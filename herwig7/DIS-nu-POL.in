@@ -1,0 +1,145 @@
+# -*- ThePEG-repository -*-
+##############################################################################
+# LO CC neutrino DIS for the FASER evgen benchmark (Herwig 7.3.0)
+#
+# nu_mu p -> mu- X, run in the nu-p c.m. frame like the Sherpa benchmark:
+# beams [nu_mu, p+] with E = [21.654469, 21.674786] GeV (sqrt(s) = 43.32926),
+# the EXACT c.m. energies of a massless 1 TeV nu_mu on a proton at rest, so
+# 2 k.P = 1876.5440 GeV^2; the analysis is frame-invariant.
+#
+# CC counterpart of DIS-mu.in -- identical except for the beam (nu_mu), the
+# matrix element (MEDISCC instead of MEDISNC) and the cut object
+# (ChargedCurrentCut instead of NeutralCurrentCut).
+#
+# Conventions matched:
+#  - LO MEDISCC (t-channel W), O(alphas^0)
+#  - proton PDF NNPDF40_nnlo_as_01180 via LHAPDF (hard ME + backward shower)
+#  - muF = Q for the hard ME (DISBase default: scale = -tHat = Q2)
+#  - fixed alpha_em = 1/132.119, sin2thetaW = 0.22291 via EW/Scheme Independent
+#  - generation cuts = fiducial cuts: Q2 > 4 GeV2, 0.2 < y < 0.9
+#  - default angular-ordered shower + cluster hadronisation; MPI off
+#  - stable-particle convention ctau > 10 mm
+#
+# usage: Herwig read DIS-nu-POL.in ; Herwig run DIS-nu-POL.run -N NEV -s SEED
+##############################################################################
+
+read snippets/EPCollider.in
+
+##################################################
+# beams: nu_mu (A, +z) on p+ (B, -z), nu-p c.m. frame
+##################################################
+cd /Herwig/EventHandlers
+set EventHandler:BeamA /Herwig/Particles/nu_mu
+set Luminosity:BeamEMaxA 21.654469*GeV
+set EventHandler:BeamB /Herwig/Particles/p+
+set Luminosity:BeamEMaxB 21.674786*GeV
+
+##################################################
+# proton PDF: NNPDF4.0 NNLO via LHAPDF
+##################################################
+cd /Herwig/Partons
+create ThePEG::LHAPDF NNPDF40 ThePEGLHAPDF.so
+set NNPDF40:PDFName NNPDF40_nnlo_as_01180
+set NNPDF40:RemnantHandler HadronRemnants
+set /Herwig/Particles/p+:PDF NNPDF40
+set EPExtractor:SecondPDF NNPDF40
+set /Herwig/Shower/ShowerHandler:PDFB NNPDF40
+
+##################################################
+# EW parameters: fixed alpha_em = 1/132.119,
+# sin2thetaW = 0.22291 (Gmu-matched benchmark values).
+# For CC the whole normalisation is (alpha/sin2thetaW)^2 / (Q2+m_W^2)^2,
+# i.e. G_F^2 m_W^4; see NEUTRINO_NOTES.md for the 0.2% G_F convention spread.
+##################################################
+cd /Herwig
+set Model:EW/Scheme Independent
+set Model:EW/AlphaEMMZ 0.007568934067015342
+set Model:EW/Sin2ThetaW 0.22291
+
+##################################################
+# hard process: LO charged-current DIS (t-channel W)
+##################################################
+cd /Herwig/MatrixElements
+insert SubProcess:MatrixElements[0] MEDISCC
+# NOTE: PowhegMEDISCC exists in Herwig 7.3.0 -- the natural route to an
+# NLO-matched Herwig CC neutrino sample (Contribution 1 + PowhegShowerHandler)
+
+##################################################
+# generation cuts = fiducial region
+##################################################
+# TRAP: SimpleDISCut defaults are MinQ2 = 20 GeV2 AND MaxQ2 = 100 GeV2 for
+# ChargedCurrentCut -- both silently wrong for this benchmark
+set /Herwig/Cuts/ChargedCurrentCut:MinQ2 4.0*GeV2
+set /Herwig/Cuts/ChargedCurrentCut:MaxQ2 1000000.0*GeV2
+set /Herwig/Cuts/ChargedCurrentCut:Miny 0.2
+set /Herwig/Cuts/ChargedCurrentCut:Maxy 0.9
+
+##################################################
+# no QED radiation in the shower: lepton splittings are
+# already removed by EPCollider.in; remove the quark ones
+##################################################
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting u->u,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting d->d,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting s->s,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting c->c,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting b->b,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting t->t,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting u->u,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting d->d,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting s->s,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting c->c,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting b->b,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting t->t,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting d->gamma,d; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting u->gamma,u; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting s->gamma,s; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting c->gamma,c; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting b->gamma,b; /Herwig/Shower/QtoGammaQSudakov
+
+##################################################
+# stable-particle convention: ctau > 10 mm stable
+##################################################
+set /Herwig/Decays/DecayHandler:MaxLifeTime 10*mm
+set /Herwig/Decays/DecayHandler:LifeTimeOption Average
+
+##################################################
+# HepMC3 Ascii output
+##################################################
+##################################################
+# POLARIZED NEUTRINO BEAM
+# ThePEG's nu_mu is a plain BeamParticleData, so MEChargedCurrentDIS
+# falls through to the unconditional  me *= 0.25  (1/2 lepton x 1/2 quark
+# spin average) -- wrong for a massless neutrino, which has one helicity.
+# Declaring the beam as PolarizedBeamParticleData with
+# LongitudinalPolarization = -1 (rho = diag(1,0), pure left-handed) makes
+# the ME use  menew.average(rho_lepton, rho_quark)  instead.
+##################################################
+cd /Herwig/Particles
+create ThePEG::PolarizedBeamParticleData nu_mu_L
+setup nu_mu_L 14 nu_mu 0 0.  0 0 0 0 2 1
+create ThePEG::PolarizedBeamParticleData nu_mubar_L
+setup nu_mubar_L -14 nu_mubar 0 0.  0 0 0 0 2 1
+makeanti nu_mubar_L nu_mu_L
+set nu_mu_L:LongitudinalPolarization -1.0
+set nu_mubar_L:LongitudinalPolarization 1.0
+cd /Herwig/EventHandlers
+set EventHandler:BeamA /Herwig/Particles/nu_mu_L
+# ESSENTIAL: the ME's mePartonData() comes from the DIAGRAM, built with
+# getParticleData(14) -- i.e. the generator's particle map, not the beam
+# object.  Setting BeamA alone therefore has NO effect (verified: bit-identical
+# cross-section).  LocalParticles overrides the id-14 entry of that map.
+insert /Herwig/Generators/EventGenerator:LocalParticles 0 /Herwig/Particles/nu_mu_L
+insert /Herwig/Generators/EventGenerator:LocalParticles 0 /Herwig/Particles/nu_mubar_L
+
+read snippets/HepMC.in
+set /Herwig/Analysis/HepMC:Format GenEventHepMC3
+set /Herwig/Analysis/HepMC:Filename events.hepmc
+set /Herwig/Analysis/HepMC:PrintEvent 100000000
+set /Herwig/Analysis/HepMC:Units GeV_mm
+
+##################################################
+# generator settings
+##################################################
+cd /Herwig/Generators
+set EventGenerator:MaxErrors 10000
+saverun DIS-nu-POL EventGenerator

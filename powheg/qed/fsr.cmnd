@@ -1,0 +1,8 @@
+! QED arm: FSR -- photon radiation off the OUTGOING lepton only.
+!
+! The scattered lepton is what Q2, x and y are reconstructed from, so a photon
+! radiated before reconstruction moves the event in the fiducial variables
+! themselves.  This is the arm that migrates events across the Q2 > 4 GeV2 and
+! 0.2 < y < 0.9 boundaries, and it exists in BOTH currents: the charged
+! current's outgoing lepton is a muon.
+TimeShower:QEDshowerByL = on

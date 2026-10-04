@@ -1,0 +1,54 @@
+Sherpa 3.0.5: a neutron (2112) beam segfaults on its first event.
+
+WHAT IT FIXES.  Hadron_Remnant::RemnantFlavour() must remove ONE copy of the
+struck valence flavour from the hadron's constituents and build the remnant
+diquark from the other two.  It sets its `taken` flag after the first
+constituent, whatever that is, and then skips every later copy of the struck
+flavour.  For the proton (u u d) the result happens to be right (2101, 2203).
+For the neutron (u d d) it is kf 21101 (u struck) or 201 (d struck), neither a
+particle, and Particle::Particle dereferences the missing Particle_Info.
+Found building the paper-plots-v2 neutron runs (PRODUCTION.md, Status,
+Sherpa).
+
+HOW IT IS USED.  NOT applied to the shared install, which the proton runs use.
+tools/build_sherpa_npatch.sh copies the install to $SHERPA_NPATCH (config.sh,
+BENCH_SHERPA_NPATCH), applies this diff to a scratch copy of the source file,
+rebuilds libRemnants with the install's own CMake flags and link line, and
+rewrites every rpath in the copy to point at the copy.  tools/sherpa_production.sh runs
+neutron jobs from that copy and checks inside each job which libRemnants is
+mapped.
+
+VALIDATED: a 2112 beam then generates, every target vertex has valence
+(u,d) = (1,2) with diquarks 2101/1103 only; 500 proton-beam events at a fixed
+seed are byte-identical with and without the patch.
+
+Apply from the Sherpa source root:  patch -p0 < sherpa-hadron-remnant-neutron.diff
+
+--- REMNANTS/Main/Hadron_Remnant.C
++++ REMNANTS/Main/Hadron_Remnant.C
+@@ -263,9 +263,23 @@
+   bool taken = false;
+   std::vector<int> kfs;
+   for (const auto& flit : m_constituents) {
+-    if (taken && flav==flit) continue;
++    // FASER DIS benchmark patch (2026-09-13); built into a separate copy
++    // of the install, see PRODUCTION.md, Status, Sherpa.
++    //
++    // RemnantFlavour() must drop ONE copy of the struck valence flavour and
++    // build the diquark from the other two constituents.  The original set
++    // `taken` after the FIRST constituent whatever it was, and then skipped
++    // EVERY later copy of the struck flavour.  For the proton (u u d) that
++    // happens to give the right diquark (2101, 2203).  For the neutron
++    // (u d d) it gives kf 21101 when u is struck and 201 when d is, neither
++    // a particle, and Particle::Particle segfaults on the missing
++    // Particle_Info at the first event of any 2112 beam.
++    //
++    // Checked: a 2112 beam then generates, every target vertex carries
++    // (u,d) = (1,2), the diquarks are 2101/1103 only; and 500 proton-beam
++    // events at a fixed seed are byte-identical with and without it.
++    if (!taken && flav==flit) { taken = true; continue; }
+     kfs.push_back(((flit.IsAnti() && !m_beamflav.IsAnti())?-1:1)*flit.Kfcode());
+-    taken = true;
+   }
+   int kfcode = 1 + (kfs.size()==2 && kfs[0]==kfs[1]?2:0);
+   for (size_t i=0;i<kfs.size();i++) kfcode += kfs[i]*pow(10,kfs.size()+1-i);

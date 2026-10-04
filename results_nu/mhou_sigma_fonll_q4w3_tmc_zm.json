@@ -1,0 +1,105 @@
+{
+ "what": "7-point muR/muF band on sigma_fid, CC DIS, YADISM NLO in FONLL",
+ "q2_min": 4.0,
+ "scheme": "ZM-VFNS",
+ "scale_floor": "muF^2 = max(xiF^2 Q^2, Q2min_PDF) and muR^2 = max(xiR^2 Q^2, Q2min_PDF); without it the downward points leave the PDF grid and the alphas reference scale, and the band is an extrapolation artefact rather than a scale variation",
+ "pdf": "NNPDF40_nnlo_as_01180",
+ "q2min_pdf": 2.7224999999999997,
+ "current": "nu",
+ "scales": [
+  {
+   "xiR": 1.0,
+   "xiF": 1.0
+  },
+  {
+   "xiR": 2.0,
+   "xiF": 1.0
+  },
+  {
+   "xiR": 0.5,
+   "xiF": 1.0
+  },
+  {
+   "xiR": 1.0,
+   "xiF": 2.0
+  },
+  {
+   "xiR": 1.0,
+   "xiF": 0.5
+  },
+  {
+   "xiR": 2.0,
+   "xiF": 2.0
+  },
+  {
+   "xiR": 0.5,
+   "xiF": 0.5
+  }
+ ],
+ "points": {
+  "1000": {
+   "rows": [
+    {
+     "xiR": 1.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 4.3300916627508474,
+     "sigma_charm_pb": 0.8755555697898745
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 4.36361474637157,
+     "sigma_charm_pb": 0.889440870207794
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 1.0,
+     "sigma_fid_pb": 4.279143957464075,
+     "sigma_charm_pb": 0.854583908854233
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 4.332015695347057,
+     "sigma_charm_pb": 0.8819038797540559
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 0.5,
+     "sigma_fid_pb": 4.345539501760483,
+     "sigma_charm_pb": 0.8641833253572944
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 4.355137087932433,
+     "sigma_charm_pb": 0.901829812924302
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 0.5,
+     "sigma_fid_pb": 4.278237724789802,
+     "sigma_charm_pb": 0.852743168809612
+    }
+   ],
+   "central_pb": 4.3300916627508474,
+   "rel_hi": 0.007741887754733057,
+   "rel_lo": -0.011975251795963815,
+   "charm_central_pb": 0.8755555697898745,
+   "charm_rel_hi": 0.030008652838257932,
+   "charm_rel_lo": -0.026054772269608506
+  }
+ },
+ "selection": {
+  "name": "q4w3",
+  "label": "Q2 > 4 GeV2, W > 3 GeV, no y cut",
+  "q2_min": 4.0,
+  "y_min": 0.0,
+  "y_max": 1.0,
+  "w2_min": 9.0,
+  "note": "The final benchmark region (user, 2026-09-13): tungsten by isospin (74p + 110n, NNPDF4.0, no nuclear effects), generated inside the region. Paper plots."
+ },
+ "pdf_set": "NNPDF40_nnlo_as_01180",
+ "target": "p",
+ "tmc": 3
+}

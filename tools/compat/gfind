@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# GNU-find stand-in for macOS, for build systems that hardcode `gfind`.
+#
+# WHY THIS EXISTS RATHER THAN `brew install findutils`.  GiBUU's Makefile sets
+# FIND = gfind on Darwin and then calls it once in a GNU-only way:
+#
+#     $(FIND) -maxdepth 1 ! -name ".*" -type d
+#
+# GNU find defaults the search path to "."; BSD find REQUIRES one and exits
+# with a usage error.  That single difference is the whole incompatibility --
+# every other use in that Makefile is plain POSIX -- so a three-line shim is
+# the honest fix, and it keeps the build reproducible on a machine where
+# nothing has been installed system-wide (CONVENTIONS.md rule 1: what this project
+# needs lives in this repository).
+#
+# Put this directory FIRST on PATH for the build and nowhere else.
+if [ "$#" -gt 0 ] && [ "${1#-}" != "$1" ]; then
+    exec find . "$@"          # GNU-style: no path given, so supply "."
+fi
+exec find "$@"

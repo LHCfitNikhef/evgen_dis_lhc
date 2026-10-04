@@ -1,0 +1,41 @@
+# The Python environment the analysis runs in (config.sh: BENCH_PYTHON).
+#
+#   conda env create -f environment.yml        # or mamba
+#   conda activate evgen-bench
+#   export BENCH_DEPS=$CONDA_PREFIX            # or put it in config.local.sh
+#
+# Versions are the ones the tracked results were produced with (2026-09-30).
+# ROOT, LHAPDF and HepMC3 also serve the C++ builds (BENCH_DEPS); on a
+# cluster with CVMFS an LCG view can supply those three instead, with the
+# pip packages installed on top of its Python.
+#
+# NOT here, on purpose:
+#   * Pythia 8 -- the benchmark builds its own 8.311 (pythia8/, patched, see
+#     patches/); conda-forge ships 8.312 and exports PYTHIA8DATA pointing at
+#     it, which is the silent-wrong-particle-data trap config.sh describes.
+#   * the event generators (Sherpa, Herwig/ThePEG, POWHEG-BOX, GENIE, MG5_aMC)
+#     -- built from source under $PHYSICS24/software, with patches/ applied.
+#   * LaTeX: the figures use usetex (analysis/plotstyle.py) and need a TeX
+#     installation on PATH (texlive with type1cm, dvipng).
+name: evgen-bench
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy=2.4
+  - scipy=1.18
+  - matplotlib=3.11
+  - pandas=2.3
+  - pyyaml
+  - pillow
+  - root=6.38
+  - lhapdf=6.5.4
+  - hepmc3
+  - poppler          # pdftoppm/pdftocairo: the digitisers in tools/digitise_*.py
+  - log4cpp          # GENIE's logger: set BENCH_LOG4CPP=$CONDA_PREFIX (default: Homebrew / /usr)
+  - libxml2          # GENIE's XML configuration
+  - pip
+  - pip:
+      - yadism==0.13.11
+      - eko==0.15.5
+      - pineappl==1.5.0

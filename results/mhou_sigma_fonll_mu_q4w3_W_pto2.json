@@ -1,0 +1,313 @@
+{
+ "what": "7-point muR/muF band on sigma_fid, muon NC DIS, YADISM NLO in FONLL",
+ "q2_min": 4.0,
+ "scheme": "FONLL general-mass, damped; charm only",
+ "scale_floor": "muF^2 = max(xiF^2 Q^2, Q2min_PDF) and muR^2 = max(xiR^2 Q^2, Q2min_PDF); without it the downward points leave the PDF grid and the alphas reference scale, and the band is an extrapolation artefact rather than a scale variation",
+ "pdf": "NNPDF40_nnlo_as_01180_W184free",
+ "q2min_pdf": 2.7224999999999997,
+ "current": "mu",
+ "scales": [
+  {
+   "xiR": 1.0,
+   "xiF": 1.0
+  },
+  {
+   "xiR": 2.0,
+   "xiF": 1.0
+  },
+  {
+   "xiR": 0.5,
+   "xiF": 1.0
+  },
+  {
+   "xiR": 1.0,
+   "xiF": 2.0
+  },
+  {
+   "xiR": 1.0,
+   "xiF": 0.5
+  },
+  {
+   "xiR": 2.0,
+   "xiF": 2.0
+  },
+  {
+   "xiR": 0.5,
+   "xiF": 0.5
+  }
+ ],
+ "points": {
+  "400": {
+   "rows": [
+    {
+     "xiR": 1.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 62986.92735233421,
+     "sigma_charm_pb": 1065.6943339271072
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 64432.339980364464,
+     "sigma_charm_pb": 1510.5481838436535
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 1.0,
+     "sigma_fid_pb": 61868.83100287409,
+     "sigma_charm_pb": 689.8416993076711
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 62993.25169030229,
+     "sigma_charm_pb": 747.6406057487853
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 0.5,
+     "sigma_fid_pb": 63413.52057671331,
+     "sigma_charm_pb": 1103.0664342136201
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 64800.69046612827,
+     "sigma_charm_pb": 1554.6315155403518
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 0.5,
+     "sigma_fid_pb": 62733.6989512535,
+     "sigma_charm_pb": 992.9598760315903
+    }
+   ],
+   "central_pb": 62986.92735233421,
+   "rel_hi": 0.028795865904813756,
+   "rel_lo": -0.0177512445273883,
+   "charm_central_pb": 1065.6943339271072,
+   "charm_rel_hi": 0.45879682949190514,
+   "charm_rel_lo": -0.3526833376643853
+  },
+  "700": {
+   "rows": [
+    {
+     "xiR": 1.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 79712.8453856242,
+     "sigma_charm_pb": 2033.0904290791689
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 81662.97920553008,
+     "sigma_charm_pb": 2653.24561769062
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 1.0,
+     "sigma_fid_pb": 78099.19367428971,
+     "sigma_charm_pb": 1482.9436833582054
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 79541.70294555172,
+     "sigma_charm_pb": 1590.4703020832803
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 0.5,
+     "sigma_fid_pb": 79908.46443451704,
+     "sigma_charm_pb": 1967.156581978421
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 82261.77158629466,
+     "sigma_charm_pb": 2771.870291726307
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 0.5,
+     "sigma_fid_pb": 79181.39170686575,
+     "sigma_charm_pb": 1888.3927204636325
+    }
+   ],
+   "central_pb": 79712.8453856242,
+   "rel_hi": 0.031976354480129476,
+   "rel_lo": -0.020243308384341074,
+   "charm_central_pb": 2033.0904290791689,
+   "charm_rel_hi": 0.36337776818995104,
+   "charm_rel_lo": -0.27059629903925964
+  },
+  "1000": {
+   "rows": [
+    {
+     "xiR": 1.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 91560.18413548717,
+     "sigma_charm_pb": 2928.7678920324374
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 93897.13967419845,
+     "sigma_charm_pb": 3679.470326971299
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 1.0,
+     "sigma_fid_pb": 89535.8901097539,
+     "sigma_charm_pb": 2241.8744670027236
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 91250.31272584049,
+     "sigma_charm_pb": 2398.4905699678966
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 0.5,
+     "sigma_fid_pb": 91490.9741489228,
+     "sigma_charm_pb": 2744.9124345882387
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 94724.21614441961,
+     "sigma_charm_pb": 3880.2981411033397
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 0.5,
+     "sigma_fid_pb": 90794.74714517138,
+     "sigma_charm_pb": 2721.0518752919256
+    }
+   ],
+   "central_pb": 91560.18413548717,
+   "rel_hi": 0.034556855021724564,
+   "rel_lo": -0.02210888985039383,
+   "charm_central_pb": 2928.7678920324374,
+   "charm_rel_hi": 0.3248909726371596,
+   "charm_rel_lo": -0.23453324071817783
+  },
+  "2000": {
+   "rows": [
+    {
+     "xiR": 1.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 117598.00580217162,
+     "sigma_charm_pb": 5443.3503886458975
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 120837.68008946345,
+     "sigma_charm_pb": 6485.994071992012
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 1.0,
+     "sigma_fid_pb": 114546.06727165834,
+     "sigma_charm_pb": 4435.281486728126
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 116946.8104875731,
+     "sigma_charm_pb": 4727.985798172466
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 0.5,
+     "sigma_fid_pb": 116636.06331346375,
+     "sigma_charm_pb": 4870.625635292489
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 122363.79524706409,
+     "sigma_charm_pb": 6959.07519423654
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 0.5,
+     "sigma_fid_pb": 116230.06245812928,
+     "sigma_charm_pb": 5070.50564216484
+    }
+   ],
+   "central_pb": 117598.00580217162,
+   "rel_hi": 0.04052610766979914,
+   "rel_lo": -0.025952298337842516,
+   "charm_central_pb": 5443.3503886458975,
+   "charm_rel_hi": 0.2784543888176374,
+   "charm_rel_lo": -0.1851927268949044
+  },
+  "4000": {
+   "rows": [
+    {
+     "xiR": 1.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 148096.42282882595,
+     "sigma_charm_pb": 9196.024121003515
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 152453.40156557036,
+     "sigma_charm_pb": 10574.84154684469
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 1.0,
+     "sigma_fid_pb": 143668.93126902077,
+     "sigma_charm_pb": 7794.69429093875
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 146937.45292914307,
+     "sigma_charm_pb": 8264.187235974727
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 0.5,
+     "sigma_fid_pb": 145678.03099948075,
+     "sigma_charm_pb": 7945.6777620442235
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 155134.1352287429,
+     "sigma_charm_pb": 11523.091320052466
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 0.5,
+     "sigma_fid_pb": 146034.89083584613,
+     "sigma_charm_pb": 8594.20097094011
+    }
+   ],
+   "central_pb": 148096.42282882595,
+   "rel_hi": 0.04752115051456274,
+   "rel_lo": -0.029896006096802208,
+   "charm_central_pb": 9196.024121003515,
+   "charm_rel_hi": 0.25305144575838834,
+   "charm_rel_lo": -0.15238431431080723
+  }
+ },
+ "selection": {
+  "name": "q4w3",
+  "label": "Q2 > 4 GeV2, W > 3 GeV, no y cut",
+  "q2_min": 4.0,
+  "y_min": 0.0,
+  "y_max": 1.0,
+  "w2_min": 9.0,
+  "note": "The final benchmark region (user, 2026-09-13): tungsten by isospin (74p + 110n, NNPDF4.0, no nuclear effects), generated inside the region. Paper plots."
+ },
+ "pdf_set": "NNPDF40_nnlo_as_01180_W184free",
+ "target": "W",
+ "tmc": 0
+}

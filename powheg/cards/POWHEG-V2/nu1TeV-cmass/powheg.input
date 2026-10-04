@@ -1,0 +1,41 @@
+! POWHEG nu-DIS smoke test: 1 TeV nu_mu on a proton at rest, charged current
+! Conventions follow the evgen-benchmark setup (NNPDF4.0 NNLO, muF=muR=Q)
+
+numevts 2000       ! number of events to be generated
+ih1   14           ! incoming lepton: PDG code (14 = nu_mu)
+ih2   1            ! hadron 2: proton
+ndns1 131          ! (unused with lhapdf)
+ndns2 131
+lhans1 331100      ! NNPDF40_nnlo_as_01180
+lhans2 331100
+ebeam1 21.66462758937933d0   ! sqrt(s)/2 with s = mp^2 + 2*1000*mp
+ebeam2 21.66462758937933d0
+qmass  1.5d0        ! massive charm in the final state (this version's new feature)
+facscfact 1
+renscfact 1
+                   ! fixedscale absent => running mu = max(sqrt(Q^2+mq^2),1.5)
+
+use-old-grid  1
+use-old-ubound 1
+
+ncall1 20000
+itmx1 3
+ncall2 50000
+itmx2 2
+foldcsi 1
+foldy 1
+foldphi 1
+nubound 20000
+iymax 1
+ixmax 1
+xupbound 2
+
+! DIS process
+charged_current 1
+
+numflav 4          ! active flavours in the proton
+q2cut 4d0          ! Q^2 > 4 GeV^2 (benchmark cut)
+
+!iupperfsr 1       ! massless-case option, dropped for the massive run        ! necessary for the massless case
+
+storeinfo_rwgt 1

@@ -1,0 +1,18 @@
+SetDesc: "ABMP16_5_nnlo every member with u<->d and ubar<->dbar exchanged: a NEUTRON target by isospin (tools/make_neutron_pdf.py)"
+SetIndex: 340400
+Authors: S. Alekhin, J. Bluemlein, S. Moch, R.Placakyte
+Reference: arXiv:1701.05838 
+Format: lhagrid1
+DataVersion: 1
+NumMembers: 30
+Particle: 2212
+Flavors: [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 21]
+OrderQCD: 2
+FlavorScheme: fixed
+NumFlavors: 5
+ErrorType: symmhessian
+XMin: 1e-07
+XMax: 1
+QMin: 4.472140
+QMax: 14142.1
+MZ: 91.1876  

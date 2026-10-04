@@ -1,0 +1,42 @@
+# Apply from the repository root (variables from config.sh):
+#   patch -p0 -d <Sherpa source root> < patches/sherpa-dy-qcd-virtual-ckm.diff  (then rebuild)
+--- EXTRA_XS/NLO/DY_QCD_Virtual.C
++++ EXTRA_XS/NLO/DY_QCD_Virtual.C
+@@ -97,15 +97,35 @@
+     Flavour_Vector fl=pi.ExtractFlavours();
+     for (size_t i(0);i<fl.size();++i)
+       if (fl[i].IsMassive()) return NULL;
++    // FASER DIS benchmark patch: serve the Cabibbo CROSS-FAMILY charged
++    // currents too (nu_mu d -> mu- c, nu_mu s -> mu- u, ...), which the
++    // original QuarkFamily() equality refused, returning NULL and aborting
++    // with "Couldn't find virtual ME for this process" as soon as a full CKM
++    // (CKM: {Order: 3}) switched those channels on.
++    //
++    // The restriction is not physics.  DY_QCD_Virtual::Calc() builds its one
++    // kinematic invariant from the two LEPTON momenta alone and returns
++    //     V/B = C_F ( -2/eps^2 + (-3-2L)/eps + (-8-3L-L^2) ),  L = ln(mu_R^2/Q^2)
++    // which is the universal massless quark-line QCD vertex correction,
++    // NORMALISED TO THE BORN.  Every flavour and every CKM element lives in
++    // the Born and cancels in that ratio, and -(p_l1+p_l2)^2 = Q^2 equals the
++    // quark-line invariant (p_3-p_1)^2 by momentum conservation whatever the
++    // families are.  The one genuine requirement, that both quarks be
++    // massless, is already enforced a few lines above by the explicit
++    //     for (...) if (fl[i].IsMassive()) return NULL;
++    // and the benchmark runs a massless (ZM) charm anyway.
++    //
++    // So the family equality is replaced by the requirement it was standing
++    // in for: that both legs of the quark line really are quarks.
+     if (((fl[0].IsLepton() && fl[2].IsNeutrino()) ||
+ 	 (fl[2].IsLepton() && fl[0].IsNeutrino())) &&
+ 	fl[2].LeptonFamily()==fl[0].LeptonFamily()) {
+-      if (fl[1].IsQuark() && fl[3].QuarkFamily()==fl[1].QuarkFamily())
++      if (fl[1].IsQuark() && fl[3].IsQuark())
+ 	return new DY_QCD_Virtual(pi,fl);
+     }
+     if ((fl[2].IsLepton() && fl[3].IsNeutrino() &&
+ 	 fl[3].LeptonFamily()==fl[2].LeptonFamily())) {
+-      if (fl[0].IsQuark() && fl[1].QuarkFamily()==fl[0].QuarkFamily())
++      if (fl[0].IsQuark() && fl[1].IsQuark())
+ 	return new DY_QCD_Virtual(pi,fl);
+     }
+     if ((fl[0].IsLepton() && fl[1]==fl[0].Bar()) ||

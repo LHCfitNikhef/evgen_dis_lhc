@@ -1,0 +1,196 @@
+# -*- ThePEG-repository -*-
+##############################################################################
+# THE SAME POWHEG-RES LHE EVENTS, SHOWERED AND HADRONISED BY HERWIG 7.
+#
+# mu- p -> mu- X at Q2 > 4 GeV2, the muon neutral-current benchmark.  The
+# matrix element, the matching, the parton distribution and the scale all come
+# from the Les Houches file -- the SAME file powheg/run_powheg_shower.sh hands
+# to Pythia 8 for the published `powheg` sample -- so the only difference
+# between the two samples is the shower and the hadronisation model:
+#
+#     Pythia 8.311   p_T-ordered dipole shower + Lund string
+#     Herwig 7.3.0   angular-ordered shower + cluster model
+#
+# WHY THIS EXISTS (user, 2026-09-08).  The hadronisation model was confounded
+# with the generator everywhere in this benchmark: every Lund-string number
+# came from Pythia or from something showered by Pythia, every cluster number
+# from Sherpa's AHADIC or Herwig's own matrix element.  One matrix element
+# through two independent showers is the only comparison here in which the
+# hadronisation model is the thing that changes.
+#
+# AND IT IS ALSO THE SHOWER STUDY AT NLO.  `pythia8/shower/` switches
+# PartonShowers:model on the LO samples, because on a POWHEG sample Pythia's
+# veto hooks are a SimpleShower feature and Vincia and Dire deliver nothing
+# (0 and 225 events of 59775; logs/shower_probe_powheg.log).  Herwig applies
+# the POWHEG veto through its own machinery -- MaxPtIsMuF/RestrictPhasespace
+# below -- so this path carries an NLO-matched shower comparison that the
+# PartonShowers:model switch cannot.
+#
+# WHAT IS HELD FIXED, deliberately and item by item: the proton PDF
+# (NNPDF4.0 NNLO, for the backward evolution as well as the hard process),
+# no multiple interactions, no QED radiation in the shower, the ctau > 10 mm
+# stability convention, and the 0.5 GeV intrinsic pT this benchmark needs at
+# sqrt(s) = 43 GeV (see DIS-mu-POWHEG.in for the measurement).  Anything
+# Herwig tunes that Pythia does not is part of "the hadronisation model", and
+# that is what the figure is about.
+#
+# @LHEFILE@ and @RUNNAME@ are substituted per job by
+# powheg/run_powheg_herwig.sh; this template holds no path of its own
+# (CONVENTIONS.md rule 1).
+#
+# usage (via the driver): Herwig read <job>/LHE-mu.in ; Herwig run <run>.run
+##############################################################################
+
+# EPCollider.in is the lepton-hadron setup: EPExtractor, MPI off on every
+# shower handler, the lepton-line QED splittings deleted, and
+# KinematicsReconstructor:ReconstructionOption Colour.  It also configures the
+# standard EventHandler, which the Les Houches handler below REPLACES -- the
+# settings that matter here are the global ones.
+read snippets/EPCollider.in
+
+##################################################
+# proton PDF: NNPDF4.0 NNLO, the set POWHEG ran with
+##################################################
+cd /Herwig/Partons
+create ThePEG::LHAPDF NNPDF40 ThePEGLHAPDF.so
+set NNPDF40:PDFName NNPDF40_nnlo_as_01180
+set NNPDF40:RemnantHandler HadronRemnants
+set /Herwig/Particles/p+:PDF NNPDF40
+set EPExtractor:SecondPDF NNPDF40
+set /Herwig/Shower/ShowerHandler:PDFB NNPDF40
+
+##################################################
+# the Les Houches event handler
+##################################################
+cd /Herwig/EventHandlers
+library LesHouches.so
+create ThePEG::LesHouchesEventHandler LesHouchesHandler
+# EPExtractor, NOT the template's PPExtractor: beam A is a lepton and takes no
+# parton distribution.  PPExtractor would ask the muon for a PDF.
+set LesHouchesHandler:PartonExtractor /Herwig/Partons/EPExtractor
+set LesHouchesHandler:CascadeHandler /Herwig/Shower/ShowerHandler
+set LesHouchesHandler:DecayHandler /Herwig/Decays/DecayHandler
+set LesHouchesHandler:HadronizationHandler /Herwig/Hadronization/ClusterHadHandler
+# POWHEG-RES writes IDWTUP = -4: weighted events that may be negative.
+set LesHouchesHandler:WeightOption VarNegWeight
+set /Herwig/Generators/EventGenerator:EventHandler \
+    /Herwig/EventHandlers/LesHouchesHandler
+
+# NO CUTS AT THIS STAGE.  The fiducial region is applied by the analysis, and
+# a generation-level cut here would act on the SHOWERED event rather than on
+# the Born one -- which is the SimpleDISCut trap of CONVENTIONS.md rule 2 in a
+# different costume.  For a POWHEG sample it would also cut the extra jet,
+# which the matching forbids.
+create ThePEG::Cuts /Herwig/Cuts/NoCuts
+# EVERY LIMIT SPELLED OUT, because the defaults are not all finite.  A bare
+# Cuts object carries infinite rapidity limits, and saverun then dies with
+# "Tried to write a NaN or Inf double to a persistent stream" -- after having
+# already written a .run file, which then fails to read back.  The values
+# below are wide enough to cut nothing at these energies, and none of them
+# is exactly zero: ThePEG builds the parton bins from log(x_min) and log of a
+# zero limit is the -inf that reappears one object further on, as a PartonBin
+# rather than a Cuts failure.  x > 1e-9 cuts nothing -- the fiducial region
+# reaches x ~ 2e-3 at 1 TeV.
+set /Herwig/Cuts/NoCuts:MHatMin 0.1*GeV
+set /Herwig/Cuts/NoCuts:MHatMax 1.0e7*GeV
+set /Herwig/Cuts/NoCuts:ScaleMin 1.0e-6*GeV2
+set /Herwig/Cuts/NoCuts:ScaleMax 1.0e14*GeV2
+set /Herwig/Cuts/NoCuts:X1Min 1.0e-9
+set /Herwig/Cuts/NoCuts:X1Max 1.0
+set /Herwig/Cuts/NoCuts:X2Min 1.0e-9
+set /Herwig/Cuts/NoCuts:X2Max 1.0
+set /Herwig/Cuts/NoCuts:YHatMin -100.0
+set /Herwig/Cuts/NoCuts:YHatMax 100.0
+
+create ThePEG::LesHouchesFileReader LesHouchesReader
+set LesHouchesReader:FileName @LHEFILE@
+set LesHouchesReader:AllowedToReOpen No
+set LesHouchesReader:InitPDFs 0
+set LesHouchesReader:Cuts /Herwig/Cuts/NoCuts
+# IDWTUP = -4 IS NOT A READER MODE ThePEG KNOWS.  Left alone it prints a
+# warning saying it will "make intelligent guesses to get correct
+# statistics" and carries on -- the shape of failure CONVENTIONS.md rule 2 is
+# about.  Weighted On says explicitly that the events carry weights, which
+# is what -4 means, and the analysis normalises from the weight sum anyway.
+set LesHouchesHandler:Weighted On
+# rounding in the Les Houches record: rescale the energy to close momentum
+set LesHouchesReader:MomentumTreatment RescaleEnergy
+# BEAM A IS THE MUON AND HAS NO PARTON CONTENT.  Saying so takes two
+# statements, not one: the reader's own PDFA, and the muon particle's, which
+# is what the parton extractor consults when it builds the parton bins.
+# Without them the run dies at initialisation with "Could not find
+# appropriate PartonBin objects", which names neither the beam nor the muon.
+set /Herwig/Particles/mu-:PDF /Herwig/Partons/NoPDF
+set LesHouchesReader:PDFA /Herwig/Partons/NoPDF
+set LesHouchesReader:PDFB /Herwig/Partons/NNPDF40
+insert LesHouchesHandler:LesHouchesReaders 0 LesHouchesReader
+
+##################################################
+# POWHEG matching: SCALUP is a VETO scale
+##################################################
+cd /Herwig/Shower
+# The hardest emission is already in the file.  HardEmission must stay None:
+# turning it on would have Herwig generate a second hardest emission on top of
+# POWHEG's, which is the double count the veto exists to prevent.
+set ShowerHandler:HardEmission None
+set ShowerHandler:MaxPtIsMuF Yes
+set ShowerHandler:RestrictPhasespace Yes
+# wide-angle radiation, as recommended for POWHEG input
+set PartnerFinder:PartnerMethod Random
+set PartnerFinder:ScaleChoice Partner
+# the intrinsic pT this benchmark runs at -- 0.5 GeV, not Herwig's LHC-tuned
+# 2.2, which discards 5.9% of muon events at sqrt(s) = 43 GeV, biased to low
+# Q2.  The measurement is in DIS-mu-POWHEG.in.
+set ShowerHandler:IntrinsicPtGaussian 0.5*GeV
+
+##################################################
+# no QED radiation off the quark line (the lepton line is already done by
+# EPCollider.in), matching the Pythia card's four QEDshowerBy* switches
+##################################################
+do SplittingGenerator:DeleteFinalSplitting u->u,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteFinalSplitting d->d,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteFinalSplitting s->s,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteFinalSplitting c->c,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteFinalSplitting b->b,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteFinalSplitting t->t,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteInitialSplitting u->u,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteInitialSplitting d->d,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteInitialSplitting s->s,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteInitialSplitting c->c,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteInitialSplitting b->b,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteInitialSplitting t->t,gamma; /Herwig/Shower/QtoQGammaSudakov
+do SplittingGenerator:DeleteInitialSplitting d->gamma,d; /Herwig/Shower/QtoGammaQSudakov
+do SplittingGenerator:DeleteInitialSplitting u->gamma,u; /Herwig/Shower/QtoGammaQSudakov
+do SplittingGenerator:DeleteInitialSplitting s->gamma,s; /Herwig/Shower/QtoGammaQSudakov
+do SplittingGenerator:DeleteInitialSplitting c->gamma,c; /Herwig/Shower/QtoGammaQSudakov
+do SplittingGenerator:DeleteInitialSplitting b->gamma,b; /Herwig/Shower/QtoGammaQSudakov
+
+##################################################
+# stable-particle convention: ctau > 10 mm stable
+##################################################
+set /Herwig/Decays/DecayHandler:MaxLifeTime 10*mm
+
+##################################################
+# HepMC3 Ascii output, the format analysis/analyze.py reads
+##################################################
+cd /Herwig/Generators
+read snippets/HepMC.in
+set /Herwig/Analysis/HepMC:Format GenEventHepMC3
+set /Herwig/Analysis/HepMC:Filename events.hepmc
+set /Herwig/Analysis/HepMC:PrintEvent 100000000
+set /Herwig/Analysis/HepMC:Units GeV_mm
+
+set EventGenerator:MaxErrors 10000
+set EventGenerator:NumberOfEvents 100000000
+set EventGenerator:PrintEvent 0
+
+# REBUILD, DO NOT REPLACE (2026-09-19, patches/thepeg-2.3.0-event-error-retry.diff):
+# an event whose remnant Herwig cannot put on shell is re-showered from the SAME
+# Les Houches event instead of being dropped for the next one.  The drops were
+# charm/sea/high-x (v2 nu 1 TeV p: charm 19.13% in the LHE, 16.97% delivered
+# without this, 19.67% with it).  Needs the patched ThePEG: unpatched, read fails.
+set /Herwig/EventHandlers/LesHouchesHandler:MaxEventErrorRetries 100
+# ... and never move the scattered lepton to rescue the remnant: the event
+# fails and is re-showered instead (herwig7/production/make_cards.py, RETRIES).
+set /Herwig/Partons/RemnantDecayer:DISRemnantOption NoLepton
+saverun @RUNNAME@ EventGenerator

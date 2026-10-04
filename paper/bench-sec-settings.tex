@@ -1,0 +1,295 @@
+\section{Benchmark settings}
+\label{sec:settings}
+
+In this section we summarise the settings and inputs used in this benchmark comparison of MC event generators for muon and neutrino DIS at the LHC. 
+%
+We specify  the kinematics, the fiducial regions, the common physics inputs and the observables.
+%
+Technical implementation details, including the per-generator cards, 
+normalisation conventions, and the validation procedure, are collected in full in the public
+repository of this project~\cite{benchmarkrepo}.
+
+\paragraph{Kinematics and fiducial region.}
+%
+We consider a lepton (neutrino or muon) with energy $E_\ell$ incident on a tungsten (W) nucleus at rest in two channels:
+neutral-current scattering 
+\be 
+\mu^\pm  + A \to \mu^\pm + X \, ,
+\ee 
+via $\gamma^*/Z$ exchange, and
+charged-current scattering
+\be
+\nu_\ell~(\bar{\nu}_\ell) + A \to \ell^-~(\ell^+) +  X \, , \ell=e,\mu\, ,
+\ee
+via $W^+~(W^-)$ exchange.  
+%
+We consider a range of energies between $E_\ell=400$ GeV and $E_\ell=4$ TeV, with representative results for differential distributions shown for $E_\ell=1$ TeV. 
+%
+Cross sections are given per nucleon: each generator is run separately on a proton and on a neutron target, and the two are combined as $\sigma = (74\,\sigma_p + 110\,\sigma_n)/184$, as appropriate for a tungsten nucleus with $Z=74$ and $A=184$, neglecting nuclear effects.
+%
+Event generation is performed either in the centre-of-mass frame or in the target rest frame, depending on which mode is more efficient.
+%
+All observables and selection requirements are evaluated in the target rest frame, which is the laboratory frame of FASER, and events generated in the centre-of-mass frame are boosted to it before being analysed.
+
+The fiducial region of the benchmark is defined by
+\begin{equation}
+  Q^2 > 4~{\rm GeV}^2 , \qquad W > 3~{\rm GeV},
+  \label{eq:fiducial}
+\end{equation}
+with $Q^2$ and $W^2$ being the standard DIS invariants, $Q^2$ built from
+the beam and scattered-lepton momenta and $W^2 = M_N^2 + 2P\cdot q - Q^2$ also
+from the momentum $P$ of the target nucleon at rest, with $M_N$ the nucleon mass. 
+%
+The generators are run with generation cuts looser than, or at most equal to, those of Eq.~\eqref{eq:fiducial}, and the fiducial region is then imposed on the generated final-state events.
+%
+The lower limit on $Q^2$ keeps the calculation in the region of validity of perturbative QCD, while the lower bound on the invariant mass of the hadronic final state $W$ avoids the region where  hadronisation models are unreliable.
+%
+For charm-production observables the lower limit on $W$ is raised to 5~GeV, for the reasons given in Sect.~\ref{sec:charmdef}.
+
+\paragraph{FASER selections.}
+\label{sec:faser-selections}
+%
+The fiducial region of Eq.~\eqref{eq:fiducial} enables a clean comparison of the predictions of event generators, both inclusive and differential, with the corresponding analytic structure-function calculations.
+%
+Additional selection requirements should be imposed to match the acceptance of the FASER experiment, which is the main target of this paper.
+%
+For this, we define two  further
+selections that emulate FASER analyses, both nested 
+inside the region of Eq.~\eqref{eq:fiducial}.
+%
+Different selections are needed since FASER can perform measurements with different detector subcomponents each with their own set of requirements on the detected final-state particles. 
+%
+We describe them in turn. 
+
+\paragraph{\it Tier S (spectrometer).}  The FASER electronic-detector analyses~\cite{FASER:2023zcr,FASER:2024ref,FASER:2026enu2d} select $\nu_\mu$ and $\bar{\nu}_\mu$ charged-current interactions in a $200$~mm diameter fiducial volume of the tungsten target by requiring a single track passing through all three spectrometer stations with momentum $p_\mu > 100$~GeV, lying within $95$~mm of the detector axis and at an angle $\theta < 25$~mrad to it. 
+%
+Therefore our truth-level proxy for the FASER spectrometer selection is given by
+\begin{equation}
+  E_{\mu'} > 100~{\rm GeV} , \qquad \theta_{\mu'} < 25~{\rm mrad} \, ,
+  \label{eq:tierS}
+\end{equation}
+where with $\mu'$ we indicate the final-state muon. 
+%
+Since $\theta_{\mu'} \simeq \sqrt{Q^2(1-y)}/E_{\mu'}$ in this regime, the additional angular requirement on the outgoing muon removes part of the  high-$Q^2$, high-$y$ corner of the fiducial region.
+
+
+\paragraph{\it Tier E (emulsion).}  
+%
+The FASER$\nu$ emulsion neutrino analyses~\cite{FASER:2024hoe,FASER:2026nu680} are vertex-based.
+%
+The current FASER$\nu$ event selection therefore requires more than four tracks converging on the vertex, of which more than three have $\tan\theta \le 0.1$, and identifies the charged-current muon by a track penetrating more than one hundred tungsten plates with $p_\mu > 200$~GeV and $\tan\theta > 0.005$, back-to-back with the remaining vertex tracks in azimuth.
+%
+Taking into account these considerations, 
+our truth-level proxy for the FASER$\nu$ emulsion selection is given by
+\begin{equation}
+  E_{\mu'} > 200~{\rm GeV} , \quad
+  \theta_{\mu'} > 5~{\rm mrad} , \quad
+  N_{0.5} \ge 5 , \quad N_{0.1} \ge 4 , \quad
+  \Delta\phi(\mu', X) > \pi/2 ,
+  \label{eq:tierE}
+\end{equation}
+where $N_{0.5}$ and $N_{0.1}$ count charged particles satisfying $\tan\theta < 0.5$ and $<0.1$ respectively, defined at hadron level under the same $c\tau > 10$~mm stability convention as every other observable in this work, and $\Delta\phi(\mu', X)$ is the azimuthal separation between the scattered lepton and the vector sum of those charged particles ($X=\sum h^\pm$).  
+%
+In addition, we impose that reconstructed charged particles have energies $E_{\rm ch}\ge 1$ GeV, given that tracks need to pass several tungsten plates in order to be reconstructed.
+%
+A momentum threshold of this kind also reduces the sensitivity of the multiplicity to the modelling of very soft hadrons.
+
+The efficiency of Tier E depends sensitively 
+on the charged-particle multiplicity, one of the observables for which, as we will show, event generators differ the most. 
+%
+The same sensitivity propagates into the
+experimental energy estimator.
+%
+For instance,  the $2026$ emulsion analysis reconstructs $E_\nu$ with a multivariate estimator whose inputs include the summed
+charged-hadron momenta~\cite{FASER:2026nu680}, and hence the modelling of hadronic activity affects
+the unfolded cross section estimate.
+
+Tier E can be extended to charm production as follows.
+%
+Events where the hadronic system contains a charmed meson can be reconstructed at FASER$\nu$ by identifying a secondary vertex. 
+%
+In addition to the Tier E fiducial selection requirements of Eq.~(\ref{eq:tierE}), one needs to account for the efficiency to identify this secondary vertex, which here we take to be $f_c=50\%$. 
+%
+No additional kinematic cuts on the $D$-meson or its decay products with respect to those of Eq.~(\ref{eq:tierE}) are necessary.
+
+\paragraph{\it Dimuon selection.} 
+%
+We also consider an extension of Tier S where we also request a secondary  muon of charge opposite to the primary, the so-called dimuon selection:
+\begin{equation}
+  \textrm{Tier S} \quad \textrm{and} \quad \exists\, \mu^{\pm} :\;
+  E_{\mu^{\pm}} > 100~{\rm GeV} , \quad \theta_{\mu^{\pm}} < 25~{\rm mrad} \, ,
+  \label{eq:tierD}
+\end{equation}
+where a secondary $\mu^+$ is associated with a primary $\mu^-$ and vice versa.
+%
+This selection is not a further acceptance requirement but rather a charm tag, given that an
+opposite-sign secondary muon with $E_\mu \ge 100$~GeV comes overwhelmingly from the
+semileptonic decay of a charm hadron.
+%
+This is the dimuon signal through which charm production was historically measured in neutrino DIS.
+%
+Its rate is therefore set by the charm fraction, a semileptonic branching ratio of $\mathcal{O}(10\%)$, and the acceptance for the decay muon, and it is of order $10^{-3}$ of the inclusive DIS cross section.
+%
+Being a charm tag, the dimuon selection is evaluated with $W > 5$~GeV, as all charm-production observables (see Sect.~\ref{sec:charmdef}).
+
+\paragraph{Physics inputs.}
+
+The common physics specifications to which all generators are configured for the benchmark study, unless otherwise specified, are collected in Table~\ref{tab:settings}.
+%
+Whenever variations with respect to the parameters listed in this table are implemented, these are mentioned specifically.
+%
+For instance, as mentioned in 
+Sect.~\ref{sec:generators}, not all of these options can be implemented in \genie, for which only fixed specific physics tunes are available. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[!tbp]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabularx}{\textwidth}{Xl}
+    \toprule
+    Setting & Value \\
+    \midrule
+    Beams                     & Fixed-$E_\ell$ $\mu^-$ (NC) or $\nu_\mu$ (CC) on a tungsten nucleus at rest, per nucleon \\
+    Fiducial region           & $Q^2 > 4$~GeV$^2$, $ W > 3 $ GeV ($W > 5$~GeV for charm production) \\
+    Parton distributions      & {\tt NNPDF40\_nnlo\_as\_01180}~\cite{NNPDF:2021njg} via \lhapdf~\cite{Buckley:2014ana} \\
+    Renormalisation and factorisation scales                    & $\mu_R = \mu_F = Q$ \\
+    Electroweak scheme        & $G_\mu$-matched: $\alpha_{\rm em} = 1/132.119$, $\sin^2\theta_W = 0.22291$ \\
+    QED radiation             & switched off \\
+    Heavy-quark scheme        & massless charm and bottom (zero-mass, five-flavour scheme) \\
+    Target-mass corrections   & included in the structure-function calculations \\
+    Stable-particle criterion & $c\tau > 10$~mm \\
+    Multiple interactions     & switched off \\
+    Final-state interactions     & switched off \\
+    \bottomrule
+  \end{tabularx}
+  \vspace{0.2cm}
+  \caption{The common specification to which the event generators are configured for the benchmark study, unless otherwise specified.
+    }
+  \label{tab:settings}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Concerning proton structure, we adopt the {\tt NNPDF40\_nnlo\_as\_01180} PDF set~\cite{NNPDF:2021njg} via the \lhapdf interface~\cite{Buckley:2014ana} throughout. 
+%
+In particular, we use the same PDF set irrespective of perturbative order of the MC generator considered. 
+%
+As one of the physics applications to be discussed later, predictions for alternative PDF sets are also provided. 
+%
+Since the target is a tungsten nucleus, we apply isospin symmetry to construct the neutron PDFs from the proton ones. 
+%
+Nuclear PDF effects are not part of the benchmark settings and are studied separately as one of the physics applications. 
+%
+The analytic structure-function calculations include target-mass corrections~\cite{Georgi:1976ve,Schienbein:2007gr}.
+
+The renormalisation and factorisation scales are set dynamically to $\mu_F=\mu_R=Q$, and their variation using the seven-point prescription~\cite{NNPDF:2019ubu} is used to estimate missing higher-order uncertainties.
+%
+We use the $G_\mu$-matched electroweak scheme and switch off QED radiation in the simulations.
+%
+The impact of the latter is studied separately as another of the physics applications.
+%
+Multiple parton interactions play no role, since only one of the two colliding particles carries partons, while final-state interactions with the cold nuclear medium are neglected since their study is beyond the scope of this paper.
+
+
+The heavy-quark scheme is strictly massless, both for charm and bottom quarks, so that generators can be compared against zero-mass structure functions without a scheme ambiguity. 
+%
+We estimate the impact of charm mass effects both from the analytical structure-function side, using the FONLL general-mass scheme~\cite{Forte:2010ta}, up to NNLO for neutral-current scattering and up to NLO for charged-current scattering, for which the massive coefficient functions, although known at NNLO~\cite{Berger:2016inr,Gao:2017kkx,Caola:2026kvl}, are not implemented in \yadism, and from the event generator side using \powhegtwo for charm production in neutrino DIS~\cite{Buonocore:2024pdv}, which accounts for charm mass effects in the $s\to c$ and $d \to c$ transitions.
+%
+Whenever mass effects are included in the simulations, we indicate so explicitly. 
+
+The stability criterion which defines a final-state hadron in the detector is $c\tau>10$ mm.
+%
+The chosen criterion implies that we assume that $D$-mesons, whose $c\tau$ is between about $60$ and $310$~$\mu$m, never appear as final-state particles and therefore  they must be counted at the point of production.
+%
+While at FASER$\nu$ this is not necessarily true ($D$-mesons may be detected before decay), this distinction is immaterial from the point of view of the present study.
+
+\paragraph{Observables.}
+%
+Three main groups of physical observables are considered in the present work:
+
+\begin{enumerate}
+  \item Observables constructed from the deep-inelastic kinematics, namely from the incoming and outgoing lepton momenta and the total energy  of the hadronic final state.
+  %
+  These are the momentum transfer, $Q^2$, the momentum fraction, $x_{\rm Bj}$, the inelasticity, $y$, and the invariant mass of the hadronic final state, $W$ (all Lorentz invariants) as well as the scattered-lepton  energy $E'_\ell$ and angle $\theta_\ell$  and the energy transfer $\nu$ (or equivalently the total hadronic energy $E_h$) in the target rest frame.
+  %
+  These observables can be evaluated both with analytical structure functions as well as at the event generator level, and hence will be used to validate the implementation of the latter. 
+
+  \item Observables depending on the final-state hadronic activity, such as the charged multiplicity $N_{\rm ch}$, the same restricted to $E_{\rm ch}>1$~GeV, the energy of the leading charged hadron, and $\Delta\phi$, the azimuthal separation between the scattered lepton and the vector sum of the charged hadrons.  
+  %
+  These observables probe the shower structure and the hadronisation model, and are directly relevant to event selection at the LHC far-forward detectors. 
+
+  \item Observables constructed from a charm tag (see below), such as the  multiplicities and energy spectra of $D^\pm$ and $D^0/\bar{D}^0$ mesons or the ratio between charged and neutral $D$-mesons.  
+  %
+  Here $D_s$ is reported separately and excluded from the charged-$D$ observable, since the hadronisation models used by the event generators considered here differ significantly in the fraction of $D_s$ mesons predicted. 
+      
+\end{enumerate}
+
+\paragraph{Charm tagging.}
+\label{sec:charmdef}
+%
+In order to connect predictions from the analytical structure-function framework for charm production with those provided by event generators we need an explicit, functional definition of charm-tagging. 
+
+From the event generator side, a charm event is tagged by the presence of at least one charmed hadron in the final state after parton showering and hadronisation.
+%
+This requirement hence applies to open charm of any species, its excited
+states, charmed baryons, and charmonium.
+%
+Furthermore, this charmed hadron must be prompt. 
+%
+Under the stability criterion of Table~\ref{tab:settings} a bottom hadron always decays, and its product may contain charm quarks. 
+%
+Each charm hadron's ancestry is
+therefore traced, and it is kept only if no bottom hadron lies above it. 
+%
+We note that this is a hadron-level definition, chosen to mimic charm tagging in experimental FASER analyses and is different from a charm tag 
+on the hard process.
+%
+For instance, in NC DIS, in addition to charm-initiated scattering, $\gamma^*/Z + c \to c$ and photon--gluon fusion, $\gamma^* g \to c\bar{c}$, this definition also adds charm produced by $g \to c\bar{c}$ splitting inside the shower and the charm carried by the beam remnant, which are absent from the structure function analytical calculations. 
+
+On the structure function side, neutral-current charm production is defined as the charm-flavour contribution to $F_2$, $F_L$ and $xF_3$ following~\cite{Forte:2010ta}, namely the contribution from those diagrams where the charm quark couples to the virtual photon.
+%
+Diagrams which have charm in the final state but where the light quark couples to the virtual photon are included in the light component of the NC structure functions. 
+%
+Up to NLO this definition coincides with a tag on the charm quark in the hard process, and from NNLO onwards the two differ; the hadron-level tag used for the event generators differs from both already at NLO, since it also counts the charm produced in shower splittings and carried by the beam remnant.
+%
+Concerning charged-current DIS, charm production is defined~\cite{Ball:2011mu} as all contributions proportional to the CKM matrix elements $V_{cd}$ or $V_{cs}$, that is, by the diagrams where the charm quark couples to the $W^\pm$ boson.
+%
+Again, this partonic definition differs from the hadron-level one used for the charm tagging in event generators. 
+%
+For instance, the channel $\nu \bar{c} \to \mu^- \bar{s}$ carries $|V_{cs}|^2$ and so belongs to the charm structure function definition, but there the charm quark is in the initial state and is absent from the hard-process final state. 
+%
+Nevertheless, charm tagging may still arise via the $c$ present in the beam remnant as required by the vanishing charm number of the nucleon. 
+
+We note that \sherpa's parton shower treats the charm quark as massless and produces $g \to c\bar c$ at
+a rate an order of magnitude higher than the massive showers of \pythia and
+\herwig, unphysically inflating 
+\sherpa's charm and $D$-meson rates.
+%
+To account for this,  charm tags in \sherpa are obtained by requiring a charm quark in the event hard record as well as a charm hadron in
+the final state.
+
+Charm-production observables are evaluated in a fiducial region with a tighter requirement on the hadronic invariant mass, $W > 5$~GeV, applied to both currents, to the dimuon selection, and also to the inclusive cross sections that normalise charm fractions.
+%
+In neutral-current scattering, the zero-mass calculation populates charm-initiated events down to the $W > 3$~GeV boundary, whereas in a showered event the anticharm quark is left in the beam remnant, so that a hadronic final state can only be formed above a threshold of $W \simeq 4.4$~GeV.
+%
+Below this threshold \pythia and \herwig cannot hadronise such events and discard them, depleting the charm-tagged cross section by a few per cent, more so at lower beam energies.
+%
+With $W > 5$~GeV this loss becomes negligible.
+
+\paragraph{Theoretical uncertainties.}
+%
+As mentioned above, missing higher-order uncertainties (MHOU) associated with the truncation of the QCD expansion are estimated through the standard seven-point variation of $\mu_R$ and $\mu_F$ about the central choice $\mu_R = \mu_F = Q$.
+%
+This is done both in \yadism~\cite{Candido:2024rkr,Candido:2023utz} and in \powhegtwo, in the former exploiting that MHOUs are available analytically 
+because the DIS coefficient function operator is independent of the scales, and in the latter case using its built-in event reweighting feature.
+%
+We have verified that MHOUs estimated using these two independent approaches are consistent. 
+
+We also estimate the theoretical uncertainties associated with the nucleon PDF through dedicated studies where again both \yadism and \powhegtwo calculations are repurposed for different PDF sets as well as each set's own
+uncertainty, which requires no additional calculation and hence is computationally very efficient.
+%
+Specifically, in addition to NNPDF4.0, we consider predictions from CT18~\cite{Hou:2019efy}, MSHT20~\cite{Bailey:2020ooq}, ABMP16~\cite{Alekhin:2017kpj}, ATLASpdf21~\cite{ATLAS:2021vod}, in all cases at NNLO accuracy and taking the strong coupling to be $\alpha_s(m_Z)=0.118$.
+%
+Furthermore, selected results are obtained with GRV98 LO~\cite{Gluck:1998xa}, which is the PDF set underlying \genie's baseline tune. 
+
+

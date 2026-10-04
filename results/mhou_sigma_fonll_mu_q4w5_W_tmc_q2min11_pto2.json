@@ -1,0 +1,209 @@
+{
+ "what": "7-point muR/muF band on sigma_fid, muon NC DIS, YADISM NLO in FONLL",
+ "q2_min": 11.0,
+ "scheme": "FONLL general-mass, damped; charm only",
+ "scale_floor": "muF^2 = max(xiF^2 Q^2, Q2min_PDF) and muR^2 = max(xiR^2 Q^2, Q2min_PDF); without it the downward points leave the PDF grid and the alphas reference scale, and the band is an extrapolation artefact rather than a scale variation",
+ "pdf": "NNPDF40_nnlo_as_01180_W184free",
+ "q2min_pdf": 2.7224999999999997,
+ "current": "mu",
+ "scales": [
+  {
+   "xiR": 1.0,
+   "xiF": 1.0
+  },
+  {
+   "xiR": 2.0,
+   "xiF": 1.0
+  },
+  {
+   "xiR": 0.5,
+   "xiF": 1.0
+  },
+  {
+   "xiR": 1.0,
+   "xiF": 2.0
+  },
+  {
+   "xiR": 1.0,
+   "xiF": 0.5
+  },
+  {
+   "xiR": 2.0,
+   "xiF": 2.0
+  },
+  {
+   "xiR": 0.5,
+   "xiF": 0.5
+  }
+ ],
+ "points": {
+  "400": {
+   "rows": [
+    {
+     "xiR": 1.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 13991.53340447977,
+     "sigma_charm_pb": 425.18720700192796
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 14155.896692432596,
+     "sigma_charm_pb": 476.2086712483898
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 1.0,
+     "sigma_fid_pb": 13782.666626646893,
+     "sigma_charm_pb": 352.54462953410075
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 14076.95475937649,
+     "sigma_charm_pb": 407.867832915207
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 0.5,
+     "sigma_fid_pb": 14191.811154844181,
+     "sigma_charm_pb": 443.7059774453657
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 14232.023657090944,
+     "sigma_charm_pb": 484.0779403652115
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 0.5,
+     "sigma_fid_pb": 14069.147411077696,
+     "sigma_charm_pb": 425.6452271540935
+    }
+   ],
+   "central_pb": 13991.53340447977,
+   "rel_hi": 0.017188269910013876,
+   "rel_lo": -0.014928083419791682,
+   "charm_central_pb": 425.18720700192796,
+   "charm_rel_hi": 0.1385054215966015,
+   "charm_rel_lo": -0.17084845515471447
+  },
+  "1000": {
+   "rows": [
+    {
+     "xiR": 1.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 23255.02287417289,
+     "sigma_charm_pb": 1106.1631975826049
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 23559.275658416744,
+     "sigma_charm_pb": 1209.5103836451894
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 1.0,
+     "sigma_fid_pb": 22847.894944999694,
+     "sigma_charm_pb": 958.6603661905164
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 23324.31300356707,
+     "sigma_charm_pb": 1060.0121415160884
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 0.5,
+     "sigma_fid_pb": 23425.550706585516,
+     "sigma_charm_pb": 1096.418134155041
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 23679.627770899904,
+     "sigma_charm_pb": 1223.0710498339358
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 0.5,
+     "sigma_fid_pb": 23320.993403472527,
+     "sigma_charm_pb": 1105.2073603550418
+    }
+   ],
+   "central_pb": 23255.02287417289,
+   "rel_hi": 0.018258631652372292,
+   "rel_lo": -0.017507096483029172,
+   "charm_central_pb": 1106.1631975826049,
+   "charm_rel_hi": 0.10568770729926635,
+   "charm_rel_lo": -0.13334635586723487
+  },
+  "4000": {
+   "rows": [
+    {
+     "xiR": 1.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 43014.955112118594,
+     "sigma_charm_pb": 3637.946901748138
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 1.0,
+     "sigma_fid_pb": 43691.806312805755,
+     "sigma_charm_pb": 3869.235575732776
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 1.0,
+     "sigma_fid_pb": 41972.978114920144,
+     "sigma_charm_pb": 3294.355503363839
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 43013.55633619677,
+     "sigma_charm_pb": 3529.6144133182343
+    },
+    {
+     "xiR": 1.0,
+     "xiF": 0.5,
+     "sigma_fid_pb": 42740.58402545786,
+     "sigma_charm_pb": 3392.341596765297
+    },
+    {
+     "xiR": 2.0,
+     "xiF": 2.0,
+     "sigma_fid_pb": 44000.17735779283,
+     "sigma_charm_pb": 3933.988045826413
+    },
+    {
+     "xiR": 0.5,
+     "xiF": 0.5,
+     "sigma_fid_pb": 43050.9637048367,
+     "sigma_charm_pb": 3624.1995557899772
+    }
+   ],
+   "central_pb": 43014.955112118594,
+   "rel_hi": 0.022904179328009366,
+   "rel_lo": -0.02422359838531818,
+   "charm_central_pb": 3637.946901748138,
+   "charm_rel_hi": 0.08137588372607052,
+   "charm_rel_lo": -0.09444651273474969
+  }
+ },
+ "selection": {
+  "name": "q4w5",
+  "label": "Q2 > 4 GeV2, W > 5 GeV, no y cut",
+  "q2_min": 11.0,
+  "y_min": 0.0,
+  "y_max": 1.0,
+  "w2_min": 25.0,
+  "note": "The charm-production region of the final paper (user, 2026-09-14): the benchmark region with W raised from 3 to 5 GeV, which removes the heavy-quark remnant threshold the showered generators cannot hadronise. Charm figures and their inclusive normalisations only."
+ },
+ "pdf_set": "NNPDF40_nnlo_as_01180_W184free",
+ "target": "W",
+ "tmc": 3
+}

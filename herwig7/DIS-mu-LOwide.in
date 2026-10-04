@@ -1,0 +1,180 @@
+# -*- ThePEG-repository -*-
+##############################################################################
+# MATCHBOX LO NC muon DIS over the NLO card's WIDE GENERATION REGION
+# (Q2 > 4 GeV2, NO y cut), for the FASER evgen benchmark.
+#
+# WHY THIS CARD EXISTS.  The NLO sample's excess over YADISM decomposes into
+# a sigma_gen part (+2.0%) and a fiducial-fraction part (+4.3%).  The
+# sigma_gen part is a K-FACTOR statement: Herwig gives K(wide) = 0.968
+# against YADISM's 0.9288.  But the Herwig LO leg of that ratio was 113(2) nb
+# quoted from a comment -- +-1.8%, which makes the 4.2% discrepancy only
+# ~2.3 sigma.  This card measures it properly.
+#
+# It is the NLO card with exactly ONE line changed,
+#   read Matchbox/MCatNLO-DefaultShower.in  ->  read Matchbox/LO-DefaultShower.in
+# so the process, cuts, scales, PDF, EW scheme and shower are identical by
+# construction and the LO/NLO ratio is apples-to-apples.
+#
+# mu- p -> mu- j at NLO QCD, MC@NLO matching to the default angular-ordered
+# (q-tilde) shower  ->  Factory:ShowerApproximation = QTildeMatching.
+# Built-in Matchbox amplitudes (MatchboxAmplitudellbarqqbar + real/virtual);
+# no external one-loop provider needed.
+#
+# Same frame/beams/conventions as the LO card DIS-mu.in:
+# beams [mu-, p+] with E = [21.6438, 21.6641] GeV (sqrt(s) = 43.33 GeV),
+# equivalent to E_mu = 1 TeV on a proton at rest.
+#
+# Conventions matched:
+#  - NLO QCD NC DIS (gamma + Z + interference), Born O(alphas^0)
+#  - proton PDF NNPDF40_nnlo_as_01180 via LHAPDF (hard ME + shower)
+#  - muF = muR = Q via Scales/LeptonQ2Scale (= |(k - k')^2| for a
+#    lepton in the initial and one in the final state)
+#  - fixed alpha_em = 1/132.119, sin2thetaW = 0.22291 via EW/Scheme
+#    Independent (the Matchbox amplitude uses SM().alphaEMMZ() directly)
+#  - massless charm and bottom in the ME (HardProcessMass 0, five-flavour
+#    scheme); nominal/constituent masses untouched for hadronisation
+#  - GENERATION cuts: Q2 > 4 GeV2 only, NO y cut (see TRAP 2 below);
+#    the fiducial 0.2 < y < 0.9 is applied in the analysis
+#  - default angular-ordered shower + cluster hadronisation; MPI off
+#  - all QED shower splittings removed
+#  - stable-particle convention ctau > 10 mm
+#  - HepMC3 Ascii output
+#
+# usage: Herwig read DIS-mu-NLO.in ; Herwig run DIS-mu-NLO.run -N NEV -s SEED
+##############################################################################
+
+read snippets/Matchbox.in
+read snippets/EPCollider.in
+
+##################################################
+# beams: mu- (A, +z) on p+ (B, -z), mu-p c.m. frame
+##################################################
+cd /Herwig/EventHandlers
+set EventHandler:BeamA /Herwig/Particles/mu-
+set Luminosity:BeamEMaxA 21.6438*GeV
+set EventHandler:BeamB /Herwig/Particles/p+
+set Luminosity:BeamEMaxB 21.6641*GeV
+
+##################################################
+# model assumptions + process
+##################################################
+read Matchbox/StandardModelLike.in
+read Matchbox/DiagonalCKM.in
+
+cd /Herwig/MatrixElements/Matchbox
+set Factory:OrderInAlphaS 0
+set Factory:OrderInAlphaEW 2
+do Factory:Process mu- p -> mu- j
+
+##################################################
+# scale choice: muR = muF = Q
+# (MatchboxLeptonMassScale with one incoming and one
+#  outgoing lepton returns |(k_in - k_out)^2| = Q2)
+##################################################
+set Factory:ScaleChoice /Herwig/MatrixElements/Matchbox/Scales/LeptonQ2Scale
+
+##################################################
+# matching: MC@NLO with the default (q-tilde) shower
+##################################################
+read Matchbox/LO-DefaultShower.in
+
+##################################################
+# five-flavour scheme: massless c and b in the hard
+# process (HardProcessMass 0), nominal masses kept
+##################################################
+read Matchbox/FiveFlavourScheme.in
+
+##################################################
+# proton PDF: NNPDF4.0 NNLO via LHAPDF everywhere
+##################################################
+cd /Herwig/Partons
+set HardLOPDF:PDFName NNPDF40_nnlo_as_01180
+set HardNLOPDF:PDFName NNPDF40_nnlo_as_01180
+set ShowerLOPDF:PDFName NNPDF40_nnlo_as_01180
+set ShowerNLOPDF:PDFName NNPDF40_nnlo_as_01180
+set MPIPDF:PDFName NNPDF40_nnlo_as_01180
+set RemnantPDF:PDFName NNPDF40_nnlo_as_01180
+
+##################################################
+# EW parameters: fixed alpha_em = 1/132.119,
+# sin2thetaW = 0.22291 (Gmu-matched benchmark values)
+##################################################
+cd /Herwig
+set Model:EW/Scheme Independent
+set Model:EW/AlphaEMMZ 0.007568934067015342
+set Model:EW/Sin2ThetaW 0.22291
+
+##################################################
+# generation cuts.
+#
+# TRAP 1: SimpleDISCut has a DEFAULT MaxQ2 = 100 GeV2 (silent post-cut
+#   veto that truncates the high-Q2 tail); open it to the kinematic limit.
+# TRAP 2 (fatal, found the hard way): SimpleDISCut computes
+#   y = Q2/(x_parton * S) from the INCOMING PARTON momentum fraction, not
+#   from x_Bjorken. At LO the two coincide. At NLO they do not: the CS
+#   dipole mapping rescales the incoming parton (x_parton -> x_parton/z)
+#   while leaving both lepton momenta untouched, so a y cut accepts the
+#   real emission and rejects its subtraction term (or vice versa) and the
+#   IR cancellation is destroyed. Symptom: with Miny/Maxy = 0.2/0.9 the
+#   run returns sigma = -5(2) nb with 52% negative weights and |w| up to 40.
+#   FIX: no y cut at generation (Miny 0, Maxy 1); the fiducial
+#   0.2 < y < 0.9 is applied in the ANALYSIS, and
+#   sigma_fid = sigma_gen * (fiducial weight fraction).
+#   Q2 = -(k - k')^2 is built from the two lepton momenta only and is
+#   therefore invariant under the dipole mapping -> the Q2 cut IS safe and
+#   can be left at the fiducial value.
+#   With the y cut removed: sigma_gen = 107(2) nb, 9.6% negative weights,
+#   |w| < 6, and Matchbox LO in the same region gives 113(2) nb (K = 0.95).
+##################################################
+set /Herwig/Cuts/NeutralCurrentCut:MinQ2 4.0*GeV2
+set /Herwig/Cuts/NeutralCurrentCut:MaxQ2 1000000.0*GeV2
+set /Herwig/Cuts/NeutralCurrentCut:Maxy 1.0
+set /Herwig/Cuts/NeutralCurrentCut:Miny 0.0
+
+##################################################
+# no QED radiation in the shower. NB: this MUST come after
+# Matchbox/FiveFlavourScheme.in, which re-adds b->b,gamma and
+# t->t,gamma initial-state splittings.
+##################################################
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting u->u,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting d->d,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting s->s,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting c->c,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting b->b,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting t->t,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting u->u,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting d->d,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting s->s,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting c->c,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting b->b,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting t->t,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting d->gamma,d; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting u->gamma,u; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting s->gamma,s; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting c->gamma,c; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting b->gamma,b; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting bbar->gamma,bbar; /Herwig/Shower/QtoGammaQSudakov
+
+##################################################
+# stable-particle convention: ctau > 10 mm stable
+##################################################
+set /Herwig/Decays/DecayHandler:MaxLifeTime 10*mm
+set /Herwig/Decays/DecayHandler:LifeTimeOption Average
+
+##################################################
+# HepMC3 Ascii output
+##################################################
+read snippets/HepMC.in
+set /Herwig/Analysis/HepMC:Format GenEventHepMC3
+set /Herwig/Analysis/HepMC:Filename events.hepmc
+set /Herwig/Analysis/HepMC:PrintEvent 100000000
+set /Herwig/Analysis/HepMC:Units GeV_mm
+
+##################################################
+# generator settings
+##################################################
+do /Herwig/MatrixElements/Matchbox/Factory:ProductionMode
+
+cd /Herwig/Generators
+set EventGenerator:MaxErrors 10000
+saverun DIS-mu-LOWIDE EventGenerator

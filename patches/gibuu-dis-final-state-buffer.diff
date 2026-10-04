@@ -1,0 +1,26 @@
+# GiBUU 2017: the DIS final-state buffer is 20 particles, which overflows at
+# TeV energies.  Apply with:
+#   patch -p0 -d $SOFTWARE/gibuu < patches/gibuu-dis-final-state-buffer.diff
+
+--- code/init/neutrino/initNeutrino.f90.orig	2026-09-08 16:24:36
++++ code/init/neutrino/initNeutrino.f90	2026-09-08 16:24:36
+@@ -544,7 +544,18 @@
+     real, dimension(1:max_finalstate_ID) ::  sigma=0.
+ 
+     type(particle),dimension(1:max_finalstate_ID,1:2),target :: OutPart
+-    type(particle),dimension(1:20),target :: OutPartDIS
++    ! >>> 20 WAS NOT ENOUGH AT TeV ENERGIES (2026-09-08). <<<  This is the
++    ! buffer the DIS final state is written into, and at 1 TeV a fragmented
++    ! event routinely has more particles than that: GiBUU aborts with
++    !   Error in SetVectorFromPYJETS: N>size  21  20
++    !   You have to increase the size of the particle vector
++    ! after a few thousand events -- so a short run looks fine and a long one
++    ! dies, which is the worst of both.  It is a buffer size and not physics;
++    ! nothing downstream assumes the length, since OutPartDIS is only ever
++    ! used through a pointer and every consumer reads size(Part).  The number
++    ! is a measure of how far outside its documented 1-50 GeV range the
++    ! neutrino module is being pushed here.
++    type(particle),dimension(1:200),target :: OutPartDIS
+     type(particle),dimension(1:3), target :: OutPart2pi
+     type(particle),dimension(:), pointer :: pOutPart
+     type(particle),dimension(:), allocatable :: finalstate

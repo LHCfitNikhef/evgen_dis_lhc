@@ -1,0 +1,70 @@
+\section{Introduction}
+\label{sec:intro}
+
+The LHC produces an intense, highly energetic flux of neutrinos and muons in the forward direction~\cite{Kling:2021gos,Bai:2020ukz,Bai:2021ira,Bai:2022xad,Maciula:2022lzk,Bhattacharya:2023zei,Buonocore:2023kna,Kling:2023tgr,John:2025qlm}, and since 2022 two dedicated far-forward detectors, FASER~\cite{FASER:2019aik,FASER:2019dxq,FASER:2020gpr,FASER:2022hcn} and SND@LHC~\cite{SNDLHC:2022ihg}, have been recording and studying them~\cite{FASER:2021mtu,FASER:2023zcr,SNDLHC:2023pun,SNDLHC:2023mib,SNDLHC:2024qqb,Ariga:2025lhcnu,SNDLHC:2026oxu,SNDLHC:2026mip,SNDLHC:2026yqa,FASER:2024hoe,FASER:2025qaf,FASER:2025sge,FASER:2026hzm,FASER:2026jhh,FASERnu:2026conf,Boyd:2026xuf}.
+%
+These are the highest-energy neutrinos ever produced in a laboratory, and both experiments observe them through the deep-inelastic scattering (DIS) process.
+%
+The study of neutrino and muon DIS at these LHC far-forward experiments has a unique potential to improve current determinations of proton and nuclear structure~\cite{Cruz-Martinez:2023sdv,Francener:2025pnr} as encoded in the (nuclear) parton distribution functions (PDFs)~\cite{Gao:2017yyd,Klasen:2023uqj,Kovarik:2019xvh,Ethier:2020way} as well as of light and heavy hadron fragmentation.
+%
+For instance, charm production in muon DIS could provide conclusive evidence for intrinsic charm in the proton~\cite{Brodsky:1980pb,Ball:2022qks,Guzzi:2022rca,Brodsky:2015fna,Ball:2016neh}, while the analogous measurement in neutrino DIS would represent a sensitive probe of proton strangeness~\cite{Faura:2020oom}.
+%
+This potential impact further increases with the upgraded detectors and increased luminosities of the High-Luminosity LHC (HL-LHC)~\cite{FASER:2025upgrade,SNDLHC:2025eppsu,SNDLHC:2026why}, as well as with the proposed Forward Physics Facility~\cite{FPF:2025bor,FPFWorkingGroups:2025rsc,Feng:2022inv,Anchordoqui:2021ghd,Adhikary:2024nlv}.
+
+The interpretation of current and future FASER, SND@LHC, and FPF measurements in terms of proton and nuclear structure as well as of hadron fragmentation is only possible with accurate and precise simulations of neutral- and charged-current DIS for both the leptonic and hadronic final states.
+%
+Indeed, fiducial signal selections, for instance those associated with vertex identification, often involve exclusive cuts on quantities such as the number and momenta of charged particles, the angle between the outgoing charged lepton and the hadronic system, or the presence of a secondary muon from charm decay.
+%
+Therefore, realising the precision QCD physics potential of the LHC far-forward experiments demands state-of-the-art Monte Carlo (MC) simulations~\cite{Buckley:2011ms,Campbell:2022qmc} that account for higher-order QCD and QED corrections, modern PDFs and parton shower algorithms, and tailored hadronisation models~\cite{Skands:2014pea,Fieg:2023kld}.
+%
+These criteria are not met by some of the neutrino event generators used to interpret the FASER and SND@LHC data, such as \genie~\cite{Andreopoulos:2009rq,Andreopoulos:2015wxa,NuSTEC:2017hzk}.
+
+With this motivation, in this work we present a systematic benchmark of predictions for neutrino- and muon-initiated DIS at the LHC, obtained at NLO accuracy with three independent general-purpose MC event generators: \sherpa~\cite{Sherpa:2019gpd,Bothmann:2024}, \powheg~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd,Banfi:2023mhz,Buonocore:2024pdv,vanBeekveld:2024ziz,FerrarioRavasio:2024kem}, and \herwig~\cite{Bellm:2015jjp,Bewick:2023tfi}.
+ %
+ These predictions are compared with the analytical structure-function calculations provided by \yadism~\cite{Candido:2024rkr,Candido:2023utz} up to NNLO in the QCD expansion, as well as with the predictions of dedicated neutrino simulation packages, in particular \genie.
+ %
+ Furthermore, we also study other neutrino generators, such as
+ {\sc\small GiBUU}~\cite{Buss:2011mx} and {\sc\small NuWro}~\cite{Golan:2012rfa,Juszczak:2009qa}, used for the interpretation of oscillation experiments. 
+ %
+ In these benchmark comparisons, identical inputs (PDFs, electroweak parameters, heavy quark mass scheme, \ldots) are adopted whenever possible, in order to disentangle the effects of the different physical mechanisms entering these theory predictions.
+ 
+Equipped with this framework, we quantify in detail
+the role of higher-order QCD corrections, PDF choice, parton shower and hadronisation modelling, charm quark mass effects, and QED radiation both for inclusive observables and for FASER fiducial selections. 
+%
+We also consider nuclear PDF uncertainties arising from the tungsten target of FASER and SND@LHC, though nuclear modifications to shower and hadronisation due to rescattering and absorption are left for future work. 
+%
+Our analysis highlights the agreement of modern event generators at the inclusive level, while significant differences emerge for fiducial observables sensitive to the hadronic final state. 
+%
+While we find that \genie agrees with NLO generators for inclusive rates, we show that, first, this agreement arises from an accidental cancellation of independent effects and that, second, larger differences arise for exclusive observables and final-state distributions. 
+
+We also present three representative applications of the pipeline developed in this work to the FASER neutrino programme.
+%
+First, we carry out comparisons of theoretical predictions from different event generators with the most recent FASER neutrino measurements~\cite{FASER:2024hoe,FASERnu:2026conf,FASER:2026nu680}, obtained both with the emulsion and with the electronic sub-detectors.
+%
+Second, we evaluate event yields for the dimuon signal at FASER, an excellent probe of the proton strangeness content, which can be accessed through the tracking spectrometer. 
+%
+Third, we estimate the expected event yields for inclusive charged-hadron production in semi-inclusive DIS (SIDIS), a process for which NNLO QCD corrections have recently become available, both for unpolarised~\cite{Goyal:2023zdi,Bonino:2024qbh,Bonino:2025ident,Bonino:2025qta} and for polarised~\cite{Goyal:2024tmo,Bonino:2024wgg,Bonino:2025sidis} scattering, and which provides unparalleled sensitivity to the flavour separation of hadron fragmentation functions~\cite{Bertone:2017tyb,Bertone:2018ecm,Borsa:2021ran,deFlorian:2017lwf,Moffat:2021dji}. 
+
+The outline of this paper is as follows.
+%
+First, Sect.~\ref{sec:generators} presents the event generators and analytic tools considered in this benchmark, and Sect.~\ref{sec:settings} the common settings, fiducial regions, FASER selections, and the associated physical observables.
+%
+Then Sect.~\ref{sec:inclusive} compares the generators with the structure-function calculations for inclusive scattering and differential distributions in the DIS variables.
+%
+Sect.~\ref{sec:charm} is dedicated to charm production, comparing the generators with the \yadism calculations in different heavy-quark schemes, assessing the charm modelling of \genie, and studying the sensitivity of the charm-hadron composition to the hadronisation model.
+%
+Sect.~\ref{sec:hadronic} extends the comparison to observables sensitive to the modelling of the hadronic final state in the FASER$\nu$ selection, and studies the impact of the choice of parton shower algorithm and of the treatment of QED radiation in the results.
+%
+Sect.~\ref{sec:faser-app} presents representative applications to FASER: the comparison with the emulsion and electronic-detector measurements, a study of the PDF dependence of the dimuon signal, and predictions for inclusive charged-hadron production in neutrino SIDIS. 
+%
+We summarise our findings and outline possible future developments in Sect.~\ref{sec:conclusions}, including the connection with neutrino astronomy.
+
+Additional studies are collected in the appendices.
+%
+Appendix~\ref{app:implementation} discusses the implementation of these event generator settings and how interested users can reproduce and extend our results.
+%
+Appendix~\ref{app:nondis} quantifies the contribution of non-DIS processes to fiducial differential distributions as estimated with \genie.
+%
+App.~\ref{app:npdf} estimates the effects of nuclear PDF systematic uncertainties for muon- and neutrino-DIS at TeV energies.
+%
+Finally, App.~\ref{app:nugen} compares \genie with two other dedicated neutrino generators, {\sc\small GiBUU} and {\sc\small NuWro}.

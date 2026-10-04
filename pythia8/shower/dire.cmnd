@@ -1,0 +1,6 @@
+! Shower arm: DIRE -- the dipole shower.
+!
+! Same caveat as vincia.cmnd: Dire reads its own DireTimes:*/DireSpace:*
+! settings and the base card's SpaceShower:*/TimeShower:* values do not carry
+! over.
+PartonShowers:model = 3

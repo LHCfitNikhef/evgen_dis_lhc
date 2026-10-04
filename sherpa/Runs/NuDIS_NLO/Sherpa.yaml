@@ -1,0 +1,108 @@
+# Charged-current neutrino DIS at NLO QCD via MC@NLO, fixed target:
+# 1 TeV nu_mu beam on a proton at rest, W exchange, outgoing lepton mu-.
+#
+# This is the CC counterpart of ../MuonDIS_NLO (which validated at
+# sigma_fid = 35.019 +- 0.078 nb = 0.998 x YADISM NLO), built by taking that
+# card's NLO machinery and this beam/current setup from ../NuDIS_LO.
+# Reference to close against: YADISM CC NLO = 3.0464 +- 0.0006 pb
+# (analysis/yadism_cc_calc.py nlo), i.e. K_NLO = 0.955 against CC LO.
+#
+# Generated in COLLIDER mode in the exact nu-p c.m. frame (sqrt(s) = 43.32926
+# GeV); Sherpa's Fixed_Target beam mode has a bunch-blob frame bug (charge
+# veto).  Beam energies are the EXACT c.m. energies of a massless 1 TeV
+# neutrino on a proton at rest, copied from ../NuDIS_LO:
+#   E_nu* = (s - m_p^2)/(2 sqrt s), E_p* = (s + m_p^2)/(2 sqrt s),
+#   s = m_p^2 + 2 E_nu m_p = 1877.42435 GeV^2.
+# (Note these are the CORRECTED energies; the muon runs' were 0.05% low in
+# sqrt(s).)  Lab-frame observables are computed as invariants in the analysis.
+BEAMS: [14, 2212]
+BEAM_ENERGIES: [21.654469, 21.674786]
+PDF_SET: [None, NNPDF40_nnlo_as_01180]
+MPI_PDF_SET: NNPDF40_nnlo_as_01180
+
+# !!! SHERPA NEUTRINO-BEAM FACTOR 2 — carried over from ../NuDIS_LO !!!
+# Sherpa 3.0.5 averages the ME over TWO initial-state lepton helicities even
+# for a neutrino beam, where only the left-handed state exists, so its
+# integrator sigma is exactly HALF the physical one (verified per channel at
+# LO against the analytic parton model; the same setup with an e- beam is
+# correct, so it is neutrino-specific, and BEAM_POLARIZATIONS is a no-op
+# because the polarisation machinery is dead code).
+# AT LO this was measured to be a pure overall normalisation.  It must NOT be
+# assumed to carry over to NLO unchecked: the B, V, I and RS pieces each
+# average helicities separately.
+# THE RIGHT TEST IS A K-FACTOR, NOT A B-ONLY RUN.  A B-only fixed-order run
+# would merely reproduce the LO Comix Born (1.59510 pb) and says nothing about
+# V/I/RS.  Instead compare Sherpa's INTERNAL K = sigma(NLO)/sigma(LO) against
+# YADISM's K_NLO = 3.0464/3.1896 = 0.9551: that ratio is independent of the
+# overall factor the spin average introduces, so if the helicity average hit
+# B but not V/RS, K would come out far from 0.955.
+# Applied downstream in analysis/analyze_nu.py as SHERPA_NU_SPIN_FACTOR = 2.
+
+ME_GENERATORS: [Comix, Amegic, Internal]
+
+# benchmark convention: MASSLESS charm/bottom (ZM), c/b stay in the 93
+# container, as in the muon study and ../NuDIS_LO.
+#
+# !!! CKM ORDER DELIBERATELY DIFFERS FROM ../NuDIS_LO — READ THIS !!!
+# ../NuDIS_LO uses Order: 3 (full CKM) so the charm fraction is right at 20%
+# rather than the unit-CKM 17%.  That CANNOT be used here: full CKM switches
+# on the Cabibbo cross-family channels (vmu d -> mu- c etc.), and Sherpa's
+# ONLY loop provider in this build refuses them --
+#   "Couldn't find virtual ME for this process"
+# because the getter in EXTRA_XS/NLO/DY_QCD_Virtual.C demands
+# fl[3].QuarkFamily() == fl[1].QuarkFamily(), serving d->u and s->c only.
+# (That check is an over-restriction, not physics: Calc() uses only the LEPTON
+# momenta -- it is the universal massless quark-line QCD vertex correction and
+# is blind to the CKM element.  Lifting it would need a Sherpa patch+rebuild;
+# no OpenLoops/Recola is installed.)
+#
+# MEASURED COST OF Order: 0, 2026-08-14 (run dir ../NuDIS_LO_ckm0, same card
+# as NuDIS_LO with only this changed):
+#   Order 0: 1.59596 +- 0.00118 pb   vs   Order 3: 1.59510 pb
+#   => +0.054%, well inside the 0.074% integration error.
+# CKM unitarity protects the INCLUSIVE rate, which is what this NLO sample is
+# for.  **The charm COMPOSITION is still wrong by ~3 points (17% vs 20%), so
+# this sample must NOT be used for the CC charm strand** -- that needs either
+# the DY_QCD_Virtual patch or POWHEG (powheg/cards/nu1TeV-prod).
+CKM:
+  Order: 0
+
+# !!! SHERPA MASSIVE-PS TRAP — mandatory here !!!
+# Sherpa's default RESPECT_MASSIVE_FLAG: false makes ME_Generator_Base::
+# SetPSMasses() declare every flavour outside {d,u,s,g,gamma} massive in the
+# parton shower whatever the ME did.  In CC neutrino DIS that hits BOTH the
+# outgoing mu- and the s->c charm, and at these fixed-target energies the
+# ME->shower interface then silently vetoes and regenerates 23% of events,
+# deleting the entire charm-producing part of the sample while the
+# integrator-normalised sigma_fid still looks perfect.  ../MuonDIS_NLO
+# already had this flag set, which is why MC@NLO never showed the bug there.
+# CHECK THE LOG: it must read "Massive PS flavours for Comix: (none)" and the
+# "From Jet_Evolution:CSS" discard rate must be ~0.
+RESPECT_MASSIVE_FLAG: true
+
+SHOWER:
+  KIN_SCHEME: 1
+MI_HANDLER: None
+
+PROCESSES:
+- 14 93 -> 13 93:
+    Order: {QCD: 0, EW: 2}
+    NLO_Mode: MC@NLO
+    NLO_Order: {QCD: 1, EW: 0}
+    ME_Generator: Amegic
+    RS_ME_Generator: Comix
+    # crossed Drell-Yan virtual; for CC this is the W-exchange crossing of
+    # the same colour structure the muon NC run used
+    Loop_Generator: Internal
+    # The muon run needed Integration_Error: 0.03 + RS_PSI_ItMin: 25000 to
+    # converge its steep 1/Q^4 photon-pole RS channel.  CC has no such pole
+    # (massive W propagator, <Q2> = 155 GeV2 instead of 13), so the same
+    # target should be reachable at the LO card's tighter 0.01; the raised
+    # RS_PSI_ItMin is kept as cheap insurance.
+    Integration_Error: 0.01
+    RS_PSI_ItMin: 25000
+
+SELECTORS:
+# same fiducial region as the rest of the benchmark: Q2 > 4 GeV2, 0.2<y<0.9
+- [Q2, 14, 13, 4, 1e12]
+- [INEL, 14, 13, 0.2, 0.9]

@@ -1,0 +1,181 @@
+\section{Monte Carlo event generators}
+\label{sec:generators}
+
+In this section we present the MC event generators that will be considered in this benchmark.
+%
+We focus on three general-purpose MC generators achieving NLO QCD accuracy, namely \sherpa, \herwig, and \powheg (both the V2 and RES variants). 
+%
+For inclusive observables, their predictions are compared with the analytical structure-function calculations provided by \yadism.
+%
+For completeness, we have also studied predictions provided by the LO MCs \pythia and \mgamc.
+%
+Furthermore, we consider event generators tailored to neutrino physics, with emphasis on \genie, the current default MC in FASER and SND@LHC, as well as {\sc\small NuWro} and {\sc\small GiBUU}.
+%
+Table~\ref{tab:generators} indicates the main features of these generators.
+%
+For each generator we indicate the version used, the source of the hard process, the QCD perturbative order, and the shower and hadronisation algorithms.
+%
+We provide now more details on each of these MC generators in turn.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[!tbp]
+  \centering
+  \small
+  \renewcommand{\arraystretch}{1.40}
+  \setlength{\tabcolsep}{4pt}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llllll}
+    \toprule
+    Generator & Version & Hard process & Order & Shower & Hadronisation \\
+    \midrule
+    \pythia      & 8.311  & internal DIS ME        & LO            & $p_T$-ordered, dipole recoil & Lund string \\
+                 &        &                        &               & (also {\sc Vincia}~\cite{Fischer:2016vfv}, {\sc Dire}~\cite{Hoche:2015sya}) & \\
+    \mgamc       & 3.7.2  & tree-level ME          & LO            & {\sc\small Pythia}~8.311 & Lund string \\
+                 &        &                        &               & (also parton level) & \\
+    \genie       & 3.06.02 & {\sc EMDIS} / {\sc DIS-CC} (+charm)  & LO (Bodek--Yang) & --- & {\sc AGKY} + {\sc\small Pythia}~8.312 \\
+                 &        & tune {\tt G18\_02a}    &               &  & \\
+    \midrule 
+    \sherpa      & 3.0.5  & {\sc Comix} / {\sc Amegic}~\cite{Krauss:2001iv} & NLO ({\sc MC@NLO}) & CS dipole (also {\sc Dire}) & {\sc AHADIC} cluster \\
+    \herwig      & 7.3.0  & {\sc MEDISNC} / {\sc MEDISCC} & NLO ({\sc POWHEG}) & angular-ordered & cluster \\
+    \powhegres   & {\tt DIS\_v} & POWHEG-BOX-RES   & NLO           & {\sc\small Pythia}~8.311 & Lund string \\
+                 &        &                        &               & or {\sc\small Herwig}~7.3.0 & or cluster \\
+    \powhegtwo   & {\tt nu-DIS} & POWHEG-BOX-V2    & NLO           & {\sc\small Pythia}~8.311 & Lund string \\
+                 &        &                        &               & or {\sc\small Herwig}~7.3.0 & or cluster \\
+    \genie       & 3.06.02 & {\sc HEDIS}, tune {\tt GHE19\_00a} & NLO (BGR18)  & --- & {\sc AGKY} + {\sc\small Pythia}~8.312 \\
+    \midrule
+    \yadism      & 0.13.11 & DIS structure functions & LO, NLO, NNLO & --- & --- \\
+    \bottomrule
+  \end{tabular}}
+  \vspace{0.5cm}
+  \caption{Monte Carlo event generators considered in this benchmark.
+  %
+  The top part of the table indicates generators which are run at LO accuracy, while the bottom part corresponds to NLO-accurate generators. 
+  %
+    For each generator we indicate the version, the source of the hard process, the QCD perturbative order, and the shower and hadronisation algorithms.
+  %
+  Where more than one shower or hadronisation model is used for the same
+  hard process, the alternatives are given in the corresponding entry.
+  %
+  \sherpa is in addition run at LO and at fixed-order NLO with the shower
+  switched off, and \herwig at LO through the same matrix elements;
+  \mgamc is used both at parton level, where only the leptonic observables
+  are defined, and showered and hadronised by \pythia.
+  %
+  For \genie, following the benchmark conventions, the {\sc AGKY}
+  hadronisation and decay chain calls \pythia rather than {\sc Pythia6}.
+  %
+  The last row corresponds to the analytical structure-function calculation provided by \yadism, which uses {\sc EKO}~0.15.5~\cite{Candido:2022tld} for the DGLAP evolution.
+  %
+  See text for more details.
+  %
+  We also consider for specific studies the dedicated neutrino generators  {\sc\small NuWro} and {\sc\small GiBUU}.
+  }
+  \label{tab:generators}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{\pythia.}  {\sc\small Pythia}~8.311~\cite{Bierlich:2022pfr} simulates DIS processes
+through its internal LO neutral- and charged-current matrix elements, showered
+with the $p_T$-ordered shower and hadronised with the Lund string model~\cite{Andersson:1983ia}.  
+%
+The baseline shower algorithm is taken to be the dipole-recoil scheme~\cite{Cabouat:2017rzi}, in which initial-state radiation recoils against the colour dipole rather than the scattered lepton.
+%
+In this work, \pythia is considered both as a stand-alone generator and as the provider of shower and hadronisation algorithms for some of the NLO generators.
+%
+Unless otherwise specified, here \pythia is run with the Monash tune~\cite{Skands:2014pea} for non-perturbative physics, other tunes such as the forward physics tune of~\cite{Fieg:2023kld} can be easily implemented. 
+
+\paragraph{\sherpa.}  \sherpa~v3.0.5~\cite{Sherpa:2019gpd,Bothmann:2024} provides either an LO sample from {\sc Comix}~\cite{Gleisberg:2008fv} or an NLO sample using the MC@NLO~\cite{Frixione:2002ik} scheme for the matching to the Catani--Seymour dipole
+shower~\cite{Schumann:2007mg}.
+%
+Hadronisation in \sherpa is based on the {\sc AHADIC} cluster model~\cite{Winter:2003tt,Chahal:2022rid}.  
+
+\paragraph{\herwig.}  {\sc\small Herwig}~7.3.0~\cite{Bellm:2015jjp,Bewick:2023tfi} provides DIS simulations at LO through {\sc MEDISNC} and {\sc MEDISCC} modules, and at NLO through its POWHEG implementation matched to the angular-ordered shower.  Its cluster hadronisation~\cite{Webber:1983if} is implemented independently of {\sc AHADIC}.
+%
+\herwig admits two independent NLO implementations.  The first matches {\sc
+Matchbox}~\cite{Platzer:2011bc} one-loop amplitudes to the shower in the MC@NLO scheme; the second is
+\herwig's native POWHEG implementation, built on the same matrix-element classes as
+the LO calculation. 
+%
+In this work, the second strategy is adopted for NLO event generation with \herwig.
+%
+The value of the intrinsic transverse
+momentum used in these simulations is adjusted to match the DIS kinematics. 
+
+\paragraph{\powheg.}  Two independent POWHEG~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}
+implementations are used and are distinguished throughout. 
+%
+First,
+\powhegres is the
+{\tt DIS\_v} process~\cite{Banfi:2023mhz} of POWHEG-BOX-RES~\cite{Jezo:2015aia}, covering inclusive and charm
+production in both currents with mass effects neglected; it supplies the NLO
+entry for neutral-current muon scattering. 
+%
+Second, \powhegtwo is the {\tt nu-DIS}
+process of POWHEG-BOX-V2~\cite{Buonocore:2024pdv}, developed for neutrino DIS with a massive
+final-state charm quark, and supplies the NLO entry for charged-current
+neutrino scattering.  By default both are showered and hadronised with \pythia, and hence with
+Lund-string hadronisation; where stated, their events are instead showered and hadronised with \herwig.
+%
+We note that mass effects in \powhegtwo are only available for the generation of charm-tagged events, while for inclusive DIS production charm quark mass effects are neglected. 
+%
+We note that \powhegres hardcodes a diagonal CKM matrix that never reaches its matrix elements, so
+$d\to c$ is absent altogether: unitarity protects the inclusive CC rate but not the charm composition, and hence  it is quoted for the inclusive selection alone. 
+%
+For inclusive generation, both \powheg variants agree with each other and with \yadism at the per-cent level at NLO. 
+
+\paragraph{\mgamc.}  \mgamc~3.7.2~\cite{Alwall:2014hca} is used to generate events at LO matched to \pythia.
+%
+In its current implementation, this generator cannot be used to simulate DIS events at NLO accuracy.
+
+\paragraph{\genie.}  \genie~\cite{Andreopoulos:2009rq,Andreopoulos:2015wxa} is one of the most widely-used event generators for neutrino physics. 
+%
+As opposed to the other generators considered here, its settings (such as PDF choice or ME model) cannot be straightforwardly modified and are only available for a fixed set of tunes. 
+%
+Here LO simulations for neutrino scattering are produced with \genie using 
+{\tt G18\_02a\_00\_000}~\cite{GENIE:2021zuu}, which is the same configuration that FASER uses~\cite{FASER:2024ykc}.\footnote{In the course of this work we found that the charm-production DIS cross-section of \genie multiplies by the $W$-boson propagator factor $(1+Q^2/M_W^2)$ instead of dividing by it. 
+%
+For $\nu_\mu$ scattering on a proton by about $4\%$ at $E_\nu=400$~GeV and $8\%$ at 1~TeV, growing rapidly at higher energies, while the fiducial inclusive cross-section changes by less than $0.2\%$. All \genie predictions in this work are obtained with the corrected cross-section; the \genie versions currently in use, including the one adopted by FASER, are affected.} 
+%
+This tune is built on the Bodek--Yang model~\cite{Bodek:2002vp,Bodek:2003wd} with
+GRV98 LO parton distributions~\cite{Gluck:1998xa}.  For neutral-current muon scattering we use the
+{\sc EMDIS} channel of that tune.
+%
+For CC scattering we also consider the {\sc HEDIS} module~\cite{Soto:2021vdc} of {\tt GHE19\_00a}, built on BGR18 structure functions~\cite{Bertone:2018dse} at NLO through {\sc APFEL}~\cite{Bertone:2013vaa}, achieving NLO accuracy for inclusive distributions.
+%
+This tune evaluates its structure functions with the {\tt NNPDF31sx\_nlo\_as\_0118\_LHCb\_nf\_6} set rather than with \nnpdf, a difference that turns out to account for the whole of its offset from our NLO reference, as discussed in Sect.~\ref{sec:inclusive}.
+% 
+To separate PDF effects from other model parameters, we also generate LO events where GRV98
+is replaced by \nnpdf, both inside the Bodek--Yang parametrisation and inside
+the separate charm-production algorithm.
+
+\genie has no parton shower: the hadronic system is handed directly to the {\sc AGKY} model~\cite{Yang:2009zx}, which takes hadron multiplicities and momenta from an empirical Koba--Nielsen--Olesen parametrisation~\cite{Koba:1972ng} below a hadronic invariant mass of $2.3$~GeV and from \pythia string fragmentation above $3$~GeV, interpolating in between.
+%
+The fiducial region of this benchmark lies far above that window, so \genie final states are in practice Lund strings fragmented by \pythia, seeded by a different hard process and without perturbative radiation before fragmentation.
+%
+Here that fragmentation and the subsequent decays are carried out by \pythia rather than by the {\sc Pythia6} of the default configuration, and charm hadrons are decayed rather than left stable, so that the stability convention of Sect.~\ref{sec:settings} applies to \genie as to the other generators.
+
+We note that \genie treats charm production as a separate process, with the Aivazis--Olness--Tung massive-charm cross-section~\cite{Aivazis:1993pi} and slow rescaling, and subtracts it from the inclusive deep-inelastic cross section
+internally.  The charm channel must therefore be generated alongside the
+inclusive one, as is relevant for instance for the first search for charm production in neutrino DIS at FASER$\nu$~\cite{FASER:2026charm}.
+%
+Concerning NC scattering, the {\sc EMDIS} channel
+list is therefore a three-flavour calculation where charm is absent both from the initial and final state. 
+
+A crucial advantage of \genie as compared to the general-purpose generators is that it can account also for non-DIS processes such as quasi-elastic, resonance, and diffractive scattering which are then combined with the DIS contribution.
+%
+Here we quantify the importance of these contributions for the FASER neutrino kinematics, finding that these effects can in general be neglected. 
+%
+Should it become necessary, DIS distributions simulated with other generators can be corrected for the non-DIS contributions as estimated by \genie. 
+
+\paragraph{\yadism.} Analytic calculations of the DIS structure functions up to NNLO and accounting for heavy-quark mass effects are provided by
+\yadism~\cite{Candido:2024rkr}, using the same PDFs, renormalisation and factorisation scales and electroweak inputs as the generators. 
+%
+Cross
+sections are assembled from $F_2$, $F_L$ and $xF_3$ and then integrated over the
+fiducial region.
+%
+\yadism further allows the heavy-quark scheme to be varied, comparing massless (ZM-VFNS) calculations with the FONLL matched ones~\cite{Forte:2010ta} which account for heavy quark mass effects.
+%
+\yadism has been benchmarked with other widely-used DIS tools such as \apfel~\cite{Bertone:2013vaa} and {\sc\small HOPPET}~\cite{Salam:2008qg}.
+%
+Although not considered here, \yadism enables also the calculation of DIS structure functions at (partial) N$^3$LO accuracy~\cite{NNPDF:2024nan}.

@@ -1,0 +1,91 @@
+! POWHEG-V2mc -- POWHEG-V2 with MASSIVE CHARM, neutrino charged current.
+!
+! GENERATED from the massless POWHEG-V2 card of the same energy; edit that one
+! and regenerate.  Only the charm-mass treatment differs, and the three lines
+! that differ are marked V2mc below.
+!
+! WHY THIS EXISTS (user, 2026-08-28).  Every generator in this benchmark
+! computes MASSLESS charm, while the YADISM FONLL reference is massive, so a
+! charm comparison against FONLL charges the generators for something they
+! never computed -- 7% on the muon side, 1-4% on the neutrino side.  This
+! sample closes that gap on the CHARGED CURRENT.
+!
+! IT DOES NOT REPLACE THE MASSLESS SAMPLE.  The benchmark's stated convention
+! is massless charm (CONVENTIONS.md rule 3) and the existing POWHEG-V2 results stay
+! exactly as they are.  This is an ADDITIONAL entry, labelled POWHEG-V2mc
+! everywhere so the two can never be confused in a table or a legend.
+!
+! CC ONLY, and that asymmetry with the neutral current is allowed by explicit
+! user decision (2026-08-28) -- rule 2b otherwise requires both.  The muon NC
+! card forbids it anyway: "qmass MUST BE ZERO HERE, AND THE CODE ENFORCES IT".
+! POWHEG nu-DIS PRODUCTION run: 1 TeV nu_mu on a proton at rest, charged current
+! NLO QCD + first emission; showered afterwards with evgen-benchmark/powheg/main_powheg
+! (POWHEG's own main-PYTHIA8-lhef is NOT used: it is unbuilt, hardcodes
+!  pythia8307 paths, and writes Fortran histograms rather than HepMC3.)
+!
+! Reference to close against: YADISM CC NLO = 3.0464 +- 0.0006 pb in the
+! FIDUCIAL region Q2 > 4, 0.2 < y < 0.9.  This run generates WIDER than that
+! (see q2cut below and no y cut at all), so sigma_fid must be obtained as
+! integrator sigma x fiducial weight fraction, exactly as for the muon POWHEG
+! and Herwig samples.  Do NOT compare the raw integrator number to 3.0464.
+!
+! Derived from testrun-nu1TeV (validated 2026-08-13 at 4.3284 +- 0.0017 pb,
+! K = 0.956) with the two production fixes:
+!   q2cut  4 -> 2.25  (was sitting ON the analysis cut; see below)
+!   numflav 4 -> 5    (benchmark convention is massless c AND b, 5-flavour PDF)
+
+numevts 300000    ! 3x (user, 2026-08-29), matching the
+                  ! massless POWHEG-V2 sample so the two are
+                  ! compared at equal statistics      ! events this seed; more seeds added once grids are cached
+
+ih1   14           ! incoming lepton: nu_mu
+ih2   1            ! hadron 2: proton
+ndns1 131          ! (unused with lhapdf)
+ndns2 131
+lhans1 331100      ! NNPDF40_nnlo_as_01180
+lhans2 331100
+
+! EXACT c.m. energies for a massless 1 TeV neutrino on a proton at rest:
+! s = mp^2 + 2*1000*mp = 1877.42435 GeV^2, sqrt(s)/2 = 21.6646...
+ebeam1 21.66462758937933d0
+ebeam2 21.66462758937933d0
+
+qmass  1.51d0     ! V2mc: MASSIVE charm.  1.51 GeV, the same
+                  ! value the YADISM FONLL reference uses, so the
+                  ! two are comparable without a mass conversion         ! MASSLESS final-state charm: the benchmark's ZM convention.
+                   ! (qmass is also the handle for the open massive-charm
+                   ! question -- deliberately not exercised here.)
+facscfact 1
+renscfact 1
+                   ! fixedscale absent => running mu = max(sqrt(Q^2+mq^2),1.5)
+
+! !!! q2cut MUST STAY BELOW THE ANALYSIS CUT !!!
+! The cut is applied to the BORN Q2.  Generating at q2cut = 4, i.e. exactly at
+! the analysis cut, forbids events whose Born Q2 < 4 but whose LEPTONIC Q2
+! migrates above 4 under radiation, biasing sigma_fid ~1% low.  This is the
+! same boundary bias that forced the muon POWHEG run to be redone ("wide",
+! Qmin 1.5 => Q2 > 2.25); 2.25 is chosen here to match it.
+q2cut 2.25d0
+
+charged_current 1  ! CC (W exchange), nu_mu p -> mu- X
+numflav 4         ! V2mc: charm comes from the ME, not from a
+                  ! charm density, so the proton has 4 active flavours          ! active flavours in the proton (massless c and b)
+
+
+use-old-grid   1
+use-old-ubound 1
+
+ncall1 50000
+itmx1  3
+ncall2 100000
+itmx2  2
+foldcsi 1
+foldy   1
+foldphi 1
+nubound 50000
+iymax 1
+ixmax 1
+xupbound 2
+
+storeinfo_rwgt 1   ! keep reweighting info so scale variations can be added later
+iseed 12

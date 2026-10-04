@@ -1,0 +1,50 @@
+! Shower/hadronisation card for POWHEG-DIS LHE events, muon-DIS benchmark.
+! Shower + hadronisation settings identical to ../pythia8/dis_mu1TeV.cmnd
+! (Monash defaults); the hard process comes from the LHE file, so the
+! SigmaProcess/PhaseSpace settings of the LO card do not apply here.
+! Beams:frameType/LHEF are set by the driver (main_powheg.cc).
+
+! proton PDF for shower backward evolution: same set as the POWHEG run
+PDF:pSet = LHAPDF6:NNPDF40_nnlo_as_01180
+PDF:lepton = off
+
+! DIS-appropriate shower recoil (Cabouat-Sjostrand), as in the LO benchmark;
+! pTmaxMatch = 2 (start from kinematic limit) is required by the POWHEG
+! veto: SCALUP acts as a veto scale, not a starting scale
+SpaceShower:dipoleRecoil = on
+SpaceShower:pTmaxMatch = 2
+TimeShower:pTmaxMatch = 2
+
+! no QED radiation in initial- or final-state showers
+SpaceShower:QEDshowerByL = off
+SpaceShower:QEDshowerByQ = off
+TimeShower:QEDshowerByL = off
+TimeShower:QEDshowerByQ = off
+
+! no MPI (matches Sherpa MI_HANDLER: None)
+PartonLevel:MPI = off
+
+! stable-particle convention: ctau > 10 mm kept stable
+ParticleDecays:limitTau0 = on
+ParticleDecays:tau0Max = 10.
+
+! POWHEG matching (values from the powheg-dis paper's main31.cmnd);
+! dis_map = 1 selects the DIS kinematic map in DISPowhegHooks
+! (powheg.input has no flg_dis / iupperisr=2, hence map 1)
+POWHEG:nFinal = 2
+POWHEG:veto = 1
+POWHEG:vetoCount = 5
+POWHEG:pThard = 0
+POWHEG:pTemt = 0
+POWHEG:emitted = 0
+POWHEG:pTdef = 1
+POWHEG:MPIveto = 0
+POWHEG:QEDveto = 0
+POWHEG:dis_map = 1
+
+! tolerate LHE parsing hiccups; printout
+Main:timesAllowErrors = 10
+Next:numberCount = 20000
+Next:numberShowEvent = 0
+Next:numberShowProcess = 1
+Next:numberShowInfo = 1

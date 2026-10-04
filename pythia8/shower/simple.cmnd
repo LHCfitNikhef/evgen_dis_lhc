@@ -1,0 +1,6 @@
+! Shower arm: SIMPLE -- the published benchmark configuration.
+!
+! Deliberately empty of settings: PartonShowers:model defaults to 1 and the
+! base card is already written for this shower.  The file exists so that
+! `--shower simple` is spelled like the other arms and produces a directory
+! under the same bookkeeping.  It must reproduce the published sample.

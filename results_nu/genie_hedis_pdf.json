@@ -1,0 +1,156 @@
+{
+ "what": "GENIE HEDIS (GHE19_00a) against the YADISM NLO reference in the final region, and the PDF that accounts for the difference",
+ "region": "q4w3",
+ "target": "tungsten per nucleon (74 p + 110 n)",
+ "hedis_tune": "GHE19_00a_00_000",
+ "hedis_pdf": "NNPDF31sx_nlo_as_0118_LHCb_nf_6",
+ "benchmark_pdf": "NNPDF40_nnlo_as_01180",
+ "hedis_settings": {
+  "perturbative_order": "NLO (APFEL::SetPerturbativeOrder(1))",
+  "scheme": "BGR -> APFEL FONLL-B, pole masses from the PDF set",
+  "alphas": "taken from the PDF set at MZ (0.1180, as ours)",
+  "MW_gev": 80.385,
+  "benchmark_MW_gev": 80.379,
+  "sf_grid": "400 x 400 nodes, x >= 1e-9, Q2 in [2.6896, 1e10]"
+ },
+ "rows": [
+  {
+   "energy_gev": 400,
+   "genie_hedis_pb": 2.4323123618257085,
+   "genie_hedis_err_pb": 0.0061189248038086485,
+   "yadism_nlo_zm_pb": 2.5860944551519625,
+   "yadism_nlo_fonll_pb": 2.571532641945446,
+   "yadism_nlo_zm_hedis_pdf_pb": 2.448270911896511,
+   "yadism_nlo_fonll_hedis_pdf_pb": 2.4362970797979053,
+   "ratio_published": 0.9458609710610506,
+   "pdf_only": 0.9467059128560126,
+   "scheme_factor_fonll_over_zm": 0.9943691874140534,
+   "pdf_only_fonll": 0.947410520892618,
+   "genie_over_fonll_same_pdf": 0.9983644367490161,
+   "yadism_like_for_like_pb": 2.434485157231997,
+   "genie_over_like_for_like": 0.9991074928512774
+  },
+  {
+   "energy_gev": 700,
+   "genie_hedis_pb": 4.279933002845445,
+   "genie_hedis_err_pb": 0.010677460445410954,
+   "yadism_nlo_zm_pb": 4.537967942587181,
+   "yadism_nlo_fonll_pb": 4.517918918567611,
+   "yadism_nlo_zm_hedis_pdf_pb": 4.301491113356927,
+   "yadism_nlo_fonll_hedis_pdf_pb": 4.284546346207691,
+   "ratio_published": 0.9473239958459417,
+   "pdf_only": 0.9478892684518538,
+   "scheme_factor_fonll_over_zm": 0.9955819379349473,
+   "pdf_only_fonll": 0.9483451171731275,
+   "genie_over_fonll_same_pdf": 0.998923259783074,
+   "yadism_like_for_like_pb": 4.282486858645844,
+   "genie_over_like_for_like": 0.9994036512230638
+  },
+  {
+   "energy_gev": 1000,
+   "genie_hedis_pb": 6.075796230395239,
+   "genie_hedis_err_pb": 0.007545012491053014,
+   "yadism_nlo_zm_pb": 6.429679593215174,
+   "yadism_nlo_fonll_pb": 6.405529382342851,
+   "yadism_nlo_zm_hedis_pdf_pb": 6.098810164638155,
+   "yadism_nlo_fonll_hedis_pdf_pb": 6.0781742590384455,
+   "ratio_published": 0.9485236688076809,
+   "pdf_only": 0.948540292905705,
+   "scheme_factor_fonll_over_zm": 0.9962439480035977,
+   "pdf_only_fonll": 0.9488949150390636,
+   "genie_over_fonll_same_pdf": 0.9996087593836801,
+   "yadism_like_for_like_pb": 6.075902716543587,
+   "genie_over_like_for_like": 0.9999824740201884
+  },
+  {
+   "energy_gev": 2000,
+   "genie_hedis_pb": 11.706059817155008,
+   "genie_hedis_err_pb": 0.02885936171801892,
+   "yadism_nlo_zm_pb": 12.362021179256862,
+   "yadism_nlo_fonll_pb": 12.328568090122594,
+   "yadism_nlo_zm_hedis_pdf_pb": 11.739690787692574,
+   "yadism_nlo_fonll_hedis_pdf_pb": 11.71059959202348,
+   "ratio_published": 0.9495068471523204,
+   "pdf_only": 0.9496578769328965,
+   "scheme_factor_fonll_over_zm": 0.9972938819106376,
+   "pdf_only_fonll": 0.9498750792807626,
+   "genie_over_fonll_same_pdf": 0.9996123362571834,
+   "yadism_like_for_like_pb": 11.707921798088478,
+   "genie_over_like_for_like": 0.9998409640100454
+  },
+  {
+   "energy_gev": 4000,
+   "genie_hedis_pb": 21.74189802873716,
+   "genie_hedis_err_pb": 0.05322130614415121,
+   "yadism_nlo_zm_pb": 22.904100010622113,
+   "yadism_nlo_fonll_pb": 22.859735453693656,
+   "yadism_nlo_zm_hedis_pdf_pb": 21.775447563861324,
+   "yadism_nlo_fonll_hedis_pdf_pb": 21.736474712984197,
+   "ratio_published": 0.9511001591763445,
+   "pdf_only": 0.9507226895517676,
+   "scheme_factor_fonll_over_zm": 0.9980630298982329,
+   "pdf_only_fonll": 0.9508629160217179,
+   "genie_over_fonll_same_pdf": 1.0002495030047225,
+   "yadism_like_for_like_pb": 21.73326917297753,
+   "genie_over_like_for_like": 1.0003970344125843
+  }
+ ],
+ "fonll_factorisation_check": {
+  "energy_gev": 1000,
+  "fonll_with_hedis_pdf_pb": 6.0781742590384455,
+  "factorised_pb": 6.075902716543587,
+  "ratio": 0.9996262788136617,
+  "genie_over_direct_fonll": 0.9996087593836801
+ },
+ "pipeline_closure": {
+  "mhou_pb": 6.429679593215174,
+  "tracked_pb": 6.429679593215174,
+  "ratio": 1.0
+ },
+ "proton_decomposition_1tev": [
+  {
+   "pdf": "NNPDF40_nnlo_as_01180",
+   "what": "the benchmark's set",
+   "sigma_1tev_pb": 4.3300916627508474,
+   "ratio_to_benchmark": 1.0
+  },
+  {
+   "pdf": "NNPDF40_nlo_as_01180",
+   "what": "same fit, NLO instead of NNLO",
+   "sigma_1tev_pb": 4.302842724562632,
+   "ratio_to_benchmark": 0.9937070758980413
+  },
+  {
+   "pdf": "NNPDF31_nnlo_as_0118",
+   "what": "the previous NNPDF global fit",
+   "sigma_1tev_pb": 4.252547997228771,
+   "ratio_to_benchmark": 0.9820919113123777
+  },
+  {
+   "pdf": "NNPDF31sx_nlo_as_0118_LHCb_nf_6",
+   "what": "GENIE HEDIS's set",
+   "sigma_1tev_pb": 4.060923408460253,
+   "ratio_to_benchmark": 0.9378377468065894
+  },
+  {
+   "pdf": "NNPDF31sx_nlonllx_as_0118_LHCb_nf_6",
+   "what": "the same with small-x resummation",
+   "sigma_1tev_pb": 4.065966622447868,
+   "ratio_to_benchmark": 0.9390024366977986
+  }
+ ],
+ "quark_ratio_x": {
+  "0.005": 0.9570046552578915,
+  "0.01": 0.953265538886234,
+  "0.02": 0.9415824074415474,
+  "0.05": 0.9446688582944587,
+  "0.1": 0.9610264089216645,
+  "0.2": 0.9416804304365458,
+  "0.3": 0.9263520015959433,
+  "0.4": 0.9284249278649563,
+  "0.5": 0.9554842602393556,
+  "0.6": 1.0246433516946492,
+  "0.7": 1.2378815187421262
+ },
+ "quark_ratio_note": "(d + s + b) of NNPDF31sx_nlo_as_0118_LHCb_nf_6 over NNPDF40_nnlo_as_01180, tungsten free nucleon, Q2 = 100 GeV2"
+}

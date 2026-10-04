@@ -1,0 +1,181 @@
+# ---------------------------------------------------------------------------
+# evgen-benchmark: track the ~1 MB of cards, drivers, analysis and results.
+# Everything else in this tree is generated: ~44 GB of event samples.
+#
+# Rule of thumb: if a generator wrote it, it is ignored; if you wrote it (or
+# the analysis distilled it), it is tracked.
+# ---------------------------------------------------------------------------
+
+# --- event samples and per-job output ---
+# NB: match ANY *job_* directory, not just ones starting with "job_" --
+# GENIE uses nucc_job_N / nnpdf_job_N, Herwig nu_job_N, Pythia me_job_N.
+*job_*/
+job_*/
+*.hepmc
+*.hepmc3
+*.lhe
+*.lhe.gz
+*.evtfull
+evtfull*
+events*.lhe
+# GENIE native output
+*.ghep.root
+*.root
+*.cdat
+*.status
+*.gst.root
+
+# --- generator run-time state ---
+# Herwig compiled run files (~8 MB each): regenerate with `Herwig read <card>.in`
+*.run
+# Herwig/other per-run scratch.  NB *.tex here is HERWIG's per-run output --
+# it silently swallowed the entire paper/ source once, so paper/*.tex is
+# explicitly re-included below.
+*.tex
+*.out
+Results.zip
+Results.zip~
+Results_*.zip
+Process/
+Process_*/
+# Herwig integration grids (generator-written, like Sherpa's Results.zip)
+Herwig-cache/
+Settings_Report/
+Status__*
+makelibs
+References.tex
+
+# --- MG5_aMC generated process directories and its bundled tools ---
+# `mg5_aMC` writes PROC_*/ and drops HEPTools/ (COLLIER, ninja, ...) into
+# whatever directory it is run from.  All of it is generator output; the
+# tracked artefacts are the process card, the DIS hooks and the drivers.
+mg5/PROC_*/
+mg5/HEPTools/
+mg5/py.py
+mg5/*.log
+mg5/MG5_debug
+
+# --- GENIE cross-section splines and trial output ---
+# gmkspl writes these (hours of CPU, ~2 MB of XML) so by the rule above they
+# are generated, not tracked.  The GENIE *config overlays* in genie/config/
+# ARE tracked -- they are benchmark physics content, not generator output.
+genie/splines/
+genie/hedis_test/
+# The nu_cc_lo overlay is REGENERATED from the installed GENIE config on every
+# run (genie/make_nucc_lo_overlay.py), precisely so it cannot drift from it.
+# Committing the copy would defeat that -- the SCRIPT is the tracked artefact.
+genie/config/nu_cc_lo/
+genie/config/nondis/
+
+# --- FONLL component grids (yadism output, cached so the damped and undamped
+#     variants do not each pay for three full runs) ---
+results/fonll_cache/
+results_nu/fonll_cache/
+
+# --- logs ---
+*.log
+logs/
+
+# --- compiled artefacts ---
+*.o
+*.a
+*.so
+*.dylib
+__pycache__/
+*.pyc
+pythia8/main_dis
+powheg/main_powheg
+genie/gtohepmc3
+nuwro/nuwro2hepmc
+# Herwig's per-stem build directories: copies of herwig7/production/cards/
+# plus the .run each `Herwig read` writes (lib.sh v2_compile)
+herwig7/production/build/
+# presentation files (talks are kept outside the public export)
+*.key
+
+# --- generated figures and reports (regenerate with plot_compare*.py and
+#     make_report.py; ~20 MB per pass, so deliberately not versioned) ---
+*.png
+# THE PAPER'S OWN FIGURES ARE TRACKED.  Everything else a generator
+# or an analysis writes is regenerable and stays out of git
+# (rule 1), but a paper figure is a DELIVERABLE: a clone must build
+# the document without first re-running the whole benchmark.
+# tools/sync_paper_figures.sh keeps them in step with the report.
+report.html
+
+# --- the paper -------------------------------------------------------------
+# The LaTeX SOURCE is tracked (it is written, not generated); the build
+# artefacts are not.  The compiled PDF IS tracked deliberately, so the paper
+# can be read without a TeX installation.
+!paper/*.tex
+!paper/*.bib
+!paper/*.bst
+!paper/figures/*
+paper/*.aux
+paper/*.toc
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.synctex.gz
+paper/*.fdb_latexmk
+paper/*.fls
+
+# --- editor / OS noise ---
+.DS_Store
+*.swp
+*~
+
+# --- Claude Code local settings (machine-specific permissions) ---
+.claude/settings.local.json
+mg5/additional_command
+analysis/pineappl_cache/
+
+# --- vendored generator EVENT files that are too big for git ---
+# data/faser_flux/ and data/nomad/ are small digitised histograms and ARE
+# tracked; data/forward_charm/ is 300 MB of POWHEG neutrino events from
+# arXiv:2309.12793 and is not.  tools/fetch_forward_charm.sh re-fetches it in
+# one command, its README carries the provenance, and the small histograms
+# analysis/forward_charm_flux.py derives from it are tracked -- so a clone
+# reproduces every number without the 300 MB.
+data/forward_charm/*.csv.gzip
+data/forward_charm/*.txt
+
+# the FASER flux as ROOT histograms for gevgen -f (tools/genie_dimuon_ladder.sh), rebuilt in seconds
+genie/faser_flux_hist/
+
+# isospin-mirrored NEUTRON copies of the PDF sets (tools/make_neutron_pdf.py
+# --all-members, 2026-09-07): 490 MB of grids rebuilt in a minute.  The
+# member-0 NNPDF4.0 mirror the FASER-rate ladders were generated with stays
+# tracked, as do the .info files and pdfsets.index (the ids are part of the
+# recipe).
+data/pdfs/lhapdf/*_n/*.dat
+!data/pdfs/lhapdf/NNPDF40_nnlo_as_01180_n/NNPDF40_nnlo_as_01180_n_0000.dat
+
+# free-nucleon TUNGSTEN averages, (74 p + 110 n)/184, from
+# tools/make_isoscalar_pdf.py (2026-09-10): the NNPDF4.0 one is 157 MB of
+# grids for its 101 members and is rebuilt in five seconds, so only its .info
+# is tracked.  The two single-member baselines are under a megabyte each and
+# stay, so a clone can reproduce the central comparison without holding
+# nNNPDF3.0 and CT18A locally.
+data/pdfs/lhapdf/NNPDF40_nnlo_as_01180_W184free/*.dat
+# and the same for GENIE HEDIS's own set (2026-09-21): one member, 2.8 MB,
+# rebuilt by tools/genie_hedis_pdf.sh in a couple of seconds.
+data/pdfs/lhapdf/NNPDF31sx_nlo_as_0118_LHCb_nf_6_W184free/*.dat
+
+# talks: Keynote render scratch
+talks/.render/
+!talks/style/*.png
+!talks/*/recovered/*.png
+~$*.pptx
+
+# --- faser_format ---
+faser_format/__pycache__/
+faser_format/trace
+
+# per-machine settings of a clone (config.sh sources it)
+config.local.sh
+
+# neutrino-telescope study: yadism structure-function grids and per-energy
+# histograms, rebuilt by telescopes/yadism_sf.py (~7 min per arm) and
+# telescopes/sigma_fold.py
+results_telescopes/sf_cache/

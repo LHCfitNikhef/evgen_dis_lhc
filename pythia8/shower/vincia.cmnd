@@ -1,0 +1,8 @@
+! Shower arm: VINCIA -- the antenna shower.
+!
+! NOTE the base card's SpaceShower:*/TimeShower:* settings do NOT apply here:
+! Vincia reads Vincia:* instead, so dipoleRecoil and pTmaxMatch as set for the
+! simple shower are silently inert and Vincia's own defaults take over.  That
+! is part of what "as shipped" means in the README and is why this arm is not
+! a controlled variation of one parameter.
+PartonShowers:model = 2

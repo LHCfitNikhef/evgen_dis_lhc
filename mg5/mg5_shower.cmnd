@@ -1,0 +1,68 @@
+! Shower/hadronisation card for MG5_aMC LO Les Houches events, BOTH currents.
+! Read by powheg/main_powheg (the repository's LHE -> HepMC3 shower driver);
+! Beams:frameType/LHEF are set there, and the hard process, the beams and the
+! fiducial cuts all come from the file, so none of the SigmaProcess or
+! PhaseSpace settings of pythia8/dis_mu1TeV.cmnd apply here.
+!
+! ONE CARD FOR THE MUON AND THE NEUTRINO SAMPLE.  Nothing below depends on the
+! current: the electroweak couplings that do were used by MG5 when it made the
+! events, and Pythia only showers and hadronises them.  Two cards would be two
+! places to keep in step.
+!
+! Everything that IS a physics choice is taken from the Pythia LO benchmark
+! card, so that the MG5 + Pythia arm differs from the Pythia LO arm in the
+! matrix element and the phase-space generation and in nothing else.
+
+! proton PDF for shower backward evolution: same set as the MG5 run
+PDF:pSet = LHAPDF6:NNPDF40_nnlo_as_01180
+PDF:lepton = off
+
+! DIS-appropriate shower recoil (Cabouat-Sjostrand), with emissions allowed up
+! to the kinematic limit as the official DIS example (main36.cc) and the LO
+! benchmark card both do.
+!
+! THE ALTERNATIVE WOULD BE TO START AT SCALUP, AND FOR THIS FILE THAT IS WORSE:
+! MG5 writes SCALUP from its own CLUSTERING of the external states, not from
+! the factorisation scale, and on this process that runs at 0.787 x Q on
+! average -- so `pTmaxMatch = 1` would start the shower below the scale the
+! matrix element was evaluated at, for a reason that has nothing to do with
+! the physics.  There is no matching veto to respect here: the sample is LO.
+SpaceShower:dipoleRecoil = on
+SpaceShower:pTmaxMatch = 2
+TimeShower:pTmaxMatch = 2
+
+! no QED radiation in initial- or final-state showers
+SpaceShower:QEDshowerByL = off
+SpaceShower:QEDshowerByQ = off
+TimeShower:QEDshowerByL = off
+TimeShower:QEDshowerByQ = off
+
+! no MPI (matches Sherpa MI_HANDLER: None)
+PartonLevel:MPI = off
+
+! stable-particle convention: ctau > 10 mm kept stable
+ParticleDecays:limitTau0 = on
+ParticleDecays:tau0Max = 10.
+
+! PYTHIA'S OWN HEAVY-QUARK MASSES ARE LEFT IN PLACE, and that is a choice.
+! The benchmark's convention is massless charm and bottom, and MG5 writes them
+! massless in the Les Houches file; Pythia puts every parton back on its own
+! mass shell as it reads one (1.5 GeV charm, 4.8 GeV bottom), which reshuffles
+! the hard process of every heavy-quark-initiated event and moves the
+! reconstructed Q2 -- 9.6% of muon events by more than 1%, by -14% on average
+! in that tail, costing about 1.5% of the fiducial rate at the Q2 = 4 edge.
+! `4:m0 = 0` and `5:m0 = 0` remove the shift completely, and were used to
+! identify it (mg5/install_hooks.py records the measurement), but they are NOT
+! set here: every other showered sample in this benchmark runs with Pythia's
+! masses, and this arm exists to be compared with them.
+!
+! NO POWHEG MATCHING.  main_powheg registers its veto hooks only when
+! POWHEG:veto > 0; this says out loud that a LO sample takes none.
+POWHEG:veto = 0
+
+! tolerate LHE parsing hiccups; printout
+Main:timesAllowErrors = 10
+Next:numberCount = 20000
+Next:numberShowEvent = 0
+Next:numberShowProcess = 1
+Next:numberShowInfo = 1

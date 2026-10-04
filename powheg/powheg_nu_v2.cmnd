@@ -1,0 +1,65 @@
+! Shower/hadronisation card for POWHEG-V2 nu-DIS LHE events, PAPER PLOTS V2.
+! Shower + hadronisation settings identical to powheg_mu1TeV.cmnd / the LO
+! neutrino card (Monash defaults). The hard process (nu_mu p -> mu- X, CC)
+! comes from the LHE, so no SigmaProcess/PhaseSpace settings apply here.
+! Beams:frameType/LHEF are set by the driver (main_powheg.cc).
+!
+! >>> THE EARLIER CARD (powheg_nu1TeV.cmnd) PLUS ONE SWITCH, LesHouches:matchInOut
+! = off (user, 2026-09-14: "implement this fix in POWHEG-V2"). <<<
+! POWHEG-V2 writes massless charm (qmass 0, the ZM convention).  Pythia gives
+! it its mass on reading the LHE; for ~2% of events -- 97-99% of them an
+! outgoing charm plus a second parton -- no recoiler can absorb it, and with
+! matchInOut on Pythia then rebuilds the incoming partons, needs one above
+! half the c.m. energy, and DROPS the event ("setting mass failed").
+! Deterministic, so the loss is flavour-concentrated: inclusive sigma_fid
+! biased by < 0.15%, charm-tagged sigma 8-10% LOW (PRODUCTION.md, "Shower
+! losses"; powheg/production/lost_events.py).  Off, the same events shower (2156 of
+! 2248 in the test) with a charm hadron and balanced four-momentum; on
+! ordinary events it moves momenta at the 1e-10 level.
+! The earlier card is left untouched so its samples stay reproducible.
+LesHouches:matchInOut = off
+
+! proton PDF for shower backward evolution: same set as the POWHEG run
+PDF:pSet = LHAPDF6:NNPDF40_nnlo_as_01180
+PDF:lepton = off
+
+! DIS-appropriate shower recoil (Cabouat-Sjostrand), as in the LO benchmark;
+! pTmaxMatch = 2 (start from kinematic limit) is required by the POWHEG
+! veto: SCALUP acts as a veto scale, not a starting scale
+SpaceShower:dipoleRecoil = on
+SpaceShower:pTmaxMatch = 2
+TimeShower:pTmaxMatch = 2
+
+! no QED radiation in initial- or final-state showers
+SpaceShower:QEDshowerByL = off
+SpaceShower:QEDshowerByQ = off
+TimeShower:QEDshowerByL = off
+TimeShower:QEDshowerByQ = off
+
+! no MPI (matches Sherpa MI_HANDLER: None)
+PartonLevel:MPI = off
+
+! stable-particle convention: ctau > 10 mm kept stable
+ParticleDecays:limitTau0 = on
+ParticleDecays:tau0Max = 10.
+
+! POWHEG matching (values from the powheg-dis paper's main31.cmnd);
+! dis_map = 1 selects the DIS kinematic map in DISPowhegHooks
+! (powheg.input has no flg_dis / iupperisr=2, hence map 1)
+POWHEG:nFinal = 2
+POWHEG:veto = 1
+POWHEG:vetoCount = 5
+POWHEG:pThard = 0
+POWHEG:pTemt = 0
+POWHEG:emitted = 0
+POWHEG:pTdef = 1
+POWHEG:MPIveto = 0
+POWHEG:QEDveto = 0
+POWHEG:dis_map = 1
+
+! tolerate LHE parsing hiccups; printout
+Main:timesAllowErrors = 10
+Next:numberCount = 20000
+Next:numberShowEvent = 0
+Next:numberShowProcess = 1
+Next:numberShowInfo = 1

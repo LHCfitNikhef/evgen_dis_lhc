@@ -1,0 +1,33 @@
+# Apply from the repository root (variables from config.sh):
+#   patch -p0 -d $PYTHIA8_DIR < patches/pythia8311-StandardModelParameters.diff
+--- share/Pythia8/xmldoc/StandardModelParameters.xml.orig	2024-03-08 20:14:24
++++ share/Pythia8/xmldoc/StandardModelParameters.xml	2026-08-12 17:38:42
+@@ -103,7 +103,7 @@
+ </parm> 
+  
+ <parm name="StandardModel:alphaEMmZ" default="0.00781751" 
+-min="0.00780" max="0.00783"> 
++min="0.00700" max="0.00800"> 
+ The <ei>alpha_em</ei> value at the <ei>M_Z</ei> mass scale. 
+ Default is taken from <ref>Yao06</ref>. 
+ </parm> 
+@@ -121,8 +121,8 @@
+ There are two degrees of freedom that can be set, related to the 
+ electroweak mixing angle: 
+  
+-<parm name="StandardModel:sin2thetaW" default="0.2312" 
+-min="0.225" max="0.240"> 
++<parm name="StandardModel:sin2thetaW" default="0.2312"
++min="0.215" max="0.240"> 
+ The sine-squared of the weak mixing angle, as used in all <ei>Z^0</ei> 
+ and <ei>W^+-</ei> masses and couplings, except for the vector couplings 
+ of fermions to the <ei>Z^0</ei>, see below. Default is the MSbar value 
+@@ -130,7 +130,7 @@
+ </parm> 
+  
+ <parm name="StandardModel:sin2thetaWbar" default="0.2315" 
+-min="0.225" max="0.240"> 
++min="0.215" max="0.240"> 
+ The sine-squared of the weak mixing angle, as used to derive the vector 
+ couplings of fermions to the <ei>Z^0</ei>, in the relation 
+ <ei>v_f = a_f - 4 e_f sin^2(theta_W)bar</ei>. Default is the 

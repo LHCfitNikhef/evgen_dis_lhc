@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Message thresholds for the LONG gevgen runs of the FASER dimuon cut flow
+  (tools/genie_dimuon_ladder.sh).  Passed AFTER Messenger_whisper.xml on
+  the message-thresholds list, so it only tightens what whisper leaves:
+
+      gevgen ... message-thresholds Messenger_whisper.xml:Messenger_quiet.xml
+
+  WHY.  The benchmark's Pythia8 decayer overlay prints three NOTICE/INFO
+  lines per decay, and whisper does not know the stream: 2.5 kB of log per
+  event, 500 MB per 200k-event ladder point and 5 GB for the flux-mode runs,
+  none of it read.  The non-DIS study met the same thing at 1 GB per job
+  and digested the logs afterwards; here the stream is silenced at source.
+  WARN keeps every real complaint.
+-->
+<messenger_config>
+  <priority msgstream="Pythia8Decay">          WARN  </priority>
+  <priority msgstream="Pythia8Had">            WARN  </priority>
+  <priority msgstream="Pythia8Hadro">          WARN  </priority>
+  <priority msgstream="Decay">                 WARN  </priority>
+  <priority msgstream="UnstableParticleDecayer"> WARN </priority>
+</messenger_config>

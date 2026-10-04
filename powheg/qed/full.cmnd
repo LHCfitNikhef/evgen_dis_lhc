@@ -1,0 +1,11 @@
+! QED arm: FULL -- lepton line plus quark line, both showers.
+!
+! Adds photon radiation off the quarks.  This does NOT move the reconstructed
+! DIS kinematics, which are built from the scattered lepton alone, so the
+! difference between this arm and `fsrisr` (muon) or `fsr` (neutrino) is a
+! hadronic-final-state effect: it shows up in the charged multiplicity, the
+! leading-hadron energy and the D-meson panels rather than in Q2, x or y.
+TimeShower:QEDshowerByL = on
+TimeShower:QEDshowerByQ = on
+SpaceShower:QEDshowerByL = on
+SpaceShower:QEDshowerByQ = on

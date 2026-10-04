@@ -1,0 +1,317 @@
+ \documentclass[11pt,a4paper]{article}
+\pdfoutput=1
+
+\usepackage[colorlinks=true, linkcolor=black!50!blue, urlcolor=blue, citecolor=blue, anchorcolor=blue]{hyperref}
+\usepackage[font=small,labelfont=bf,margin=0mm,labelsep=period,tableposition=top]{caption}
+\usepackage[a4paper,top=1.5cm,bottom=2cm,left=1.5cm,right=1.5cm,bindingoffset=0mm]{geometry}
+
+% FLOAT BARRIERS ONLY AT THE MAJOR BOUNDARIES (Summary, appendices,
+% references): one per \section left near-empty pages (user, 2026-10-04)
+\usepackage{placeins}
+\usepackage{cite}
+% FLOAT PLACEMENT (user, 2026-10-04: too much empty space): let a figure
+% share a page with text instead of waiting for a float page of its own
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.85}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\usepackage{graphicx}
+\usepackage{soul}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{epsfig}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{booktabs,multirow}
+\usepackage{textcomp}
+\usepackage{comment}
+% NB: the template loads both `comment' and `changes', which both define
+% \comment and make the document fail to build.  We drop `changes'.
+\graphicspath{{../}{./figures/}}
+
+\usepackage{makecell}
+
+
+\makeatletter
+\def\thickhline{%
+             \noalign{\ifnum0 =`}\fi\hrule \@height \thickarrayrulewidth \futurelet
+             \reserved@a\@xthickhline}
+\def\@xthickhline{\ifx\reserved@a\thickhline
+                \vskip\doublerulesep
+                \vskip -\thickarrayrulewidth
+                \fi
+                \ifnum0 =`{\fi}}
+\makeatother
+\newlength{\thickarrayrulewidth}
+\setlength{\thickarrayrulewidth}{3\arrayrulewidth}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{arrows.meta}
+\usepackage{varwidth}
+%['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
+\definecolor{mtplotlib1}{HTML}{1f77b4}
+\definecolor{mtplotlib2}{HTML}{ff7f0e}
+\definecolor{mtplotlib3}{HTML}{2ca02c}
+\definecolor{mtplotlib4}{HTML}{d62728}
+
+\tikzset{%
+  >={Latex[width=2mm,length=2mm]},
+  % Specifications for style of nodes:
+            base/.style = {rectangle, rounded corners, draw=black,
+                           minimum width=4cm, minimum height=1cm,
+                           text centered}, %, font=\sffamily},
+            mystyle/.style={rectangle, rounded corners, draw=black,
+            minimum width=12cm, minimum height=1cm,
+            text centered}, %, font=\sffamily},
+    col0/.style = {base, fill=white!30},
+    col1/.style = {base, fill=mtplotlib1!30},
+    col11/.style = {mystyle, fill=mtplotlib1!30},
+    col2/.style = {base, fill=mtplotlib2!30},
+    col3/.style = {base, fill=mtplotlib3!30},
+    col4/.style = {base, minimum width=2.5cm, fill=mtplotlib4!15,}%font=\ttfamily},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\smallfrac#1#2{\hbox{$\frac{#1}{#2}$}}
+
+%% DELETE IN FINAL PROOF!
+
+
+\newcommand{\Eleni}[1]{{\color{ao}{EV: #1}}}
+\newcommand{\Juan}[1]{{\color{blue}{JR: #1}}}
+\newcommand{\ANR}[1]{{\color{cyan}{AR: #1}}}
+\newcommand{\Giacomo}[1]{{\color{orange}{GM: #1}}}
+\newcommand{\Jaco}[1]{{\color{magenta}{JtH: #1}}}
+\newcommand{\Marion}[1]{{\color{mt}{MT: #1}}}
+\newcommand{\Eugenia}[1]{{\color{teal}{EC: #1}}}
+\newcommand{\Jelle}[1]{{\color{purple}{JK: #1}}}
+\newcommand{\Felix}[1]{\textcolor{magenta}{[FK: #1]}}
+\newcommand{\Peter}[1]{\textcolor{green}{[PK: #1]}}
+\newcommand{\Reinaldo}[1]{\textcolor{red}{[RF: #1]}}
+
+
+
+%comments for changes
+\RequirePackage[normalem]{ulem} 
+\newcommand{\changed}[2]{{\protect\color{red}\sout{#1}}{\protect\color{blue}\uwave{#2}}}
+%% -----------------------------------------------------------
+
+
+\newcommand{\POWHEG}{{\sc\small POWHEG}}
+\newcommand{\hov}{\frac{h}{v}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\la}{\left\langle}
+\newcommand{\ra}{\right\rangle}
+\newcommand{\lc}{\left[}
+\newcommand{\rc}{\right]}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\as}{\alpha_s}
+\newcommand{\aq}{\alpha_s\left( Q^2 \right)}
+\newcommand{\amz}{\alpha_s\left( M_Z^2 \right)}
+\newcommand{\aqq}{\alpha_s \left( Q^2_0 \right)}
+\newcommand{\aqz}{\alpha_s \left( Q^2_0 \right)}
+\def\toinf#1{\mathrel{\mathop{\sim}\limits_{\scriptscriptstyle
+{#1\rightarrow\infty }}}}
+\def\tozero#1{\mathrel{\mathop{\sim}\limits_{\scriptscriptstyle
+{#1\rightarrow0 }}}}
+\def\toone#1{\mathrel{\mathop{\sim}\limits_{\scriptscriptstyle
+{#1\rightarrow1 }}}}
+\def\frac#1#2{{{#1}\over {#2}}}
+\def\gsim{\mathrel{\rlap{\lower4pt\hbox{\hskip1pt$\sim$}}
+    \raise1pt\hbox{$>$}}}       
+\def\lsim{\mathrel{\rlap{\lower4pt\hbox{\hskip1pt$\sim$}}
+    \raise1pt\hbox{$<$}}}       
+\newcommand{\mrexp}{\mathrm{exp}}
+\newcommand{\dat}{\mathrm{dat}}
+\newcommand{\one}{\mathrm{(1)}}
+\newcommand{\two}{\mathrm{(2)}}
+\newcommand{\art}{\mathrm{art}}
+\newcommand{\rep}{\mathrm{rep}}
+\newcommand{\net}{\mathrm{net}}
+\newcommand{\stopp}{\mathrm{stop}}
+\newcommand{\sys}{\mathrm{sys}}
+\newcommand{\stat}{\mathrm{stat}}
+\newcommand{\pdf}{\mathrm{pdf}}
+\newcommand{\tot}{\mathrm{tot}}
+\newcommand{\minn}{\mathrm{min}}
+\newcommand{\mut}{\mathrm{mut}}
+\newcommand{\partt}{\mathrm{part}}
+\newcommand{\dof}{\mathrm{dof}}
+\newcommand{\NS}{\mathrm{NS}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\gen}{\mathrm{gen}}
+\newcommand{\parr}{\mathrm{par}}
+\newcommand{\val}{\mathrm{val}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\checkk}{\mathrm{check}}
+\newcommand{\reff}{\mathrm{ref}}
+\newcommand{\Mll}{M_{ll}}
+\newcommand{\extra}{\mathrm{extra}}
+\newcommand{\draft}[1]{}
+\newcommand{\todo}[1]{\footnote{{\bfseries{\color{red} TODO} #1}}} % For todo's
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+\newcommand{\tmtextit}[1]{{\itshape{#1}}}
+\newcommand{\tmtextrm}[1]{{\rmfamily{#1}}}
+\newcommand{\tmtexttt}[1]{{\ttfamily{#1}}}
+
+\usepackage{tabularx}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\DeclareRobustCommand{\RG}[1]{{\color{magenta}\textbf{[RG: #1]}}\xspace}
+
+\definecolor{darkblue}{rgb}{0.0,0,0.5}
+\definecolor{darkgreen}{rgb}{0.0,0.3,0.0}
+\definecolor{redish}{rgb}{0.675,0,0.2}
+\definecolor{red}{rgb}{0.8,0,0}
+\definecolor{green}{rgb}{0,0.6,0}
+\definecolor{bluish}{rgb}{0.2,0.2,0.675}
+\definecolor{mygrey}{rgb}{0.6,0.6,0.6}
+
+\usetikzlibrary{shapes,arrows,positioning,automata,backgrounds,calc,er,patterns,arrows.meta}
+\usepackage{tikz-feynman}
+\tikzfeynmanset{compat=1.0.0}
+\usepackage{varwidth}
+%['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
+\definecolor{mtplotlib1}{HTML}{1f77b4}
+\definecolor{mtplotlib2}{HTML}{ff7f0e}
+\definecolor{mtplotlib3}{HTML}{2ca02c}
+\definecolor{mtplotlib4}{HTML}{d62728}
+
+\tikzset{%
+  >={Latex[width=2mm,length=2mm]},
+  % Specifications for style of nodes:
+            base/.style = {rectangle, rounded corners, draw=black,
+                           minimum width=4cm, minimum height=1cm,
+                           text centered}, %, font=\sffamily},
+            mystyle/.style={rectangle, rounded corners, draw=black,
+            minimum width=12cm, minimum height=1cm,
+            text centered}, %, font=\sffamily},
+    col0/.style = {base, fill=white!30},
+    col1/.style = {base, fill=mtplotlib1!30},
+    col11/.style = {mystyle, fill=mtplotlib1!30},
+    col2/.style = {base, fill=mtplotlib2!30},
+    col3/.style = {base, fill=mtplotlib3!30},
+    col4/.style = {base, minimum width=2.5cm, fill=mtplotlib4!15,}%font=\ttfamily},
+}
+
+\definecolor{lightblue}{rgb}{0.0,0.5,1.0}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xspace}
+% generator shorthands
+\newcommand{\pythia}{{\sc\small Pythia8}\xspace}
+\newcommand{\sherpa}{{\sc\small Sherpa}\xspace}
+\newcommand{\herwig}{{\sc\small Herwig7}\xspace}
+\newcommand{\powheg}{{\sc\small POWHEG}\xspace}
+\newcommand{\powhegres}{{\sc\small POWHEG-RES}\xspace}
+\newcommand{\powhegtwo}{{\sc\small POWHEG-V2}\xspace}
+% the massive-charm variant: a SEPARATE code name throughout, so it can
+% never be read as the massless POWHEG-V2 samples used everywhere else
+\newcommand{\powhegtwomc}{{\sc\small POWHEG-V2mc}\xspace}
+\newcommand{\mgamc}{{\sc\small MG5\_aMC}\xspace}
+\newcommand{\genie}{{\sc\small GENIE}\xspace}
+\newcommand{\yadism}{{\sc\small YADISM}\xspace}
+% forward-hadron generators, named only where the FLUX model is discussed
+\newcommand{\dpmjet}{{\sc\small DPMJET}\xspace}
+\newcommand{\sibyll}{{\sc\small SIBYLL}\xspace}
+\newcommand{\lhapdf}{{\sc\small LHAPDF}\xspace}
+\newcommand{\apfel}{{\sc\small APFEL}\xspace}
+\newcommand{\nnpdf}{{\sc\small NNPDF4.0}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\newgeometry{top=1.5cm,bottom=1.5cm,left=1.5cm,right=1.5cm,bindingoffset=0mm}
+
+$\qquad$
+\vspace{1.6cm}
+
+\begin{center}
+  {\Large \bf Event Generation for Neutrino and Muon DIS at the LHC}\\
+  \vspace{1.1cm}
+  {\small
+  Paulina Hernandez-Sainz$^{1,2}$, Felix Kling$^{3}$, Jelle Koorn$^{1,2}$, and Juan Rojo$^{1,2}$
+  }\\
+
+\vspace{0.7cm}
+
+{\it \small
+  ~$^{1}$Nikhef Theory Group, Science Park 105, 1098 XG Amsterdam, The Netherlands\\[0.1cm]
+  ~$^{2}$Department of Physics and Astronomy, Vrije Universiteit, NL-1081 HV Amsterdam\\[0.1cm]
+  ~$^{3}$Universit\"at Bonn, Regina-Pacis-Weg 3, D-53113 Bonn, Germany\\[0.1cm]
+ }
+
+\vspace{1.0cm}
+
+{\bf \large Abstract}
+
+\end{center}
+
+Neutrinos and muons produced in the forward direction of LHC collisions and detected by the FASER and SND@LHC experiments enable a rich
+deep-inelastic scattering (DIS) programme, covering both neutral- and charged-current scattering, at TeV energies.
+%
+One of the goals of such a programme is to provide stringent constraints on proton and nuclear structure as well as on hadron fragmentation, and to offer novel insight into neutrino interactions at the highest energies ever achieved in a laboratory.
+%
+Realising this potential
+requires accurate and precise simulations of neutral- and charged-current DIS.
+%
+With this motivation, here we systematically compare the predictions of NLO general-purpose Monte Carlo (MC) event generators for neutrino- and muon-initiated DIS at the LHC (\sherpa, \herwig, and \powheg) against analytical structure-function calculations (\yadism) and dedicated neutrino simulation packages (\genie, {\sc\small GiBUU}, and {\sc\small NuWro}).
+%
+Within this framework, we quantify the role of higher-order QCD corrections, (nuclear) parton distribution functions (PDFs), parton shower and hadronisation modelling, and QED radiation both for inclusive observables and for the FASER fiducial selections.
+%
+To illustrate the flexibility of this pipeline, we present representative applications to the FASER neutrino programme: comparisons with its most recent data from the emulsion and electronic sub-detectors, a study of strange PDF sensitivity in the dimuon final state, and predictions for inclusive charged-hadron production in semi-inclusive DIS.
+%
+Our analysis highlights the excellent agreement of modern event generators for inclusive and differential DIS observables once common settings are adopted, while significant differences remain for fiducial observables sensitive to the hadronic final state.
+
+\clearpage
+\tableofcontents
+
+\input{bench-sec-introduction}
+\input{bench-sec-generators}
+\input{bench-sec-settings}
+\input{bench-sec-inclusive}
+\input{bench-sec-charm}
+\input{bench-sec-hadronic}
+\input{bench-sec-faser}
+\FloatBarrier
+\input{bench-sec-conclusions}
+\FloatBarrier
+\appendix
+\input{bench-app-implementation}
+\input{bench-app-nondis}
+\input{bench-app-npdf}
+\input{bench-app-nugen}
+\bibliographystyle{utphys}
+\FloatBarrier
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,20 @@
+# GiBUU 2017: make the DO variable of ResetPosition local (see the comment in
+# the hunk).  Apply with:  patch -p0 -d $SOFTWARE/gibuu < patches/gibuu-masternbody-local-k.diff
+
+--- code/collisions/threeBodyReactions/masterNBody.f90.orig	2026-09-08 16:08:12
++++ code/collisions/threeBodyReactions/masterNBody.f90	2026-09-08 16:08:12
+@@ -806,6 +806,14 @@
+     subroutine ResetPosition
+       ! Doku?????
+       logical :: flag1,flag2
++      ! >>> k IS LOCAL HERE, AND IT WAS NOT. <<<  This internal subroutine
++      ! used the HOST's k, which is the DO variable of the "do k = 1,10"
++      ! attempt loop that calls it -- so every call silently ran that loop's
++      ! counter to the end and the retry loop executed once.  gfortran 14
++      ! refuses to compile it ("Index variable k redefined ... called from
++      ! within DO loop"), which is how it was found.  Declaring k local both
++      ! builds and restores the ten attempts the code asks for.
++      integer :: k
+       maxId= ubound(finalState,dim=1)
+       do k=lbound(finalState,dim=1),ubound(finalState,dim=1)
+          if (finalState(k)%Id.eq.0) then

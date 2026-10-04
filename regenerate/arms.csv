@@ -1,0 +1,93 @@
+sample,file,events,showered_from,GB
+QED FSR,powheg/qedfsr_v2mu_n_job_1/events.hepmc,49828,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0001.lhe,0.27
+QED FSR,powheg/qedfsr_v2mu_n_job_10/events.hepmc,49831,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0010.lhe,0.27
+QED FSR,powheg/qedfsr_v2mu_n_job_11/events.hepmc,49830,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0011.lhe,0.27
+QED FSR,powheg/qedfsr_v2mu_n_job_2/events.hepmc,49810,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0002.lhe,0.27
+QED FSR,powheg/qedfsr_v2mu_n_job_3/events.hepmc,49832,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0003.lhe,0.27
+QED FSR,powheg/qedfsr_v2mu_n_job_4/events.hepmc,49828,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0004.lhe,0.27
+QED FSR,powheg/qedfsr_v2mu_n_job_5/events.hepmc,49827,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0005.lhe,0.27
+QED FSR,powheg/qedfsr_v2mu_n_job_6/events.hepmc,49819,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0006.lhe,0.27
+QED FSR,powheg/qedfsr_v2mu_n_job_7/events.hepmc,49838,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0007.lhe,0.27
+QED FSR,powheg/qedfsr_v2mu_n_job_8/events.hepmc,49845,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0008.lhe,0.27
+QED FSR,powheg/qedfsr_v2mu_p_job_1/events.hepmc,49828,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0001.lhe,0.26
+QED FSR,powheg/qedfsr_v2mu_p_job_10/events.hepmc,49826,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0010.lhe,0.26
+QED FSR,powheg/qedfsr_v2mu_p_job_11/events.hepmc,49828,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0011.lhe,0.26
+QED FSR,powheg/qedfsr_v2mu_p_job_2/events.hepmc,49805,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0002.lhe,0.26
+QED FSR,powheg/qedfsr_v2mu_p_job_3/events.hepmc,49817,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0003.lhe,0.26
+QED FSR,powheg/qedfsr_v2mu_p_job_4/events.hepmc,49827,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0004.lhe,0.26
+QED FSR,powheg/qedfsr_v2mu_p_job_5/events.hepmc,49808,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0005.lhe,0.26
+QED FSR,powheg/qedfsr_v2mu_p_job_7/events.hepmc,49823,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0007.lhe,0.26
+QED FSR,powheg/qedfsr_v2mu_p_job_8/events.hepmc,49803,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0008.lhe,0.26
+QED FSR,powheg/qedfsr_v2mu_p_job_9/events.hepmc,49828,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0009.lhe,0.26
+QED FSR,powheg/qedfsr_v2nu_n_job_1/events.hepmc,259998,$POWHEG_V2/v2-nu1TeV-n/pwgevents.lhe,1.82
+QED FSR,powheg/qedfsr_v2nu_n_job_2/events.hepmc,259996,$POWHEG_V2/v2-nu1TeV-n-b2/pwgevents.lhe,1.82
+QED FSR,powheg/qedfsr_v2nu_p_job_1/events.hepmc,259993,$POWHEG_V2/v2-nu1TeV-p/pwgevents.lhe,1.82
+QED FSR,powheg/qedfsr_v2nu_p_job_2/events.hepmc,259994,$POWHEG_V2/v2-nu1TeV-p-b2/pwgevents.lhe,1.82
+QED FSR+ISR,powheg/qedfsrisr_v2mu_n_job_1/events.hepmc,49839,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0001.lhe,0.27
+QED FSR+ISR,powheg/qedfsrisr_v2mu_n_job_10/events.hepmc,49843,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0010.lhe,0.27
+QED FSR+ISR,powheg/qedfsrisr_v2mu_n_job_11/events.hepmc,49847,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0011.lhe,0.27
+QED FSR+ISR,powheg/qedfsrisr_v2mu_n_job_2/events.hepmc,49810,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0002.lhe,0.27
+QED FSR+ISR,powheg/qedfsrisr_v2mu_n_job_3/events.hepmc,49834,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0003.lhe,0.27
+QED FSR+ISR,powheg/qedfsrisr_v2mu_n_job_4/events.hepmc,49825,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0004.lhe,0.27
+QED FSR+ISR,powheg/qedfsrisr_v2mu_n_job_5/events.hepmc,49828,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0005.lhe,0.27
+QED FSR+ISR,powheg/qedfsrisr_v2mu_n_job_6/events.hepmc,49823,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0006.lhe,0.27
+QED FSR+ISR,powheg/qedfsrisr_v2mu_n_job_7/events.hepmc,49838,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0007.lhe,0.27
+QED FSR+ISR,powheg/qedfsrisr_v2mu_n_job_8/events.hepmc,49844,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0008.lhe,0.27
+QED FSR+ISR,powheg/qedfsrisr_v2mu_p_job_1/events.hepmc,49827,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0001.lhe,0.26
+QED FSR+ISR,powheg/qedfsrisr_v2mu_p_job_10/events.hepmc,49824,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0010.lhe,0.26
+QED FSR+ISR,powheg/qedfsrisr_v2mu_p_job_11/events.hepmc,49825,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0011.lhe,0.26
+QED FSR+ISR,powheg/qedfsrisr_v2mu_p_job_2/events.hepmc,49810,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0002.lhe,0.26
+QED FSR+ISR,powheg/qedfsrisr_v2mu_p_job_3/events.hepmc,49817,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0003.lhe,0.26
+QED FSR+ISR,powheg/qedfsrisr_v2mu_p_job_4/events.hepmc,49828,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0004.lhe,0.26
+QED FSR+ISR,powheg/qedfsrisr_v2mu_p_job_5/events.hepmc,49811,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0005.lhe,0.26
+QED FSR+ISR,powheg/qedfsrisr_v2mu_p_job_7/events.hepmc,49818,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0007.lhe,0.26
+QED FSR+ISR,powheg/qedfsrisr_v2mu_p_job_8/events.hepmc,49797,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0008.lhe,0.26
+QED FSR+ISR,powheg/qedfsrisr_v2mu_p_job_9/events.hepmc,49823,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0009.lhe,0.26
+QED full,powheg/qedfull_v2mu_n_job_1/events.hepmc,49838,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0001.lhe,0.27
+QED full,powheg/qedfull_v2mu_n_job_10/events.hepmc,49835,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0010.lhe,0.27
+QED full,powheg/qedfull_v2mu_n_job_11/events.hepmc,49838,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0011.lhe,0.27
+QED full,powheg/qedfull_v2mu_n_job_2/events.hepmc,49817,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0002.lhe,0.27
+QED full,powheg/qedfull_v2mu_n_job_3/events.hepmc,49841,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0003.lhe,0.27
+QED full,powheg/qedfull_v2mu_n_job_4/events.hepmc,49828,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0004.lhe,0.27
+QED full,powheg/qedfull_v2mu_n_job_5/events.hepmc,49823,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0005.lhe,0.27
+QED full,powheg/qedfull_v2mu_n_job_6/events.hepmc,49829,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0006.lhe,0.27
+QED full,powheg/qedfull_v2mu_n_job_7/events.hepmc,49837,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0007.lhe,0.27
+QED full,powheg/qedfull_v2mu_n_job_8/events.hepmc,49842,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0008.lhe,0.27
+QED full,powheg/qedfull_v2mu_p_job_1/events.hepmc,49830,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0001.lhe,0.26
+QED full,powheg/qedfull_v2mu_p_job_10/events.hepmc,49822,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0010.lhe,0.26
+QED full,powheg/qedfull_v2mu_p_job_11/events.hepmc,49819,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0011.lhe,0.26
+QED full,powheg/qedfull_v2mu_p_job_2/events.hepmc,49812,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0002.lhe,0.26
+QED full,powheg/qedfull_v2mu_p_job_3/events.hepmc,49819,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0003.lhe,0.26
+QED full,powheg/qedfull_v2mu_p_job_4/events.hepmc,49833,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0004.lhe,0.26
+QED full,powheg/qedfull_v2mu_p_job_5/events.hepmc,49813,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0005.lhe,0.26
+QED full,powheg/qedfull_v2mu_p_job_7/events.hepmc,49820,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0007.lhe,0.26
+QED full,powheg/qedfull_v2mu_p_job_8/events.hepmc,49810,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0008.lhe,0.26
+QED full,powheg/qedfull_v2mu_p_job_9/events.hepmc,49830,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0009.lhe,0.26
+QED full,powheg/qedfull_v2nu_n_job_1/events.hepmc,259999,$POWHEG_V2/v2-nu1TeV-n/pwgevents.lhe,1.83
+QED full,powheg/qedfull_v2nu_n_job_2/events.hepmc,259992,$POWHEG_V2/v2-nu1TeV-n-b2/pwgevents.lhe,1.82
+QED full,powheg/qedfull_v2nu_p_job_1/events.hepmc,259988,$POWHEG_V2/v2-nu1TeV-p/pwgevents.lhe,1.82
+QED full,powheg/qedfull_v2nu_p_job_2/events.hepmc,259997,$POWHEG_V2/v2-nu1TeV-p-b2/pwgevents.lhe,1.82
+POWHEG -> Herwig 7,powheg/hw_v2mu_n_job_1/events.hepmc,48419,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0001.lhe,0.41
+POWHEG -> Herwig 7,powheg/hw_v2mu_n_job_10/events.hepmc,48299,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0010.lhe,0.40
+POWHEG -> Herwig 7,powheg/hw_v2mu_n_job_11/events.hepmc,48393,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0011.lhe,0.41
+POWHEG -> Herwig 7,powheg/hw_v2mu_n_job_2/events.hepmc,48369,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0002.lhe,0.41
+POWHEG -> Herwig 7,powheg/hw_v2mu_n_job_3/events.hepmc,48357,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0003.lhe,0.41
+POWHEG -> Herwig 7,powheg/hw_v2mu_n_job_4/events.hepmc,48382,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0004.lhe,0.41
+POWHEG -> Herwig 7,powheg/hw_v2mu_n_job_5/events.hepmc,48409,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0005.lhe,0.41
+POWHEG -> Herwig 7,powheg/hw_v2mu_n_job_6/events.hepmc,48372,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0006.lhe,0.41
+POWHEG -> Herwig 7,powheg/hw_v2mu_n_job_7/events.hepmc,48401,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0007.lhe,0.41
+POWHEG -> Herwig 7,powheg/hw_v2mu_n_job_8/events.hepmc,48396,$POWHEG_RES/v2-mu1TeV-n/pwgevents-0008.lhe,0.41
+POWHEG -> Herwig 7,powheg/hw_v2mu_p_job_1/events.hepmc,48188,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0001.lhe,0.38
+POWHEG -> Herwig 7,powheg/hw_v2mu_p_job_10/events.hepmc,48126,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0010.lhe,0.38
+POWHEG -> Herwig 7,powheg/hw_v2mu_p_job_11/events.hepmc,48160,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0011.lhe,0.38
+POWHEG -> Herwig 7,powheg/hw_v2mu_p_job_2/events.hepmc,48163,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0002.lhe,0.38
+POWHEG -> Herwig 7,powheg/hw_v2mu_p_job_3/events.hepmc,48131,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0003.lhe,0.38
+POWHEG -> Herwig 7,powheg/hw_v2mu_p_job_4/events.hepmc,48145,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0004.lhe,0.38
+POWHEG -> Herwig 7,powheg/hw_v2mu_p_job_5/events.hepmc,48183,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0005.lhe,0.38
+POWHEG -> Herwig 7,powheg/hw_v2mu_p_job_7/events.hepmc,48135,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0007.lhe,0.38
+POWHEG -> Herwig 7,powheg/hw_v2mu_p_job_8/events.hepmc,48181,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0008.lhe,0.38
+POWHEG -> Herwig 7,powheg/hw_v2mu_p_job_9/events.hepmc,48170,$POWHEG_RES/v2-mu1TeV-p/pwgevents-0009.lhe,0.38
+POWHEG -> Herwig 7,powheg/hw_v2nu_n_job_1/events.hepmc,253280,$POWHEG_V2/v2-nu1TeV-n/pwgevents.lhe,2.36
+POWHEG -> Herwig 7,powheg/hw_v2nu_n_job_2/events.hepmc,253352,$POWHEG_V2/v2-nu1TeV-n-b2/pwgevents.lhe,2.36
+POWHEG -> Herwig 7,powheg/hw_v2nu_p_job_1/events.hepmc,246510,$POWHEG_V2/v2-nu1TeV-p/pwgevents.lhe,2.31
+POWHEG -> Herwig 7,powheg/hw_v2nu_p_job_2/events.hepmc,246591,$POWHEG_V2/v2-nu1TeV-p-b2/pwgevents.lhe,2.32

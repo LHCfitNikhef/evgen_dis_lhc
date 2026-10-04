@@ -1,0 +1,99 @@
+! POWHEG-RES, muon NC DIS on the FASERnu MUON FLUX -- the setup of
+! arXiv:2506.13889 (Francener, Goncalves, Kling, Krack, Rojo), reproduced
+! here as a check of the benchmark's event-rate machinery (user, 2026-09-03).
+!
+! WHAT DIFFERS FROM THE BENCHMARK CARDS, AND WHY EACH IS DELIBERATE:
+!   fixed_lepton_beam 0 + LEPpdf 111222334
+!       the incoming muon is drawn from the FLUX (an LHAPDF grid, index
+!       111222334 = mu- + mu+ summed, data/faser_muon_flux/lhapdf/), so the
+!       integrated "cross-section" POWHEG reports is already a NUMBER OF
+!       EVENTS at 250 fb^-1 on 50 cm of tungsten nucleons (the flux is
+!       normalised as n_T L_T dN/dx in pb^-1, Eq. 2.1 of the paper).
+!   ebeam1 7000d0   the paper's own card (DIS/testrun/powheg.input-save in
+!       LHCfitNikhef/DIS_with_LHC_muons); the muon energy is x * ebeam1.
+!       The grid's x is defined with sqrt(s_pp) = 13.6 TeV, i.e. E = 6800 x,
+!       so 7000 puts every muon 2.9% high -- kept, because the point is to
+!       reproduce THEIR number, and stated.
+!   Qmin 1.65d0     the paper's DIS cut Q > 1.65 GeV, applied at generation as
+!       in their card (the leptonic Q is untouched by QCD radiation).
+!   alphaem 1/137, s2w 1-(mW/mZ)^2 = 0.22265   THEIR electroweak point -- their
+!       card sets neither, so the code defaults apply.  The benchmark's Gmu
+!       point (1/132.119) would raise a photon-exchange rate by (137/132.119)^2
+!       = 7.5%, which is the single largest convention difference between the
+!       two setups.
+!   ymin 0 / ymax 1  no y window (theirs has none); the target is a PROTON
+!       (ih2 1), as in their card, not the (Z p + N n)/A nucleon of the text.
+! Everything else -- NNPDF4.0 NNLO, muF = muR = Q, NLO+PS with the same
+! POWHEG-RES binary -- is common to both.
+
+numevts 50000        ! events per seed; 8 seeds -> 400k total
+
+ih1 13               ! lepton beam: mu-
+ih2  1               ! hadron 2 (1 for protons)
+ebeam1 7000d0        ! x * ebeam1 = muon energy; the paper's card (see header)
+ebeam2 0.938d0       ! proton at rest (mass)
+fixed_lepton_beam 0  ! lepton drawn from the flux grid below
+LEPpdf 111222334     ! data/faser_muon_flux/lhapdf/muon_flux_FASERv_Run3_var2_sum, read by the paper's lepton_flux.f
+fixed_target 1       ! beam 2 at rest, mass = ebeam2
+
+bornktmin 0d0
+bornsuppfact 0d0     ! no Born suppression: flat event weights
+
+Qmin 1.65d0          ! the paper's DIS cut Q > 1.65 GeV, at generation as in their card
+Qmax 100000d0
+xmin 0d0
+xmax 1d0
+ymin 0d0
+ymax 1d0
+
+lhans1   331100      ! NNPDF40_nnlo_as_01180
+lhans2   331100
+alphas_from_pdf 1
+
+renscfact  1d0
+facscfact  1d0
+runningscales 1      ! muF = muR = Q
+
+channel_type 4       ! NC only
+vtype 3              ! photon + Z exchange
+smartsig 1
+nores 1
+olddij 0
+
+! EW parameters: Gmu-scheme values used as fixed couplings (matched to Sherpa)
+alphaem 0.0072992700729927d0   ! 1/137, THEIR default (see header)
+s2w 0.22265d0        ! 1 - (80.398/91.1876)^2, THEIR default
+
+muonmass 0.10566d0
+
+use-old-grid    1
+use-old-ubound  1
+
+ncall1 50000         ! calls per process for importance-sampling grid
+itmx1 1              ! (xgriditerations handled by parallel stage 1)
+ncall2 50000         ! calls per process for upper-bounding envelope
+itmx2 1
+foldcsi 5
+foldy   5
+foldphi 1
+nubound 50000
+iupperfsr 1
+
+fastbtlbound 1
+storemintupb 1
+ubexcess_correct 1
+storeinfo_rwgt 1
+hdamp 0
+bornzerodamp 1
+
+withnegweights 1
+flg_jacsing 1
+testplots 0
+
+xupbound 2d0
+iseed    12
+manyseeds 1
+doublefsr 0
+
+parallelstage 4
+xgriditeration 1

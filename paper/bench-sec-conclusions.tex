@@ -1,0 +1,60 @@
+\section{Summary and outlook}
+\label{sec:conclusions}
+
+In this work we have presented a systematic benchmark of state-of-the-art NLO event generators simulating neutrino- and muon-initiated deep-inelastic scattering at the LHC far-forward experiments, comparing three independent general-purpose generators, \sherpa, \herwig and \powheg, against the analytic structure-function calculations of \yadism and the dedicated neutrino generator \genie, under common settings and assuming FASER's tungsten target.
+%
+The three NLO generators reproduce the \yadism (ZM-VFNS) inclusive fiducial cross-sections, and each other, to within about $2\%$ for both currents and over an order of magnitude in beam energy, with residual differences in the differential distributions at the per-cent level, largely covered by the NLO MHOU band.
+
+Our analysis shows that the default \genie tune agrees with these NLO calculations at the inclusive level only through an accidental cancellation, and its differential distributions deviate from them by up to about $20\%$, well outside the MHOU band.
+%
+NNLO corrections, estimated with \yadism, are moderate but not negligible, up to $-7\%$ for muon DIS and around $-1.5\%$ for neutrino DIS at the inclusive level and up to $-12\%$ in some regions of phase space for differential distributions, which highlights the urgency of extending available DIS event generators to NNLO accuracy.
+
+Predictions from the various event generators considered differ instead for observables sensitive to the modelling of the hadronic final state. 
+%
+For instance, the mean charged-hadron multiplicity $\la N_{\rm ch}\ra $ spreads by up to about $25\%$ between generators, with \genie below and \sherpa and \herwig above the \powheg predictions in both currents.
+%
+Since the FASER$\nu$ vertex selection algorithm relies on a cut on $N_{\rm ch}$, the event generator choice may influence the selection efficiency. 
+%
+Furthermore, changing the shower and the hadronisation model together moves this multiplicity by about three times more than changing the shower alone, indicating that a shower variation within one generator underestimates the overall modelling uncertainty.
+%
+These differences are well outside the MHOU band of the NLO calculation, are the largest at the end of the fragmentation region, and motivate the need for a dedicated tune of non-perturbative QCD effects for TeV-energy lepton scattering using data from FASER and SND@LHC.
+
+Of particular interest for phenomenology is charm production, which provides sensitive constraints on proton and nuclear structure (such as on intrinsic charm and strangeness) and also is closely related to the reconstruction of tau-neutrino events.
+%
+On charm production, the NLO-matched generators agree to $3\%$ for neutrino DIS, and charm mass effects reach $1$--$4\%$ ($3$--$7\%$) for neutrino (muon) DIS against a sub-per-cent effect at the inclusive level; the massive-charm \powhegtwo calculation agrees with the analytic \yadism counterpart in the same mass scheme.
+%
+The default \genie tune produces a third fewer charm events than the NLO calculations based on the benchmark settings, because of its choice of PDF (GRV98), whose strange sea is about half that of NNPDF4.0 in the relevant $x$ region. 
+
+We also present representative applications to neutrino DIS at FASER.
+%
+We find that differences between generator predictions are large for some distributions, such as the charged-track multiplicity in FASER$\nu$, though data statistics are limited and do not exhibit a clear preference for a specific prediction. 
+%
+Concerning the dimuon rate at FASER, modern NNLO PDF sets differ in their predictions by up to 20\%, with the PDF of the default \genie tune (GRV98) suppressing it by $40\%$.
+%
+Finally, semi-inclusive charged-hadron production rates in SIDIS are large enough to enable the first measurements of light-hadron fragmentation functions in high-energy charged-current DIS. 
+
+In summary, our analysis highlights the excellent agreement of modern NLO DIS event generators at the inclusive level and for differential DIS distributions, once common settings are adopted; that NNLO corrections are potentially large; that hadronic final states can markedly differ between generators; and that a careful treatment of heavy-quark mass effects is crucial for the accurate modelling of charm production in muon and neutrino DIS. 
+%
+Furthermore, while non-DIS effects can be safely neglected at FASER, nuclear PDF corrections should be accounted for in general.
+
+Therefore, our work motivates progress in DIS event generators increasing perturbative accuracy (at least NNLO~\cite{Monni:2019whf,Hoche:2018gti}, eventually N$^3$LO~\cite{Vermaseren:2005qc,Moch:2004xu,Moch:2008fj,Currie:2018fgr}), shower logarithmic accuracy~\cite{vanBeekveld:2023chs}, and a dedicated treatment of non-perturbative effects including hadronisation, fragmentation, and nuclear effects related to rescattering and absorption in the tungsten target~\cite{Sjostrand:2020gyg}.
+%
+This theoretical progress must be aligned with experimental efforts, where measurements at FASER, such as the ones considered in this work, and at SND@LHC will constrain different aspects of the simulation pipeline on which the interpretation of the forward LHC neutrino programme rests.
+
+Furthermore, the results of this work are directly applicable to the modelling of neutrino scattering signals at neutrino telescopes such as KM3NeT~\cite{KM3Net:2016zxf,KM3NeT:2021ozk} and IceCube~\cite{IceCube:2016zyt,IceCube:2013low}, both for their oscillation programme~\cite{IceCube:2017lak,IceCube:2023ewe,KM3NeT:2021ozk} and for their study of astrophysical neutrinos at ultra-high energy (UHE)~\cite{IceCube:2014stg,KM3NeT:2025npi,IceCube:2017roe,IceCube:2018pgc}.
+%
+Our pipeline can be straightforwardly applied to neutrino DIS in these experiments, replacing the FASER fluxes with the atmospheric and astrophysical ones and then applying the corresponding selection requirements.
+%
+For instance, while precision QCD calculations are available for UHE neutrinos~\cite{Gandhi:1998ri,Connolly:2011vc,Cooper-Sarkar:2011jtt,Bertone:2018dse,Gauld:2019pgt,Garcia:2020jwr,Candido:2023utz,Xie:2023suk}, these are limited to inclusive cross-sections, and final-state distributions with fiducial cuts have received much less attention (see~\cite{FerrarioRavasio:2024kem} for an exception).
+
+\bigskip
+
+\rule{12cm}{0.4pt}\\
+
+The complete benchmark, including generator cards, analysis code and derived results, is publicly available from its {\tt GitHub}~\cite{benchmarkrepo} as summarised in App.~\ref{app:implementation}.
+
+\subsection*{Acknowledgements}
+
+We are grateful to Luca Buonocore for assistance with \powhegtwo, Daniel Reichelt to support with the \sherpa event generation, and Alfonso Garcia for help with \genie. 
+%
+We are grateful to many FASER colleagues, in particular Akitaka Ariga and Tomoko Ariga, for information concerning the data selection strategy.

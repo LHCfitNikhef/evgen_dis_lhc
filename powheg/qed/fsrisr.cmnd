@@ -1,0 +1,11 @@
+! QED arm: FSR + ISR -- photon radiation off both lepton legs.
+!
+! MUON ONLY.  Initial-state radiation off the lepton line needs a charged
+! incoming lepton; the charged current starts from a neutrino and has no
+! counterpart.  run_powheg_shower.sh refuses this arm for --current nu rather
+! than silently producing a duplicate of `fsr`.
+!
+! ISR changes the energy actually entering the hard scattering, so unlike FSR
+! it moves the true kinematics and not only the reconstructed ones.
+TimeShower:QEDshowerByL = on
+SpaceShower:QEDshowerByL = on

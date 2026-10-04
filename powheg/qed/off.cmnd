@@ -1,0 +1,9 @@
+! QED arm: OFF -- the published benchmark convention.
+!
+! Deliberately empty of settings.  The base card already switches all four
+! QED shower flags off, and restating them here would be a second copy of the
+! same rule; this file exists so that `--qed off` is spelled the same way as
+! the other arms and produces a directory that can be compared with them
+! under identical bookkeeping.
+!
+! This arm MUST reproduce the published sample event for event.

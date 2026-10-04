@@ -1,0 +1,66 @@
+# W-CUT STUDY (2026-09-11), SCAN POINT W > 8 GeV: the muon NC LO card
+# with the y window replaced by the W > 8 GeV boundary (0.0358 at the Q2 floor), to answer whether AHADIC survives the region the
+# benchmark's y > 0.2 cut was introduced to keep out.
+#
+# SHERPA HAS NO W SELECTOR -- its DIS selectors are Q2 and INEL only (checked
+# in libPhasicSelectors) -- so the W cut is imposed as the y it corresponds to
+# AT THE Q2 FLOOR:  W2 = M_p^2 + y (2 k.P) - Q2 > 9 GeV2  <=>
+# y > (9 - M_p^2 + Q2)/1876.544, which is 0.00646 at Q2 = 4.  A FIXED y floor
+# is therefore LOOSER than W > 3 everywhere above the floor, so this run
+# admits the low-W corner rather than excluding it -- which is what makes it a
+# test of AHADIC rather than a way of avoiding one.  The analysis applies the
+# exact W cut afterwards.
+#
+# Everything else is character-for-character the committed MuonDIS_LO card.
+# Neutral-current muon DIS, fixed target: 1 TeV mu- beam on proton at rest.
+# LO variant of ../MuonDIS_NLO (same beams/PDF/cuts/shower, LO matrix element
+# only) for the LO-vs-LO comparison against Pythia 8.
+# Generated in COLLIDER mode in the exact mu-p c.m. frame (sqrt(s)=43.33 GeV);
+# Sherpa's Fixed_Target beam mode has a bunch-blob frame bug (charge veto).
+# Lab-frame observables are computed as invariants in the analysis script.
+BEAMS: [13, 2212]
+BEAM_ENERGIES: [21.6438, 21.6641]
+PDF_SET: [None, NNPDF40_nnlo_as_01180]
+MPI_PDF_SET: NNPDF40_nnlo_as_01180
+
+ME_GENERATORS: [Comix]
+# benchmark convention (user-fixed 2026-08-13): MASSLESS charm everywhere.
+# c/b stay in the 93 container (ZM). The 2026-08-12 massive convention was
+# dropped: Sherpa's Massive:true removes the charm channel entirely, and an
+# explicit massive mu c -> mu c process treats the incoming c on-shell
+# massive (hard Q2 > ~10, x > 0.03 thresholds, Vegas mapping errors,
+# sigma 0.40 nb vs the ACOT-ish 1.4-2.8 nb) -- pathological in 3.0.5.
+#
+# REQUIRED for the massless convention to reach the EVENT SAMPLE (2026-08-13):
+# make the PARTON SHOWER masses follow the ME masses. Sherpa's default
+# RESPECT_MASSIVE_FLAG: false declares every flavour outside {d,u,s,g,gamma}
+# (plus the DIS lepton) massive IN THE SHOWER -- "Massive PS flavours for
+# Comix: (c,cb,b,bb,e-,e+,tau-,tau+)" -- regardless of the massless ME.
+# At these fixed-target energies the incoming charm carries only
+# E = x * 21.6438 GeV, which is below m_c = 1.42 for x < 0.066, i.e. for
+# almost the whole fiducial region (<x> = 0.021). The ME -> shower interface
+# (SHERPA/PerturbativePhysics/Perturbative_Interface.C) then cannot put it on
+# shell, its "Leg(0).pz * Leg(1).pz > 0" test trips, and the event is DISCARDED
+# and REGENERATED (Return_Value::New_Event). The result was a silent loss of
+# ~89% of the charm channel from the delivered events -- 8.9% "New events /
+# From Jet_Evolution:CSS", incoming-charm fraction 1.18% instead of 10.2%,
+# <N(D0)> = 0.0145 instead of 0.129, event-level XS 34692 pb instead of the
+# integrator's 38097.5 pb -- while sigma_fid, being pinned to the integrator,
+# showed nothing. ../MuonDIS_NLO already sets this flag, which is why the
+# MC@NLO sample never had the problem. The ME and the integration are
+# UNCHANGED: a fresh integration still gives 38097.5 +- 34.5845 pb.
+RESPECT_MASSIVE_FLAG: true
+SHOWER:
+  KIN_SCHEME: 1
+MI_HANDLER: None
+
+PROCESSES:
+- 13 93 -> 13 93:
+    Order: {QCD: 0, EW: 2}
+    Integration_Error: 0.02
+
+SELECTORS:
+# FASER-motivated DIS cut Q2 > 4 GeV2; y range avoids the low-W region where
+# cluster hadronization fails (see MuonDIS_NLO)
+- [Q2, 13, 13, 4, 1e12]
+- [INEL, 13, 13, 0.0358, 1.0]

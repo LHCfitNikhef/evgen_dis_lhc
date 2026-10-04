@@ -1,0 +1,99 @@
+! Fixed-target NC muon DIS benchmark: 1 TeV mu- on proton at rest.
+! *** MASSLESS-QUARK DIAGNOSTIC ***, matrix-element level.
+!
+! Identical to dis_mu1TeV_me.cmnd except that ALL FIVE quark masses are set
+! to (numerically) zero.  Purpose: the benchmark's stated convention is a
+! ZERO-MASS scheme (ZM-VFNS, massless charm and bottom, see CONVENTIONS.md rule 3), and
+! the YADISM reference is strictly massless, but the standard Pythia cards
+! leave Pythia's DEFAULT quark masses in place (m_c = 1.5, m_b = 4.8,
+! m_u = m_d = 0.33, m_s = 0.5 GeV).  Pythia's MEs are massless but its 2 -> 2
+! PHASE SPACE and final-state kinematics are not, so the comparison against
+! YADISM was between two different heavy-quark schemes.  This card removes
+! that mismatch and quantifies its size.
+!
+! DIAGNOSTIC ONLY -- this is NOT a proposed benchmark sample: with massless
+! quarks the hadronisation and heavy-flavour decays would be meaningless, so
+! the card is only ever to be run at ME level (shower + hadronisation off,
+! as below), where nothing downstream of the hard process uses the masses.
+
+Main:numberOfEvents = 1000
+
+! beams: mu- (1 TeV) on proton at rest (eB below mass -> at rest)
+Beams:frameType = 2
+Beams:idA = 13
+Beams:idB = 2212
+Beams:eA = 1000.
+Beams:eB = 0.
+
+! hard process: NC DIS via t-channel gamma*/Z
+WeakBosonExchange:ff2ff(t:gmZ) = on
+PhaseSpace:Q2Min = 4.
+! open mHat down to the kinematic floor sqrt(Q2min/ymax) ~ 2.1 GeV
+PhaseSpace:mHatMin = 1.
+! the default 1 GeV imposes pTHat^2 = Q2(1-y) > 1, cutting the high-y
+! low-Q2 fiducial corner (at Q2=4 it removes y > 0.75); 0.5 is the minimum
+! allowed and leaves the whole region Q2 > 4, y < 0.9 uncut
+PhaseSpace:pTHatMinDiverge = 0.5
+
+! *** the point of this card ***: zero quark masses, so that the outgoing
+! parton is massless in the phase space exactly as it is in the ME and in
+! the ZM-VFNS structure functions of the YADISM reference.
+1:m0 = 0.
+2:m0 = 0.
+3:m0 = 0.
+4:m0 = 0.
+5:m0 = 0.
+
+! proton PDF: NNPDF4.0 NNLO; bare muon beam (no lepton PDF)
+PDF:pSet = LHAPDF6:NNPDF40_nnlo_as_01180
+PDF:lepton = off
+
+! benchmark convention: muF = muR = Q (-tHat). The default (smaller outgoing
+! mT^2 ~ Q^2(1-y)) undershoots the LO sigma by ~15% (up to 40% at high y)
+SigmaProcess:factorScale2 = 6
+SigmaProcess:renormScale2 = 6
+
+! DIS-appropriate shower recoil (Cabouat-Sjostrand); the default global
+! recoil distorts the scattered-muon kinematics. pTmaxMatch = 2 (emissions
+! up to the kinematic limit) is required alongside it, as in the official
+! DIS example (examples/main36.cc)
+SpaceShower:dipoleRecoil = on
+SpaceShower:pTmaxMatch = 2
+
+! EW parameters matched to Sherpa's Gmu scheme: fixed alpha_em = 1/132.119.
+! alphaEMorder = -1 fixes alpha_em at StandardModel:alphaEMmZ; order 0 would
+! fix it at the THOMSON value 1/137.036 and silently ignore alphaEMmZ
+! (found 2026-08-13: it cost -7% on sigma across all channels)
+SigmaProcess:alphaEMorder = -1
+StandardModel:alphaEMmZ = 0.0075689
+StandardModel:sin2thetaW = 0.22291
+StandardModel:sin2thetaWbar = 0.22291
+
+! no QED radiation in initial- or final-state showers
+SpaceShower:QEDshowerByL = off
+SpaceShower:QEDshowerByQ = off
+TimeShower:QEDshowerByL = off
+TimeShower:QEDshowerByQ = off
+
+! no MPI (matches Sherpa MI_HANDLER: None)
+PartonLevel:MPI = off
+
+! ME level: no ISR/FSR, no hadronisation, no primordial kT (beam remnants
+! kept so the event record stays valid for the HepMC converter; with
+! primordial kT off they do not touch the hard-system kinematics).
+! NOTE: PartonLevel:all = off leaves the main event record empty -> empty
+! HepMC output; do not use it here.
+PartonLevel:ISR = off
+PartonLevel:FSR = off
+HadronLevel:all = off
+BeamRemnants:primordialKT = off
+
+! stable-particle convention: ctau > 10 mm kept stable (matches Sherpa)
+ParticleDecays:limitTau0 = on
+ParticleDecays:tau0Max = 10.
+
+! printout
+Next:numberCount = 20000
+Next:numberShowEvent = 0
+Next:numberShowProcess = 1
+Next:numberShowInfo = 1

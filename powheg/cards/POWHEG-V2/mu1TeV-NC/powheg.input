@@ -1,0 +1,119 @@
+! POWHEG-BOX-V2 (nu-DIS code), MUON NEUTRAL CURRENT: 1 TeV mu- on a proton
+! at rest.  The cross-check partner of POWHEG-RES: same process, same
+! conventions, a DIFFERENT NLO framework and shower matching.
+!
+! Conventions follow the evgen-benchmark setup (NNPDF4.0 NNLO, muF = muR = Q,
+! Gmu EW, massless charm).
+!
+! WHY THE LEPTON IS SET BY ITS PDG CODE AND NOTHING ELSE.
+! init_processes.f decides the beam from the PARITY of ih1:
+!     mod(ih1,2) == 0  ->  neutrino DIS      (12, 14, 16)
+!     otherwise        ->  charged-lepton DIS, and in_lep = -abs(ih1)
+! so ih1 13 gives a mu-, which is what this benchmark scatters.
+!
+! !!! qmass MUST BE ZERO HERE, AND THE CODE ENFORCES IT !!!
+! init_processes.f refuses neutral current with a massive final-state quark:
+!     "The program cannot handle neutral current with massive quark in the
+!      final state"
+! That is not a limitation for this run -- the benchmark convention is
+! massless (ZM) charm anyway -- but it does mean POWHEG-V2's massive-charm
+! capability, the feature that motivates using it for the CHARGED current,
+! is unavailable in the neutral one.  A V2 NC sample is a matching and
+! shower cross-check, not a charm-mass study.
+!
+! VALIDATED against POWHEG-RES on the same wide generation region:
+!     POWHEG-V2   220209 +- 3379 pb   (short run)
+!     POWHEG-RES  216553 +-  284 pb
+! 1.7% apart, about 1.1 sigma on the short run's statistics.
+!
+! STATISTICS RAISED 2026-08-27 -- the decisive test of TODO item 5b.
+! The first production (numevts 50000, ncall2 100000 x itmx2 2) put this row
+! 3.7% above YADISM where POWHEG-RES and Herwig sit inside 1%, but with 1.4%
+! MC and 1.4% integrator error it was only ~2 sigma and could not be called.
+! Neither known effect explains it: the missing EW card handle (Born.f derives
+! alpha_em = 1/132.51, s2w = 0.22224 against the convention's 1/132.119 and
+! 0.22291) is -0.59% on an NC rate, so correcting it moves the row FURTHER
+! out, to +4.3%; and the 2.6% shower dropout is weight-neutral and cancels in
+! the ratio estimator.  So this is 8x on both halves at once:
+!     numevts  50000 -> 400000     MC          1.4% -> ~0.5%
+!     ncall2 x itmx2   2e5 -> 1.6e6    integrator  1.4% -> ~0.5%
+! nubound goes 50000 -> 200000 with the event count (the first run logged 886
+! upper-bound failures in the inclusive cross section), and iseed 12 -> 137 so
+! the new integral is statistically INDEPENDENT of the old one rather than a
+! refinement of it.  Folding is deliberately left at 1: the sample is 14.9%
+! negative weights, but raising foldcsi/foldy/foldphi would change the
+! character of the sample as well as its size, and brute-force events are
+! cheap here (the first run showered 48704 in about a minute).
+
+numevts 400000
+ih1   13           ! mu- : odd PDG code -> charged-lepton DIS, taken negative
+ih2   1            ! proton
+ndns1 131          ! (unused with lhapdf)
+ndns2 131
+lhans1 331100      ! NNPDF40_nnlo_as_01180
+lhans2 331100
+ebeam1 21.6646920032d0   ! sqrt(s)/2, s = mp^2 + 2*1000*mp  (POWHEG-V2 wants a symmetric pair)
+ebeam2 21.6646920032d0
+
+neutral_current 1  ! NC; exactly one of neutral_current / charged_current
+qmass  0d0         ! massless final-state quark -- REQUIRED for NC (see above)
+numflav 5          ! active flavours in the proton (massless c and b)
+
+! !!! A GENERATION CUT IS MANDATORY IN NC, AND FOR A DIFFERENT REASON !!!
+! Neutral-current DIS has a photon pole: dsigma ~ 1/Q^4 as Q^2 -> 0.  The
+! charged current has no such thing, because the W mass regulates it.
+! ../nu1TeV-prod does carry q2cut 2.25d0, but only to keep the generation cut
+! BELOW the analysis cut so radiation can migrate into the fiducial region --
+! it is a bias question there, and a convergence question here.  Born_phsp.f
+! defaults q2cut to 5d-2 GeV^2, and left at that default this run integrates
+! the pole and returns 15 microbarn against the ~38 nb it should give, with no
+! error message.
+! 2.25 GeV^2 satisfies both requirements at once: it matches
+! ../../POWHEG-RES/mu1TeV-wide (Qmin 1.5), so it sits safely below the
+! fiducial cut in both directions, and it is far above the pole.
+q2cut 2.25d0
+
+facscfact 1
+renscfact 1
+                   ! fixedscale absent => running mu = max(sqrt(Q^2+mq^2),1.5)
+
+bornktmin 0d0
+bornsuppfact 0d0
+
+ncall1 100000
+itmx1  3
+ncall2 400000
+itmx2  4
+foldcsi   1
+foldy     1
+foldphi   1
+
+iupperfsr 1        ! necessary for the massless case -- and qmass is 0 here
+
+! !!! THE EVENT-GENERATION BLOCK, ADDED 2026-08-26 AFTER THE FIRST PRODUCTION
+! !!! ATTEMPT DIED ON IT.
+! The card as first written was validated against POWHEG-RES on the INTEGRAL
+! alone, and pwhg_main gets all the way through the integration -- grids,
+! btilde, remnants, a printed cross section -- before stopping at
+!     powheginput: keyword nubound              not found
+! So a card can reproduce a cross-section to 0.4% and still be incapable of
+! writing a single event.  The values below are ../nu1TeV-prod's, which is the
+! same code with the same folding and the same massless final state.
+nubound 200000
+iymax 1
+ixmax 1
+xupbound 2
+iseed 137
+
+storeinfo_rwgt 1   ! keep reweighting info (powheg/reweight/)
+
+! !!! BOTH ARE 0 ON PURPOSE, AND TURNING THEM BACK ON SILENTLY UNDOES THE
+! !!! WHOLE POINT OF THE HIGH-STATISTICS RUN.
+! They were 1 for the first production, which is correct when you only want
+! more EVENTS: the grids are expensive and the integral is already known.  But
+! a cached pwggrid.dat carries the cross-section AND ITS ERROR with it, so a
+! re-run with a bigger ncall2 reads the old 1.4% straight back in and reports
+! it as if it had just been measured.  The integrator error is half of what is
+! being fought here (see TODO item 5b), so the grids have to be rebuilt.
+use-old-grid   0
+use-old-ubound 0

@@ -1,0 +1,17 @@
+<initrwgt>
+<weightgroup name='scale_variation' combine='envelope'>
+<weight id='1001'> renscfact=1d0 facscfact=1d0 </weight>
+<weight id='1002'> renscfact=2d0 facscfact=1d0 </weight>
+<weight id='1003'> renscfact=0.5d0 facscfact=1d0 </weight>
+<weight id='1004'> renscfact=1d0 facscfact=2d0 </weight>
+<weight id='1005'> renscfact=1d0 facscfact=0.5d0 </weight>
+<weight id='1006'> renscfact=2d0 facscfact=2d0 </weight>
+<weight id='1007'> renscfact=0.5d0 facscfact=0.5d0 </weight>
+</weightgroup>
+<weightgroup name='PDF_sets' combine='none'>
+<weight id='2001'> lhapdf=331100 </weight>
+<weight id='2002'> lhapdf=14000 </weight>
+<weight id='2003'> lhapdf=27400 </weight>
+<weight id='2004'> lhapdf=65600 </weight>
+</weightgroup>
+</initrwgt>

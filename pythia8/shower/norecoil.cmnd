@@ -1,0 +1,13 @@
+! DIAGNOSTIC ARM, not a physics result.
+!
+! The simple shower with SpaceShower:dipoleRecoil switched OFF, so the ISR
+! recoil is taken by the SCATTERED LEPTON instead of by the final-state
+! parton.  It exists to answer one question: when PartonShowers:model is
+! changed to Vincia or Dire, how much of the shift in the DIS kinematics is
+! the shower ALGORITHM and how much is simply that the base card's
+! `SpaceShower:dipoleRecoil = on` is a SimpleShower setting that the other two
+! models never read?
+!
+! If this arm reproduces the Vincia/Dire shift in <Q2>, the shift is a recoil
+! artefact and must not be reported as a shower-model uncertainty.
+SpaceShower:dipoleRecoil = off

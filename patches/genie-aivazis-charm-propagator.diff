@@ -1,0 +1,43 @@
+# GENIE (3.06.02, master 6a91779 and upstream master as of 2026-10-01; FASER's
+# fork faser-R-3_04_00 has the same line): the charm DIS cross-sections MULTIPLY
+# by the W propagator factor (1+Q2/MW2) instead of dividing, so DIS-CC-CHARM
+# (AivazisCharmPXSecLO, used by G18_02a and every G18/G21/AR23 tune) is too
+# large by (1+Q2/MW2)^4: +2% at Q2 = 30, +6% at 100, +78% at 1000 GeV2.
+# QPMDISPXSec divides correctly (g2 = GF2*MW4/(Q2+MW2)^2), and SUBTRACTS this
+# charm piece from its inclusive DIS, so the bug moves rate from DIS-CC to
+# DIS-CC-CHARM and leaves their sum unchanged wherever charm < inclusive.
+# SlowRsclCharmDISPXSecLO (used by no tune) carries the same line; fixed too.
+# HEDIS (GHE19_*) is unaffected: HEDISPXSec has its own correct propagator.
+# Apply from the repository root (variables from config.sh):
+#   patch -p1 -d $GENIE_DIR < patches/genie-aivazis-charm-propagator.diff
+# then rebuild:  make -C $GENIE_DIR/src/Physics/Charm/XSection
+diff --git a/src/Physics/Charm/XSection/AivazisCharmPXSecLO.cxx b/src/Physics/Charm/XSection/AivazisCharmPXSecLO.cxx
+index 2700d4cff..0c1452c80 100644
+--- a/src/Physics/Charm/XSection/AivazisCharmPXSecLO.cxx
++++ b/src/Physics/Charm/XSection/AivazisCharmPXSecLO.cxx
+@@ -125,7 +125,9 @@ double AivazisCharmPXSecLO::XSec(
+   if(isnub) dv=0;
+ 
+   //----- calculate the cross section
+-  double Gw2    = TMath::Power((kGF/kSqrt2)*(1+Q2/kMw2), 2);
++  // W propagator: DIVIDE by (1+Q2/MW2), as QPMDISPXSec does (g2 = GF2*MW4/(Q2+MW2)^2).
++  // Upstream multiplied, inflating charm by (1+Q2/MW2)^4 (evgen-benchmark patch).
++  double Gw2    = TMath::Power((kGF/kSqrt2)/(1+Q2/kMw2), 2);
+   double f1     = TMath::Power( (1+coshpsi)/2, 2);
+   double f2     = 0.25 * (fMc2/Q2) * sinh2psi;
+   double xsec_0 = 2 * Gw2 * (y*Q2/kPi) * (f1+f2);
+diff --git a/src/Physics/Charm/XSection/SlowRsclCharmDISPXSecLO.cxx b/src/Physics/Charm/XSection/SlowRsclCharmDISPXSecLO.cxx
+index 17749f5d3..13962093d 100644
+--- a/src/Physics/Charm/XSection/SlowRsclCharmDISPXSecLO.cxx
++++ b/src/Physics/Charm/XSection/SlowRsclCharmDISPXSecLO.cxx
+@@ -118,7 +118,9 @@ double SlowRsclCharmDISPXSecLO::XSec(
+   if(isnub) dv=0;
+ 
+   //----- calculate cross section
+-  double Gw2    = TMath::Power( (kGF/kSqrt2)*(1+Q2/kMw2), 2);
++  // W propagator: DIVIDE by (1+Q2/MW2), as QPMDISPXSec does (g2 = GF2*MW4/(Q2+MW2)^2).
++  // Upstream multiplied, inflating charm by (1+Q2/MW2)^4 (evgen-benchmark patch).
++  double Gw2    = TMath::Power((kGF/kSqrt2)/(1+Q2/kMw2), 2);
+   double xsec_0 = Gw2 * 2*Q2/(y*kPi) * (y + xi*(1-y)/x);
+   double xsec_d = xsec_0 * fVcd2 * (dv+ds);
+   double xsec_s = xsec_0 * fVcs2 * s;

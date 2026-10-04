@@ -1,0 +1,13 @@
+SetIndex: 340500
+Format: lhagrid1
+NumMembers: 1
+Particle: 2212
+Flavors: [-5, -4, -3, -2, -1, 21,  1, 2, 3, 4, 5]
+OrderQCD: 1
+FlavorScheme: variable
+XMin:   0.100000E-08
+XMax:   0.100000E+01
+QMin:   0.894427E+00
+QMax:   0.141421E+04
+AlphaS_Lambda4:   0.200000E+00
+AlphaS_Lambda5:   0.131000E+00

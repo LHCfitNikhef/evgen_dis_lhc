@@ -1,0 +1,1436 @@
+deleted,group,file,events,GB
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_2TeV_1/events.hepmc,24930,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_2TeV_2/events.hepmc,24903,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_2TeV_3/events.hepmc,24910,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_2TeV_4/events.hepmc,24905,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_2TeV_5/events.hepmc,24905,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_2TeV_6/events.hepmc,24910,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_2TeV_7/events.hepmc,24918,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_2TeV_8/events.hepmc,24926,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_2TeV_9/events.hepmc,24905,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_400GeV_1/events.hepmc,24859,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_400GeV_2/events.hepmc,24848,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_400GeV_3/events.hepmc,24871,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_400GeV_4/events.hepmc,24869,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_400GeV_5/events.hepmc,24857,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_400GeV_6/events.hepmc,24856,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_400GeV_7/events.hepmc,24865,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_400GeV_8/events.hepmc,24866,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_400GeV_9/events.hepmc,24855,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_4TeV_1/events.hepmc,24930,0.15
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_4TeV_10/events.hepmc,24929,0.15
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_4TeV_2/events.hepmc,24922,0.15
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_4TeV_3/events.hepmc,24931,0.15
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_4TeV_5/events.hepmc,24903,0.15
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_4TeV_6/events.hepmc,24942,0.15
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_4TeV_7/events.hepmc,24926,0.15
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_4TeV_8/events.hepmc,24926,0.15
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_4TeV_9/events.hepmc,24936,0.15
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_700GeV_1/events.hepmc,24893,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_700GeV_2/events.hepmc,24875,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_700GeV_3/events.hepmc,24869,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_700GeV_4/events.hepmc,24869,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_700GeV_5/events.hepmc,24881,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_700GeV_6/events.hepmc,24892,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_700GeV_7/events.hepmc,24899,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_700GeV_8/events.hepmc,24891,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_n_job_700GeV_9/events.hepmc,24871,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_2TeV_1/events.hepmc,24918,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_2TeV_2/events.hepmc,24916,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_2TeV_3/events.hepmc,24930,0.13
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_2TeV_4/events.hepmc,24943,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_2TeV_5/events.hepmc,24930,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_2TeV_6/events.hepmc,24919,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_2TeV_7/events.hepmc,24934,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_2TeV_8/events.hepmc,24921,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_2TeV_9/events.hepmc,24918,0.13
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_400GeV_1/events.hepmc,24879,0.11
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_400GeV_2/events.hepmc,24886,0.11
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_400GeV_3/events.hepmc,24886,0.11
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_400GeV_4/events.hepmc,24868,0.11
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_400GeV_5/events.hepmc,24890,0.11
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_400GeV_6/events.hepmc,24873,0.11
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_400GeV_7/events.hepmc,24894,0.11
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_400GeV_8/events.hepmc,24873,0.11
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_400GeV_9/events.hepmc,24884,0.11
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_4TeV_1/events.hepmc,24952,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_4TeV_2/events.hepmc,24936,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_4TeV_3/events.hepmc,24932,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_4TeV_4/events.hepmc,24924,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_4TeV_5/events.hepmc,24934,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_4TeV_6/events.hepmc,24936,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_4TeV_7/events.hepmc,24936,0.15
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_4TeV_8/events.hepmc,24928,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_4TeV_9/events.hepmc,24942,0.14
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_700GeV_1/events.hepmc,24890,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_700GeV_2/events.hepmc,24910,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_700GeV_3/events.hepmc,24898,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_700GeV_4/events.hepmc,24904,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_700GeV_5/events.hepmc,24918,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_700GeV_6/events.hepmc,24904,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_700GeV_7/events.hepmc,24873,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_700GeV_8/events.hepmc,24888,0.12
+2026-09-14,"POWHEG-RES + Pythia 8, muon NC",powheg/v2mu_p_job_700GeV_9/events.hepmc,24884,0.12
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_n_job_2TeV_1/events.hepmc,104986,0.81
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_n_job_2TeV_2/events.hepmc,104984,0.81
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_n_job_400GeV_1/events.hepmc,104940,0.59
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_n_job_400GeV_2/events.hepmc,104928,0.58
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_n_job_4TeV_1/events.hepmc,104987,0.93
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_n_job_4TeV_2/events.hepmc,104990,0.93
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_n_job_700GeV_1/events.hepmc,104969,0.65
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_n_job_700GeV_2/events.hepmc,104965,0.66
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_p_job_2TeV_1/events.hepmc,104972,0.81
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_p_job_2TeV_2/events.hepmc,104975,0.81
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_p_job_400GeV_1/events.hepmc,104905,0.59
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_p_job_400GeV_2/events.hepmc,104898,0.59
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_p_job_4TeV_1/events.hepmc,104985,0.92
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_p_job_4TeV_2/events.hepmc,104987,0.92
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_p_job_700GeV_1/events.hepmc,104917,0.66
+2026-09-14,"POWHEG-V2 + Pythia 8, neutrino CC",powheg/v2nu_p_job_700GeV_2/events.hepmc,104951,0.66
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_n_job_2TeV_1/events.hepmc,104987,0.84
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_n_job_2TeV_2/events.hepmc,104984,0.84
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_n_job_400GeV_1/events.hepmc,104906,0.63
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_n_job_400GeV_2/events.hepmc,104904,0.63
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_n_job_4TeV_1/events.hepmc,104997,0.94
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_n_job_4TeV_2/events.hepmc,104993,0.94
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_n_job_700GeV_1/events.hepmc,104956,0.70
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_n_job_700GeV_2/events.hepmc,104953,0.70
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_p_job_2TeV_1/events.hepmc,104987,0.84
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_p_job_2TeV_2/events.hepmc,104986,0.83
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_p_job_400GeV_1/events.hepmc,104881,0.63
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_p_job_400GeV_2/events.hepmc,104889,0.63
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_p_job_4TeV_1/events.hepmc,104994,0.94
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_p_job_4TeV_2/events.hepmc,104991,0.94
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_p_job_700GeV_1/events.hepmc,104955,0.70
+2026-09-14,"POWHEG-V2mc + Pythia 8, massive charm",powheg/v2numc_p_job_700GeV_2/events.hepmc,104956,0.70
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_2TeV_1/events.hepmc,,0.20
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_2TeV_2/events.hepmc,,0.20
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_2TeV_3/events.hepmc,,0.20
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_2TeV_4/events.hepmc,,0.20
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_400GeV_1/events.hepmc,,0.16
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_400GeV_2/events.hepmc,,0.16
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_400GeV_3/events.hepmc,,0.16
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_400GeV_4/events.hepmc,,0.16
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_4TeV_1/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_4TeV_2/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_4TeV_3/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_4TeV_4/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_700GeV_1/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_700GeV_2/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_700GeV_3/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_n_job_700GeV_4/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_2TeV_1/events.hepmc,,0.19
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_2TeV_2/events.hepmc,,0.19
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_2TeV_3/events.hepmc,,0.19
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_2TeV_4/events.hepmc,,0.19
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_400GeV_1/events.hepmc,,0.15
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_400GeV_2/events.hepmc,,0.15
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_400GeV_3/events.hepmc,,0.15
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_400GeV_4/events.hepmc,,0.15
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_4TeV_1/events.hepmc,,0.21
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_4TeV_2/events.hepmc,,0.21
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_4TeV_3/events.hepmc,,0.21
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_4TeV_4/events.hepmc,,0.21
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_700GeV_1/events.hepmc,,0.16
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_700GeV_2/events.hepmc,,0.16
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_700GeV_3/events.hepmc,,0.16
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwg_p_job_700GeV_4/events.hepmc,,0.16
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwgneg_n_job_2TeV_1/events.hepmc,,0.27
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwgneg_n_job_400GeV_1/events.hepmc,,0.23
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwgneg_n_job_4TeV_1/events.hepmc,,0.28
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwgneg_n_job_700GeV_1/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwgneg_p_job_2TeV_1/events.hepmc,,0.26
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwgneg_p_job_400GeV_1/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwgneg_p_job_4TeV_1/events.hepmc,,0.28
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2mupwgneg_p_job_700GeV_1/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_2TeV_1/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_2TeV_2/events.hepmc,,0.21
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_2TeV_3/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_2TeV_4/events.hepmc,,0.21
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_400GeV_1/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_400GeV_2/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_400GeV_3/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_400GeV_4/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_4TeV_1/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_4TeV_2/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_4TeV_3/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_4TeV_4/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_700GeV_1/events.hepmc,,0.18
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_700GeV_2/events.hepmc,,0.18
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_700GeV_3/events.hepmc,,0.18
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_n_job_700GeV_4/events.hepmc,,0.18
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_2TeV_1/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_2TeV_2/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_2TeV_3/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_2TeV_4/events.hepmc,,0.22
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_400GeV_1/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_400GeV_2/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_400GeV_3/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_400GeV_4/events.hepmc,,0.17
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_4TeV_1/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_4TeV_2/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_4TeV_3/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_4TeV_4/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_700GeV_1/events.hepmc,,0.18
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_700GeV_2/events.hepmc,,0.18
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_700GeV_3/events.hepmc,,0.18
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwg_p_job_700GeV_4/events.hepmc,,0.18
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwgneg_n_job_2TeV_1/events.hepmc,,0.24
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwgneg_n_job_400GeV_1/events.hepmc,,0.19
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwgneg_n_job_4TeV_1/events.hepmc,,0.26
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwgneg_n_job_700GeV_1/events.hepmc,,0.21
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwgneg_p_job_2TeV_1/events.hepmc,,0.23
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwgneg_p_job_400GeV_1/events.hepmc,,0.19
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwgneg_p_job_4TeV_1/events.hepmc,,0.26
+2026-09-14,"Herwig 7 POWHEG NLO, both currents, pos and neg",herwig7/v2nupwgneg_p_job_700GeV_1/events.hepmc,,0.20
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_n_2TeV/job_1/evtfull,25000,0.18
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_n_2TeV/job_2/evtfull,25000,0.18
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_n_400GeV/job_1/evtfull,25000,0.16
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_n_400GeV/job_2/evtfull,25000,0.16
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_n_4TeV/job_1/evtfull,25000,0.20
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_n_4TeV/job_2/evtfull,25000,0.20
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_n_700GeV/job_1/evtfull,25000,0.16
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_n_700GeV/job_2/evtfull,25000,0.16
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_p_2TeV/job_1/evtfull,25000,0.18
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_p_2TeV/job_2/evtfull,25000,0.18
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_p_400GeV/job_1/evtfull,25000,0.15
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_p_400GeV/job_2/evtfull,25000,0.15
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_p_4TeV/job_1/evtfull,25000,0.19
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_p_4TeV/job_2/evtfull,25000,0.19
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_p_700GeV/job_1/evtfull,25000,0.16
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_MuonDIS_NLO_p_700GeV/job_2/evtfull,25000,0.16
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_n_2TeV/job_1/evtfull,25000,0.20
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_n_2TeV/job_2/evtfull,25000,0.20
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_n_400GeV/job_1/evtfull,25000,0.16
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_n_400GeV/job_2/evtfull,25000,0.16
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_n_4TeV/job_1/evtfull,25000,0.22
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_n_4TeV/job_2/evtfull,25000,0.22
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_n_700GeV/job_1/evtfull,25000,0.17
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_n_700GeV/job_2/evtfull,25000,0.17
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_p_2TeV/job_1/evtfull,25000,0.21
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_p_2TeV/job_2/evtfull,25000,0.21
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_p_400GeV/job_1/evtfull,25000,0.16
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_p_400GeV/job_2/evtfull,25000,0.16
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_p_4TeV/job_1/evtfull,25000,0.23
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_p_4TeV/job_2/evtfull,25000,0.23
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_p_700GeV/job_1/evtfull,25000,0.18
+2026-09-14,"Sherpa MC@NLO, both currents",$SHERPA_RUNS/V2_NuDIS_NLO_p_700GeV/job_2/evtfull,25000,0.18
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_n_job_400GeV_1/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_n_job_400GeV_2/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_n_job_400GeV_3/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_n_job_400GeV_4/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_n_job_700GeV_1/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_n_job_700GeV_2/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_n_job_700GeV_3/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_n_job_700GeV_4/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_p_job_400GeV_1/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_p_job_400GeV_2/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_p_job_400GeV_3/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_p_job_400GeV_4/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_p_job_700GeV_1/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_p_job_700GeV_2/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_p_job_700GeV_3/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_grv_p_job_700GeV_4/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_n_job_400GeV_1/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_n_job_400GeV_2/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_n_job_400GeV_3/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_n_job_400GeV_4/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_n_job_700GeV_1/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_n_job_700GeV_2/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_n_job_700GeV_3/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_n_job_700GeV_4/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_p_job_400GeV_1/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_p_job_400GeV_2/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_p_job_400GeV_3/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_p_job_400GeV_4/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_p_job_700GeV_1/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_p_job_700GeV_2/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_p_job_700GeV_3/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_mu_nnpdf_p_job_700GeV_4/events.hepmc,25000,0.05
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_n_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_n_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_n_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_n_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_n_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_n_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_n_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_n_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_p_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_p_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_p_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_p_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_p_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_p_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_p_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_grv_p_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_2TeV_1/events.hepmc,25000,0.07
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_2TeV_2/events.hepmc,25000,0.07
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_2TeV_3/events.hepmc,25000,0.07
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_2TeV_4/events.hepmc,25000,0.07
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_4TeV_1/events.hepmc,25000,0.08
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_4TeV_2/events.hepmc,25000,0.08
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_4TeV_3/events.hepmc,25000,0.08
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_4TeV_4/events.hepmc,25000,0.08
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_n_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_2TeV_1/events.hepmc,25000,0.07
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_2TeV_2/events.hepmc,25000,0.07
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_2TeV_3/events.hepmc,25000,0.07
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_2TeV_4/events.hepmc,25000,0.07
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_4TeV_1/events.hepmc,25000,0.08
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_4TeV_2/events.hepmc,25000,0.08
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_4TeV_3/events.hepmc,25000,0.08
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_4TeV_4/events.hepmc,25000,0.08
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_hedis_p_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_n_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_n_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_n_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_n_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_n_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_n_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_n_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_n_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_p_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_p_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_p_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_p_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_p_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_p_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_p_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-14,GENIE configurations,genie/v2g_nu_nnpdf_p_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_1/events.hepmc,24860,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_10/events.hepmc,24883,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_2/events.hepmc,24868,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_3/events.hepmc,24872,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_4/events.hepmc,24854,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_5/events.hepmc,24886,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_7/events.hepmc,24864,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_8/events.hepmc,24852,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_9/events.hepmc,24884,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_300GeV_1/events.hepmc,20000,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_300GeV_2/events.hepmc,20000,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_300GeV_3/events.hepmc,20000,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_300GeV_4/events.hepmc,20000,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_p_job_300GeV_1/events.hepmc,20000,0.21
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_300GeV/job_1/evtfull,,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_300GeV/job_2/evtfull,,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_1/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_2/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_3/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_4/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_5/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_6/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_7/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_8/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_1/events.hepmc,24845,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_10/events.hepmc,24854,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_2/events.hepmc,24858,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_4/events.hepmc,24855,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_5/events.hepmc,24836,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_6/events.hepmc,24839,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_7/events.hepmc,24835,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_8/events.hepmc,24830,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_9/events.hepmc,24834,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_300GeV_1/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_300GeV_2/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_300GeV_3/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_300GeV_4/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_n_job_300GeV_1/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_300GeV/job_1/evtfull,,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_300GeV/job_2/evtfull,,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_1/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_2/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_3/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_4/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_5/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_6/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_7/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_8/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_1/events.hepmc,24879,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_2/events.hepmc,24886,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_3/events.hepmc,24886,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_4/events.hepmc,24868,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_5/events.hepmc,24890,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_6/events.hepmc,24873,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_7/events.hepmc,24894,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_8/events.hepmc,24873,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_9/events.hepmc,24884,0.11
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_400GeV_1/events.hepmc,20000,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_400GeV_2/events.hepmc,20000,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_400GeV_3/events.hepmc,20000,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_400GeV_4/events.hepmc,20000,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_p_job_400GeV_1/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_400GeV/job_1/evtfull,,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_400GeV/job_2/evtfull,,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_1/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_2/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_3/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_4/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_5/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_6/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_7/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_8/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_1/events.hepmc,24859,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_2/events.hepmc,24848,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_3/events.hepmc,24871,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_4/events.hepmc,24869,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_5/events.hepmc,24857,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_6/events.hepmc,24856,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_7/events.hepmc,24865,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_8/events.hepmc,24866,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_9/events.hepmc,24855,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_400GeV_1/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_400GeV_2/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_400GeV_3/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_400GeV_4/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_n_job_400GeV_1/events.hepmc,20000,0.23
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_400GeV/job_1/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_400GeV/job_2/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_1/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_2/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_3/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_4/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_5/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_6/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_7/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_8/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_1/events.hepmc,24890,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_2/events.hepmc,24910,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_3/events.hepmc,24898,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_4/events.hepmc,24904,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_5/events.hepmc,24918,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_6/events.hepmc,24904,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_7/events.hepmc,24873,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_8/events.hepmc,24888,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_9/events.hepmc,24884,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_700GeV_1/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_700GeV_2/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_700GeV_3/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_700GeV_4/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_p_job_700GeV_1/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_700GeV/job_1/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_700GeV/job_2/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_1/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_2/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_3/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_4/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_5/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_6/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_7/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_8/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_1/events.hepmc,24893,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_2/events.hepmc,24875,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_3/events.hepmc,24869,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_4/events.hepmc,24869,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_5/events.hepmc,24881,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_6/events.hepmc,24892,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_7/events.hepmc,24899,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_8/events.hepmc,24891,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_9/events.hepmc,24871,0.12
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_700GeV_1/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_700GeV_2/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_700GeV_3/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_700GeV_4/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_n_job_700GeV_1/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_700GeV/job_1/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_700GeV/job_2/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_1/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_2/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_3/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_4/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_5/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_6/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_7/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_8/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_1/events.hepmc,24918,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_2/events.hepmc,24916,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_3/events.hepmc,24930,0.13
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_4/events.hepmc,24943,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_5/events.hepmc,24930,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_6/events.hepmc,24919,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_7/events.hepmc,24934,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_8/events.hepmc,24921,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_9/events.hepmc,24918,0.13
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_2TeV_1/events.hepmc,20000,0.19
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_2TeV_2/events.hepmc,20000,0.19
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_2TeV_3/events.hepmc,20000,0.19
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_2TeV_4/events.hepmc,20000,0.19
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_p_job_2TeV_1/events.hepmc,20000,0.26
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_2TeV/job_1/evtfull,,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_2TeV/job_2/evtfull,,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_1/events.hepmc,24930,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_2/events.hepmc,24903,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_3/events.hepmc,24910,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_4/events.hepmc,24905,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_5/events.hepmc,24905,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_6/events.hepmc,24910,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_7/events.hepmc,24918,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_8/events.hepmc,24926,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_9/events.hepmc,24905,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_2TeV_1/events.hepmc,20000,0.20
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_2TeV_2/events.hepmc,20000,0.20
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_2TeV_3/events.hepmc,20000,0.20
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_2TeV_4/events.hepmc,20000,0.20
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_n_job_2TeV_1/events.hepmc,20000,0.27
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_2TeV/job_1/evtfull,,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_2TeV/job_2/evtfull,,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_1/events.hepmc,24952,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_2/events.hepmc,24936,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_3/events.hepmc,24932,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_4/events.hepmc,24924,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_5/events.hepmc,24934,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_6/events.hepmc,24936,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_7/events.hepmc,24936,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_8/events.hepmc,24928,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_9/events.hepmc,24942,0.14
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_4TeV_1/events.hepmc,20000,0.21
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_4TeV_2/events.hepmc,20000,0.21
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_4TeV_3/events.hepmc,20000,0.21
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_4TeV_4/events.hepmc,20000,0.21
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_p_job_4TeV_1/events.hepmc,20000,0.28
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_4TeV/job_1/evtfull,,0.19
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_4TeV/job_2/evtfull,,0.19
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_1/events.hepmc,24930,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_10/events.hepmc,24929,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_2/events.hepmc,24922,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_3/events.hepmc,24931,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_5/events.hepmc,24903,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_6/events.hepmc,24942,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_7/events.hepmc,24926,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_8/events.hepmc,24926,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_9/events.hepmc,24936,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_4TeV_1/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_4TeV_2/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_4TeV_3/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_4TeV_4/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_n_job_4TeV_1/events.hepmc,20000,0.28
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_4TeV/job_1/evtfull,,0.20
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_4TeV/job_2/evtfull,,0.20
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_300GeV_1/events.hepmc,104881,0.56
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_300GeV_2/events.hepmc,104896,0.56
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_1/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_2/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_3/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_4/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_300GeV_1/events.hepmc,20000,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_300GeV/job_1/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_300GeV/job_2/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_300GeV_1/events.hepmc,104919,0.55
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_300GeV_2/events.hepmc,104914,0.55
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_1/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_2/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_3/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_4/events.hepmc,20000,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_300GeV_1/events.hepmc,20000,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_300GeV/job_1/evtfull,,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_300GeV/job_2/evtfull,,0.15
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_2/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_4/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_6/events.hepmc,25000,0.05
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_400GeV_1/events.hepmc,104905,0.59
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_400GeV_2/events.hepmc,104898,0.59
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_1/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_2/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_3/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_4/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_400GeV_1/events.hepmc,20000,0.19
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_400GeV/job_1/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_400GeV/job_2/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_400GeV_1/events.hepmc,104940,0.59
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_400GeV_2/events.hepmc,104928,0.58
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_1/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_2/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_3/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_4/events.hepmc,20000,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_400GeV_1/events.hepmc,20000,0.19
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_400GeV/job_1/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_400GeV/job_2/evtfull,,0.16
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_700GeV_1/events.hepmc,104917,0.66
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_700GeV_2/events.hepmc,104951,0.66
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_1/events.hepmc,20000,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_2/events.hepmc,20000,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_3/events.hepmc,20000,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_4/events.hepmc,20000,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_700GeV_1/events.hepmc,20000,0.20
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_700GeV/job_1/evtfull,,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_700GeV/job_2/evtfull,,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_700GeV_1/events.hepmc,104969,0.65
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_700GeV_2/events.hepmc,104965,0.66
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_1/events.hepmc,20000,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_2/events.hepmc,20000,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_3/events.hepmc,20000,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_4/events.hepmc,20000,0.18
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_700GeV_1/events.hepmc,20000,0.21
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_700GeV/job_1/evtfull,,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_700GeV/job_2/evtfull,,0.17
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_2TeV_1/events.hepmc,104972,0.81
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_2TeV_2/events.hepmc,104975,0.81
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_1/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_2/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_3/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_4/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_2TeV_1/events.hepmc,20000,0.23
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_2TeV/job_1/evtfull,,0.21
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_2TeV/job_2/evtfull,,0.21
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_1/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_2/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_3/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_4/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_5/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_6/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_7/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_8/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_2TeV_1/events.hepmc,104986,0.81
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_2TeV_2/events.hepmc,104984,0.81
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_1/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_2/events.hepmc,20000,0.21
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_3/events.hepmc,20000,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_4/events.hepmc,20000,0.21
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_2TeV_1/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_2TeV/job_1/evtfull,,0.20
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_2TeV/job_2/evtfull,,0.20
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_1/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_2/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_3/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_4/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_5/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_6/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_7/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_8/events.hepmc,25000,0.07
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_4TeV_1/events.hepmc,104985,0.92
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_4TeV_2/events.hepmc,104987,0.92
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_1/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_2/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_3/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_4/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_4TeV_1/events.hepmc,20000,0.26
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_4TeV/job_1/evtfull,,0.23
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_4TeV/job_2/evtfull,,0.23
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_1/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_2/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_3/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_4/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_5/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_6/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_7/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_8/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_4TeV_1/events.hepmc,104987,0.93
+2026-09-18,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_4TeV_2/events.hepmc,104990,0.93
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_1/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_2/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_3/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_4/events.hepmc,20000,0.24
+2026-09-18,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_4TeV_1/events.hepmc,20000,0.26
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_4TeV/job_1/evtfull,,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_4TeV/job_2/evtfull,,0.22
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_1/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_2/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_3/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_4/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_5/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_6/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_7/events.hepmc,25000,0.08
+2026-09-18,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_8/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_300GeV_1/events.hepmc,104886,0.56
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_300GeV_2/events.hepmc,104896,0.56
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_300GeV_1/events.hepmc,104919,0.55
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_300GeV_2/events.hepmc,104914,0.55
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_400GeV_1/events.hepmc,104908,0.59
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_400GeV_2/events.hepmc,104898,0.59
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_p_job_400GeV_1/events.hepmc,104891,0.63
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_p_job_400GeV_2/events.hepmc,104889,0.63
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_400GeV_1/events.hepmc,104941,0.58
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_400GeV_2/events.hepmc,104928,0.58
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_n_job_400GeV_1/events.hepmc,104907,0.63
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_n_job_400GeV_2/events.hepmc,104904,0.63
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_700GeV_1/events.hepmc,104921,0.66
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_700GeV_2/events.hepmc,104951,0.66
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_p_job_700GeV_1/events.hepmc,104943,0.70
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_p_job_700GeV_2/events.hepmc,104956,0.70
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_700GeV_1/events.hepmc,104971,0.65
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_700GeV_2/events.hepmc,104965,0.66
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_n_job_700GeV_1/events.hepmc,104960,0.70
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_n_job_700GeV_2/events.hepmc,104953,0.70
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_2TeV_1/events.hepmc,104972,0.81
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_2TeV_2/events.hepmc,104975,0.81
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_p_job_2TeV_1/events.hepmc,104990,0.84
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_p_job_2TeV_2/events.hepmc,104986,0.83
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_2TeV_1/events.hepmc,104986,0.81
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_2TeV_2/events.hepmc,104984,0.81
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_n_job_2TeV_1/events.hepmc,104983,0.84
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_n_job_2TeV_2/events.hepmc,104984,0.84
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_4TeV_1/events.hepmc,104984,0.92
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_4TeV_2/events.hepmc,104987,0.92
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_p_job_4TeV_1/events.hepmc,104993,0.94
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_p_job_4TeV_2/events.hepmc,104991,0.94
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_4TeV_1/events.hepmc,104987,0.93
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_4TeV_2/events.hepmc,104990,0.93
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_n_job_4TeV_1/events.hepmc,104996,0.94
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2numc_n_job_4TeV_2/events.hepmc,104993,0.94
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_1/events.hepmc,24860,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_10/events.hepmc,24883,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_2/events.hepmc,24868,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_3/events.hepmc,24872,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_4/events.hepmc,24854,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_5/events.hepmc,24886,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_7/events.hepmc,24864,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_8/events.hepmc,24852,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_300GeV_9/events.hepmc,24884,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_1/events.hepmc,24845,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_10/events.hepmc,24854,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_2/events.hepmc,24858,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_4/events.hepmc,24855,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_5/events.hepmc,24836,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_6/events.hepmc,24839,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_7/events.hepmc,24835,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_8/events.hepmc,24830,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_300GeV_9/events.hepmc,24834,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_1/events.hepmc,24879,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_2/events.hepmc,24886,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_3/events.hepmc,24886,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_4/events.hepmc,24868,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_5/events.hepmc,24890,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_6/events.hepmc,24873,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_7/events.hepmc,24894,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_8/events.hepmc,24873,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_400GeV_9/events.hepmc,24884,0.11
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_1/events.hepmc,24859,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_2/events.hepmc,24848,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_3/events.hepmc,24871,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_4/events.hepmc,24869,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_5/events.hepmc,24857,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_6/events.hepmc,24856,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_7/events.hepmc,24865,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_8/events.hepmc,24866,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_400GeV_9/events.hepmc,24855,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_1/events.hepmc,24890,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_2/events.hepmc,24910,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_3/events.hepmc,24898,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_4/events.hepmc,24904,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_5/events.hepmc,24918,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_6/events.hepmc,24904,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_7/events.hepmc,24873,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_8/events.hepmc,24888,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_700GeV_9/events.hepmc,24884,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_1/events.hepmc,24893,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_2/events.hepmc,24875,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_3/events.hepmc,24869,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_4/events.hepmc,24869,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_5/events.hepmc,24881,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_6/events.hepmc,24892,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_7/events.hepmc,24899,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_8/events.hepmc,24891,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_700GeV_9/events.hepmc,24871,0.12
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_1/events.hepmc,24918,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_2/events.hepmc,24916,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_3/events.hepmc,24930,0.13
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_4/events.hepmc,24943,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_5/events.hepmc,24930,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_6/events.hepmc,24919,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_7/events.hepmc,24934,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_8/events.hepmc,24921,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_2TeV_9/events.hepmc,24918,0.13
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_1/events.hepmc,24930,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_2/events.hepmc,24903,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_3/events.hepmc,24910,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_4/events.hepmc,24905,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_5/events.hepmc,24905,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_6/events.hepmc,24910,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_7/events.hepmc,24918,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_8/events.hepmc,24926,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_2TeV_9/events.hepmc,24905,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_1/events.hepmc,24952,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_2/events.hepmc,24936,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_3/events.hepmc,24932,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_4/events.hepmc,24924,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_5/events.hepmc,24934,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_6/events.hepmc,24936,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_7/events.hepmc,24936,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_8/events.hepmc,24928,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_p_job_4TeV_9/events.hepmc,24942,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_1/events.hepmc,24930,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_10/events.hepmc,24929,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_2/events.hepmc,24922,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_3/events.hepmc,24931,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_5/events.hepmc,24903,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_6/events.hepmc,24942,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_7/events.hepmc,24926,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_8/events.hepmc,24926,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),powheg/v2mu_n_job_4TeV_9/events.hepmc,24936,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_300GeV_1/events.hepmc,20000,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_300GeV_2/events.hepmc,20000,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_300GeV_3/events.hepmc,20000,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_300GeV_4/events.hepmc,20000,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_p_job_300GeV_1/events.hepmc,20000,0.21
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_300GeV_1/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_300GeV_2/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_300GeV_3/events.hepmc,20000,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_300GeV_4/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_n_job_300GeV_1/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_400GeV_1/events.hepmc,20000,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_400GeV_2/events.hepmc,20000,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_400GeV_3/events.hepmc,20000,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_400GeV_4/events.hepmc,20000,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_p_job_400GeV_1/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_400GeV_1/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_400GeV_2/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_400GeV_3/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_400GeV_4/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_n_job_400GeV_1/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_700GeV_1/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_700GeV_2/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_700GeV_3/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_700GeV_4/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_p_job_700GeV_1/events.hepmc,20000,0.23
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_700GeV_1/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_700GeV_2/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_700GeV_3/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_700GeV_4/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_n_job_700GeV_1/events.hepmc,20000,0.24
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_2TeV_1/events.hepmc,20000,0.19
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_2TeV_2/events.hepmc,20000,0.19
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_2TeV_3/events.hepmc,20000,0.19
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_2TeV_4/events.hepmc,20000,0.19
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_p_job_2TeV_1/events.hepmc,20000,0.26
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_2TeV_1/events.hepmc,20000,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_2TeV_2/events.hepmc,20000,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_2TeV_3/events.hepmc,20000,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_2TeV_4/events.hepmc,20000,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_n_job_2TeV_1/events.hepmc,20000,0.26
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_4TeV_1/events.hepmc,20000,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_4TeV_2/events.hepmc,20000,0.21
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_4TeV_3/events.hepmc,20000,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_p_job_4TeV_4/events.hepmc,20000,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_p_job_4TeV_1/events.hepmc,20000,0.27
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_4TeV_1/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_4TeV_2/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_4TeV_3/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwg_n_job_4TeV_4/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2mupwgneg_n_job_4TeV_1/events.hepmc,20000,0.28
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_1/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_2/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_3/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_4/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_300GeV_1/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_1/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_2/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_3/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_4/events.hepmc,20000,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_300GeV_1/events.hepmc,20000,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_1/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_2/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_3/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_4/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_400GeV_1/events.hepmc,20000,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_1/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_2/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_3/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_4/events.hepmc,20000,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_400GeV_1/events.hepmc,20000,0.19
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_1/events.hepmc,20000,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_2/events.hepmc,20000,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_3/events.hepmc,20000,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_4/events.hepmc,20000,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_700GeV_1/events.hepmc,20000,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_1/events.hepmc,20000,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_2/events.hepmc,20000,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_3/events.hepmc,20000,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_4/events.hepmc,20000,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_700GeV_1/events.hepmc,20000,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_1/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_2/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_3/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_4/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_2TeV_1/events.hepmc,20000,0.23
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_1/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_2/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_3/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_4/events.hepmc,20000,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_2TeV_1/events.hepmc,20000,0.24
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_1/events.hepmc,20000,0.24
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_2/events.hepmc,20000,0.24
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_3/events.hepmc,20000,0.24
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_4/events.hepmc,20000,0.24
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_4TeV_1/events.hepmc,20000,0.26
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_1/events.hepmc,20000,0.24
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_2/events.hepmc,20000,0.24
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_3/events.hepmc,20000,0.24
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_4/events.hepmc,20000,0.24
+2026-09-19,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_4TeV_1/events.hepmc,20000,0.26
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_1/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_2/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_3/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_4/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_5/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_6/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_7/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_300GeV_8/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_1/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_2/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_3/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_4/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_5/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_6/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_7/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_300GeV_8/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_1/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_2/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_3/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_4/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_5/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_6/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_7/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_400GeV_8/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_1/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_2/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_3/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_4/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_5/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_6/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_7/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_400GeV_8/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_1/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_2/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_3/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_4/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_5/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_6/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_7/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_p_job_700GeV_8/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_1/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_2/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_3/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_4/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_5/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_6/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_7/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_mu_grv_n_job_700GeV_8/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_2/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_4/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_6/events.hepmc,25000,0.05
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_1/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_2/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_3/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_4/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_5/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_6/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_7/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_8/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_1/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_2/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_3/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_4/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_5/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_6/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_7/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_8/events.hepmc,25000,0.07
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_1/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_2/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_3/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_4/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_5/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_6/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_7/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_8/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_1/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_2/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_3/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_4/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_5/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_6/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_7/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_8/events.hepmc,25000,0.08
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_300GeV/job_1/evtfull,,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_300GeV/job_2/evtfull,,0.14
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_300GeV/job_1/evtfull,,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_300GeV/job_2/evtfull,,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_400GeV/job_1/evtfull,,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_400GeV/job_2/evtfull,,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_400GeV/job_1/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_400GeV/job_2/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_700GeV/job_1/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_700GeV/job_2/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_700GeV/job_1/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_700GeV/job_2/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_2TeV/job_1/evtfull,,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_2TeV/job_2/evtfull,,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_2TeV/job_1/evtfull,,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_2TeV/job_2/evtfull,,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_4TeV/job_1/evtfull,,0.19
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_p_4TeV/job_2/evtfull,,0.19
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_4TeV/job_1/evtfull,,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_MuonDIS_NLO_n_4TeV/job_2/evtfull,,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_300GeV/job_1/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_300GeV/job_2/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_300GeV/job_1/evtfull,,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_300GeV/job_2/evtfull,,0.15
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_400GeV/job_1/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_400GeV/job_2/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_400GeV/job_1/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_400GeV/job_2/evtfull,,0.16
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_700GeV/job_1/evtfull,,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_700GeV/job_2/evtfull,,0.18
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_700GeV/job_1/evtfull,,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_700GeV/job_2/evtfull,,0.17
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_2TeV/job_1/evtfull,,0.21
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_2TeV/job_2/evtfull,,0.21
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_2TeV/job_1/evtfull,,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_2TeV/job_2/evtfull,,0.20
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_4TeV/job_1/evtfull,,0.23
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_4TeV/job_2/evtfull,,0.23
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_4TeV/job_1/evtfull,,0.22
+2026-09-19,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_4TeV/job_2/evtfull,,0.22
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_20GeV_1/events.hepmc,102771,0.34
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_20GeV_2/events.hepmc,102863,0.34
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_20GeV_1/events.hepmc,101380,0.32
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_20GeV_2/events.hepmc,101436,0.32
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_50GeV_1/events.hepmc,104218,0.40
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_50GeV_2/events.hepmc,104284,0.40
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_50GeV_3/events.hepmc,104267,0.40
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_50GeV_4/events.hepmc,104311,0.40
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_50GeV_5/events.hepmc,104259,0.40
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_50GeV_6/events.hepmc,104295,0.40
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_50GeV_7/events.hepmc,104255,0.40
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_50GeV_1/events.hepmc,104377,0.39
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_50GeV_2/events.hepmc,104351,0.39
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_100GeV_1/events.hepmc,104612,0.45
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_100GeV_2/events.hepmc,104666,0.45
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_100GeV_1/events.hepmc,104757,0.44
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_100GeV_2/events.hepmc,104734,0.44
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_200GeV_1/events.hepmc,104824,0.52
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_200GeV_2/events.hepmc,104824,0.52
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_200GeV_1/events.hepmc,104883,0.51
+2026-09-21,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_200GeV_2/events.hepmc,104887,0.51
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_20GeV_1/events.hepmc,102771,0.34
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_20GeV_2/events.hepmc,102863,0.34
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_20GeV_1/events.hepmc,101380,0.32
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_20GeV_2/events.hepmc,101436,0.32
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_50GeV_1/events.hepmc,104218,0.40
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_50GeV_2/events.hepmc,104284,0.40
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_50GeV_1/events.hepmc,104377,0.39
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_50GeV_2/events.hepmc,104351,0.39
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_100GeV_1/events.hepmc,104612,0.45
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_100GeV_2/events.hepmc,104666,0.45
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_100GeV_1/events.hepmc,104757,0.44
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_100GeV_2/events.hepmc,104734,0.44
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_200GeV_1/events.hepmc,104824,0.52
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_200GeV_2/events.hepmc,104824,0.52
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_200GeV_1/events.hepmc,104883,0.51
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_200GeV_2/events.hepmc,104887,0.51
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_300GeV_1/events.hepmc,104886,0.56
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_300GeV_2/events.hepmc,104896,0.56
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_1/events.hepmc,20000,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_2/events.hepmc,20000,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_3/events.hepmc,20000,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_300GeV_4/events.hepmc,20000,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_300GeV_1/events.hepmc,20000,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_300GeV_1/events.hepmc,104919,0.55
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_300GeV_2/events.hepmc,104914,0.55
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_1/events.hepmc,20000,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_2/events.hepmc,20000,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_3/events.hepmc,20000,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_300GeV_4/events.hepmc,20000,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_300GeV_1/events.hepmc,20000,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_400GeV_1/events.hepmc,104908,0.59
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_400GeV_2/events.hepmc,104898,0.59
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_1/events.hepmc,20000,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_2/events.hepmc,20000,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_3/events.hepmc,20000,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_400GeV_4/events.hepmc,20000,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_400GeV_1/events.hepmc,20000,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_400GeV_1/events.hepmc,104941,0.58
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_400GeV_2/events.hepmc,104928,0.58
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_1/events.hepmc,20000,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_2/events.hepmc,20000,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_3/events.hepmc,20000,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_400GeV_4/events.hepmc,20000,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_400GeV_1/events.hepmc,20000,0.19
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_700GeV_1/events.hepmc,104921,0.66
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_700GeV_2/events.hepmc,104951,0.66
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_1/events.hepmc,20000,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_2/events.hepmc,20000,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_3/events.hepmc,20000,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_700GeV_4/events.hepmc,20000,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_700GeV_1/events.hepmc,20000,0.20
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_700GeV_1/events.hepmc,104971,0.65
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_700GeV_2/events.hepmc,104965,0.66
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_1/events.hepmc,20000,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_2/events.hepmc,20000,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_3/events.hepmc,20000,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_700GeV_4/events.hepmc,20000,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_700GeV_1/events.hepmc,20000,0.20
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_2TeV_1/events.hepmc,104972,0.81
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_2TeV_2/events.hepmc,104975,0.81
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_1/events.hepmc,20000,0.22
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_2/events.hepmc,20000,0.22
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_3/events.hepmc,20000,0.22
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_2TeV_4/events.hepmc,20000,0.22
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_2TeV_1/events.hepmc,20000,0.23
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_2TeV_1/events.hepmc,104986,0.81
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_2TeV_2/events.hepmc,104984,0.81
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_1/events.hepmc,20000,0.22
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_2/events.hepmc,20000,0.22
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_3/events.hepmc,20000,0.22
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_2TeV_4/events.hepmc,20000,0.22
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_2TeV_1/events.hepmc,20000,0.24
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_4TeV_1/events.hepmc,104984,0.92
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_p_job_4TeV_2/events.hepmc,104987,0.92
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_1/events.hepmc,20000,0.24
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_2/events.hepmc,20000,0.24
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_3/events.hepmc,20000,0.24
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_p_job_4TeV_4/events.hepmc,20000,0.24
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_p_job_4TeV_1/events.hepmc,20000,0.26
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_4TeV_1/events.hepmc,104987,0.93
+2026-09-30,pion-pass prune (tools/prune_energies.py),powheg/v2nu_n_job_4TeV_2/events.hepmc,104990,0.93
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_1/events.hepmc,20000,0.24
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_2/events.hepmc,20000,0.24
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_3/events.hepmc,20000,0.24
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwg_n_job_4TeV_4/events.hepmc,20000,0.24
+2026-09-30,pion-pass prune (tools/prune_energies.py),herwig7/v2nupwgneg_n_job_4TeV_1/events.hepmc,20000,0.26
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_300GeV/job_1/evtfull,,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_300GeV/job_2/evtfull,,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_300GeV/job_1/evtfull,,0.15
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_300GeV/job_2/evtfull,,0.15
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_2/events.hepmc,25000,0.05
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_4/events.hepmc,25000,0.05
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_6/events.hepmc,25000,0.05
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_300GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_400GeV/job_1/evtfull,,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_400GeV/job_2/evtfull,,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_400GeV/job_1/evtfull,,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_400GeV/job_2/evtfull,,0.16
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_400GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_700GeV/job_1/evtfull,,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_700GeV/job_2/evtfull,,0.18
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_p_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_700GeV/job_1/evtfull,,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_700GeV/job_2/evtfull,,0.17
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_grv_n_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_1/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_2/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_3/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_4/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_5/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_6/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_7/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_700GeV_8/events.hepmc,25000,0.06
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_2TeV/job_1/evtfull,,0.21
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_2TeV/job_2/evtfull,,0.21
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_1/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_2/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_3/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_4/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_5/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_6/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_7/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_2TeV_8/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_2TeV/job_1/evtfull,,0.20
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_2TeV/job_2/evtfull,,0.20
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_1/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_2/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_3/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_4/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_5/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_6/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_7/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_2TeV_8/events.hepmc,25000,0.07
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_4TeV/job_1/evtfull,,0.23
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_p_4TeV/job_2/evtfull,,0.23
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_1/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_2/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_3/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_4/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_5/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_6/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_7/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_p_job_4TeV_8/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_4TeV/job_1/evtfull,,0.22
+2026-09-30,pion-pass prune (tools/prune_energies.py),$SHERPA_RUNS/V2_NuDIS_NLO_n_4TeV/job_2/evtfull,,0.22
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_1/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_2/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_3/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_4/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_5/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_6/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_7/events.hepmc,25000,0.08
+2026-09-30,pion-pass prune (tools/prune_energies.py),genie/v2g_nu_hedis_n_job_4TeV_8/events.hepmc,25000,0.08

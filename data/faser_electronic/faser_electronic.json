@@ -1,0 +1,166 @@
+{
+ "what": "FASER's electronic-detector muon-neutrino measurements: published tables, plus the unfolded points of CONF Fig. 5 read off the page",
+ "edges_minus_L_over_E": [
+  -0.01,
+  -0.0033333333333333335,
+  -0.0016666666666666668,
+  -0.001,
+  0.001,
+  0.0033333333333333335,
+  0.01
+ ],
+ "bins": [
+  {
+   "charge": "nu",
+   "e_lo": 100.0,
+   "e_hi": 300.0
+  },
+  {
+   "charge": "nu",
+   "e_lo": 300.0,
+   "e_hi": 600.0
+  },
+  {
+   "charge": "nu",
+   "e_lo": 600.0,
+   "e_hi": 1000.0
+  },
+  {
+   "charge": "both",
+   "e_lo": 1000.0,
+   "e_hi": null
+  },
+  {
+   "charge": "nubar",
+   "e_lo": 300.0,
+   "e_hi": 1000.0
+  },
+  {
+   "charge": "nubar",
+   "e_lo": 100.0,
+   "e_hi": 300.0
+  }
+ ],
+ "prl": {
+  "arxiv": "2412.03186",
+  "title": "First Measurement of the Muon Neutrino Interaction Cross Section and Flux as a Function of Energy at the LHC with FASER",
+  "lumi_fb": 65.6,
+  "lumi_fb_err": 1.4,
+  "n_obs": 338.1,
+  "n_obs_stat": 19.0,
+  "n_obs_syst": 8.8,
+  "sim_signal": [
+   33.6,
+   59.5,
+   51.6,
+   84.1,
+   50.1,
+   19.6
+  ],
+  "sim_signal_err": [
+   7.6,
+   9.1,
+   8.8,
+   21.4,
+   11.4,
+   5.9
+  ],
+  "sim_total": [
+   39.5,
+   63.9,
+   54.1,
+   86.3,
+   53.7,
+   24.7
+  ],
+  "sim_total_err": [
+   9.2,
+   10.2,
+   9.6,
+   22.3,
+   12.1,
+   7.5
+  ],
+  "data": [
+   50,
+   97,
+   71,
+   69,
+   48,
+   27
+  ],
+  "acceptance": [
+   16.7,
+   30.0,
+   38.8,
+   46.6,
+   47.5,
+   27.8
+  ],
+  "acceptance_err": [
+   0.6,
+   1.2,
+   2.6,
+   3.0,
+   1.9,
+   2.5
+  ],
+  "reco_eff": [
+   80.8,
+   79.0,
+   79.3,
+   78.8,
+   84.4,
+   84.5
+  ],
+  "efficiency": [
+   13.5,
+   23.7,
+   30.8,
+   36.8,
+   40.1,
+   23.5
+  ],
+  "efficiency_err": [
+   1.2,
+   1.7,
+   2.6,
+   3.0,
+   3.1,
+   2.4
+  ],
+  "flux_1e6_fb_cm2": [
+   7.0,
+   3.6,
+   1.6,
+   1.7,
+   3.5,
+   5.5
+  ],
+  "flux_err": [
+   1.8,
+   0.7,
+   0.3,
+   0.5,
+   0.8,
+   1.7
+  ],
+  "sigma_1e38_cm2_per_nucleon": [
+   128.5,
+   292.2,
+   514.6,
+   799.3,
+   166.3,
+   56.8
+  ],
+  "sigma_err": [
+   7.9,
+   17.6,
+   31.3,
+   68.1,
+   10.5,
+   3.4
+  ],
+  "selection": "muon momentum > 100 GeV, track angle < 25 mrad, a 100 mm-radius fiducial cylinder, VetoNu charge < 30 pC"
+ }
+}

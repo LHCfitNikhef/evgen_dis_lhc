@@ -1,0 +1,68 @@
+{
+ "what": "FASER emulsion sigma/E per nucleon against GENIE (default tune) totals, flux-weighted over nu + nubar",
+ "unit": "1e-38 cm^2 GeV^-1 nucleon^-1",
+ "flux": "vendored FASER flux of arXiv:2402.13318",
+ "points": [
+  {
+   "source": "CERN-FASER-CONF-2026-002",
+   "flavour": "numu",
+   "e_lo": 200.0,
+   "e_hi": 1000.0,
+   "e_centre": 447.0,
+   "measured": 0.32,
+   "err_hi": 0.18,
+   "err_lo": 0.18,
+   "ours": 0.5336661851063298,
+   "pull": 1.1870343617018322
+  },
+  {
+   "source": "CERN-FASER-CONF-2026-002",
+   "flavour": "numu",
+   "e_lo": 1000.0,
+   "e_hi": 3129.0,
+   "e_centre": 1483.0,
+   "measured": 0.55,
+   "err_hi": 0.24,
+   "err_lo": 0.25,
+   "ours": 0.5334434714862507,
+   "pull": -0.06622611405499734
+  },
+  {
+   "source": "CERN-FASER-CONF-2026-002",
+   "flavour": "nue",
+   "e_lo": 553.0,
+   "e_hi": 1670.0,
+   "e_centre": 950.0,
+   "measured": 0.43,
+   "err_hi": 0.22,
+   "err_lo": 0.23,
+   "ours": 0.49863825131892553,
+   "pull": 0.3119920514496615
+  },
+  {
+   "source": "arXiv:2403.12520",
+   "flavour": "numu",
+   "e_lo": 520.0,
+   "e_hi": 1760.0,
+   "e_centre": 1140.0,
+   "measured": 0.5,
+   "err_hi": 0.2,
+   "err_lo": 0.2,
+   "ours": 0.5333731138402013,
+   "pull": 0.16686556920100626
+  },
+  {
+   "source": "arXiv:2403.12520",
+   "flavour": "nue",
+   "e_lo": 560.0,
+   "e_hi": 1740.0,
+   "e_centre": 1150.0,
+   "measured": 1.2,
+   "err_hi": 0.8,
+   "err_lo": 0.7,
+   "ours": 0.4995505693379157,
+   "pull": -1.0006420438029777
+  }
+ ],
+ "nu_fraction_of_flux_at_1TeV": 0.6202369385475158
+}

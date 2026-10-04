@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+  OVERLAY (2026-09-01).  THE POINT OF THE `nnpdf` CONFIG IS TO CHANGE THE
+  PARTON DISTRIBUTION, AND WITHOUT THIS FILE IT DID NOT CHANGE IT FOR CHARM.
+
+  `genie/config/nnpdf/BYPDF.xml` substitutes NNPDF4.0 into the Bodek-Yang
+  model, which is what the INCLUSIVE deep-inelastic cross-section is built
+  from.  But G18_02a computes charm deep-inelastic scattering with a
+  DIFFERENT algorithm.  ModelConfiguration.xml maps
+  `XSecModel@genie::EventGenerator/DIS-CC-CHARM` to
+  `genie::AivazisCharmPXSecLO/CC-Default`, and that algorithm carries its OWN
+  `PDF-Set` parameter, hardwired to `genie::GRV98LO/Default` in the stock
+  configuration.  It never consults BYPDF.
+
+  So the "NNPDF4.0" variant was an NNPDF4.0 INCLUSIVE sample whose CHARM was
+  still GRV98.  The symptom: its charm cross section sat on top of the GRV98
+  tune's to better than a per cent while the inclusive rate moved by five,
+  which the user flagged as implausible, since the two sets differ most in
+  exactly the STRANGENESS that drives the s to c conversion.
+
+  Keep the `CC-Default` param_set name.  ModelConfiguration.xml names that
+  set explicitly, so an overlay under any other name is loaded and ignored.
+  Keep `Default` too: `CC-Default` inherits Charm-Mass and the CKM elements
+  from it through CommonParam, and a file with only `CC-Default` aborts with
+  "Key: Charm-Mass does not exist".
+
+  NOTE FOR EDITORS: no double hyphen may appear anywhere in an XML comment.
+  The first version of this file used them as dashes in the prose; GENIE
+  refused the whole file, fell back with no charm configuration at all and
+  aborted.  It failed loudly, which is the one good thing about it.
+-->
+
+<alg_conf>
+
+  <param_set name="Default">
+     <param type="string" name="CommonParam"> CKM,Masses </param>
+  </param_set>
+
+  <param_set name="CC-Default">
+     <param type="alg" name="PDF-Set">         genie::LHAPDF6/NNPDF40_nnlo_0 </param>
+     <param type="alg" name="XSec-Integrator"> genie::DISXSec/Default        </param>
+  </param_set>
+
+</alg_conf>

@@ -1,0 +1,123 @@
+# -*- ThePEG-repository -*-
+##############################################################################
+# LO NC muon DIS for the FASER evgen benchmark (Herwig 7.3.0)
+#
+# mu- p -> mu- X, run in the mu-p c.m. frame like the Sherpa benchmark:
+# beams [mu-, p+] with E = [21.6438, 21.6641] GeV (sqrt(s) = 43.33 GeV),
+# equivalent to E_mu = 1 TeV on a proton at rest; the analysis is
+# frame-invariant.
+#
+# Conventions matched:
+#  - LO MEDISNC (gamma + Z + interference), O(alphas^0)
+#  - proton PDF NNPDF40_nnlo_as_01180 via LHAPDF (hard ME + backward shower);
+#    no lepton PDF (EPExtractor:FirstPDF unset -> NoPDF)
+#  - muF = Q for the hard ME (DISBase default: scale = -tHat = Q2);
+#    at O(alphas^0) muR does not enter the ME
+#  - fixed alpha_em = 1/132.119, sin2thetaW = 0.22291 via EW/Scheme
+#    Independent (alphaEMME returns the fixed AlphaEMMZ at all ME scales)
+#  - generation cuts = fiducial cuts: Q2 > 4 GeV2, 0.2 < y < 0.9
+#  - default angular-ordered shower + cluster hadronisation; MPI off
+#    (EPCollider.in); all QED shower splittings removed
+#  - stable-particle convention ctau > 10 mm (DecayHandler:MaxLifeTime)
+#  - HepMC3 Ascii output, status-4 beams / status-1 finals
+#
+# usage: Herwig read DIS-mu.in ; Herwig run DIS-mu.run -N NEV -s SEED
+##############################################################################
+
+read snippets/EPCollider.in
+
+##################################################
+# beams: mu- (A, +z) on p+ (B, -z), mu-p c.m. frame
+##################################################
+cd /Herwig/EventHandlers
+set EventHandler:BeamA /Herwig/Particles/mu-
+set Luminosity:BeamEMaxA 21.6438*GeV
+set EventHandler:BeamB /Herwig/Particles/p+
+set Luminosity:BeamEMaxB 21.6641*GeV
+
+##################################################
+# proton PDF: NNPDF4.0 NNLO via LHAPDF
+# (hard process AND backward-evolution shower)
+##################################################
+cd /Herwig/Partons
+create ThePEG::LHAPDF NNPDF40 ThePEGLHAPDF.so
+set NNPDF40:PDFName NNPDF40_nnlo_as_01180
+set NNPDF40:RemnantHandler HadronRemnants
+set /Herwig/Particles/p+:PDF NNPDF40
+set EPExtractor:SecondPDF NNPDF40
+set /Herwig/Shower/ShowerHandler:PDFB NNPDF40
+
+##################################################
+# EW parameters: fixed alpha_em = 1/132.119,
+# sin2thetaW = 0.22291 (Gmu-matched benchmark values)
+# Scheme "Independent" = all values input, FIXED scale
+# in ME calculations (no running alpha_em in the ME)
+##################################################
+cd /Herwig
+set Model:EW/Scheme Independent
+set Model:EW/AlphaEMMZ 0.007568934067015342
+set Model:EW/Sin2ThetaW 0.22291
+
+##################################################
+# hard process: LO neutral-current DIS
+# (gamma/Z, quark flavours d..b, massless outgoing quark)
+##################################################
+cd /Herwig/MatrixElements
+insert SubProcess:MatrixElements[0] MEDISNC
+# muF = Q: DISBase default ScaleOption DynamicScale -> scale = -tHat = Q2
+
+##################################################
+# generation cuts = fiducial region
+##################################################
+set /Herwig/Cuts/NeutralCurrentCut:MinQ2 4.0*GeV2
+# TRAP: SimpleDISCut has a DEFAULT MaxQ2 = 100 GeV2 (silent post-cut veto
+# that truncates the high-Q2 tail); open it up to the kinematic limit
+set /Herwig/Cuts/NeutralCurrentCut:MaxQ2 1000000.0*GeV2
+set /Herwig/Cuts/NeutralCurrentCut:Miny 0.2
+set /Herwig/Cuts/NeutralCurrentCut:Maxy 0.9
+
+##################################################
+# no QED radiation in the shower: lepton splittings are
+# already removed by EPCollider.in; remove the quark ones
+##################################################
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting u->u,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting d->d,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting s->s,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting c->c,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting b->b,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteFinalSplitting t->t,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting u->u,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting d->d,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting s->s,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting c->c,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting b->b,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting t->t,gamma; /Herwig/Shower/QtoQGammaSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting d->gamma,d; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting u->gamma,u; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting s->gamma,s; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting c->gamma,c; /Herwig/Shower/QtoGammaQSudakov
+do /Herwig/Shower/SplittingGenerator:DeleteInitialSplitting b->gamma,b; /Herwig/Shower/QtoGammaQSudakov
+
+##################################################
+# stable-particle convention: ctau > 10 mm stable
+# (K_S0, K_L0, Lambda, Sigma+-, Xi, Omega, K+-, pi+-, n stable;
+#  pi0 decays)
+##################################################
+set /Herwig/Decays/DecayHandler:MaxLifeTime 10*mm
+set /Herwig/Decays/DecayHandler:LifeTimeOption Average
+
+##################################################
+# HepMC3 Ascii output
+##################################################
+read snippets/HepMC.in
+set /Herwig/Analysis/HepMC:Format GenEventHepMC3
+set /Herwig/Analysis/HepMC:Filename events.hepmc
+set /Herwig/Analysis/HepMC:PrintEvent 100000000
+set /Herwig/Analysis/HepMC:Units GeV_mm
+
+##################################################
+# generator settings
+##################################################
+cd /Herwig/Generators
+set EventGenerator:MaxErrors 10000
+saverun DIS-mu EventGenerator

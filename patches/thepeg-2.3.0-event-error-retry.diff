@@ -1,0 +1,426 @@
+# ThePEG 2.3.0: rebuild an event that fails after its hard process was accepted
+# (Exception::eventerror, e.g. Herwig's HwRemDecayer "Can't put the remnant on-shell")
+# on the SAME phase-space point / the SAME Les Houches event, instead of
+# discarding it and drawing a new one.
+#   set /Herwig/EventHandlers/EventHandler:MaxEventErrorRetries N       (sampled runs)
+#   set /Herwig/EventHandlers/LesHouchesHandler:MaxEventErrorRetries N  (LHE showering)
+# 0 = unpatched behaviour.  Class versions bumped to 1: pre-patch .run files read 0.
+# Why: Herwig's charm was 5-26% low; the discards are sea quark / charm / high x.
+# See the project memory herwig-charm-remnant-veto and the commit messages.
+#
+# BUILD TRAP (2026-09-19): the Command Line Tools were updated to the macOS 27 SDK after
+# Herwig was built (SDK 26.5).  A ThePEG rebuilt against SDK 27 installs fine and RUNS
+# old .run files, but 'Herwig read' fails ('interface Factory:PartonExtractor was not
+# found'): ThePEG keys class descriptions by type_info POINTER and the two builds
+# disagree.  Build with  SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk
+#
+# Apply: cd ThePEG-2.3.0 && patch -p1 < this && SDKROOT=... make && make install
+--- a/Handlers/StandardEventHandler.h	2023-12-08 11:23:06
++++ b/Handlers/StandardEventHandler.h	2026-09-19 11:23:55
+@@ -440,6 +440,30 @@
+   mutable XSecStat xSecStats;
+ 
+   /**
++   * FASER EVGEN-BENCHMARK PATCH (patches/thepeg-2.3.0-event-error-retry.diff).
++   * The number of times an event that fails downstream of the hard process
++   * with an Exception::eventerror (e.g. Herwig's "Can't put the remnant
++   * on-shell") is rebuilt from scratch on the SAME phase-space point before it
++   * is discarded.  0 (the default) is the unpatched behaviour.
++   */
++  unsigned int theMaxEventErrorRetries = 0;
++
++  /**
++   * The random-number vector of the last call to dSigDR(r): the point the
++   * accepted event was built from, whatever remapping the sampler applied.
++   */
++  vector<double> theLastR;
++
++  /**
++   * Retry bookkeeping (not persistent), printed by statistics():
++   * events that needed a retry, retries made, events recovered, events
++   * abandoned after the last retry, and rebuilds whose hard momenta did not
++   * reproduce the accepted point (these are discarded, never kept).
++   */
++  mutable long theNRetriedEvents = 0, theNRetries = 0, theNRecovered = 0,
++    theNAbandoned = 0, theNMismatch = 0;
++
++  /**
+    * Standard Initialization object.
+    */
+   static ClassDescription<StandardEventHandler> initStandardEventHandler;
+@@ -502,6 +526,9 @@
+    * Return the class name.
+    */
+   static string className() { return "ThePEG::StandardEventHandler"; }
++  /** Version 1 adds MaxEventErrorRetries (evgen-benchmark patch); a
++   *  version-0 run file reads it as 0. */
++  static int version() { return 1; }
+ };
+ 
+ /** @endcond */
+--- a/Handlers/StandardEventHandler.cc	2023-12-08 11:23:06
++++ b/Handlers/StandardEventHandler.cc	2026-09-19 11:28:49
+@@ -254,6 +254,12 @@
+ }
+  
+ void StandardEventHandler::statistics(ostream & os) const {
++  if ( theMaxEventErrorRetries > 0 )
++    os << "evgen-benchmark event-error retry (MaxEventErrorRetries "
++       << theMaxEventErrorRetries << "): events retried " << theNRetriedEvents
++       << ", retries " << theNRetries << ", recovered " << theNRecovered
++       << ", abandoned " << theNAbandoned << ", point mismatches "
++       << theNMismatch << "\n\n";
+   if ( statLevel() == 0 ) return;
+   map<cPDPair, XSecStat> partonMap;
+   map<MEPtr, XSecStat> meMap;
+@@ -405,6 +411,8 @@
+ }
+ 
+ CrossSection StandardEventHandler::dSigDR(const vector<double> & r) {
++  // evgen-benchmark patch: remember the point, see generateEvent()
++  theLastR = r;
+   double jac = 1.0;
+   pair<double,double> ll = lumiFn().generateLL(&r[0], jac);
+   Energy2 maxS = sqr(lumiFn().maximumCMEnergy())/exp(ll.first + ll.second);
+@@ -429,33 +437,87 @@
+     tStdXCombPtr lastXC = 
+       select(sampler()->lastBin(), weight);
+ 
+-    try {
+-
+-      lumiFn().select(lastXC);
+-
+-      currentEventBoost() = lumiFn().getBoost();
++    // evgen-benchmark patch (patches/thepeg-2.3.0-event-error-retry.diff).
++    // An event that fails AFTER its hard process was accepted -- Herwig's
++    // "Can't put the remnant on-shell", a shower that fails MaxTry times --
++    // is normally thrown away and a NEW phase-space point is drawn.  The
++    // cross-section is still quoted from all attempts, so the failed points'
++    // rate is silently handed to the points that survive, and when failures
++    // depend on the flavour and x of the hard process (they do: sea quarks,
++    // charm above all, at high x) the delivered sample is biased while its
++    // total looks right.  With MaxEventErrorRetries > 0 the event is instead
++    // rebuilt from scratch on the SAME point (same XComb = same parton
++    // channel, same random vector = same hard kinematics, fresh particle
++    // objects), up to that many times, and only then discarded.
++    const vector<double> acceptedR = theLastR;
++    const vector<Lorentz5Momentum> acceptedP = lastXC->meMomenta();
++    unsigned int nretry = 0;
++    bool stop = false;
+ 
+-      currentEvent(new_ptr(Event(lastParticles(), this, generator()->runName(),
+-				 generator()->currentEventNumber(), weight)));
++    while (1) {
++      try {
++
++        lumiFn().select(lastXC);
++
++        currentEventBoost() = lumiFn().getBoost();
+ 
+-      performCollision();
+-      if ( !currentCollision() ) throw Veto();
++        currentEvent(new_ptr(Event(lastParticles(), this, generator()->runName(),
++                                   generator()->currentEventNumber(), weight)));
+ 
+-      currentEvent()->transform(currentEventBoost());
++        performCollision();
++        if ( !currentCollision() ) throw Veto();
+ 
+-      return currentEvent();
++        currentEvent()->transform(currentEventBoost());
+ 
+-    }
+-    catch (Veto) {
+-      reject(currentEvent()->weight());
+-    }
+-    catch (Stop) {
+-      break;
+-    }
+-    catch (Exception &) {
+-      reject(currentEvent()->weight());
+-      throw;
++        if ( nretry ) ++theNRecovered;
++        return currentEvent();
++
++      }
++      catch (Veto) {
++        if ( nretry ) ++theNAbandoned;
++        reject(currentEvent()->weight());
++        break;
++      }
++      catch (Stop) {
++        stop = true;
++        break;
++      }
++      catch (Exception & ex) {
++        if ( ex.severity() == Exception::eventerror &&
++             nretry < theMaxEventErrorRetries && !acceptedR.empty() ) {
++          ex.handle();
++          if ( nretry == 0 ) ++theNRetriedEvents;
++          ++nretry;
++          ++theNRetries;
++          EventHandler::clean();
++          dSigDR(acceptedR);
++          // The rebuilt point must BE the accepted one.  ME2to2Base draws the
++          // azimuth of the scattering from UseRandom, not from the sampled
++          // point (the cross-section does not depend on it), so the rebuild
++          // comes back ROTATED about the beam axis -- an exact symmetry for
++          // beams along z, leaving x, Q2, y, W unchanged.  So compare E, p_z
++          // and |p_T|; anything else is a genuine mismatch, and the event is
++          // then discarded exactly as unpatched ThePEG would.
++          const vector<Lorentz5Momentum> & p = lastXC->meMomenta();
++          bool same = p.size() == acceptedP.size();
++          for ( size_t i = 0; same && i < p.size(); ++i ) {
++            const Energy scale = max(acceptedP[i].e(), 1.0*GeV);
++            same = abs(p[i].e() - acceptedP[i].e()) < 1e-9*scale &&
++                   abs(p[i].z() - acceptedP[i].z()) < 1e-9*scale &&
++                   abs(p[i].perp() - acceptedP[i].perp()) < 1e-7*scale;
++          }
++          if ( same ) continue;
++          ++theNMismatch;
++          ++theNAbandoned;
++          reject(weight);
++          break;
++        }
++        if ( nretry ) ++theNAbandoned;
++        reject(currentEvent()->weight());
++        throw;
++      }
+     }
++    if ( stop ) break;
+   }
+   return currentEvent();
+ }
+@@ -574,6 +636,16 @@
+      "points according to the cross section given by this event handler",
+      &StandardEventHandler::theSampler, false, false, true, true);
+ 
++  static Parameter<StandardEventHandler,unsigned int> interfaceMaxEventErrorRetries
++    ("MaxEventErrorRetries",
++     "evgen-benchmark patch: how many times an event that fails after its "
++     "hard process was accepted (an Exception::eventerror, e.g. a remnant "
++     "that cannot be put on shell) is rebuilt on the SAME phase-space point "
++     "before it is discarded.  0 = unpatched ThePEG: discard and draw a new "
++     "point, which biases the sample towards points that do not fail.",
++     &StandardEventHandler::theMaxEventErrorRetries, 0, 0, 10000,
++     false, false, Interface::limited);
++
+   interfaceSubhandlers.rank(11);
+   interfaceIncomingA.rank(3);
+   interfaceIncomingB.rank(2);
+@@ -582,11 +654,15 @@
+ 
+ void StandardEventHandler::persistentOutput(PersistentOStream & os) const {
+   os << theIncomingA << theIncomingB << theSubProcesses << theCuts << collisionCuts
+-     << theXCombs << theMaxDims << theSampler << theLumiDim << xSecStats;
++     << theXCombs << theMaxDims << theSampler << theLumiDim << xSecStats
++     << theMaxEventErrorRetries;
+ }
+ 
+-void StandardEventHandler::persistentInput(PersistentIStream & is, int) {
++void StandardEventHandler::persistentInput(PersistentIStream & is, int version) {
+   is >> theIncomingA >> theIncomingB >> theSubProcesses >> theCuts >> collisionCuts
+      >> theXCombs >> theMaxDims >> theSampler >> theLumiDim >> xSecStats;
++  // evgen-benchmark patch: version-0 files predate the retry switch
++  if ( version >= 1 ) is >> theMaxEventErrorRetries;
++  else theMaxEventErrorRetries = 0;
+ }
+ 
+--- a/LesHouches/LesHouchesEventHandler.h	2023-12-08 11:23:06
++++ b/LesHouches/LesHouchesEventHandler.h	2026-09-19 13:05:21
+@@ -409,6 +409,21 @@
+    * How to number the events
+    */
+   unsigned int UseLHEEvent;
++
++  /**
++   * FASER EVGEN-BENCHMARK PATCH (patches/thepeg-2.3.0-event-error-retry.diff).
++   * How many times an event that fails downstream of the Les Houches event
++   * with an Exception::eventerror (e.g. Herwig's "Can't put the remnant
++   * on-shell") is rebuilt from the SAME Les Houches event before it is
++   * discarded and the next one read.  0 (the default) is unpatched ThePEG.
++   */
++  unsigned int theMaxEventErrorRetries = 0;
++
++  /**
++   * Retry bookkeeping (not persistent), printed by statistics().
++   */
++  mutable long theNRetriedEvents = 0, theNRetries = 0, theNRecovered = 0,
++    theNAbandoned = 0;
+ 
+ public:
+ 
+@@ -466,6 +481,9 @@
+   : public ClassTraitsBase<LesHouchesEventHandler> {
+   /** Return a platform-independent class name */
+   static string className() { return "ThePEG::LesHouchesEventHandler"; }
++  /** Version 1 adds MaxEventErrorRetries (evgen-benchmark patch); a
++   *  version-0 run file reads it as 0. */
++  static int version() { return 1; }
+   /** Return the name of the shared library be loaded to get access to
+    *  the LesHouchesEventHandler class and every other class it uses
+    *  (except the base class). */
+--- a/LesHouches/LesHouchesEventHandler.cc	2023-12-08 11:23:06
++++ b/LesHouches/LesHouchesEventHandler.cc	2026-09-19 13:22:51
+@@ -237,6 +237,18 @@
+     // Divide by the bias introduced by the preweights in the reader.
+     weight /= currentReader()->preweight;
+ 
++    // evgen-benchmark patch (patches/thepeg-2.3.0-event-error-retry.diff):
++    // an event that fails after the Les Houches event was accepted (an
++    // Exception::eventerror, e.g. a remnant Herwig cannot put on shell) is
++    // rebuilt from the SAME event -- reset() drops the particles and XComb
++    // built from it, the HEPEUP record stays -- up to MaxEventErrorRetries
++    // times, instead of being dropped for the next event in the file.  The
++    // failures depend on the flavour and x of the hard process, so dropping
++    // them biases the showered sample while its total still closes.
++    unsigned int nretry = 0;
++    bool again = true;
++    while ( again ) {
++      again = false;
+     try {
+       theLastXComb = currentReader()->getXComb();
+ 
+@@ -266,17 +278,32 @@
+ 
+       if ( !currentCollision() ) throw Veto();
+ 
++      if ( nretry ) ++theNRecovered;
+       return currentEvent();
+     }
+     catch (Veto) {
++      if ( nretry ) ++theNAbandoned;
+       reject(weight);
+     }
+     catch (Stop) {
+     }
+-    catch (Exception &) {
++    catch (Exception & ex) {
++      if ( ex.severity() == Exception::eventerror &&
++           nretry < theMaxEventErrorRetries &&
++           currentReader()->rebuildCurrentEvent() ) {
++        ex.handle();
++        if ( nretry == 0 ) ++theNRetriedEvents;
++        ++nretry;
++        ++theNRetries;
++        EventHandler::clean();
++        again = true;
++        continue;
++      }
++      if ( nretry ) ++theNAbandoned;
+       reject(weight);
+       throw;
+     }
++    }
+   }
+ }
+ 
+@@ -376,6 +403,11 @@
+ }
+ 
+ void LesHouchesEventHandler::statistics(ostream & os) const {
++  if ( theMaxEventErrorRetries > 0 )
++    os << "evgen-benchmark event-error retry (MaxEventErrorRetries "
++       << theMaxEventErrorRetries << "): events retried " << theNRetriedEvents
++       << ", retries " << theNRetries << ", recovered " << theNRecovered
++       << ", abandoned " << theNAbandoned << "\n\n";
+   if ( statLevel() == 0 ) return;
+ 
+   string line = "======================================="
+@@ -521,13 +553,16 @@
+ void LesHouchesEventHandler::persistentOutput(PersistentOStream & os) const {
+   os << stats << histStats << theReaders << theSelector
+      << oenum(theWeightOption) << theUnitTolerance << theCurrentReader << warnPNum
+-     << theNormWeight << UseLHEEvent;
++     << theNormWeight << UseLHEEvent << theMaxEventErrorRetries;
+ }
+ 
+-void LesHouchesEventHandler::persistentInput(PersistentIStream & is, int) {
++void LesHouchesEventHandler::persistentInput(PersistentIStream & is, int version) {
+   is >> stats >> histStats >> theReaders >> theSelector
+      >> ienum(theWeightOption) >> theUnitTolerance >> theCurrentReader >> warnPNum
+      >> theNormWeight >> UseLHEEvent;
++  // evgen-benchmark patch: version-0 files predate the retry switch
++  if ( version >= 1 ) is >> theMaxEventErrorRetries;
++  else theMaxEventErrorRetries = 0;
+ }
+ 
+ ClassDescription<LesHouchesEventHandler>
+@@ -639,6 +674,16 @@
+      1);
+ 
+ 
++  static Parameter<LesHouchesEventHandler,unsigned int> interfaceMaxEventErrorRetries
++    ("MaxEventErrorRetries",
++     "evgen-benchmark patch: how many times an event that fails after its "
++     "Les Houches event was accepted (an Exception::eventerror, e.g. a remnant "
++     "that cannot be put on shell) is rebuilt from the SAME Les Houches event "
++     "before it is discarded.  0 = unpatched ThePEG: discard it and read the "
++     "next event, which biases the sample towards events that do not fail.",
++     &LesHouchesEventHandler::theMaxEventErrorRetries, 0, 0, 10000,
++     false, false, Interface::limited);
++
+   interfaceLesHouchesReaders.rank(10);
+   interfaceWeightOption.rank(9);
+ 
+--- a/LesHouches/LesHouchesReader.h	2023-12-08 11:23:06
++++ b/LesHouches/LesHouchesReader.h	2026-09-19 13:22:51
+@@ -245,6 +245,16 @@
+   void reset();
+ 
+   /**
++   * evgen-benchmark patch (patches/thepeg-2.3.0-event-error-retry.diff):
++   * forget everything built from the current event and restore its record
++   * as it was read -- createBeams() appends the beams to it -- so that
++   * getXComb() rebuilds the SAME event from scratch.  Used by
++   * LesHouchesEventHandler:MaxEventErrorRetries.  False if there is nothing
++   * to restore.
++   */
++  bool rebuildCurrentEvent();
++
++  /**
+    * Possibility for subclasses to recover from non-conformant
+    * settings of XMAXUP when an event file has been scanned with \a
+    * neve events. Should set weightScale so that the average XMAXUP
+@@ -901,6 +911,13 @@
+    *  Use the spin information
+    */
+   bool theIncludeSpin;
++
++  /**
++   * evgen-benchmark patch: the current event's record before fillEvent()
++   * first touched it, and whether it is valid.  Not persistent.
++   */
++  HEPEUP theSavedHEPEUP;
++  bool theHaveSavedHEPEUP = false;
+ 
+ private:
+ 
+--- a/LesHouches/LesHouchesReader.cc	2023-12-08 11:23:06
++++ b/LesHouches/LesHouchesReader.cc	2026-09-19 13:22:51
+@@ -466,6 +466,9 @@
+ 
+ void LesHouchesReader::fillEvent() {
+   if ( !particleIndex.empty() ) return;
++  // evgen-benchmark patch: keep the record as read, see rebuildCurrentEvent()
++  theSavedHEPEUP = hepeup;
++  theHaveSavedHEPEUP = true;
+   particleIndex.clear();
+   colourIndex.clear();
+   colourIndex(0, tColinePtr());
+@@ -510,7 +513,15 @@
+   }
+ }
+ 
++bool LesHouchesReader::rebuildCurrentEvent() {
++  if ( !theHaveSavedHEPEUP ) return false;
++  hepeup = theSavedHEPEUP;
++  reset();
++  return true;
++}
++
+ void LesHouchesReader::reset() {
++  theHaveSavedHEPEUP = false;
+   particleIndex.clear();
+   colourIndex.clear();
+   if ( theLastXComb ) theLastXComb->clean();

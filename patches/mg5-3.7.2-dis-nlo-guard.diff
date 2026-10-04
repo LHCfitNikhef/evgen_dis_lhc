@@ -1,0 +1,31 @@
+# Apply from the repository root (variables from config.sh):
+#   patch -p1 -d $MG5_DIR < patches/mg5-3.7.2-dis-nlo-guard.diff
+--- mg5_amc/madgraph/various/banner.py	2026-08-21 11:18:15
++++ mg5_amc/madgraph/various/banner.py	2026-08-21 11:18:15
+@@ -5780,7 +5780,25 @@
+         # for lepton-lepton collisions, ignore 'pdlabel' and 'lhaid'
+         if abs(self['lpp1'])!=1 or abs(self['lpp2'])!=1:
+             if self['lpp1'] == 1 or self['lpp2']==1:
+-                raise InvalidRunCard('Process like Deep Inelastic scattering not supported at NLO accuracy.')
++                # evgen-benchmark patch: DOWNGRADED FROM AN ERROR TO A WARNING.
++                # Upstream refuses lepton-hadron NLO outright.  The FKS
++                # machinery underneath is written against a generic lpp
++                # (driver_mintFO.f adds an integration dimension per HADRON
++                # beam, so a pointlike beam simply contributes none, and there
++                # is no initial-state collinear counterterm on that leg --
++                # which is what DIS is).  Any number obtained this way is
++                # UNVALIDATED BY THE AUTHORS and must be checked before use:
++                #   * check_poles.f only covers lpp = (1,1) and (2,2), so the
++                #     MadLoop pole cancellation test is NOT exercised here;
++                #   * run the same directory at LO first and confirm it
++                #     reproduces the validated LO cross section.
++                # See evgen-benchmark/patches/mg5-3.7.2-dis-nlo-guard.diff and
++                # mg5/README.md.
++                logger.warning('Lepton-hadron (DIS) at NLO is not supported '
++                               'upstream; this guard was lifted locally by '
++                               'the evgen-benchmark patch. The result is '
++                               'UNVALIDATED -- check it against a known '
++                               'reference before using it.')
+ 
+             if not self['lpp1'] == 2 == self['lpp2']:
+ 

@@ -1,0 +1,117 @@
+# Apply from the repository root (variables from config.sh):
+#   patch -p1 -d $POWHEG_V2 < patches/powheg-v2-nu-dis-ckm.diff
+--- nu-DIS-master/Born.f	2026-08-21 11:06:47
++++ nu-DIS-master/Born.f	2026-08-21 11:06:47
+@@ -242,6 +242,25 @@
+ 
+ 
+       function fun_ckm2(flav)
++c     evgen-benchmark patch (2026-08-21).  The original routine enumerated
++c     |flav(2)| = 1,2,3,4 by hand and had TWO defects, both of which only bite
++c     with numflav 5:
++c
++c       (a) NO branch for |flav(2)| = 5.  A b-initiated Born process fell
++c           through every test and the function returned an UNINITIALISED
++c           value.  Measured on the 1 TeV neutrino sample: 6% of the generated
++c           events were b-initiated and carried -1.8% of the total weight.
++c
++c       (b) the outgoing leg was tested only against |flav(4)| = 1, so an
++c           outgoing b landed in the "else" branch and was given a Cabibbo
++c           weight -- |V_us|^2 for u -> b, and |V_cs|^2 = 0.95 for c -> b,
++c           instead of |V_ub|^2 and |V_cb|^2.
++c
++c     Replaced by a direct lookup in ph_CKM(up,down).  On the 2x2 Cabibbo
++c     block this reproduces the original answers element for element; the
++c     third generation now gets its own (tiny) CKM factors.  Anything that is
++c     not a down/up pair -- a gluon leg, say -- returns 0 with a warning
++c     rather than an undefined value.
+       implicit none
+       include 'prc.h'
+       include 'PhysPars.h'
+@@ -250,41 +269,30 @@
+       integer nlegs
+       parameter (nlegs=nlegborn)
+       integer flav(nlegs)
+-            
++      integer fa,fb,iup,idn
++
+       if (prc_CC) then
+-         if (abs(flav(2)).eq.3) then
+-            if(abs(flav(4)).eq.4) then
+-c               fun_ckm2 = ph_coscabi**2
+-               fun_ckm2 = ph_CKM(2,2)**2
+-            else
+-c               fun_ckm2 = ph_sincabi**2
+-               fun_ckm2 = ph_CKM(1,2)**2
+-            endif
+-         elseif(abs(flav(2)).eq.1) then
+-            if(abs(flav(4)).eq.4) then
+-c               fun_ckm2 = ph_sincabi**2
+-               fun_ckm2 = ph_CKM(2,1)**2
+-            else
+-c               fun_ckm2 = ph_coscabi**2
+-               fun_ckm2 = ph_CKM(1,1)**2
+-            endif
+-         elseif(abs(flav(2)).eq.2) then
+-            if(abs(flav(4)).eq.1) then
+-c               fun_ckm2 = ph_coscabi**2
+-               fun_ckm2 = ph_CKM(1,1)**2
+-            else
+-c               fun_ckm2 = ph_sincabi**2
+-               fun_ckm2 = ph_CKM(1,2)**2
+-            endif
+-         elseif(abs(flav(2)).eq.4) then
+-            if(abs(flav(4)).eq.1) then
+-c               fun_ckm2 = ph_sincabi**2            
+-               fun_ckm2 = ph_CKM(2,1)**2
+-           else
+-c               fun_ckm2 = ph_coscabi**2
+-               fun_ckm2 = ph_CKM(2,2)**2
+-            endif
++         fa = abs(flav(2))
++         fb = abs(flav(4))
++c        one leg is down-type (d,s,b = 1,3,5), the other up-type (u,c,t = 2,4,6);
++c        which is which depends on whether the incoming leg is a quark or an
++c        antiquark, so decide on the parity of flav(2)
++         if (mod(fa,2).eq.1) then
++            idn = fa
++            iup = fb
++         else
++            iup = fa
++            idn = fb
+          endif
++         iup = iup/2                ! u,c,t -> 1,2,3
++         idn = (idn+1)/2            ! d,s,b -> 1,2,3
++         if (iup.ge.1 .and. iup.le.3 .and. idn.ge.1 .and. idn.le.3) then
++            fun_ckm2 = ph_CKM(iup,idn)**2
++         else
++            write(*,*) 'fun_ckm2: unexpected charged-current flavours ',
++     1           flav(2),flav(4),' -- returning 0'
++            fun_ckm2 = 0d0
++         endif
+       else
+          fun_ckm2 = 1d0
+       endif
+--- nu-DIS-master/init_couplings.f	2026-08-21 11:06:47
++++ nu-DIS-master/init_couplings.f	2026-08-21 11:06:47
+@@ -35,6 +35,20 @@
+       
+       ph_CKM(2,1) = ph_sincabi
+       ph_CKM(2,2) = ph_coscabi
++
++c     evgen-benchmark patch: THIRD GENERATION.  ph_CKM is declared (3,3) but
++c     only the 2x2 Cabibbo block was ever filled, so every third-generation
++c     element stayed 0.  That is harmless with numflav <= 4, but this
++c     benchmark runs numflav 5 (massless b in a five-flavour PDF), which puts
++c     b-initiated Born processes into the flavour list -- see
++c     init_processes.f::init_massless, where maxdown becomes 5.  PDG 2024
++c     magnitudes; the top row is unused here (maxup <= 4) but is filled for
++c     completeness.  Indexing is ph_CKM(up,down): (1,1)=V_ud ... (3,3)=V_tb.
++      ph_CKM(1,3) = 0.00382d0   ! V_ub
++      ph_CKM(2,3) = 0.0408d0    ! V_cb
++      ph_CKM(3,1) = 0.0086d0    ! V_td
++      ph_CKM(3,2) = 0.0415d0    ! V_ts
++      ph_CKM(3,3) = 0.99912d0   ! V_tb
+             
+       end
+ 
