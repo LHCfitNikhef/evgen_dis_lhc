@@ -7445,16 +7445,16 @@
  },
  "flux_weighted_W": {
   "energy_min_gev": 10.0,
-  "flux_source": "data/faser_flux/FASER_14.txt",
-  "frac_DIS": 0.9037861886782993,
-  "frac_DIS charm": 0.08725728645760324,
-  "frac_RES": 0.0057346610011692065,
-  "frac_QEL": 0.0027430132552755627,
-  "frac_DFR": 0.0004782542049447,
+  "flux_source": "data/faser_flux_2025 (EPOS-LHC light + POWHEG charm)",
+  "frac_DIS": 0.9050106598886364,
+  "frac_DIS charm": 0.08433018242249508,
+  "frac_RES": 0.006832162460425842,
+  "frac_QEL": 0.0032704257309307022,
+  "frac_DFR": 0.0005558856972021514,
   "frac_MEC": 0.0,
   "frac_COH": 0.0,
-  "nondis": 0.008955929599418894,
-  "mean_energy_gev": 915.1750458136056
+  "nondis": 0.01065847523858639,
+  "mean_energy_gev": 712.8336364736791
  },
  "antineutrino": {
   "current": "nubar",
@@ -14959,16 +14959,16 @@
   },
   "flux_weighted_W": {
    "energy_min_gev": 10.0,
-   "flux_source": "data/faser_flux/FASER_-14.txt",
-   "frac_DIS": 0.8733720961123738,
-   "frac_DIS charm": 0.10681239440567943,
-   "frac_RES": 0.013806327961661945,
-   "frac_QEL": 0.004792878944541983,
-   "frac_DFR": 0.0012149336014440314,
+   "flux_source": "data/faser_flux_2025 (EPOS-LHC light + POWHEG charm)",
+   "frac_DIS": 0.8734935392874977,
+   "frac_DIS charm": 0.10458069392987886,
+   "frac_RES": 0.015282140261200065,
+   "frac_QEL": 0.0053189225428467,
+   "frac_DFR": 0.0013232359651922786,
    "frac_MEC": 0.0,
    "frac_COH": 0.0,
-   "nondis": 0.01981414323266357,
-   "mean_energy_gev": 743.1141506426734
+   "nondis": 0.021924301747181723,
+   "mean_energy_gev": 686.6258130285376
   }
  }
 }

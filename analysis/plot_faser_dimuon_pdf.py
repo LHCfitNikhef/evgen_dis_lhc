@@ -44,7 +44,7 @@ COLOUR = {"NNPDF40_nnlo_as_01180": ("NNPDF4.0 NNLO", "#2a78d6", "o"),
           "CT18NNLO": ("CT18 NNLO", "#eb6834", "s"),
           "MSHT20nnlo_as118": ("MSHT20 NNLO", "#3fa66a", "D"),
           "ATLASpdf21_T1": ("ATLASpdf21", "#8e5bd0", "^"),
-          "ABMP16_5_nnlo": ("ABMP16 NNLO", "#d4a017", "v"),
+          "ABMP16als118_5_nnlo": ("ABMP16 NNLO", "#d4a017", "v"),
           "GRV98lo": ("GRV98 LO (no band)", "#777777", "x")}
 ROWS = [("cc", r"CC, $Q^2>4$"), ("charm", r"charm"), ("charm_mu", r"charm$\to\mu$"),
         ("p20", r"$p>20$"), ("p50", r"$p>50$"), ("p100", r"$p>100$")]

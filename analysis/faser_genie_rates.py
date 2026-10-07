@@ -157,10 +157,14 @@ def closure_against_files(pid, e_knots, sig_pb):
     rate-weighted mean, because the shape is the whole argument: a model
     difference cannot be flat over three decades in energy.
     """
-    e, phi = fr.flux(str(pid))
-    _e, cc = fr.flux(str(pid), cc=True)
-    _e, s = _on_flux(pid, e_knots, sig_pb)          # pb per NUCLEUS
-    t_file = fr.column_density(fr.FLUX_TARGET_MASS_G) / fr.A_W   # nuclei/cm2
+    # the 2021 files: the only ones that carry the authors' own CC counts
+    e, phi = fr.legacy_flux(str(pid))
+    _e, cc = fr.legacy_flux(str(pid), cc=True)
+    ok = sig_pb > 0
+    s = np.exp(np.interp(np.log(e), np.log(e_knots[ok]), np.log(sig_pb[ok])))
+    s[e < e_knots[ok][0]] = 0.0                      # pb per NUCLEUS
+    t_file = fr.column_density(fr.FLUX_TARGET_MASS_G,
+                               fr.LEGACY_FLUX_APERTURE_CM2) / fr.A_W  # nuclei/cm2
     ours = phi * s * 1e-36 * t_file
     ok = (ours > 0) & (cc > 0)
     return e[ok], ours[ok] / cc[ok], float(ours[ok].sum() / cc[ok].sum())
@@ -188,7 +192,7 @@ def main():
           f"flux's own {fr.FLUX_APERTURE_CM2:.0f} cm2 aperture = "
           f"{NUCLEI_PER_CM2*(Z_W+N_W):.3e} nucleons/cm2  (the files' own "
           f"target is {fr.FLUX_TARGET_MASS_G/1e6:.2g} t = "
-          f"{fr.column_density(fr.FLUX_TARGET_MASS_G):.3e})")
+          f"{fr.column_density(fr.FLUX_TARGET_MASS_G, fr.LEGACY_FLUX_APERTURE_CM2):.3e})")
     print()
     print(f"{'flavour':8s} {'sig_p(1TeV)':>11s} {'sig_n(1TeV)':>11s} "
           f"{'N (ours)':>10s} {'files x 1.1/1.2':>15s} "

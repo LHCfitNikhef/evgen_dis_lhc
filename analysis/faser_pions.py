@@ -140,7 +140,10 @@ TRACK_E_MIN = selmod.TRACK_E_MIN   # GeV: a Tier E track (2026-09-19)
 # factor falls from 1.24 to 1.08 on pions, so a 60% efficiency costs less
 # statistical error than the naive sqrt would say -- and quoting "1.24 times
 # the naive sqrt(N)" alongside an efficiency-corrected yield would be wrong.
-HADRON_SELECTION_EFF = 0.6
+# 80%, not 60% (user, 2026-10-06, after Felix Kling): FASER quotes a single-
+# film efficiency of 80% -- itself conservative -- giving ~99.5% tracking
+# efficiency with 3 hits out of 7 films (arXiv:2504.13008, FASER:2025qaf).
+HADRON_SELECTION_EFF = 0.8
 
 
 def hadron_yield(y, var=None):

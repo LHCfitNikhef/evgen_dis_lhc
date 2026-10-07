@@ -10,7 +10,9 @@ the neutrino rates against the published FASER predictions.
     N = integral dE  Phi(E) x sigma_fid(E) x T
 
   Phi     the flux through the detector in LHC Run 3, from the flux authors'
-          own files -- NOT ours.  `data/faser_flux/` for neutrinos (150 fb^-1)
+          own files -- NOT ours.  `data/faser_flux_2025/` for neutrinos
+          (EPOS-LHC light + POWHEG charm, the arXiv:2402.13318 default; it
+          replaced the 2021 average in `data/faser_flux/` on 2026-10-07)
           and `data/faser_muon_flux/` for muons (250 fb^-1); each directory's
           README carries the provenance and the authors' caveats.
   sigma   THE BENCHMARK'S OWN fiducial cross-section, per generator, per
@@ -114,13 +116,16 @@ SELECTION_SUFFIXES = tuple(f"_{n}" for n in _sel.SELECTIONS
                            if n != _sel.DEFAULT)
 
 BASE = paths.REPO
-FLUXDIR = f"{BASE}/data/faser_flux"
+FLUXDIR = f"{BASE}/data/faser_flux"            # 2021 average: cross-checks only
+FLUX2025DIR = f"{BASE}/data/faser_flux_2025"   # THE flux of every rate
 MUFLUXDIR = f"{BASE}/data/faser_muon_flux"
 
 # THE ONE LUMINOSITY EVERY NUMBER ON THE PAGE IS QUOTED AT: 250 fb^-1, the
 # total FASERnu expects by the end of Run 3, and the normalisation of both
-# published predictions this module compares against.  The neutrino flux
-# files are 150 fb^-1 and are scaled; the muon flux files are already 250.
+# published predictions this module compares against.  flux() returns the
+# neutrino count for LUMI_FLUX_NU = 150 fb^-1 whichever file set it reads (the
+# 2021 files are 150 fb^-1, the 2025 ones per fb^-1 and are multiplied), and
+# callers scale; the muon flux files are already 250.
 LUMI_FB = 250.0
 LUMI_FLUX_NU = 150.0
 LUMI_FLUX_MU = 250.0
@@ -172,7 +177,15 @@ E_EDGES = [0.0, float(np.sqrt(400.0 * 1000.0)),
 # count at all; the residual is an acceptance shape, not a factor.
 N_A = 6.02214076e23
 A_W_GMOL = 183.84                     # tungsten, molar mass
-FLUX_APERTURE_CM2 = 25.0 * 25.0       # 2105.08270: |x|, |y| < 12.5 cm
+# >>> 2026-10-07 (user): THE FLUX IS NOW THE 2402.13318 DEFAULT, EPOS-LHC for
+#     light hadrons + POWHEG + Pythia 8 (arXiv:2309.12793) for charm, as
+#     binned spectra through the FASERnu FACE itself (data/faser_flux_2025/,
+#     25 x 30 cm).  The rule above still holds -- divide by the aperture the
+#     COUNT was made through -- and that aperture is now 25 x 30 cm. <<<
+#     The 2021 files and their 25 x 25 cm survive only for the cross-checks
+#     against Table I of 2105.08270 (legacy_flux, LEGACY_FLUX_APERTURE_CM2).
+FLUX_APERTURE_CM2 = 25.0 * 30.0       # 2025 spectra: the FASERnu tungsten face
+LEGACY_FLUX_APERTURE_CM2 = 25.0 * 25.0  # 2105.08270: |x|, |y| < 12.5 cm
 FLUX_TARGET_MASS_G = 1.2e6            # 2105.08270: 1.2 tonnes of tungsten
 FASERNU_MASS_G = 1.1e6                # 2402.13318: 1.1 t, 25 x 30 x 80 cm
 
@@ -271,14 +284,40 @@ REF_MU = {
 
 
 # ------------------------------------------------------------------ the flux
-def flux(pid, cc=False):
-    """(E [GeV], N) from the vendored neutrino files; N is for 150 fb^-1."""
+FLUX2025_LIGHT = "EPOSLHC_light_fasernu25x30.txt"
+FLUX2025_CHARM = "Powheg_pythia_charm_{}_fasernu25x30.txt"
+FLUX2025_COLS = {"12": 2, "-12": 4, "14": 6, "-14": 8, "16": 10, "-16": 12}
+
+
+def flux(pid, cc=False, charm="central", aperture="fasernu25x30"):
+    """(E [GeV], N) of the neutrino flux through FASERnu, N for 150 fb^-1.
+
+    The 2025 spectra, EPOS-LHC light + POWHEG charm (`charm` = central, min
+    or max, the POWHEG scale envelope), at the geometric centre of each of
+    their logarithmic bins.  `aperture` is the area the count is made
+    through: the FASERnu face (FLUX_APERTURE_CM2), or "fid_r100", the
+    electronic-detector fiducial cylinder (tools/make_flux_fid_spectra.py).  cc=True returns the 2021 authors' own CC
+    interaction counts, which exist only for the legacy files."""
+    if cc:
+        return legacy_flux(pid, cc=True)
+    col = FLUX2025_COLS[str(pid)]
+    lt = np.loadtxt(f"{FLUX2025DIR}/{FLUX2025_LIGHT.replace('fasernu25x30', aperture)}")
+    ch = np.loadtxt(f"{FLUX2025DIR}/{FLUX2025_CHARM.format(charm).replace('fasernu25x30', aperture)}")
+    if not np.allclose(lt[:, :2], ch[:, :2]):
+        raise SystemExit("[faser_rates] light and charm flux bins differ")
+    e = np.sqrt(lt[:, 0] * lt[:, 1])
+    return e, (lt[:, col] + ch[:, col]) * LUMI_FLUX_NU
+
+
+def legacy_flux(pid, cc=False):
+    """(E [GeV], N) from the 2021 files of arXiv:2105.08270; N is for 150
+    fb^-1 through 25 x 25 cm.  Cross-checks against that paper only."""
     name = f"FASER_CCint_{pid}.txt" if cc else f"FASER_{pid}.txt"
     d = np.loadtxt(f"{FLUXDIR}/{name}")
     return d[:, 0], d[:, 1]
 
 
-def column_density(mass_g=FASERNU_MASS_G):
+def column_density(mass_g=FASERNU_MASS_G, aperture_cm2=FLUX_APERTURE_CM2):
     """Target nucleons per cm^2 to pair with the vendored neutrino flux.
 
     The mass we want, divided by the aperture the FLUX was counted through --
@@ -286,7 +325,7 @@ def column_density(mass_g=FASERNU_MASS_G):
     wrong denominator.  Default: FASERnu as arXiv:2402.13318 describes it,
     1.1 tonnes of tungsten, giving 1.061e27 nucleons/cm^2.
     """
-    return mass_g / A_W_GMOL * N_A * A_W / FLUX_APERTURE_CM2
+    return mass_g / A_W_GMOL * N_A * A_W / aperture_cm2
 
 
 def column_density_sigma_fit(pid="14"):
@@ -298,8 +337,8 @@ def column_density_sigma_fit(pid="14"):
     the W propagator bends over well inside the flux.  Fitted over 10 GeV to
     2 TeV it returns 1.229e27 against the file's true 1.157e27.
     """
-    e, phi = flux(pid)
-    _e2, cc = flux(pid, cc=True)
+    e, phi = legacy_flux(pid)
+    _e2, cc = legacy_flux(pid, cc=True)
     s = SIGMA_CC_PER_GEV if not pid.startswith("-") else SIGMA_CC_PER_GEV_BAR
     m = (e > 10.0) & (e < 2000.0) & (phi > 0)
     t = (cc[m] / phi[m]) / (s * e[m])
@@ -312,7 +351,7 @@ def column_density_sigma_fit(pid="14"):
 # against the files themselves by check_flux_provenance().
 REF_FLUX_2105 = {
     "arxiv": "2105.08270", "table": "Table I, FASERnu", "lumi_fb": 150.0,
-    "target_mass_g": FLUX_TARGET_MASS_G, "aperture_cm2": FLUX_APERTURE_CM2,
+    "target_mass_g": FLUX_TARGET_MASS_G, "aperture_cm2": LEGACY_FLUX_APERTURE_CM2,
     "combination_all": {"nue": 1710.0, "numu": 5782.0, "nutau": 40.5},
     "combination_no_dpmjet": {"nue": 1128.0, "numu": 5346.0, "nutau": 21.6},
 }
@@ -606,12 +645,8 @@ def flux_weights(current, pid="14", geometry="25x30"):
     if current == "nu":
         e_pts, phi = flux(pid)
         phi = phi * (LUMI_FB / LUMI_FLUX_NU)
-        _got, bad = check_flux_provenance()
-        if bad:
-            raise SystemExit("[faser_rates] the vendored flux files no longer "
-                             "reproduce Table I of arXiv:2105.08270, so the "
-                             "aperture and target mass the column density "
-                             "assumes are not theirs: " + "; ".join(bad))
+        if not (phi > 0).any():
+            raise SystemExit(f"[faser_rates] empty flux for pid {pid}")
         return e_pts, phi, PB_TO_CM2 * column_density()   # pb -> events per nucleon
     e_nodes, xf = muon_flux(geometry)
     e_pts = np.geomspace(e_nodes[0], e_nodes[-1], 2000)

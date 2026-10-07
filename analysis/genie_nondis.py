@@ -225,7 +225,7 @@ def flux_weighted(cur, tab):
 
     The rate is sum_i phi_i sigma(E_i) x column density, and the column
     density cancels in a ratio, so only the flux shape enters.  The neutrino
-    flux is a histogram of counts (data/faser_flux, 150 fb^-1); the muon flux
+    flux is a histogram of counts (faser_rates.flux: data/faser_flux_2025, scaled to 150 fb^-1); the muon flux
     is an LHAPDF grid of x f(x) with f = n_T L_T dN/dx, so the integral over
     dx is the integral of x f over d ln x (analysis/faser_rates.muon_flux).
     """
@@ -248,7 +248,7 @@ def flux_weighted(cur, tab):
     tot = np.array([_at(W["total_pb"], x) for x in e])
     res = {"energy_min_gev": E_LO,
            "flux_source": ("data/faser_muon_flux (25x30 cm)" if cur == "mu"
-                           else f"data/faser_flux/FASER_{CURRENTS[cur][0]}.txt")}
+                           else "data/faser_flux_2025 (EPOS-LHC light + POWHEG charm)")}
     den = integral(tot)
     for g in GROUPS + ["nondis"]:
         s = W["nondis_pb"] if g == "nondis" else W["sigma_pb"][g]

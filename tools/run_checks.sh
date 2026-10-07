@@ -2,7 +2,6 @@
 # ONE ENTRY POINT FOR EVERY GATE (TODO item 7, 2026-09-19).
 #
 #   tools/run_checks.sh            run every checker, print a summary, exit 1 on any FAIL
-#   tools/run_checks.sh --build    rebuild results/report.html first (make_report.py --no-copy)
 #   tools/run_checks.sh --pull     pull the paper from Overleaf first (CONVENTIONS.md rule 4)
 #   tools/run_checks.sh --fast     skip the checks that read event files (parser drift)
 #
@@ -12,13 +11,10 @@
 # checker here is run with no arguments, and its exit code decides:
 #   0 = PASS, 77 = SKIP (the checker says it has nothing to test), else FAIL.
 #
-# ORDER MATTERS for two groups, and the script says so rather than guessing:
-#   * the PAGE checks read results/report.html -- if the page is older than a
-#     result JSON or than make_report.py, they are checking a stale page; the
-#     script warns (use --build);
-#   * the PAPER checks read paper/*.tex -- if Overleaf is ahead of the local
-#     copy they check a superseded text; the script prints the sync status
-#     (use --pull).
+# ORDER MATTERS for the PAPER checks: they read paper/*.tex, and if Overleaf
+# is ahead of the local copy they check a superseded text; the script prints
+# the sync status (use --pull).  The HTML report and its four page checks
+# (and check_yadism_scheme, which read the page) were retired on 2026-10-07.
 #
 # bash 3.2 (macOS /bin/bash): no associative arrays.
 set -u
@@ -28,13 +24,12 @@ cd "$REPO" || exit 2
 # the analysis interpreter (config.sh: $BENCH_PYTHON, not a bare python3)
 . "$REPO/config.sh"
 
-BUILD=0; PULL=0; FAST=0
+PULL=0; FAST=0
 for a in "$@"; do
     case "$a" in
-        --build) BUILD=1 ;;
         --pull) PULL=1 ;;
         --fast) FAST=1 ;;
-        -h|--help) sed -n 2,26p "$0"; exit 0 ;;
+        -h|--help) sed -n 2,23p "$0"; exit 0 ;;
         *) echo "unknown option $a" >&2; exit 2 ;;
     esac
 done
@@ -42,22 +37,6 @@ done
 if [ $PULL = 1 ]; then
     echo "== pulling the paper from Overleaf"
     tools/sync_overleaf.sh pull || { echo "pull failed" >&2; exit 2; }
-fi
-if [ $BUILD = 1 ]; then
-    echo "== rebuilding results/report.html"
-    _log=$(mktemp "${TMPDIR:-/tmp}/run_checks_build.XXXXXX")
-    "$BENCH_PYTHON" analysis/make_report.py --no-copy > "$_log" 2>&1 \
-        || { tail -20 "$_log"; rm -f "$_log"; exit 2; }
-    rm -f "$_log"
-fi
-
-# stale-page warning: any result JSON or the page builder newer than the page
-PAGE=results/report.html
-if [ ! -s "$PAGE" ]; then
-    echo "WARNING: $PAGE does not exist -- the page checks will fail (use --build)"
-elif [ -n "$(find results results_nu analysis/make_report.py analysis/paper_plots \
-            -newer "$PAGE" \( -name '*.json' -o -name '*.py' \) 2>/dev/null | head -1)" ]; then
-    echo "WARNING: $PAGE is older than some results or code -- page checks see a stale page (use --build)"
 fi
 echo "== paper sync status"
 tools/sync_overleaf.sh status 2>/dev/null | tail -3
@@ -80,13 +59,8 @@ run check_manifests          "$BENCH_PYTHON" tools/check_manifests.py
 run check_figure_labels      "$BENCH_PYTHON" tools/check_figure_labels.py
 run check_paper_plots        "$BENCH_PYTHON" tools/check_paper_plots.py
 run check_paper_figures_used "$BENCH_PYTHON" tools/check_paper_figures_used.py
-run check_report_claims      "$BENCH_PYTHON" tools/check_report_claims.py
 run check_paper_claims       "$BENCH_PYTHON" tools/check_paper_claims.py
-echo "== the rendered page (results/report.html)"
-run check_report_complete    "$BENCH_PYTHON" tools/check_report_complete.py
-run check_report_caps        "$BENCH_PYTHON" tools/check_report_caps.py
-run check_report_js          "$BENCH_PYTHON" tools/check_report_js.py
-run check_yadism_scheme      "$BENCH_PYTHON" tools/check_yadism_scheme.py
+echo "== paper text"
 run check_powheg_naming      "$BENCH_PYTHON" tools/check_powheg_naming.py
 echo "== parsers (read event files)"
 if [ $FAST = 1 ]; then

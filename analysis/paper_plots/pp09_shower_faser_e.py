@@ -300,8 +300,9 @@ def block(ax, axr, resdir, rows, obs, div, unit, xs, ys, ylab_q):
         with np.errstate(divide="ignore", invalid="ignore"):
             band = np.where(dy > 0, dr / np.where(dy > 0, dy, 1.0), np.nan)
         axr.stairs(1.0 + band, de, baseline=1.0 - band, fill=True,
-                   color="#0072b2", alpha=0.18, lw=0, zorder=1,
-                   label=tex("stat. error"))
+                   color="#0072b2", alpha=0.18, lw=0, zorder=1)
+        # NO LEGEND ENTRY FOR THE STAT. BAND (user, 2026-10-05): the caption
+        # names it instead.
         axr.axhline(1.0, color="#9aa1a9", lw=0.9, ls="-", zorder=1)
         mhou(ax, axr, resdir, obs, de, dy, div)
     ax.set_xscale(xs)
@@ -520,11 +521,12 @@ def main():
     # TWO ROWS BY FOUR COLUMNS, ONE COLUMN PER NLO CALCULATION (user,
     # 2026-09-18): matplotlib fills a legend column by column, so listing each
     # calculation's two showers back to back puts them one above the other --
-    # POWHEG-RES, POWHEG-V2, Sherpa, then the two bands.
+    # POWHEG-RES, POWHEG-V2, Sherpa.  The MHOU band shares POWHEG's entry and
+    # the stat. band has none (user, 2026-10-05), so three columns of two.
     want = [tex(MU_ROWS[0][0]), tex(MU_ROWS[1][0]),
             tex(NU_ROWS[0][0]), tex(NU_ROWS[1][0]),
             tex(MU_ROWS[2][0]), tex(MU_ROWS[3][0]),
-            tex("stat. error"), tex(band_label("results"))]
+            tex(band_label("results"))]
     want = list(dict.fromkeys(want))
     order = [lab.index(w) for w in want if w in lab]
     order += [k for k in range(len(lab)) if k not in order]
@@ -536,9 +538,9 @@ def main():
         # THE LEGEND NAMES THE GENERATORS AND IS READ FIRST, so it is set at
         # the house size rather than shrunk to fit (user, 2026-09-08:
         # "increase the font of the legend indicating the various MC
-        # generators").  Four columns of two, one per calculation, as above.
+        # generators").  Three columns of two, one per calculation, as above.
         fig.legend(h, lab, loc="upper center", bbox_to_anchor=(0.535, 0.958),
-                   ncol=4, frameon=True, handlelength=2.4,
+                   ncol=3, frameon=True, handlelength=2.4,
                    columnspacing=1.6, labelspacing=0.45,
                    fontsize=plotstyle.FS_LEGEND + 2)
     fig.suptitle(tex(FIG_TITLE), y=0.99, fontsize=plotstyle.FS_SUPTITLE)

@@ -179,3 +179,5 @@ config.local.sh
 # histograms, rebuilt by telescopes/yadism_sf.py (~7 min per arm) and
 # telescopes/sigma_fold.py
 results_telescopes/sf_cache/
+# The compiled paper; Overleaf builds its own (user, 2026-10-07)
+paper/faser-evgen-benchmark.pdf

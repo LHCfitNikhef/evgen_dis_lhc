@@ -9,7 +9,7 @@
 # that was published, and each is regenerated through the same command that
 # made it.  Hard-process-tag diagnostics (`_charm`, `_charmany`) and the
 # shower-less ME-level samples (`_me`) are untouched by the subtraction and
-# are skipped.  After it: tools/make_all_plots.sh && analysis/make_report.py,
+# are skipped.  After it: tools/make_all_plots.sh,
 # tools/sync_paper_figures.sh, tools/check_paper_claims.py.
 set -e
 cd "$(dirname "$0")"

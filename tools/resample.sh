@@ -65,7 +65,7 @@ samples this knows how to re-derive:
 
 after ANY of them, finish with:
   tools/check_manifests.py             (every result reads its WHOLE sample)
-  tools/make_all_plots.sh && analysis/make_report.py
+  tools/make_all_plots.sh
   tools/sync_paper_figures.sh          (if a paper plot moved)
   tools/check_paper_claims.py          (the paper's numbers)
   tools/export_faser_emulsion_csv.py --check
@@ -184,7 +184,7 @@ esac
 echo
 echo "== downstream re-derivation done.  Now: =="
 echo "   tools/check_manifests.py"
-echo "   tools/make_all_plots.sh && analysis/make_report.py"
+echo "   tools/make_all_plots.sh"
 echo "   tools/check_paper_claims.py"
 echo "   tools/export_faser_emulsion_csv.py --check"
 echo "   tools/export_sidis_share.py --check"

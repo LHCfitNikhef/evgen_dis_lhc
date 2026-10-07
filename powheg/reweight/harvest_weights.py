@@ -22,6 +22,13 @@ LHE-to-HepMC join failed.
 Usage:
   harvest_weights.py <in.lhe> <out.npz>
   harvest_weights.py --merge <dir_of_npz> <out.npz>
+  harvest_weights.py --replace <weights.npz> <new.npz>
+
+--replace overwrites, in place, the columns of <weights.npz> whose ids
+<new.npz> carries (swapping one PDF set for another without redoing the
+other 300 weights; tools/powheg_v2_dimuon_pdf_swap_set.sh).  <new.npz> must
+also carry the nominal id 1001, which is compared with the stored column:
+the same positional join as --merge, so it is checked the same way.
 """
 import os
 import re
@@ -90,8 +97,32 @@ def merge(d, out):
     print(f"  merged {len(files)} pass(es): {n} events x {len(keep)} weights")
 
 
+def replace(old, new):
+    zo, zn = np.load(old, allow_pickle=False), np.load(new, allow_pickle=False)
+    io, wo = [str(x) for x in zo["ids"]], zo["weights"].copy()
+    inn, wn = [str(x) for x in zn["ids"]], zn["weights"]
+    if wn.shape[0] != wo.shape[0]:
+        sys.exit(f"{new} has {wn.shape[0]} events, {old} {wo.shape[0]}; refusing")
+    if "1001" not in inn or "1001" not in io:
+        sys.exit("the nominal weight 1001 is needed in both files to check alignment")
+    a, b = wo[:, io.index("1001")], wn[:, inn.index("1001")]
+    dev = np.nanmax(np.abs(a - b) / np.maximum(np.abs(a), 1e-300))
+    if not dev < 1e-4:
+        sys.exit(f"nominal weights differ by up to {dev:.2e}: misaligned; refusing")
+    missing = [i for i in inn if i != "1001" and i not in io]
+    if missing:
+        sys.exit(f"ids not in {old}: {missing[:5]}...; refusing")
+    for k, i in enumerate(inn):
+        if i != "1001":
+            wo[:, io.index(i)] = wn[:, k]
+    np.savez_compressed(old, ids=zo["ids"], weights=wo)
+    print(f"  replaced {len(inn) - 1} weight column(s); nominal agrees to {dev:.1e}")
+
+
 def main():
-    if sys.argv[1:2] == ["--merge"]:
+    if sys.argv[1:2] == ["--replace"]:
+        replace(sys.argv[2], sys.argv[3])
+    elif sys.argv[1:2] == ["--merge"]:
         merge(sys.argv[2], sys.argv[3])
     else:
         harvest(sys.argv[1], sys.argv[2])

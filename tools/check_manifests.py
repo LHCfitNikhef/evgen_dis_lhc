@@ -20,7 +20,7 @@ Fewer is not an error: samples are pruned once analysed (rule 1), and a
 result whose inputs have vanished is the only record of them.
 
 Exit status 1 if any result is stale, so a driver can gate on it.
-`analysis/make_report.py` runs it on every build.
+tools/run_checks.sh runs it.
 
 Usage: tools/check_manifests.py [-v]        (-v also lists the clean ones)
 """

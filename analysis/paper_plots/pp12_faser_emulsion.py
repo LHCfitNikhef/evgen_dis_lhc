@@ -66,6 +66,9 @@ COLS = [("nue", r"$\nu_e + \bar\nu_e$ CC, 7 candidates"),
 # SHERPA NLO, I understand this requires regeneration but this is an important
 # plot"); its samples had to be regenerated because the production card cuts
 # 0.2 < y < 0.9 AT GENERATION and FASER imposes no y window at all.
+# THE MHOU BAND IS GREY, as in every other paper figure (user, 2026-10-06):
+# a blue band reads as the statistical error, which is blue elsewhere.
+MHOU_GREY, MHOU_ALPHA = "#111111", 0.14
 GENS = [("powheg_v2", "POWHEG-V2", "#0072b2", "-"),
         ("genie", "GENIE (GRV98LO)", "#d55e00", "--"),
         ("sherpa_nlo", "Sherpa", "#009e73", "-."),
@@ -80,7 +83,7 @@ CAPTION = (
     "CERN-FASER-CONF-2026-002, digitised from its Figs. 9 and 10, with "
     "Poisson errors. Curves: POWHEG-V2, GENIE in the default tune, and Sherpa "
     "and Herwig at next-to-leading order, folded over the neutrino and antineutrino "
-    "fluxes on tungsten inside FASER&rsquo;s own selection &mdash; no "
+    "fluxes (EPOS-LHC light hadrons + POWHEG charm, arXiv:2402.13318) on tungsten inside FASER&rsquo;s own selection &mdash; no "
     "Q&sup2; cut, no y window, the lepton counted among the tracks &mdash; "
     "and normalised to the observed count, so what is compared is the shape. "
     "Neutron targets are genuine neutrons in every generator, and POWHEG-V2 "
@@ -88,9 +91,9 @@ CAPTION = (
     "The band is POWHEG-V2&rsquo;s seven-point scale envelope on the shape. "
     "Lower panels: GENIE, Sherpa and Herwig as a ratio to POWHEG-V2.")
 
-MESSAGE = """The four predictions separate exactly where the hadronic final state enters, and nowhere else. The lepton momentum and the lepton angle are the same in all of them: bin by bin, GENIE, Sherpa and Herwig sit within 4.0%, 2.3% and 3.8% of POWHEG-V2 on the momentum, and within 4.8%, 7.1% and 5.5% on the angle. That is the inclusive agreement of the earlier sections surviving the fold over the flux, and it is what one should expect of an observable a structure-function calculation could have predicted.
+MESSAGE = """The four predictions separate exactly where the hadronic final state enters, and nowhere else. The lepton momentum and the lepton angle are the same in all of them: bin by bin, GENIE, Sherpa and Herwig sit within 1.6%, 2.7% and 4.1% of POWHEG-V2 on the momentum, and within 4.5%, 7.6% and 5.8% on the angle. That is the inclusive agreement of the earlier sections surviving the fold over the flux, and it is what one should expect of an observable a structure-function calculation could have predicted.
 
-The two hadronic observables are a different matter. On the track multiplicity GENIE places more of its rate at low multiplicity and the three matched calculations more in the tail; they cross GENIE between nine and ten tracks, and above twelve POWHEG-V2 is 2.7 times it, Sherpa 3.7 and Herwig 4.0. The azimuth between the lepton and the summed hadrons &mdash; hadronic despite being an angle &mdash; has GENIE 11% above POWHEG-V2 well below the back-to-back peak and a third below it just short of the peak.
+The two hadronic observables are a different matter. On the track multiplicity GENIE places more of its rate at low multiplicity and the three matched calculations more in the tail; they cross GENIE between nine and ten tracks, and above twelve POWHEG-V2 is 2.7 times it, Sherpa 3.7 and Herwig 4.2. The azimuth between the lepton and the summed hadrons &mdash; hadronic despite being an angle &mdash; has GENIE 7% above POWHEG-V2 well below the back-to-back peak and a third below it just short of the peak.
 
 Missing higher orders are not what limits this, and the band says so directly: over the bins that carry the rate the seven-point envelope is at most 1.1% on the multiplicity and 2.6% on the lepton momentum, against a generator-to-generator difference on the multiplicity that reaches a factor of three and a Poisson error of twenty per cent at best on 33 candidates. On the hadronic final state it is the modelling that dominates, not the perturbative order.
 
@@ -187,25 +190,27 @@ CLAIMS = [
                        and _d()["cuts"]["lep_p_min"] == 200.0),
      "detail": lambda: ", ".join(f"{k}={v}" for k, v in
                                  sorted(_d()["cuts"].items()))},
-    {"what": "the leptonic observables agree: GENIE and Sherpa within 4.0% "
-             "and 2.3% of POWHEG-V2 on the lepton momentum, and within 4.8% "
-             "and 7.1% on the lepton angle",
-     "check": lambda: (abs(_spread("numu", "plep", "genie") - 0.040) < 0.002
-                       and abs(_spread("numu", "plep", "sherpa_nlo") - 0.023) < 0.002
-                       and abs(_spread("numu", "tanlep", "genie") - 0.048) < 0.002
-                       and abs(_spread("numu", "tanlep", "sherpa_nlo") - 0.071) < 0.002),
+    # numbers below moved with the flux switch of 2026-10-07: the energy
+    # mix is now EPOS-LHC light + POWHEG charm (data/faser_flux_2025)
+    {"what": "the leptonic observables agree: GENIE and Sherpa within 1.6% "
+             "and 2.7% of POWHEG-V2 on the lepton momentum, and within 4.5% "
+             "and 7.6% on the lepton angle",
+     "check": lambda: (abs(_spread("numu", "plep", "genie") - 0.016) < 0.002
+                       and abs(_spread("numu", "plep", "sherpa_nlo") - 0.027) < 0.002
+                       and abs(_spread("numu", "tanlep", "genie") - 0.045) < 0.002
+                       and abs(_spread("numu", "tanlep", "sherpa_nlo") - 0.076) < 0.002),
      "detail": lambda: ", ".join(
          f"{obs} {gen} {100 * _spread('numu', obs, gen):.1f}%"
          for obs in ("plep", "tanlep") for gen in ("genie", "sherpa_nlo"))},
-    {"what": "Herwig's leptonic observables agree as well: within 3.8% of "
-             "POWHEG-V2 on the lepton momentum and 5.5% on the lepton angle",
-     "check": lambda: (abs(_spread("numu", "plep", "herwig_nlo") - 0.038) < 0.002
-                       and abs(_spread("numu", "tanlep", "herwig_nlo") - 0.055) < 0.002),
+    {"what": "Herwig's leptonic observables agree as well: within 4.1% of "
+             "POWHEG-V2 on the lepton momentum and 5.8% on the lepton angle",
+     "check": lambda: (abs(_spread("numu", "plep", "herwig_nlo") - 0.041) < 0.002
+                       and abs(_spread("numu", "tanlep", "herwig_nlo") - 0.058) < 0.002),
      "detail": lambda: (f"plep {100 * _spread('numu', 'plep', 'herwig_nlo'):.1f}%, "
                         f"tanlep {100 * _spread('numu', 'tanlep', 'herwig_nlo'):.1f}%")},
-    {"what": "above twelve tracks Herwig is 4.0 times GENIE, the most of "
+    {"what": "above twelve tracks Herwig is 4.2 times GENIE, the most of "
              "the three matched calculations",
-     "check": lambda: (abs(_above("numu", 12.5, "herwig_nlo") - 3.97) < 0.05
+     "check": lambda: (abs(_above("numu", 12.5, "herwig_nlo") - 4.18) < 0.05
                        and _above("numu", 12.5, "herwig_nlo")
                        > max(_above("numu", 12.5, "powheg_v2"),
                              _above("numu", 12.5, "sherpa_nlo"))),
@@ -219,9 +224,9 @@ CLAIMS = [
      "detail": lambda: (f"crosses in {_cross('numu')}, above 12.5 "
                         f"POWHEG-V2 {_above('numu', 12.5, 'powheg_v2'):.2f}, "
                         f"Sherpa {_above('numu', 12.5, 'sherpa_nlo'):.2f}")},
-    {"what": "on the azimuth GENIE is 11% above POWHEG-V2 well below the "
+    {"what": "on the azimuth GENIE is 7% above POWHEG-V2 well below the "
              "back-to-back peak and a third below it just short of the peak",
-     "check": lambda: (abs(_dphi_ratio("numu", 90.0, 120.0) - 1.11) < 0.02
+     "check": lambda: (abs(_dphi_ratio("numu", 90.0, 120.0) - 1.07) < 0.02
                        and abs(1.0 / _dphi_ratio("numu", 160.0, 170.0) - 1.39) < 0.03),
      "detail": lambda: (f"90-120 deg {_dphi_ratio('numu', 90.0, 120.0):.3f}, "
                         f"160-170 deg {_dphi_ratio('numu', 160.0, 170.0):.3f}")},
@@ -255,18 +260,18 @@ def _drawband(a, edges, band, colour, label=None):
     """
     lo = np.append(band[0], band[0][-1])
     hi = np.append(band[1], band[1][-1])
-    a.fill_between(edges, lo, hi, step="post", color=colour, alpha=0.32,
+    a.fill_between(edges, lo, hi, step="post", color=colour, alpha=MHOU_ALPHA,
                    lw=0, zorder=2, label=label)
     for e in (lo, hi):
-        a.step(edges, e, where="post", color=colour, lw=0.8, alpha=0.85,
+        a.step(edges, e, where="post", color=colour, lw=0.8, alpha=0.45,
                zorder=3)
 
 
 def main():
-    # IMPORTED HERE, NOT AT MODULE LEVEL: make_report.py imports every script
+    # IMPORTED HERE, NOT AT MODULE LEVEL: the checkers import every script
     # in this directory to read its TITLE, MESSAGE and CLAIMS, and applying
-    # the matplotlib style as a side effect of that import is how a report
-    # build starts depending on the order its figures were loaded in.
+    # the matplotlib style as a side effect of that import makes them depend
+    # on the order the figures were loaded in.
     import plotstyle
     plotstyle.apply()
     from plotstyle import tex
@@ -330,7 +335,7 @@ def main():
                     # absent (user, 2026-09-09: "the MHOU band is missing").
                     # Drawn darker and with its own edges it can be seen for
                     # what it is without being drawn any wider than it is.
-                    _drawband(ax, edges, band, colour)
+                    _drawband(ax, edges, band, MHOU_GREY)
                 ax.stairs(y, edges, color=colour, lw=1.9, ls=ls,
                           baseline=None, label=tex(lab), zorder=4)
             den = gen_curves.get("powheg_v2")
@@ -358,7 +363,7 @@ def main():
                     b0 = np.where(ok, band[0] / np.where(ok, den, 1.0), np.nan)
                     b1 = np.where(ok, band[1] / np.where(ok, den, 1.0), np.nan)
                     rband = (b0, b1)
-                    _drawband(axr, edges, rband, GENS[0][2])
+                    _drawband(axr, edges, rband, MHOU_GREY)
                 for key, _lab, colour, ls in GENS:
                     if key == "powheg_v2" or key not in gen_curves:
                         continue
@@ -453,7 +458,8 @@ def main():
                          if c.__class__.__name__ == "ErrorbarContainer"),
                         Line2D([], [], color="#111111", marker="o", ms=4.5,
                                ls="none"))
-    hband = Patch(facecolor=pw[2], alpha=0.32, edgecolor=pw[2], lw=0.8)
+    hband = Patch(facecolor=MHOU_GREY, alpha=MHOU_ALPHA, edgecolor=MHOU_GREY,
+                  lw=0.8)
     handles = [(hband, Line2D([], [], color=pw[2], lw=1.9, ls=pw[3])),
                Line2D([], [], color=gn[2], lw=1.9, ls=gn[3]),
                Line2D([], [], color=sh[2], lw=1.9, ls=sh[3]),
@@ -468,7 +474,9 @@ def main():
     fig.legend(handles, labels, loc="upper center",
                bbox_to_anchor=(0.53, 0.980), ncol=5, frameon=True,
                fontsize=plotstyle.FS_LEGEND + 2,
-               handler_map={tuple: HandlerTuple(ndivide=None)})
+               # ndivide=1 OVERLAYS the line on its band in one key, as on
+               # pp12b; None put them side by side (user, 2026-10-06)
+               handler_map={tuple: HandlerTuple(ndivide=1)})
     fig.suptitle(tex(r"Comparison with FASER$\nu$ data "
                      r"(normalised to observed yields)"),
                  y=0.992, fontsize=plotstyle.FS_SUPTITLE - 2)

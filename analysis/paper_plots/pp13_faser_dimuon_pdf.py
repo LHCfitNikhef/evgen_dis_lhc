@@ -65,7 +65,7 @@ COLOUR = {"NNPDF40_nnlo_as_01180": ("NNPDF4.0 NNLO", "#2a78d6", "o"),
           "MSHT20nnlo_as118": ("MSHT20 NNLO", "#3fa66a", "D"),
           # the T = 1 tolerance variant, NNLO (its LHAPDF SetDesc)
           "ATLASpdf21_T1": ("ATLASpdf21 (T=1) NNLO", "#8e5bd0", "^"),
-          "ABMP16_5_nnlo": ("ABMP16 NNLO", "#d4a017", "v"),
+          "ABMP16als118_5_nnlo": ("ABMP16 NNLO", "#d4a017", "v"),
           "GRV98lo": ("GRV98 LO (no band)", "#777777", "x")}
 NNLO_SETS = [k for k in COLOUR if k != "GRV98lo"]
 # user, 2026-09-21: no Q2 cut on the first row and no nu_mu + nubar_mu on the
@@ -88,7 +88,7 @@ CAPTION = (
     "the NNPDF4.0 PDF uncertainty (shaded) and the seven-point scale envelope "
     "(hatched).")
 
-MESSAGE = """The dimuon rate at FASER is a measurement of the strange sea. On the charged-current total the six PDF sets agree to 6%, and every NNLO set's own band there is below 1.5%. Once a charm hadron is required they spread over 22%: CT18 at 0.78 of NNPDF4.0, ATLASpdf21 at 0.80, ABMP16 at 0.86 and MSHT20 at 0.91, with the leading-order GRV98 that GENIE's default tune carries at 0.56. The spread survives to the spectrometer rows: with both muons above 100 GeV and inside 25 mrad the NNLO sets predict 14.3 to 17.3 events, a 17% spread, against 4% for NNPDF4.0's own band and a scale envelope of -3.6% to +4.0%. CT18's band is the widest, 15%, and it still does not reach NNPDF4.0: the sets disagree by more than their uncertainties, where the charm-free total does not tell them apart."""
+MESSAGE = """The dimuon rate at FASER is a measurement of the strange sea. On the charged-current total the six PDF sets agree to 6%, and every NNLO set's own band there is below 1.5%. Once a charm hadron is required they spread over 22%: CT18 at 0.78 of NNPDF4.0, ATLASpdf21 at 0.79, ABMP16 at 0.87 and MSHT20 at 0.90, with the leading-order GRV98 that GENIE's default tune carries at 0.57. The spread survives to the spectrometer rows: with both muons above 100 GeV and inside 25 mrad the NNLO sets predict 9.6 to 11.5 events at 300 fb^-1 (EPOS-LHC light + POWHEG charm flux), a 17% spread, against 4% for NNPDF4.0's own band and a scale envelope of -3.7% to +4.2%. CT18's band is the widest, 16%, and only just reaches the lower edge of NNPDF4.0's: the sets differ by about their combined uncertainties, where the charm-free total does not tell them apart."""
 
 _J = {}
 
@@ -135,33 +135,35 @@ CLAIMS = [
              for s in NNLO_SETS),
      "detail": lambda: f"spread {100*_spread('cc', COLOUR):.1f}%; bands " + ", ".join(
          f"{s} {100*_rel(s, 'cc'):.2f}%" for s in NNLO_SETS)},
+    # yields moved with the flux switch of 2026-10-07 (EPOS-LHC light +
+    # POWHEG charm); the PDF ratios barely did
     {"what": "on the charm row the sets spread over 22%: CT18 0.78, ATLASpdf21 "
-             "0.80, ABMP16 0.86, MSHT20 0.91, GRV98 0.56 of NNPDF4.0",
+             "0.79, ABMP16 0.87, MSHT20 0.90, GRV98 0.57 of NNPDF4.0",
      "check": lambda: abs(_spread("charm", NNLO_SETS) - 0.22) < 0.01
      and all(abs(_ratio(s, "charm") - v) < 0.006 for s, v in
-             (("CT18NNLO", 0.78), ("ATLASpdf21_T1", 0.80), ("ABMP16_5_nnlo", 0.86),
-              ("MSHT20nnlo_as118", 0.91), ("GRV98lo", 0.56))),
+             (("CT18NNLO", 0.775), ("ATLASpdf21_T1", 0.790), ("ABMP16als118_5_nnlo", 0.871),
+              ("MSHT20nnlo_as118", 0.904), ("GRV98lo", 0.565))),
      "detail": lambda: f"NNLO spread {100*_spread('charm', NNLO_SETS):.1f}%; " + ", ".join(
          f"{s} {_ratio(s, 'charm'):.3f}" for s in COLOUR)},
-    {"what": "the p > 100 GeV spectrometer row: NNLO sets 14.3 to 17.3 events, "
+    {"what": "the p > 100 GeV spectrometer row: NNLO sets 9.6 to 11.5 events, "
              "a 17% spread, against a 4% NNPDF4.0 band",
-     "check": lambda: abs(min(_ev(s, "p100") for s in NNLO_SETS) - 14.3) < 0.05
-     and abs(max(_ev(s, "p100") for s in NNLO_SETS) - 17.3) < 0.05
+     "check": lambda: abs(min(_ev(s, "p100") for s in NNLO_SETS) - 9.58) < 0.05
+     and abs(max(_ev(s, "p100") for s in NNLO_SETS) - 11.50) < 0.05
      and abs(_spread("p100", NNLO_SETS) - 0.17) < 0.005
      and abs(_rel(NOM, "p100") - 0.04) < 0.005,
      "detail": lambda: ", ".join(f"{s} {_ev(s, 'p100'):.2f}" for s in COLOUR)
      + f"; spread {100*_spread('p100', NNLO_SETS):.1f}%, NNPDF band "
        f"{100*_rel(NOM, 'p100'):.2f}%"},
-    {"what": "the scale envelope on the p > 100 GeV row is -3.6% / +4.0%",
-     "check": lambda: abs(_scale("p100")[0] + 0.036) < 0.0015
-     and abs(_scale("p100")[1] - 0.040) < 0.0015,
+    {"what": "the scale envelope on the p > 100 GeV row is -3.7% / +4.2%",
+     "check": lambda: abs(_scale("p100")[0] + 0.037) < 0.0015
+     and abs(_scale("p100")[1] - 0.042) < 0.0015,
      "detail": lambda: "%+.2f%% / %+.2f%%" % tuple(100 * v for v in _scale("p100"))},
-    {"what": "CT18's band is the widest (about 15%) and does not reach NNPDF4.0 "
-             "on the p > 100 GeV row",
+    {"what": "CT18's band is the widest (about 16%) and only just reaches the "
+             "lower edge of NNPDF4.0's on the p > 100 GeV row",
      "check": lambda: max(NNLO_SETS, key=lambda s: _rel(s, "p100")) == "CT18NNLO"
-     and abs(_rel("CT18NNLO", "p100") - 0.15) < 0.01
-     and _ev("CT18NNLO", "p100") * (1 + _rel("CT18NNLO", "p100"))
-     < _ev(NOM, "p100") * (1 - _rel(NOM, "p100")),
+     and abs(_rel("CT18NNLO", "p100") - 0.16) < 0.01
+     and 0.0 < _ev("CT18NNLO", "p100") * (1 + _rel("CT18NNLO", "p100"))
+     - _ev(NOM, "p100") * (1 - _rel(NOM, "p100")) < 0.1,
      "detail": lambda: f"CT18 {_ev('CT18NNLO', 'p100'):.2f} +{100*_rel('CT18NNLO', 'p100'):.1f}%"
                        f" vs NNPDF {_ev(NOM, 'p100'):.2f} -{100*_rel(NOM, 'p100', 'err_minus'):.1f}%"},
     {"what": "the reweighted nominal closes on the unweighted cut flow",
@@ -207,7 +209,7 @@ def main():
         axr.fill_between([i - 0.45, i + 0.45], [sc["lo"] / sc["central"]] * 2,
                          [sc["hi"] / sc["central"]] * 2, facecolor="none",
                          edgecolor="#555555", hatch="////", lw=0,
-                         label=tex("7-point scale envelope") if i == 0 else None)
+                         label=tex("NLO MHOU") if i == 0 else None)  # label: user 2026-10-05
     axr.axhline(1.0, color="#111111", lw=1.0, ls="--")
     ax.set_yscale("log")
     ax.set_ylabel(tex(r"events at 300 fb$^{-1}$"),

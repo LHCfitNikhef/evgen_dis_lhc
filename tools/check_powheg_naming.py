@@ -12,7 +12,7 @@ charged current, while POWHEG-V2 is the massive-charm code -- that is what
 `cmass` means and why it is the neutrino entry -- though every production card
 here runs it at qmass = 0 to meet the benchmark's massless-charm convention.
 A sentence that says only "POWHEG" therefore does not identify a calculation,
-in exactly the way "YADISM" without a scheme does not (tools/check_yadism_scheme.py).
+in exactly the way "YADISM" without a scheme does not (CLAUDE.md rule 3).
 
 WHAT IS NOT A VIOLATION.  "POWHEG" is also the name of a MATCHING METHOD, and
 in that sense it is correct unqualified -- Herwig's POWHEG mode, "the POWHEG
@@ -23,7 +23,8 @@ Checks the rendered report and the paper sources, which is what a reader sees;
 the code's own comments and identifiers are a different audience, like the
 capitals rule.
 
-Usage: check_powheg_naming.py [report.html] ; exits non-zero on a violation.
+Usage: check_powheg_naming.py [page.html] ; reads paper/*.tex (and the page, if
+given); exits non-zero on a violation.
 """
 import os
 import re
@@ -91,8 +92,8 @@ def scan(text, label):
 
 def main():
     targets = []
-    rep = sys.argv[1] if len(sys.argv) > 1 else f"{BASE}/results/report.html"
-    if os.path.exists(rep):
+    rep = sys.argv[1] if len(sys.argv) > 1 else None
+    if rep and os.path.exists(rep):
         targets.append((rep, strip_html(open(rep, errors="replace").read())))
     pdir = f"{BASE}/paper"
     for fn in sorted(os.listdir(pdir)) if os.path.isdir(pdir) else []:

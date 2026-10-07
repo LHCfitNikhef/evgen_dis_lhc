@@ -94,4 +94,4 @@ $PY analysis/mhou_diff.py --current mu --flavour charm
 $PY analysis/mhou_diff.py --current mu --pto 2 --scheme fonll --flavour charm
 
 echo
-echo "== done.  Now: tools/make_all_plots.sh && analysis/make_report.py =="
+echo "== done.  Now: tools/make_all_plots.sh =="

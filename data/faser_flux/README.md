@@ -1,8 +1,12 @@
-# LHC neutrino fluxes at FASERν
+# LHC neutrino fluxes at FASERν -- LEGACY (2021 average)
+
+> **Superseded on 2026-10-07.** Every rate now uses `data/faser_flux_2025/`
+> (EPOS-LHC light + POWHEG charm, the arXiv:2402.13318 default; user rule).
+> These files remain only for the cross-checks against Table I of
+> arXiv:2105.08270 (`faser_rates.legacy_flux`).
 
 Vendored from **KlingFelix/FastNeutrinoFluxSimulation**, `Fluxes/FASERv/`.
-Kept in the repository (data, not code) so that a clone reproduces the
-event-rate numbers of Sect. 7.
+Kept in the repository (data, not code) for those cross-checks.
 
 ## Files
 

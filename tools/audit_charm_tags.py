@@ -70,10 +70,10 @@ def sigma(d, key):
 
 
 def consumed_keys():
-    """Charm result keys the report and the paper plots actually read."""
+    """Charm result keys the paper plots actually read (the HTML report that
+    also read them was retired on 2026-10-07)."""
     src = ""
-    for p in [f"{BASE}/analysis/make_report.py"] + sorted(
-            glob.glob(f"{BASE}/analysis/paper_plots/*.py")):
+    for p in sorted(glob.glob(f"{BASE}/analysis/paper_plots/*.py")):
         with open(p) as f:
             src += f.read()
     return {k for k in re.findall(r'"([a-z0-9_]*charm[a-z0-9_]*)"', src)

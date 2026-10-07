@@ -65,7 +65,7 @@ if CURRENT not in ("mu", "nu"):
 # relative to it, so it has to be named rather than assumed to be first.
 NOMINAL_ID = "1001"
 
-def join_scale_weights(w, idx, W, ids, where):
+def join_scale_weights(w, idx, W, ids, where, nominal_id=NOMINAL_ID):
     """Join showered events (weights w, Les Houches numbers idx) to the seven
     scale weights W of their own LHE, and return (F, worst): F[k] is each
     event's weight ratio to the nominal at scale point k.
@@ -77,7 +77,7 @@ def join_scale_weights(w, idx, W, ids, where):
     POWHEG-RES weights are nearly all equal up to sign and the tolerance
     alone would not expose a slipped join.  Either failure refuses.
     """
-    inom = ids.index(NOMINAL_ID)
+    inom = ids.index(nominal_id)
     if (len(idx) != len(w) or (idx < 0).any()
             or (len(idx) and idx.max() >= W.shape[0])):
         sys.exit(f"{where}: lhe_index cannot be joined to its weights")
@@ -96,7 +96,7 @@ def join_scale_weights(w, idx, W, ids, where):
         sys.exit(f"{where}: a join shifted by one event also closes -- "
                  f"the closure test cannot tell a slipped join; refusing")
     F = np.stack([np.where(wn != 0, W[idx, k] / np.where(wn != 0, wn, 1.0), 1.0)
-                  if ids[k] != NOMINAL_ID else np.ones(len(w))
+                  if ids[k] != nominal_id else np.ones(len(w))
                   for k in range(len(ids))])
     return F, worst
 

@@ -315,7 +315,7 @@
    "members_in_set": 53,
    "error_type": "hessian+q2min+$mc+$q20+mb+mt+#r0406+#fuvddbar"
   },
-  "ABMP16_5_nnlo": {
+  "ABMP16als118_5_nnlo": {
    "weight_ids": [
     "3278",
     "3279",
@@ -348,8 +348,8 @@
     "3306",
     "3307"
    ],
-   "lhapdf_base": 340400,
-   "lhapdf_set": "ABMP16_5_nnlo_n",
+   "lhapdf_base": 340600,
+   "lhapdf_set": "ABMP16als118_5_nnlo_n",
    "members": 30,
    "members_in_set": 30,
    "error_type": "symmhessian"

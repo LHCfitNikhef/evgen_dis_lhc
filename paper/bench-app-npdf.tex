@@ -1,11 +1,11 @@
 \section{Impact of nuclear PDFs}
 \label{app:npdf}
 
-The predictions presented in this work neglect nuclear effects in the tungsten target of the detector, which we model as an isospin combination of free protons and neutrons.
+The predictions presented in this work neglect nuclear effects in the tungsten target of the detector, which we model as an isospin combination of free nucleons.
 %
-In this appendix we quantify the impact of nPDF uncertainties~\cite{Klasen:2023uqj,Ethier:2020way} on DIS differential distributions in the fiducial region of Eq.~(\ref{eq:fiducial}).
+In this appendix we quantify the impact of nuclear PDF (nPDF) uncertainties~\cite{Klasen:2023uqj,Ethier:2020way} on DIS differential distributions in the fiducial region of Eq.~(\ref{eq:fiducial}).
 %
-For this purpose, we evaluate \yadism NLO structure functions in the ZM-VFNS scheme with target-mass corrections for three nPDF sets, namely nNNPDF3.0~\cite{AbdulKhalek:2022fyi}, EPPS21~\cite{Eskola:2021nhw} and nCTEQ15HQ~\cite{Kovarik:2015cma,Duwentaster:2022kpv}, in all cases at NLO accuracy, and compare with the corresponding free-nucleon baseline. 
+For this purpose, we evaluate \yadism NLO structure functions in the ZM-VFNS scheme with target-mass corrections (TMCs) for three nPDF sets, namely nNNPDF3.0~\cite{AbdulKhalek:2022fyi}, EPPS21~\cite{Eskola:2021nhw} and nCTEQ15HQ~\cite{Kovarik:2015cma,Duwentaster:2022kpv}, in all cases at NLO accuracy, and compare with the corresponding free-nucleon baseline. 
 %
 See also~\cite{Francener:2025tyh} for a related study.
 
@@ -14,7 +14,6 @@ Fig.~\ref{fig:npdf} shows differential distributions in $x_{\rm Bj}$, $Q^2$ and 
 The bottom panels display the ratio of each prediction to the corresponding free-nucleon case, namely the $A=1$ variants of each nPDF determination.
 %
 Note that the same nPDF dependence would be found should one use the NLO-matched event generators (following the findings of Sect.~\ref{sec:inclusive}), since the observables considered here do not depend on the modelling of the hadronic final state, and hence showing the \yadism predictions is sufficient. 
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!tbp]
@@ -33,19 +32,29 @@ From Fig.~\ref{fig:npdf} one observes that nPDF effects are in general sizeable,
 %
 Indeed, nPDF uncertainties are $2$ to $6$ times larger than the free-nucleon one.
 %
-In general, predictions from the three different nPDF sets are in qualitative agreement, mostly overlapping between their $1\sigma$ uncertainties.
+In general, predictions from the three different nPDF sets are in qualitative agreement, mostly overlapping within their $1\sigma$ uncertainties.
 %
 nPDF-associated shifts tend to be smaller for neutrino DIS (where a nuclear ratio of unity is still allowed within uncertainties, except at small $x$ and low $Q^2$) than for muon DIS, where a non-unity value of the nuclear ratio is clearly preferred.
 %
 The latter is especially true for the $y$ distribution, the low-$Q^2$ region, and the large-$x$ (EMC effect) and small-$x$ (shadowing) regions.
 
-All in all, Fig.~\ref{fig:npdf} indicates that nPDF corrections must be accounted for when producing predictions for FASER observables and related simulations, since they are comparable to the NNLO corrections for muon DIS and larger than the spread between NLO-matched generators for both NC and CC scattering.
+Fig.~\ref{fig:npdf-hadron} then shows how nPDF uncertainties propagate to the hadron-level observables of Fig.~\ref{fig:hadron-level}, for neutrino DIS at $E_\nu=1$~TeV under the FASER$\nu$ selection.
+%
+The nuclear modifications remain at the per-cent level, at most 4\% in $\Delta\phi$ and below 3\% elsewhere, are nearly flat, and lie well within the nPDF uncertainty bands of 2--5\%, as was the case for the inclusive DIS distributions of Fig.~\ref{fig:npdf}.
+%
+They are therefore much smaller than the differences between generators found in Sect.~\ref{sec:hadronic}, which are driven by the modelling of the parton shower and hadronisation.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!tbp]
+  \centering
+  \includegraphics[width=0.80\textwidth]{figures/pp_npdf_hadron.png}
+  \caption{Same as Fig.~\ref{fig:npdf} for the hadron-level distributions of Fig.~\ref{fig:hadron-level} ($N_{\rm ch}$, $E_{\rm lead}$, $\Delta\phi$, $p_{\ell'}$) in neutrino DIS on tungsten at $E_\nu=1$~TeV under the FASER$\nu$ selection, from \powheg{}+\pythia evaluated with NNPDF4.0 (free nucleons), nNNPDF3.0, EPPS21 and nCTEQ15HQ.
+    %
+    The bottom panels show the ratio of each set to its own free-nucleon baseline.}
+  \label{fig:npdf-hadron}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+All in all, Figs.~\ref{fig:npdf} and~\ref{fig:npdf-hadron} indicate that nPDF corrections must be accounted for when producing predictions for FASER observables and related simulations, since they are comparable to the NNLO corrections for muon DIS and larger than the spread between NLO-matched generators for inclusive NC and CC observables, though smaller than the generator differences on the hadronic final state.
 %
 Furthermore, this comparison confirms that FASER data itself should provide excellent opportunities to constrain nuclear PDFs alongside the free-nucleon ones, as already demonstrated in~\cite{Cruz-Martinez:2023sdv}.
-%
-Using the pipeline presented in this work, NLO-matched predictions for the various generators considered accounting for nPDF effects are straightforward and can be implemented directly at the run card level.
-%
-In the specific case of \powheg, its reweighting functionality implies that no additional generation campaign is required.
-
-
-

@@ -55,7 +55,7 @@ COLOUR = {"NNPDF40_nnlo_as_01180": ("NNPDF4.0 NNLO", "#2a78d6"),
           "CT18NNLO": ("CT18 NNLO", "#eb6834"),
           "MSHT20nnlo_as118": ("MSHT20 NNLO", "#3fa66a"),
           "ATLASpdf21_T1": ("ATLASpdf21", "#8e5bd0"),
-          "ABMP16_5_nnlo": ("ABMP16 NNLO", "#d4a017")}
+          "ABMP16als118_5_nnlo": ("ABMP16 NNLO", "#d4a017")}   # alpha_s = 0.118 (user, 2026-10-05)
 
 
 def main():

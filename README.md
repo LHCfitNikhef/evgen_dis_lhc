@@ -141,19 +141,18 @@ import, and a missing `latex`.
 since every result is tracked:
 
     for f in analysis/paper_plots/pp*.py; do "$BENCH_PYTHON" "$f"; done
-    tools/run_checks.sh --build --fast    # --build writes results/report.html first
+    tools/run_checks.sh --fast
 
 `tools/run_checks.sh` re-derives every number quoted in the paper and in the
-HTML report (`analysis/make_report.py` → `results/report.html`) from the
-result files, and checks naming and path conventions.  Checks that need event
+paper-plot scripts from the result files, and checks naming and path
+conventions.  Checks that need event
 samples skip rather than fail.
 
 Three inputs are not distributed: the FASERν emulsion and electronic-detector
 data digitised from FASER conference notes, and the NNLO SIDIS curves of
 arXiv:2504.05376 provided by its authors.  Without them Figs. 7.1 and 7.2 are
 drawn with the predictions only, the claims that compare with those data are
-reported as skipped, and the report omits the NNLO SIDIS comparison; the
-predictions themselves are all included.
+reported as skipped; the predictions themselves are all included.
 
 **6. Regenerating event samples** needs the generators, built from source with
 the diffs in `patches/` applied (each patch gives its own `patch` line).  The

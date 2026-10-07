@@ -38,6 +38,11 @@ checks that re-derive every number the message quotes from the result files.
 | C.1 | `ppA2_npdf_impact.py` | impact of nuclear PDFs |
 | D.1 | `ppA3_nu_generators.py` | GENIE, NuWro and GiBUU on a proton and on tungsten |
 
+`ppA2b_npdf_hadron.py` (`IN_PAPER = False` pending the authors' decision) is
+the hadron-level companion of Fig. C.1: nPDF bands on the four observables of
+Fig. 6.1, neutrino DIS only (user decision 2026-10-07, an illustration), from
+POWHEG-V2 reweighting (`analysis/npdf_hadron.py`).
+
 `pp16_sidis_yields_kaon.py` (`IN_PAPER = False`) is the kaon companion of
 Fig. 7.4, shown in the HTML report only.  Shared style lives in
 `analysis/plotstyle.py` (LaTeX text, no silent fallback) and the legend labels

@@ -144,7 +144,7 @@ if SCHEME not in ("fonll", "zm"):
     sys.exit("--scheme must be fonll or zm")
 _FONLL = SCHEME == "fonll"
 # The scheme is named in every user-visible string this module writes --
-# CONVENTIONS.md rule 3, enforced by tools/check_yadism_scheme.py.
+# CONVENTIONS.md rule 3.
 SCHEME_LABEL = "FONLL" if _FONLL else "ZM-VFN"
 if not _FONLL:
     OUT_JSON = OUT_JSON.replace(".json", "_zm.json")
@@ -186,7 +186,7 @@ PDF_SETS = [
     # 3-flavour fit and would not be comparable here.  It matters for this
     # study in particular because ABMP determines the strange density from
     # dimuon data, which is exactly the channel the CC charm fraction probes.
-    ("ABMP16_5_nnlo",         "ABMP16 NNLO",   "#d4a017"),
+    ("ABMP16als118_5_nnlo",   "ABMP16 NNLO",   "#d4a017"),   # alpha_s = 0.118 (user, 2026-10-05)
     ("GRV98lo",               "GRV98 LO",      "#c2317b"),
 ]
 

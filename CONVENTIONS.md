@@ -100,9 +100,12 @@ and every number in the paper text has an entry in
 `tools/check_paper_claims.py`.  The figure PNGs used by the paper are tracked
 in `paper/figures/`, so the paper builds from a clone.
 
-## 5. The HTML report
+## 5. The HTML report (retired)
 
-`analysis/make_report.py` builds a self-contained page (`results/report.html`,
-not tracked) with the figures embedded.  Its prose is sentence case (emphasis
-in bold, not capitals; `tools/check_report_caps.py`) and every number it
-quotes is checked by `tools/check_report_claims.py`.
+The project had a self-contained HTML report (`analysis/make_report.py`,
+with checkers for its prose and numbers) while the benchmark was being
+developed.  It was retired on 2026-10-07, once the paper superseded it; it
+remains in the git history.  The paper figures and their checks above are
+unaffected.  The separate neutrino-telescope page
+(`telescopes/build_report.py`) still uses its stylesheet, now in
+`analysis/html_page.py`.

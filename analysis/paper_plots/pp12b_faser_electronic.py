@@ -39,9 +39,12 @@ cross-section and are the like-for-like row.  Sherpa is absent: no Sherpa
 ladder exists over this energy range in FASER's region.
 
 The two panels carry different amounts of detector.  The yields need the
-fiducial cylinder (r = 100 mm) as a share of the flux files' 25 x 25 cm
-aperture, which assumes a uniform flux; the flux peaks on axis, and the size
-of the miss is measured against FASER's own simulated flux (Table III).
+flux through the fiducial cylinder (r = 100 mm) itself: since 2026-10-07 the
+flux is EPOS-LHC light + POWHEG charm (arXiv:2402.13318) COUNTED through that
+cylinder (data/faser_flux_2025/*_fid_r100.txt), no longer the 2021 average
+scaled from its 25 x 25 cm aperture by area -- the flux peaks on axis, by up
+to 25% at TeV energies.  Our GENIE then closes on FASER's simulated yield to
+0.6%.
 
 Inputs: results_nu/faser_electronic.json, results_nu/faser_powheg_rates.json,
 data/faser_electronic/faser_electronic.json.
@@ -71,6 +74,9 @@ DATA = f"{BASE}/data/faser_electronic/faser_electronic.json"
 SURFACE = "#ffffff"
 
 # the colours and line styles of paper plots 8 and 12
+# THE MHOU BAND IS GREY, as in every other paper figure (user, 2026-10-06):
+# a blue band reads as the statistical error, which is blue elsewhere.
+MHOU_GREY, MHOU_ALPHA = "#111111", 0.14
 POWHEG_C, GENIE_C = "#0072b2", "#d55e00"
 # Sherpa NLO (user, 2026-09-30), in the colour and style of the emulsion figure
 SHERPA_C, SHERPA_LS = "#009e73", "-."
@@ -96,12 +102,13 @@ CAPTION = (
     "cross-section there; GENIE is the default tune, with the whole "
     "charged-current cross-section. The band on POWHEG-V2 is its "
     "seven-point scale envelope, and the band in the lower right panel "
-    "FASER&rsquo;s total uncertainty on its simulation. The yields assume the "
-    "flux uniform across the flux files&rsquo; aperture.")
+    "FASER&rsquo;s total uncertainty on its simulation. The flux is EPOS-LHC "
+    "for light hadrons and POWHEG + Pythia 8 for charm (arXiv:2402.13318), "
+    "counted through the 100 mm fiducial cylinder.")
 
-MESSAGE = """FASER publishes, bin by bin in &minus;L/E<sub>&nu;</sub>, the flux-weighted charged-current cross-section per nucleon, a number that can be compared with a prediction without any model of the detector. POWHEG-V2, Sherpa and Herwig are generated above Q2 = 4 GeV2 while FASER's numbers are the total charged-current ones, so all three are extended below that floor with GENIE's Q2 < 4 GeV2 cross-section (its weighted event fraction times its total), which carries 1-23% of the neutrino and 1-37% of the antineutrino rate between 6.8 TeV and 100 GeV. Compared like with like, POWHEG-V2 agrees with GENIE to within 3% in every bin, Sherpa with POWHEG-V2 to within 0.6% and Herwig to within 0.3%; GENIE in its default tune lands 3.7-8.2% above FASER's own value, and POWHEG-V2 4-10% above. FASER's simulation is GENIE too, so this is a check of our flux fold rather than of the physics.
+MESSAGE = """FASER publishes, bin by bin in &minus;L/E<sub>&nu;</sub>, the flux-weighted charged-current cross-section per nucleon, a number that can be compared with a prediction without any model of the detector. POWHEG-V2, Sherpa and Herwig are generated above Q2 = 4 GeV2 while FASER's numbers are the total charged-current ones, so all three are extended below that floor with GENIE's Q2 < 4 GeV2 cross-section (its weighted event fraction times its total), which carries 1-23% of the neutrino and 1-37% of the antineutrino rate between 6.8 TeV and 100 GeV. Compared like with like, POWHEG-V2 agrees with GENIE to within 3% in every bin, Sherpa with POWHEG-V2 to within 0.6% and Herwig to within 0.3%; GENIE in its default tune lies between -1.7% and +4.8% of FASER's own value, and POWHEG-V2 0-6% above it. FASER's simulation is GENIE too, so this is a check of our flux fold rather than of the physics.
 
-The fiducial yields carry one approximation: the fiducial cylinder is taken as a uniform share of the flux files' aperture, while the flux peaks on axis, and our folded flux is 0.79-0.93 of FASER's in five bins of six. Summed over the six bins POWHEG-V2 predicts 3074 interactions at 186 fb-1 and GENIE 3031, against 3052 unfolded and 2596 in FASER's simulation. Bin by bin the unfolded data differ from POWHEG-V2 by -53% to +74%, against a POWHEG-V2 scale band of at most 1.4%: at this exposure the measurement is limited by the flux, not by the cross-section."""
+The fiducial yields use FASER's own default flux, EPOS-LHC light hadrons and POWHEG charm, counted through the fiducial cylinder itself (the flux peaks on axis, so an area share of the face would miss up to 25% at TeV energies); our folded flux is within 13% of the one FASER unfolds in every bin. Summed over the six bins POWHEG-V2 predicts 2617 interactions at 186 fb-1 and GENIE 2581, against 2596 in FASER's simulation -- our GENIE closes on theirs to 0.6% -- and 3052 unfolded. Bin by bin the unfolded data differ from POWHEG-V2 by -29% to +93%, against a POWHEG-V2 scale band of at most 1.4%: at this exposure the measurement is limited by the flux, not by the cross-section."""
 
 
 _J = {}
@@ -186,14 +193,17 @@ CLAIMS = [
      "check": lambda: (_j(SRC)["ladder"] == os.path.basename(RATES)
                        and _j(RATES)["ladder_dir"] == "ladder-faser-v2"),
      "detail": lambda: f"{_j(SRC)['ladder']} <- {_j(RATES)['ladder_dir']}"},
-    {"what": "GENIE lands 3.7-8.2% above FASER's cross-section in every bin",
-     "check": lambda: all(1.036 < v < 1.083 for v in _g_over_f()),
+    # the flux is EPOS-LHC light + POWHEG charm counted through the r < 100 mm
+    # cylinder since 2026-10-07 (it was the 2021 average over the face): every
+    # number below moved with it
+    {"what": "GENIE lies between -1.7% and +4.8% of FASER's cross-section in every bin",
+     "check": lambda: all(0.980 < v < 1.050 for v in _g_over_f()),
      "detail": lambda: " ".join(f"{v:.3f}" for v in _g_over_f())},
     {"what": "extended below Q2 = 4 GeV2 with GENIE, POWHEG-V2 agrees with "
-             "GENIE to within 3% in every bin and is 4-10% above FASER's "
+             "GENIE to within 3% in every bin and is 0-6% above FASER's "
              "cross-section",
      "check": lambda: (all(abs(v - 1) < 0.03 for v in _p_over_f() / _g_over_f())
-                       and all(1.035 < v < 1.105 for v in _p_over_f())),
+                       and all(0.995 < v < 1.060 for v in _p_over_f())),
      "detail": lambda: ("P/G " + " ".join(f"{v:.3f}" for v in _p_over_f() / _g_over_f())
                         + "; P/F " + " ".join(f"{v:.3f}" for v in _p_over_f()))},
     {"what": "GENIE's Q2 < 4 GeV2 share runs 1-23% (nu) and 1-37% (nubar) "
@@ -204,25 +214,26 @@ CLAIMS = [
                        and 0.36 < _j(SRC)["genie_lowq2_fraction"]["nubar_n"]["100.0"] < 0.38),
      "detail": lambda: str({k: (round(v["100.0"], 3), round(v["6800.0"], 3))
                             for k, v in _j(SRC)["genie_lowq2_fraction"].items()})},
-    {"what": "our folded flux is 0.79-0.93 of FASER's in five bins of six",
-     "check": lambda: sum(0.785 < v < 0.935 for v in _flux_ratio()) == 5,
+    {"what": "our folded flux is within 13% of FASER's in every bin (0.87-1.08)",
+     "check": lambda: all(0.865 < v < 1.085 for v in _flux_ratio()),
      "detail": lambda: " ".join(f"{v:.3f}" for v in _flux_ratio())},
-    {"what": "summed yields at 186 fb-1: POWHEG-V2 3074, GENIE 3031, unfolded "
-             "3052, FASER simulation 2596",
+    {"what": "summed yields at 186 fb-1: POWHEG-V2 2617, GENIE 2581, unfolded "
+             "3052, FASER simulation 2596 -- our GENIE on the same flux closes on "
+             "FASER's simulation to 0.6%",
      "private": True,
-     "check": lambda: (round(_col("n_fid_conf_lowq2").sum()) == 3074
-                       and round(_col("genie_n_fid_conf").sum()) == 3031
+     "check": lambda: (round(_col("n_fid_conf_lowq2").sum()) == 2617
+                       and round(_col("genie_n_fid_conf").sum()) == 2581
                        and round(_conf("fig5").sum()) == 3052
                        and round(_conf("sim_nominal").sum()) == 2596),
      "detail": lambda: (f"{_col('n_fid_conf_lowq2').sum():.1f} "
                         f"{_col('genie_n_fid_conf').sum():.1f} "
                         f"{_conf('fig5').sum():.1f} "
                         f"{_conf('sim_nominal').sum():.1f}")},
-    {"what": "unfolded data over POWHEG-V2 spans -53% to +74% bin by "
+    {"what": "unfolded data over POWHEG-V2 spans -29% to +93% bin by "
              "bin, while the POWHEG-V2 scale band is at most 1.4%",
      "private": True,
-     "check": lambda: (0.465 < (_conf("fig5") / _col("n_fid_conf_lowq2")).min() < 0.48
-                       and 1.735 < (_conf("fig5") / _col("n_fid_conf_lowq2")).max() < 1.745
+     "check": lambda: (0.700 < (_conf("fig5") / _col("n_fid_conf_lowq2")).min() < 0.715
+                       and 1.925 < (_conf("fig5") / _col("n_fid_conf_lowq2")).max() < 1.940
                        and _band().max() < 0.014),
      "detail": lambda: (" ".join(f"{v:.3f}" for v in _conf("fig5") / _col("n_fid_conf_lowq2"))
                         + f"; band max {100 * _band().max():.2f}%")},
@@ -267,8 +278,8 @@ def main():
     s_lo = ours_s * _col("n_fid_conf_lowq2_scale_lo") / _n
     a1.stairs(ours_s, edges, color=POWHEG_C, lw=2.0, baseline=None,
               label=tex("POWHEG-V2"))
-    a1.stairs(s_hi, edges, baseline=s_lo, fill=True, color=POWHEG_C,
-              alpha=0.22, lw=0)
+    a1.stairs(s_hi, edges, baseline=s_lo, fill=True, color=MHOU_GREY,
+              alpha=MHOU_ALPHA, lw=0)
     a1.stairs(gen_s, edges, color=GENIE_C, lw=1.8, ls="--", baseline=None,
               label=tex("GENIE (GRV98LO)"))
     a1.set_yscale("log")
@@ -289,7 +300,7 @@ def main():
     r1.stairs(np.ones_like(ours_s), edges, color=POWHEG_C, lw=2.0,
               baseline=None)
     r1.stairs(s_hi / ours_s, edges, baseline=s_lo / ours_s, fill=True,
-              color=POWHEG_C, alpha=0.22, lw=0)
+              color=MHOU_GREY, alpha=MHOU_ALPHA, lw=0)
     r1.stairs(gen_s / ours_s, edges, color=GENIE_C, lw=1.8, ls="--",
               baseline=None)
     r1.axhline(1.0, color="#9aa1a9", lw=0.9, zorder=1)
@@ -299,7 +310,16 @@ def main():
               baseline=None)
     rv = np.concatenate([gen_s / ours_s, sh_s / ours_s, hw_s / ours_s, s_hi / ours_s,
                          s_lo / ours_s])
-    r1.set_ylim(min(0.95, rv.min()) - 0.04, max(1.05, rv.max()) + 0.04)
+    # Fixed range, user 2026-10-06 ("adjust y axis ranges to [0.95,1.05]").
+    # Anything outside it is clipped, so say so rather than hide it.
+    r1.set_ylim(0.95, 1.05)
+    # the top label would sit on the join with the upper panel (user: hide it)
+    _rt = [0.95, 0.975, 1.0, 1.025, 1.05]
+    r1.set_yticks(_rt)
+    r1.set_yticklabels([f"${t:.3f}$" for t in _rt[:-1]] + [""])
+    print(f"left ratio panel: curves span {rv.min():.3f}-{rv.max():.3f}"
+          + ("" if 0.95 <= rv.min() and rv.max() <= 1.05
+             else " -- CLIPPED by the fixed [0.95, 1.05] range"))
     r1.set_ylabel(tex("ratio to") + "\n" + tex("POWHEG-V2"),
                   fontsize=plotstyle.FS_YLABEL - 4)
 
@@ -316,8 +336,8 @@ def main():
     # simulation curve and its uncertainty band are gone, and the ratio panel
     # is now to the data.  The simulation still enters the CLAIMS, as numbers.
     a2.stairs(n_ours, edges, color=POWHEG_C, lw=2.0, baseline=None)
-    a2.stairs(hi, edges, baseline=lo, fill=True, color=POWHEG_C,
-              alpha=0.22, lw=0)
+    a2.stairs(hi, edges, baseline=lo, fill=True, color=MHOU_GREY,
+              alpha=MHOU_ALPHA, lw=0)
     a2.stairs(gen_n, edges, color=GENIE_C, lw=1.8, ls="--", baseline=None)
     a2.stairs(sh_n, edges, color=SHERPA_C, lw=1.8, ls=SHERPA_LS,
               baseline=None)
@@ -338,7 +358,7 @@ def main():
     r2.stairs(np.ones_like(n_ours), edges, color=POWHEG_C, lw=2.0,
               baseline=None)
     r2.stairs(hi / n_ours, edges, baseline=lo / n_ours, fill=True,
-              color=POWHEG_C, alpha=0.22, lw=0)
+              color=MHOU_GREY, alpha=MHOU_ALPHA, lw=0)
     r2.stairs(gen_n / n_ours, edges, color=GENIE_C, lw=1.8, ls="--",
               baseline=None)
     r2.stairs(sh_n / n_ours, edges, color=SHERPA_C, lw=1.8, ls=SHERPA_LS,

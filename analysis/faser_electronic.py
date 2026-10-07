@@ -64,10 +64,17 @@ LADDER = f"{BASE}/results_nu/faser_powheg_rates.json"
 OUT = f"{BASE}/results_nu/faser_electronic.json"
 
 # The measured fiducial volume: a cylinder of 100 mm radius about the
-# spectrometer axis (both papers).  The flux files count through 25 x 25 cm.
+# spectrometer axis (both papers).  >>> THE FLUX IS COUNTED THROUGH THAT
+# CYLINDER ITSELF (2026-10-07), not taken as the face count times an area
+# ratio: the flux peaks on the line of sight, and inside r < 100 mm it is 2%
+# (below 100 GeV) to 25% (above 1.5 TeV) above the face average -- about 6%
+# of the rate, invisibly. <<<  data/faser_flux_2025/*_fid_r100.txt, written by
+# tools/make_flux_fid_spectra.py.  The column density stays that of the face
+# (NUCLEI_PER_CM2): the tungsten is equally thick everywhere.
 R_FID_CM = 10.0
 A_FID_CM2 = math.pi * R_FID_CM ** 2
-GEOM = A_FID_CM2 / fr.FLUX_APERTURE_CM2
+FID_APERTURE = "fid_r100"
+GEOM = 1.0                     # the count already is through the cylinder
 
 # The seven scale points POWHEG-V2's reweighting carries, in the ladder's own
 # order; index 0 is the nominal.
@@ -187,7 +194,7 @@ def fold(pid, sig_p, sig_n, es, e_lo, e_hi, lumi_fb):
     events are that count times sigma times the column density, and then times
     the geometric factor for the fiducial cylinder.
     """
-    e, phi = fr.flux(str(pid))
+    e, phi = fr.flux(str(pid), aperture=FID_APERTURE)
     phi = phi * (lumi_fb / fr.LUMI_FLUX_NU)
     m = (e >= e_lo) & ((e < e_hi) if e_hi else np.ones_like(e, bool))
     if not m.any():
@@ -300,7 +307,7 @@ def main():
             r[f"n_tiers_{tag}"] = n_s
             r[f"n_muoncuts_{tag}"] = n_k
             if tag == "prl":
-                r["flux_1e6_fb_cm2"] = (phi / (fr.FLUX_APERTURE_CM2
+                r["flux_1e6_fb_cm2"] = (phi / (A_FID_CM2
                                                * prl["lumi_fb"]) / 1e6)
                 r["sigma_1e38_cm2_per_nucleon"] = (
                     (sig_w / phi) * 1e2 if phi > 0 else float("nan"))
@@ -422,7 +429,7 @@ def main():
            "geometry": {
                "fiducial_radius_cm": R_FID_CM,
                "fiducial_area_cm2": A_FID_CM2,
-               "flux_aperture_cm2": fr.FLUX_APERTURE_CM2,
+               "flux_aperture_cm2": A_FID_CM2,
                "factor": GEOM,
                "note": ("the flux files are a COUNT through their authors' "
                         "aperture, so the fiducial cylinder takes this "

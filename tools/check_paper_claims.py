@@ -129,9 +129,11 @@ CLAIMS += [
                  / _nd("nu")["targets"]["p"]["total_pb"][0] - 21.0) < 0.6
      and abs(_nd("nu")["energies_gev"][0] - 10.0) < 1e-6,
      lambda: f"{100.0 * _nd('nu')['targets']['p']['sigma_pb']['RES'][0] / _nd('nu')['targets']['p']['total_pb'][0]:.2f}%"),
-    ("flux-weighted non-DIS share of the FASERnu rate: 0.9% nu_mu, 2.0% nubar_mu",
-     lambda: abs(100 * _nd("nu")["flux_weighted_W"]["nondis"] - 0.9) < 0.06
-     and abs(100 * _nd("nubar")["flux_weighted_W"]["nondis"] - 2.0) < 0.06,
+    # moved with the 2026-10-07 flux switch (EPOS-LHC light + POWHEG charm,
+    # was the 2021 average: 0.9% / 2.0%); not quoted in the paper text
+    ("flux-weighted non-DIS share of the FASERnu rate: 1.07% nu_mu, 2.19% nubar_mu",
+     lambda: abs(100 * _nd("nu")["flux_weighted_W"]["nondis"] - 1.07) < 0.06
+     and abs(100 * _nd("nubar")["flux_weighted_W"]["nondis"] - 2.19) < 0.06,
      lambda: f"{100*_nd('nu')['flux_weighted_W']['nondis']:.3f}, {100*_nd('nubar')['flux_weighted_W']['nondis']:.3f}"),
     ("differential paragraph (tungsten): inside Q2 > 4 AND W > 3 no RES or "
      "QEL event on either current, no non-DIS muon event; the nu_mu non-DIS share "
@@ -162,18 +164,19 @@ def _dmc():
 
 
 CLAIMS += [
-    ("FASER dimuon cut flow (Sec. faser-dimuon): POWHEG-V2 charm fraction 13.3% vs "
-     "GENIE 8.9% at Q2>4 (9.8% before the 2026-10-01 charm fix), CC rates agree to "
-     "0.4%, charm->mu step within 10%; p>100 GeV in 25 mrad 10.5 (GENIE, was 12) / "
-     "17 (POWHEG-V2) events with the antineutrino",
-     lambda: (abs(_dmc()["columns"]["powheg_q2"]["14"]["charm"]["cum_eff_pct"] - 13.3) < 0.05
-              and abs(_dmc()["columns"]["genie_q2"]["14"]["charm"]["cum_eff_pct"] - 8.9) < 0.05
+    ("FASER dimuon cut flow (Sec. faser-dimuon): POWHEG-V2 charm fraction 12.9% vs "
+     "GENIE 8.6% at Q2>4 (8.9% with the 2021 flux, 9.8% before the 2026-10-01 charm fix), CC rates agree to "
+     "0.4%, charm->mu step within 10%; p>100 GeV in 25 mrad 7.0 (GENIE) / "
+     "11.5 (POWHEG-V2) events with the antineutrino (EPOS-LHC + POWHEG flux since "
+     "2026-10-07; 10.5 / 17 with the 2021 average)",
+     lambda: (abs(_dmc()["columns"]["powheg_q2"]["14"]["charm"]["cum_eff_pct"] - 12.9) < 0.05
+              and abs(_dmc()["columns"]["genie_q2"]["14"]["charm"]["cum_eff_pct"] - 8.6) < 0.05
               and abs(_dmc()["columns"]["powheg_q2"]["14"]["cc"]["events"]
                       / _dmc()["columns"]["genie_q2"]["14"]["cc"]["events"] - 1) < 0.005
               and abs(_dmc()["columns"]["powheg_q2"]["14"]["charm_mu"]["step_eff_pct"]
                       / _dmc()["columns"]["genie_q2"]["14"]["charm_mu"]["step_eff_pct"] - 1) < 0.10
-              and abs(_dmc()["columns"]["genie_q2"]["sum"]["p100"]["events"] - 10.5) < 0.1
-              and abs(_dmc()["columns"]["powheg_q2"]["sum"]["p100"]["events"] - 17) < 0.5),
+              and abs(_dmc()["columns"]["genie_q2"]["sum"]["p100"]["events"] - 7.0) < 0.1
+              and abs(_dmc()["columns"]["powheg_q2"]["sum"]["p100"]["events"] - 11.5) < 0.5),
      lambda: "charm %.1f vs %.1f; CC ratio %.4f; step ratio %.3f; p100 %.1f / %.1f" % (
          _dmc()["columns"]["powheg_q2"]["14"]["charm"]["cum_eff_pct"],
          _dmc()["columns"]["genie_q2"]["14"]["charm"]["cum_eff_pct"],
@@ -384,26 +387,26 @@ CLAIMS += [
                        f"{r['ratio_published']:.4f}->"
                        f"{r['genie_over_fonll_same_pdf']:.4f}"
                        for r in _ghp()["rows"])),
-    ("dimuon PDF dependence (Sec. faser-dimuon): CC 6%, charm 22% (CT18 0.78, ATLAS 0.80, "
-     "MSHT 0.91, GRV98 0.56); p>100 in 25 mrad 17.3+-0.7 / 14.3 / 17.1 / 15.7 / 16.0 / 9.9, "
-     "spread 17%, largest band 15%, scale 4%",
+    ("dimuon PDF dependence (Sec. faser-dimuon): CC 6%, charm 22% (CT18 0.78, ATLAS 0.79, "
+     "MSHT 0.90, GRV98 0.56); p>100 in 25 mrad 11.5+-0.5 / 9.6 / 11.5 / 10.6 / 10.9 / 6.6, "
+     "spread 17%, largest band 16%, scale 4% (EPOS-LHC + POWHEG flux, 2026-10-07)",
      lambda: (abs(100 * (max(_dmp_row(n, "cc") for n in _dmp()["sets"])
                          / min(_dmp_row(n, "cc") for n in _dmp()["sets"]) - 1) - 6) < 0.5
-              and abs(100 * (1 - min(_dmp_row(n, "charm") for n in ("CT18NNLO", "MSHT20nnlo_as118", "ATLASpdf21_T1", "ABMP16_5_nnlo"))) - 22) < 0.5
+              and abs(100 * (1 - min(_dmp_row(n, "charm") for n in ("CT18NNLO", "MSHT20nnlo_as118", "ATLASpdf21_T1", "ABMP16als118_5_nnlo"))) - 22) < 0.5
               and abs(_dmp_row("CT18NNLO", "charm") - 0.78) < 0.005
-              and abs(_dmp_row("ATLASpdf21_T1", "charm") - 0.80) < 0.005
-              and abs(_dmp_row("MSHT20nnlo_as118", "charm") - 0.91) < 0.005
+              and abs(_dmp_row("ATLASpdf21_T1", "charm") - 0.79) < 0.005
+              and abs(_dmp_row("MSHT20nnlo_as118", "charm") - 0.90) < 0.005
               and abs(_dmp_row("GRV98lo", "charm") - 0.56) < 0.005
               and all(abs(_dmp_row(n, "p100", "events") - v) < 0.05 for n, v in (
-                  ("NNPDF40_nnlo_as_01180", 17.3), ("CT18NNLO", 14.3), ("MSHT20nnlo_as118", 17.1),
-                  ("ATLASpdf21_T1", 15.7), ("ABMP16_5_nnlo", 16.0), ("GRV98lo", 9.9)))
-              and abs(_dmp_row("NNPDF40_nnlo_as_01180", "p100", "err_plus") - 0.7) < 0.05
-              and abs(100 * (1 - min(_dmp_row(n, "p100") for n in ("CT18NNLO", "MSHT20nnlo_as118", "ATLASpdf21_T1", "ABMP16_5_nnlo"))) - 17) < 0.5
-              and abs(100 * _dmp_row("CT18NNLO", "p100", "err_plus") / _dmp_row("CT18NNLO", "p100", "events") - 15) < 0.5
+                  ("NNPDF40_nnlo_as_01180", 11.5), ("CT18NNLO", 9.6), ("MSHT20nnlo_as118", 11.5),
+                  ("ATLASpdf21_T1", 10.6), ("ABMP16als118_5_nnlo", 10.9), ("GRV98lo", 6.6)))
+              and abs(_dmp_row("NNPDF40_nnlo_as_01180", "p100", "err_plus") - 0.46) < 0.05
+              and abs(100 * (1 - min(_dmp_row(n, "p100") for n in ("CT18NNLO", "MSHT20nnlo_as118", "ATLASpdf21_T1", "ABMP16als118_5_nnlo"))) - 17) < 0.5
+              and abs(100 * _dmp_row("CT18NNLO", "p100", "err_plus") / _dmp_row("CT18NNLO", "p100", "events") - 16) < 0.5
               and abs(100 * (_dmp()["scale"]["sum"]["p100"]["hi"] / _dmp()["scale"]["sum"]["p100"]["central"] - 1) - 4) < 0.5),
      lambda: "cc spread %.1f%%, charm min %.3f, p100 %s" % (
          100 * (max(_dmp_row(n, "cc") for n in _dmp()["sets"]) / min(_dmp_row(n, "cc") for n in _dmp()["sets"]) - 1),
-         min(_dmp_row(n, "charm") for n in ("CT18NNLO", "MSHT20nnlo_as118", "ATLASpdf21_T1", "ABMP16_5_nnlo")),
+         min(_dmp_row(n, "charm") for n in ("CT18NNLO", "MSHT20nnlo_as118", "ATLASpdf21_T1", "ABMP16als118_5_nnlo")),
          ", ".join("%.1f" % _dmp_row(n, "p100", "events") for n in _dmp()["sets"]))),
 ]
 
@@ -488,14 +491,15 @@ CLAIMS += [
     # rather than read back, so what is verified is the piece the caption
     # names and not the quadrature sum the figure shows.
     ("the emulsion figure's band (Sec. faser-emulsion): the energy-remix "
-     "piece is computed exactly and stays below 0.6% in every bin",
-     lambda: _fe_remix() < 0.6,
+     "piece is computed exactly and stays below 0.7% in every bin "
+     "(0.6% with the 2021 flux)",
+     lambda: _fe_remix() < 0.7,
      lambda: "energy remix at most %.2f%%" % _fe_remix()),
 ]
 
 
 
-# --- Sec. faser, SIDIS yields (2026-10-04: nu + nubar) ----------------------
+# --- Sec. faser, SIDIS yields (2026-10-04: nu + nubar; 2026-10-06: 80% eff) -
 def _sidis_h(fl):
     with open(f"{BASE}/results_nu/faser_sidis.json") as f:
         d = json.load(f)
@@ -503,16 +507,98 @@ def _sidis_h(fl):
 
 
 CLAIMS += [
-    ("SIDIS yields (Sec. faser, Fig. sidis-yields): POWHEG-V2 expects around 1400 (3500) "
+    ("SIDIS yields (Sec. faser, Fig. sidis-yields): POWHEG-V2 expects around 900 (3700) "
      "charged hadrons above z = 0.1 for nu_e + nubar_e (nu_mu + nubar_mu) at 300 fb^-1, "
-     "the antineutrino included",
-     lambda: (abs(_sidis_h("nu_e")["h_total_zcut"] - 1400) < 50
-              and abs(_sidis_h("nu_mu")["h_total_zcut"] - 3500) < 50
+     "the antineutrino included (EPOS-LHC + POWHEG flux, 2026-10-07; 1900 / 4700 "
+     "with the 2021 average)",
+     lambda: (abs(_sidis_h("nu_e")["h_total_zcut"] - 900) < 30
+              and abs(_sidis_h("nu_mu")["h_total_zcut"] - 3700) < 50
               and _sidis_h("nu_e")["events_nubar"] > 0 and _sidis_h("nu_mu")["events_nubar"] > 0),
      lambda: "nu_e %.0f, nu_mu %.0f; nubar share of events %.3f / %.3f" % (
          _sidis_h("nu_e")["h_total_zcut"], _sidis_h("nu_mu")["h_total_zcut"],
          _sidis_h("nu_e")["events_nubar"] / _sidis_h("nu_e")["events"],
          _sidis_h("nu_mu")["events_nubar"] / _sidis_h("nu_mu")["events"])),
+]
+
+
+# --- App. nondis, Table tab:kin-regions (Felix's comment, 2026-10-07) --------
+def _kr(cur, where):
+    with open(f"{BASE}/results_nu/genie_kinematic_regions.json") as f:
+        d = json.load(f)[cur]
+    return d["flux_weighted"] if where == "flux" else d["by_energy"][where]
+
+
+_KR_TABLE = {   # region: (nu 100, nu 1000, nu flux, nubar 100, nubar 1000, nubar flux), in %
+    "dis_benchmark": (79.5, 96.5, 90.8, 62.9, 93.4, 82.3),
+    "dis_w2to3": (1.3, 0.14, 0.56, 2.3, 0.28, 0.97),
+    "soft_dis": (15.5, 3.0, 7.2, 27.5, 5.7, 13.5),
+    "nondis": (3.6, 0.31, 1.5, 7.3, 0.62, 3.2),
+}
+_KR_COLS = [("nu", "100"), ("nu", "1000"), ("nu", "flux"),
+            ("nubar", "100"), ("nubar", "1000"), ("nubar", "flux")]
+
+
+def _kr_ok():
+    for reg, vals in _KR_TABLE.items():
+        for (cur, w), v in zip(_KR_COLS, vals):
+            got = 100 * _kr(cur, w)[reg]
+            # each entry as printed: half a unit in its last digit
+            nd = len(str(v).split(".")[1]) if "." in str(v) else 0
+            if abs(got - v) > 0.5 * 10 ** -nd + 1e-9:
+                return False
+    return True
+
+
+CLAIMS += [
+    ("App. nondis, Table kin-regions: GENIE nu_mu / nubar_mu CC on tungsten in the "
+     "benchmark region, 2 < W < 3, SIS and the resonance region W < 2, at 100 GeV, 1 TeV and flux-weighted "
+     "(EPOS-LHC + POWHEG); text: 91% (82%) inside, SIS 7% (13%), resonance region 1.5% (3%), "
+     "outside 3% (7%) at 1 TeV, 20% (37%) at 100 GeV, about half (three quarters) at "
+     "30 GeV, the 2-3 GeV strip at most 5%; conclusions: 9% (18%) of the rate outside",
+     lambda: (_kr_ok()
+              and round(100 * _kr("nu", "flux")["dis_benchmark"]) == 91
+              and round(100 * _kr("nubar", "flux")["dis_benchmark"]) == 82
+              and round(100 * _kr("nu", "flux")["soft_dis"]) == 7
+              and round(100 * _kr("nubar", "flux")["soft_dis"]) == 13
+              and round(100 * (1 - _kr("nu", "1000")["dis_benchmark"])) == 3
+              and round(100 * (1 - _kr("nubar", "1000")["dis_benchmark"])) == 7
+              and round(100 * (1 - _kr("nu", "100")["dis_benchmark"])) == 20
+              and round(100 * (1 - _kr("nubar", "100")["dis_benchmark"])) == 37
+              and 0.4 < 1 - _kr("nu", "30")["dis_benchmark"] < 0.55
+              and 0.7 < 1 - _kr("nubar", "30")["dis_benchmark"] < 0.8
+              and max(_kr(c, e)["dis_w2to3"] for c in ("nu", "nubar")
+                      for e in ("30", "100", "1000")) < 0.0525
+              and round(100 * (1 - _kr("nu", "flux")["dis_benchmark"])) == 9
+              and round(100 * (1 - _kr("nubar", "flux")["dis_benchmark"])) == 18),
+     lambda: "flux nu %s; nubar %s; outside @30 GeV %.2f / %.2f" % (
+         {k: round(100 * v, 2) for k, v in _kr("nu", "flux").items() if k != "mean_energy_gev"},
+         {k: round(100 * v, 2) for k, v in _kr("nubar", "flux").items() if k != "mean_energy_gev"},
+         1 - _kr("nu", "30")["dis_benchmark"], 1 - _kr("nubar", "30")["dis_benchmark"])),
+]
+
+
+# --- App. npdf, Fig. npdf-hadron (Felix's comment, 2026-10-07; nu only) ------
+def _nph():
+    """The figure script itself, so the text and the figure read one source."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "_ppA2b", os.path.join(BASE, "analysis", "paper_plots",
+                               "ppA2b_npdf_hadron.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+CLAIMS += [
+    ("App. npdf, Fig. npdf-hadron: nuclear modifications of the hadron-level "
+     "observables at most 4% in Delta phi and below 3% elsewhere, inside nPDF "
+     "bands of 2-5%",
+     lambda: (round(_nph()._maxdev("dphix")) <= 4
+              and max(_nph()._maxdev(o) for o in ("nch05", "Elead", "Emu")) < 3.0
+              and all(2.0 <= x <= 5.0 for n in _nph().NUCLEAR for x in _nph()._half(n))),
+     lambda: "max dev: " + ", ".join(f"{o} {_nph()._maxdev(o):.2f}%" for o in
+                                     ("nch05", "Elead", "dphix", "Emu"))
+     + "; half-bands " + ", ".join("+%.2f/-%.2f" % _nph()._half(n) for n in _nph().NUCLEAR)),
 ]
 
 

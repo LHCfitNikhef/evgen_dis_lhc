@@ -31,7 +31,10 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SETS = ["NNPDF40_nnlo_as_01180", "CT18NNLO", "MSHT20nnlo_as118",
-        "ATLASpdf21_T1", "ABMP16_5_nnlo", "GRV98lo"]
+        "ATLASpdf21_T1", "ABMP16als118_5_nnlo", "GRV98lo"]
+# ABMP16 IS ITS alpha_s = 0.118 VARIANT (user, 2026-10-05): the paper states
+# alpha_s(m_Z) = 0.118 for every set, and ABMP16_5_nnlo carries its own fitted
+# 0.1147.  Same 30 members, so the weight ids 3278-3307 did not move.
 SCALES = [("1001", "1d0", "1d0"), ("1002", "2d0", "1d0"),
           ("1003", "0.5d0", "1d0"), ("1004", "1d0", "2d0"),
           ("1005", "1d0", "0.5d0"), ("1006", "2d0", "2d0"),

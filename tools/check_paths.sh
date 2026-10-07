@@ -14,7 +14,7 @@ export BENCH_REPO
 . "$HERE/../config.sh"
 
 # Variables that must name an existing directory or file.  BENCH_LIBPATH_VAR
-# is a variable NAME, and REPORT_COPY is an output, so neither is checked.
+# is a variable NAME, so it is not checked.
 CHECK="PHYSICS24 SOFTWARE BENCH BENCH_DEPS BENCH_LOG4CPP BENCH_EXTRA_BIN \
 SHERPA_RUNS SHERPA_INSTALL HERWIG_BIN GENIE_DIR PYTHIA6_LIB APFEL_DIR MG5_DIR PYTHIA8_DIR \
 POWHEG_RES POWHEG_V2 PYTHIA8DATA LHAPDF_DATA_PATH"

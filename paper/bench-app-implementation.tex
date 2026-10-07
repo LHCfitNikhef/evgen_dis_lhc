@@ -5,24 +5,24 @@
 The complete setup used in this study, including generator cards, analysis codes, and the derived results
 in machine-readable form, is publicly available from {\tt GitHub}~\cite{benchmarkrepo}.  
 %
-In this appendix we provide some useful information in order to reproduce and extend our results. 
+In this appendix we provide information in order to reproduce and extend our results. 
 
 \paragraph{Cross-section normalisation.}  
 %
 Generators that discard and regenerate events during showering report two totals: the integral over the generation region, and that integral scaled down by the fraction of events that survive. 
 %
-When the generation cuts coincide with the fiducial cuts, every discarded event was a fiducial event, so normalising with the survival-scaled number reports a fiducial cross section low by exactly the discard rate.
+When the generation cuts coincide with the fiducial cuts, every discarded event was a fiducial event, so normalising with the survival-scaled number reports a fiducial cross-section low by exactly the discard rate.
 %
 In this work, we normalise with the
-integrated cross section throughout.
+integrated cross-section throughout.
 
-\paragraph{Sample closure.}  For weighted samples, it is common to fix the normalisation to the integrator's cross section while taking the shapes from
+\paragraph{Sample closure.}  For weighted samples, it is common to fix the normalisation to the integrator's cross-section while taking the shapes from
 the delivered events.  
 %
 This is self-consistent only if the events actually
-reproduce that cross section.
+reproduce that cross-section.
 %
-Here we compute the delivered cross section for every weighted sample, compare it against the integrator, and record the ratio with the result.  
+Here we compute the delivered cross-section for every weighted sample, compare it against the integrator, and record the ratio with the result.  
 %
 For the samples studied in this work, this closure holds at the level of a few per mille, and within $1.6\%$ for every sample at the energies of the benchmark.
 
@@ -32,7 +32,7 @@ For some of the event generators considered in this work,  generation cuts are d
 %
 Two examples are \powhegres and \powhegtwo, whose $Q^2$ cut acts on the underlying Born configuration and hence generation cuts must be looser than the fiducial selection. 
 %
-In such cases, the fiducial cross section is obtained as the integrated cross section times the fiducial weight fraction, so that migration across the boundary is simulated in both directions.
+In such cases, the fiducial cross-section is obtained as the integrated cross-section times the fiducial weight fraction, so that migration across the boundary is simulated in both directions.
 
 \paragraph{Reproducibility.} 
 %
@@ -47,7 +47,7 @@ process and in the \sherpa virtual correction, the hadron remnant of the \sherpa
 %
 The event production is driven by one script per generator, described in \texttt{PRODUCTION.md}, each of which skips any sample that already exists and can therefore be interrupted and restarted.  The number of events, the number of parallel jobs and the energies are set by variables at the top of each driver.  
 %
-The event samples at $E_\ell=1$~TeV, which is taken as representative energy throughout the project, occupy about $100$~GB at the considered statistics, and a single NLO integration takes of order an hour of CPU time per energy and nucleon.  
+The event samples at $E_\ell=1$~TeV, which is taken as the representative energy throughout the project, occupy about $100$~GB at the considered statistics, and a single NLO integration takes of order an hour of CPU time per energy and nucleon.  
 %
 Most event files are deleted once analysed; the files
 \texttt{REGENERATE\_*.md} list every deleted sample with its generator, energy, target and number of events, and the command that recreates it. 
@@ -55,10 +55,8 @@ Most event files are deleted once analysed; the files
 Since the production scripts use fixed random seeds, a sample regenerated with the same settings reproduces the original results, up to differences well below their statistical errors. 
 %
 It is not necessary to regenerate the events to use the
-results: every result is stored in the repository in machine-readable form.
+results: every result presented in this work is stored in the repository in machine-readable form.
 
 \paragraph{Agentic AI usage.}  This project was carried out with the support of Anthropic's Claude models (Opus 5.0/5.5 and Fable 5.0/5.1), used as software agents, under physicist supervision, with OpenAI Codex for external reviews.
 %
 A detailed collection of standing rules enforces physical decisions and every result records the files it was computed from.  
-%
-The complete history of the project and code development, including changes implemented by these agents, can be found in the version control of the repository.

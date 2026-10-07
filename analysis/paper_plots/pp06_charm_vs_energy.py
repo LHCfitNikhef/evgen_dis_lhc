@@ -78,7 +78,7 @@ REF = "yadism_charm_nlo"
 FONLL_REF = "yadism_charm_nlo_fonll_damp"
 # The ORDER is dropped from the label (user): the title already
 # says NLO and there is no other order on the figure.  The SCHEME
-# stays -- CONVENTIONS.md rule 3, and tools/check_yadism_scheme.py
+# stays -- CONVENTIONS.md rule 3
 # enforces it: "YADISM" alone does not identify a calculation.
 REF_LABEL = "YADISM (ZM)"
 # POWHEG-V2mc's own scheme: FFNS with three light flavours and no charm PDF.

@@ -10,7 +10,7 @@ acceptance in events passing FASER Tier E nested in the benchmark region
 z = E_h/nu at 300 fb^-1 on tungsten, for the nu_e (left) and nu_mu (right)
 charged currents, and the five generators.
 
-Every count carries the 60% hadron selection efficiency of
+Every count carries the 80% hadron selection efficiency of
 faser_pions.HADRON_SELECTION_EFF (user, 2026-09-21); the K/pi ratio and both
 charge ratios are untouched by it.
 
@@ -72,16 +72,16 @@ CAPTION = (
     "GeV<sup>2</sup>, W &gt; 3 GeV, no cut on y or x), at 300 "
     "fb<sup>&minus;1</sup> on tungsten, for the &nu;<sub>e</sub> + &nu;&#772;<sub>e</sub> (left) "
     "and &nu;<sub>&mu;</sub> + &nu;&#772;<sub>&mu;</sub> (right) charged currents. The two charges are "
-    "summed and a 60% hadron selection efficiency is applied. The shaded "
+    "summed and an 80% hadron selection efficiency is applied. The shaded "
     "band is the z &lt; 0.1 that is cut. Middle panels: "
     "the ratio to GENIE&rsquo;s default tune. Lower panels: the "
     "K<sup>&minus;</sup>/K<sup>+</sup> charge ratio.")
 
-MESSAGE = """Every yield here is neutrino plus antineutrino charged-current scattering (since 2026-10-04), as on the pion figure. At 300 fb^-1 on the tungsten target the 2813 nu_mu + nubar_mu charged-current events POWHEG-V2 expects to pass Tier E in the region give, at a 60% selection efficiency, 538 identified charged kaons above z = 0.1 inside the emulsion track acceptance -- 288 K+ and 250 K- -- with a statistical uncertainty of 4.4%; for nu_e + nubar_e it is 218 kaons at 7.0%. The generators span 467 to 575 kaons. Integrated, the kaon yield is a fifth of the pion one: 19.7 to 20.2% for the three NLO matchings against 21.3% and 22.8% for GENIE's two tunes, the most direct handle on the strangeness suppression of the fragmentation.
+MESSAGE = """Every yield here is neutrino plus antineutrino charged-current scattering (since 2026-10-04), as on the pion figure. At 300 fb^-1 on the tungsten target, with the EPOS-LHC light + POWHEG charm flux, the 2173 nu_mu + nubar_mu charged-current events POWHEG-V2 expects to pass Tier E in the region give, at an 80% selection efficiency, 560 identified charged kaons above z = 0.1 inside the emulsion track acceptance -- 299 K+ and 261 K- -- with a statistical uncertainty of 4.4%; for nu_e + nubar_e it is 135 kaons at 8.9%. The generators span 492 to 610 kaons. Integrated, the kaon yield is a fifth of the pion one: 19.5 to 20.3% for the three NLO matchings against 21.2% and 22.7% for GENIE's two tunes, the most direct handle on the strangeness suppression of the fragmentation.
 
-The z shape repeats the pion pattern. Summed over 0.1 < z < 0.8 the NLO matchings give 1.16 (POWHEG-V2), 1.22 (Herwig) and 1.24 (Sherpa) times GENIE's default kaon yield, but they cross it near z = 0.4 and fall to 0.80, 0.71 and 0.72 by z = 0.5: GENIE fragments harder, in kaons as in pions. GENIE's second tune stays within 23% of the default across the drawn range.
+The z shape repeats the pion pattern. Summed over 0.1 < z < 0.8 the NLO matchings give 1.14 (POWHEG-V2), 1.23 (Herwig) and 1.25 (Sherpa) times GENIE's default kaon yield, but they cross it near z = 0.4 and fall to 0.81, 0.74 and 0.75 by z = 0.5: GENIE fragments harder, in kaons as in pions. GENIE's second tune stays within 23% of the default across the drawn range.
 
-The kaon charge ratio is where the models disagree most on this figure. Above z = 0.1 the K+/K- ratio is 1.15 for POWHEG-V2, 1.40 for Herwig, 1.05 for Sherpa and 1.42 and 1.20 for GENIE's tunes -- a 35% spread, against the 5% spread the same generators show on the pion charge ratio. In z, K-/K+ falls from about 1 at the cut to below 0.25 in the last two bins for POWHEG-V2 and the GENIE default, while Sherpa's stays above 1 from z = 0.3 to 0.7. What limits the measurement is the statistics: the intra-event correlation inflates the error by only 1.05, but there are five times fewer kaons than pions -- in bins of 0.05 in z the relative error stays below 10% only up to z = 0.20 for nu_mu, and for nu_e no bin reaches it, the best being 12.9%. A kaon measurement binned in z runs out of events before the models separate, whereas the integrated K/pi ratio does not."""
+The kaon charge ratio is where the models disagree most on this figure. Above z = 0.1 the K+/K- ratio is 1.14 for POWHEG-V2, 1.39 for Herwig, 1.05 for Sherpa and 1.43 and 1.19 for GENIE's tunes -- a 36% spread, against the 4% spread the same generators show on the pion charge ratio. In z, K-/K+ falls from about 1 at the cut to below 0.3 in the last two bins for POWHEG-V2 and below 0.15 for the GENIE default, while Sherpa's stays above 1 from z = 0.3 to 0.7. What limits the measurement is the statistics: the intra-event correlation inflates the error by only 1.06, but there are five times fewer kaons than pions -- in bins of 0.05 in z the relative error stays below 10% only up to z = 0.20 for nu_mu, and for nu_e no bin reaches it, the best being 16.8%. A kaon measurement binned in z runs out of events before the models separate, whereas the integrated K/pi ratio does not."""
 
 
 _D = {}
@@ -172,50 +172,53 @@ def _best_err(fl):
     return float(np.min(100 * e[y > 0] / y[y > 0]))
 
 
+# Every yield below moved with the flux switch of 2026-10-07: the flux is now
+# EPOS-LHC light + POWHEG charm (data/faser_flux_2025), the nu_e about half
+# the 2021 average's.
 CLAIMS = [
-    {"what": "POWHEG-V2, nu_mu + nubar_mu: 2813 Tier E events, 288 K+ and "
-             "250 K- selected above z = 0.1, 538 kaons at 4.4%",
-     "check": lambda: (abs(_r("nu_mu", REF, "events") - 2813) < 1
-                       and abs(_r("nu_mu", REF, "Kp_total_zcut") - 288) < 1
-                       and abs(_r("nu_mu", REF, "Km_total_zcut") - 250) < 1
-                       and abs(_r("nu_mu", REF, "K_total_zcut") - 538) < 1
+    {"what": "POWHEG-V2, nu_mu + nubar_mu: 2173 Tier E events, 299 K+ and "
+             "261 K- selected above z = 0.1, 560 kaons at 4.4%",
+     "check": lambda: (abs(_r("nu_mu", REF, "events") - 2173) < 1
+                       and abs(_r("nu_mu", REF, "Kp_total_zcut") - 299) < 1
+                       and abs(_r("nu_mu", REF, "Km_total_zcut") - 261) < 1
+                       and abs(_r("nu_mu", REF, "K_total_zcut") - 560) < 1
                        and abs(100 * _r("nu_mu", REF, "K_total_zcut_err")
-                               / _r("nu_mu", REF, "K_total_zcut") - 4.4) < 0.05),
+                               / _r("nu_mu", REF, "K_total_zcut") - 4.38) < 0.05),
      "detail": lambda: (f"{_r('nu_mu', REF, 'events'):.0f} events, "
                         f"{_r('nu_mu', REF, 'Kp_total_zcut'):.0f} / "
                         f"{_r('nu_mu', REF, 'Km_total_zcut'):.0f}, "
                         f"{100 * _r('nu_mu', REF, 'K_total_zcut_err') / _r('nu_mu', REF, 'K_total_zcut'):.2f}%")},
-    {"what": "nu_e + nubar_e: 218 kaons at 7.0%",
-     "check": lambda: (abs(_r("nu_e", REF, "K_total_zcut") - 218) < 1
+    {"what": "nu_e + nubar_e: 135 kaons at 8.9%",
+     "check": lambda: (abs(_r("nu_e", REF, "K_total_zcut") - 135) < 1
                        and abs(100 * _r("nu_e", REF, "K_total_zcut_err")
-                               / _r("nu_e", REF, "K_total_zcut") - 6.95) < 0.05),
+                               / _r("nu_e", REF, "K_total_zcut") - 8.93) < 0.05),
      "detail": lambda: (f"{_r('nu_e', REF, 'K_total_zcut'):.0f} at "
                         f"{100 * _r('nu_e', REF, 'K_total_zcut_err') / _r('nu_e', REF, 'K_total_zcut'):.2f}%")},
-    {"what": "the generators span 467 to 575 kaons (nu_mu + nubar_mu)",
-     "check": lambda: (abs(min(_r("nu_mu", k, "K_total_zcut") for k, _b, _c, _l in GEN_ORDER) - 467) < 1
-                       and abs(max(_r("nu_mu", k, "K_total_zcut") for k, _b, _c, _l in GEN_ORDER) - 575) < 1),
+    {"what": "the generators span 492 to 610 kaons (nu_mu + nubar_mu)",
+     "check": lambda: (abs(min(_r("nu_mu", k, "K_total_zcut") for k, _b, _c, _l in GEN_ORDER) - 492) < 1
+                       and abs(max(_r("nu_mu", k, "K_total_zcut") for k, _b, _c, _l in GEN_ORDER) - 610) < 1),
      "detail": lambda: ", ".join(f"{k} {_r('nu_mu', k, 'K_total_zcut'):.0f}"
                                  for k, _b, _c, _l in GEN_ORDER)},
-    {"what": "kaons are 19.7-20.2% of the pions for the three NLO matchings "
-             "and 21.3% and 22.8% for GENIE's two tunes",
-     "check": lambda: (all(19.7 - 0.05 <= _kpi("nu_mu", k) <= 20.2 + 0.05
+    {"what": "kaons are 19.5-20.3% of the pions for the three NLO matchings "
+             "and 21.2% and 22.7% for GENIE's two tunes",
+     "check": lambda: (all(19.5 - 0.05 <= _kpi("nu_mu", k) <= 20.3 + 0.05
                            for k in ("powheg_nu", "herwig_nlo_full", "sherpa_nlo"))
-                       and abs(_kpi("nu_mu", "genie_lo") - 21.3) < 0.05
-                       and abs(_kpi("nu_mu", "genie") - 22.8) < 0.05),
+                       and abs(_kpi("nu_mu", "genie_lo") - 21.2) < 0.06
+                       and abs(_kpi("nu_mu", "genie") - 22.7) < 0.06),
      "detail": lambda: ", ".join(f"{k} {_kpi('nu_mu', k):.1f}%"
                                  for k, _b, _c, _l in GEN_ORDER)},
     {"what": "over GENIE's default tune, summed over 0.1 < z < 0.8: "
-             "POWHEG-V2 1.16, Herwig 1.22, Sherpa 1.24; they cross it near "
-             "z = 0.4 and are at 0.80 / 0.71 / 0.72 by z = 0.5",
-     "check": lambda: (abs(_gratio("nu_mu", "powheg_nu", "sum") - 1.16) < 0.01
-                       and abs(_gratio("nu_mu", "herwig_nlo_full", "sum") - 1.22) < 0.01
-                       and abs(_gratio("nu_mu", "sherpa_nlo", "sum") - 1.24) < 0.01
+             "POWHEG-V2 1.14, Herwig 1.23, Sherpa 1.25; they cross it near "
+             "z = 0.4 and are at 0.81 / 0.74 / 0.75 by z = 0.5",
+     "check": lambda: (abs(_gratio("nu_mu", "powheg_nu", "sum") - 1.144) < 0.01
+                       and abs(_gratio("nu_mu", "herwig_nlo_full", "sum") - 1.233) < 0.01
+                       and abs(_gratio("nu_mu", "sherpa_nlo", "sum") - 1.248) < 0.01
                        and all(_gratio_at("nu_mu", k, 0.32) > 1.0
                                > _gratio_at("nu_mu", k, 0.47)
                                for k in ("powheg_nu", "herwig_nlo_full", "sherpa_nlo"))
-                       and abs(_gratio_at("nu_mu", "powheg_nu", 0.52) - 0.80) < 0.01
-                       and abs(_gratio_at("nu_mu", "herwig_nlo_full", 0.52) - 0.71) < 0.01
-                       and abs(_gratio_at("nu_mu", "sherpa_nlo", 0.52) - 0.72) < 0.01),
+                       and abs(_gratio_at("nu_mu", "powheg_nu", 0.52) - 0.81) < 0.01
+                       and abs(_gratio_at("nu_mu", "herwig_nlo_full", 0.52) - 0.74) < 0.01
+                       and abs(_gratio_at("nu_mu", "sherpa_nlo", 0.52) - 0.75) < 0.01),
      "detail": lambda: ", ".join(
          f"{k} {_gratio('nu_mu', k, 'sum'):.3f} "
          f"(z=0.3 {_gratio_at('nu_mu', k, 0.32):.2f}, "
@@ -227,41 +230,41 @@ CLAIMS = [
      "check": lambda: float(np.max(np.abs(_gratio("nu_mu", "genie") - 1.0))) < 0.23,
      "detail": lambda: ("max |HEDIS/default - 1| = "
                         f"{float(np.max(np.abs(_gratio('nu_mu', 'genie') - 1.0))):.3f}")},
-    {"what": "K+/K- above z = 0.1 is 1.15 (POWHEG-V2), 1.40 (Herwig), 1.05 "
-             "(Sherpa), 1.42 and 1.20 (GENIE) -- a 35% spread against 5% on "
+    {"what": "K+/K- above z = 0.1 is 1.14 (POWHEG-V2), 1.39 (Herwig), 1.05 "
+             "(Sherpa), 1.43 and 1.19 (GENIE) -- a 36% spread against 4% on "
              "the pion charge ratio",
      "check": lambda: (abs(_r("nu_mu", "powheg_nu", "Kp_total_zcut")
-                           / _r("nu_mu", "powheg_nu", "Km_total_zcut") - 1.15) < 0.01
+                           / _r("nu_mu", "powheg_nu", "Km_total_zcut") - 1.144) < 0.01
                        and abs(_r("nu_mu", "herwig_nlo_full", "Kp_total_zcut")
-                               / _r("nu_mu", "herwig_nlo_full", "Km_total_zcut") - 1.40) < 0.01
+                               / _r("nu_mu", "herwig_nlo_full", "Km_total_zcut") - 1.393) < 0.01
                        and abs(_r("nu_mu", "sherpa_nlo", "Kp_total_zcut")
                                / _r("nu_mu", "sherpa_nlo", "Km_total_zcut") - 1.05) < 0.01
                        and abs(_r("nu_mu", "genie_lo", "Kp_total_zcut")
-                               / _r("nu_mu", "genie_lo", "Km_total_zcut") - 1.42) < 0.01
+                               / _r("nu_mu", "genie_lo", "Km_total_zcut") - 1.426) < 0.01
                        and abs(_r("nu_mu", "genie", "Kp_total_zcut")
-                               / _r("nu_mu", "genie", "Km_total_zcut") - 1.20) < 0.01
-                       and abs(_spread("Kp", "Km") - 35) < 1
-                       and abs(_spread("pip", "pim") - 5) < 1),
+                               / _r("nu_mu", "genie", "Km_total_zcut") - 1.189) < 0.01
+                       and abs(_spread("Kp", "Km") - 36.4) < 1
+                       and abs(_spread("pip", "pim") - 4.1) < 1),
      "detail": lambda: (", ".join(
          f"{k} {_r('nu_mu', k, 'Kp_total_zcut') / _r('nu_mu', k, 'Km_total_zcut'):.3f}"
          for k, _b, _c, _l in GEN_ORDER)
          + f"; spread K {_spread('Kp', 'Km'):.0f}% vs pi {_spread('pip', 'pim'):.0f}%")},
-    {"what": "in z, K-/K+ falls below 0.25 in the last two drawn bins for "
-             "POWHEG-V2 and the GENIE default, while Sherpa's stays above 1 "
-             "from z = 0.3 to 0.7",
-     "check": lambda: (max(_chratio("nu_mu", "powheg_nu")[-2:]) < 0.25
-                       and max(_chratio("nu_mu", "genie_lo")[-2:]) < 0.25
+    {"what": "in z, K-/K+ falls below 0.3 in the last two drawn bins for "
+             "POWHEG-V2 and below 0.15 for the GENIE default, while Sherpa's "
+             "stays above 1 from z = 0.3 to 0.7",
+     "check": lambda: (max(_chratio("nu_mu", "powheg_nu")[-2:]) < 0.30
+                       and max(_chratio("nu_mu", "genie_lo")[-2:]) < 0.15
                        and _sherpa_above_one()),
      "detail": lambda: ", ".join(
          f"{k} ({_chratio('nu_mu', k)[0]:.2f} to {_chratio('nu_mu', k)[-1]:.2f})"
          for k, _b, _c, _l in GEN_ORDER)},
-    {"what": "clustering factor 1.05 on the statistical error at a 60% "
+    {"what": "clustering factor 1.06 on the statistical error at an 80% "
              "selection efficiency; under 10% per bin only up to z = 0.20 "
-             "(nu_mu) and in no nu_e bin, the best being 12.9%",
-     "check": lambda: (abs(_cluster() - 1.05) < 0.005
+             "(nu_mu) and in no nu_e bin, the best being 16.8%",
+     "check": lambda: (abs(_cluster() - 1.064) < 0.005
                        and abs(_reach("nu_mu") - 0.20) < 1e-9
                        and np.isnan(_reach("nu_e"))
-                       and abs(_best_err("nu_e") - 12.9) < 0.05),
+                       and abs(_best_err("nu_e") - 16.8) < 0.05),
      "detail": lambda: (f"{_cluster():.3f}; nu_mu {_reach('nu_mu'):.2f}, "
                         f"nu_e {_reach('nu_e')} (best bin "
                         f"{_best_err('nu_e'):.1f}%)")},
