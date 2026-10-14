@@ -492,7 +492,7 @@ def main():
             ticker.MaxNLocator(nbins=5, prune="upper"))
     fig.suptitle(tex(FIG_TITLE), fontsize=plotstyle.FS_TITLE, y=0.98)
     out = f"{BASE}/{RESULTS}/{OUTPUT}"
-    fig.savefig(out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
+    plotstyle.savefig(fig, out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
     plt.close(fig)
     print("wrote", out)
 

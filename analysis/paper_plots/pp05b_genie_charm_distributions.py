@@ -365,7 +365,7 @@ def main():
     fig.suptitle(tex(FIG_TITLE), y=1.08,
                  fontsize=round(plotstyle.FS_SUPTITLE * FSCALE))
     out = f"{BASE}/{RESULTS}/{OUTPUT}"
-    fig.savefig(out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
+    plotstyle.savefig(fig, out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
     plt.close(fig)
     print(f"wrote {out}")
 

@@ -480,7 +480,7 @@ def main():
     fig.suptitle(tex(r"Comparison with FASER$\nu$ data "
                      r"(normalised to observed yields)"),
                  y=0.992, fontsize=plotstyle.FS_SUPTITLE - 2)
-    fig.savefig(OUT, dpi=200, facecolor=SURFACE, bbox_inches="tight")
+    plotstyle.savefig(fig, OUT, dpi=200, facecolor=SURFACE, bbox_inches="tight")
     plt.close(fig)
     print(f"wrote {OUT}")
 

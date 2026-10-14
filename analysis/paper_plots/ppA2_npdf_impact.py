@@ -557,7 +557,7 @@ def main():
                ncol=4, frameon=False, handlelength=3.0,
                fontsize=plotstyle.FS_LEGEND + 6)
     out = f"{BASE}/{RESULTS}/{OUTPUT}"
-    fig.savefig(out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
+    plotstyle.savefig(fig, out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
     plt.close(fig)
     print(f"wrote {out}")
 

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # Copy the paper plots into paper/figures/, where the LaTeX picks them up.
+# The paper includes the vector PDF of each figure (user decision, 2026-10-09);
+# the PNG twin stays in results_nu/ for a quick look only.
 #
 # WHY A COPY AND NOT A REFERENCE.  results_nu/ is gitignored -- everything a
 # generator or an analysis writes is regenerable and stays out of git -- but a
@@ -18,7 +20,7 @@ mkdir -p "$REPO/paper/figures"
 # unnoticed; tools/check_paper_figures_used.py checks the list against each
 # script's IN_PAPER flag.  The earlier paper_*.png glob that used to follow was
 # removed with the 0.2 < y < 0.9 results (user, 2026-09-19): only survives.
-EXTRA="results_nu/pp_sigma_vs_energy.png results_nu/pp_dis_distributions.png results_nu/pp_genie_vs_energy.png results_nu/pp_genie_dis_distributions.png results_nu/pp_genie_nondis.png results_nu/pp_genie_nondis_100GeV.png results_nu/pp_npdf_impact.png results_nu/pp_npdf_hadron.png results_nu/pp_genie_charm_vs_energy.png results_nu/pp_genie_charm_distributions.png results_nu/pp_charm_vs_energy.png results_nu/pp_charm_distributions.png results_nu/pp_dmeson_ratios.png results_nu/pp_hadron_level_faser_e.png results_nu/pp_shower_faser_e.png results_nu/pp_qed_dis.png results_nu/pp_qed_hadron.png results_nu/pp_faser_emulsion.png results_nu/pp_faser_electronic.png results_nu/pp_faser_dimuon_pdf.png results_nu/pp_sidis_yields.png results_nu/pp_nu_generators.png"
+EXTRA="results_nu/pp_sigma_vs_energy.pdf results_nu/pp_dis_distributions.pdf results_nu/pp_genie_vs_energy.pdf results_nu/pp_genie_dis_distributions.pdf results_nu/pp_genie_nondis.pdf results_nu/pp_genie_nondis_100GeV.pdf results_nu/pp_npdf_impact.pdf results_nu/pp_npdf_hadron.pdf results_nu/pp_genie_charm_vs_energy.pdf results_nu/pp_genie_charm_distributions.pdf results_nu/pp_charm_vs_energy.pdf results_nu/pp_charm_distributions.pdf results_nu/pp_dmeson_ratios.pdf results_nu/pp_hadron_level_faser_e.pdf results_nu/pp_shower_faser_e.pdf results_nu/pp_qed_dis.pdf results_nu/pp_qed_hadron.pdf results_nu/pp_faser_emulsion.pdf results_nu/pp_faser_electronic.pdf results_nu/pp_faser_dimuon_pdf.pdf results_nu/pp_sidis_yields.pdf results_nu/pp_nu_generators.pdf"
 
 n=0
 for e in $EXTRA; do

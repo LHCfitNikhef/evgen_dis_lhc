@@ -71,17 +71,26 @@ def main():
         slug, m = _load(p, "pp2_")
         inp = bool(getattr(m, "IN_PAPER", False))
         seen += 1
-        ok = inp == (m.OUTPUT in have)
+        # compared WITHOUT the extension: OUTPUT names the PNG, while the paper
+        # includes the vector PDF that plotstyle.savefig writes next to it
+        stem = os.path.splitext(m.OUTPUT)[0]
+        inc = stem in {os.path.splitext(h)[0] for h in have}
+        ok = inp == inc
         if not ok:
             bad.append(f"{slug}: IN_PAPER={inp} but {m.OUTPUT} is "
                        f"{'not ' if inp else ''}included by the paper")
         print(f"  {'ok  ' if ok else 'FAIL'}   {slug:29s} "
               f"{'IN_PAPER' if inp else 'report':8s} "
-              f"{'in the paper' if m.OUTPUT in have else 'held back'}")
+              f"{'in the paper' if inc else 'held back'}")
     # AND EVERY INCLUDED FIGURE IS ON DISK: a figure the document still names
     # after its file was deleted (the earlier paper_*.png, 2026-09-19) would only
     # surface as a LaTeX error in Overleaf.
     figdir = os.path.join(BASE, "paper", "figures")
+    # AND EVERY ONE IS VECTOR: the paper includes PDFs, not bitmaps (user
+    # decision, 2026-10-09), so a .png creeping back in is an error.
+    for name in sorted(have):
+        if not name.endswith(".pdf"):
+            bad.append(f"{name} is included as a bitmap; include the PDF")
     for name in sorted(have):
         if not os.path.exists(os.path.join(figdir, name)):
             bad.append(f"{name} is included by the paper but is not in "

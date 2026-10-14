@@ -96,6 +96,8 @@ herwig7/production/build/
 # --- generated figures and reports (regenerate with plot_compare*.py and
 #     make_report.py; ~20 MB per pass, so deliberately not versioned) ---
 *.png
+# ... and their vector PDF twins (plotstyle.savefig writes both, 2026-10-09)
+results*/*.pdf
 # THE PAPER'S OWN FIGURES ARE TRACKED.  Everything else a generator
 # or an analysis writes is regenerable and stays out of git
 # (rule 1), but a paper figure is a DELIVERABLE: a clone must build

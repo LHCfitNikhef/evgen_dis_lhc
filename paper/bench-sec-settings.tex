@@ -25,7 +25,7 @@ via $W^+~(W^-)$ exchange.
 %
 We consider a range of energies between $E_\ell=400$~GeV and $E_\ell=4$~TeV, with representative results for differential distributions shown for $E_\ell=1$ TeV. 
 %
-Cross-sections are given per nucleon: each generator is run separately on a proton and on a neutron target, and the two are combined as $\sigma = (74\,\sigma_p + 110\,\sigma_n)/184$, as appropriate for a tungsten nucleus and neglecting nuclear effects (which are studied separately in App.~\ref{app:npdf}).
+Cross-sections are given per nucleon: each generator is run separately on a proton and on a neutron target, and the two are weighted with the corresponding $(Z,A)$ values of the tungsten target of FASER neglecting nuclear effects (which are studied separately in App.~\ref{app:npdf}).
 %
 Event generation is performed either in the centre-of-mass frame or in the target rest frame, depending on which mode is more computationally efficient.
 %
@@ -139,7 +139,7 @@ Since the target is a tungsten nucleus, we apply isospin symmetry to construct t
 %
 Nuclear PDF effects are not part of the benchmark settings and are studied separately in App.~\ref{app:npdf}.
 %
-The analytic structure-function calculations  of \yadism include target-mass corrections~\cite{Schienbein:2007gr}.
+The analytic structure-function calculations  of \yadism include target-mass corrections (TMCs)~\cite{Schienbein:2007gr}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[!tbp]
@@ -201,7 +201,7 @@ Three main groups of physical observables are considered in the present work:
   %
   These observables can be evaluated both with analytical structure functions as well as at the event generator level, and hence are used to validate the implementation of the latter. 
 
-  \item Observables depending on the final-state hadronic activity, such as the charged multiplicity $N_{\rm ch}$, the energy of the leading charged hadron, and $\Delta\phi$, the azimuthal separation between the scattered lepton and the vector sum of the charged hadrons.  
+  \item Observables depending on the final-state hadronic activity, such as the charged multiplicity $N_{\rm ch}$, the energy of the leading charged hadron $E_{\rm lead}$, and $\Delta\phi$, the azimuthal separation between the scattered lepton and the vector sum of the charged hadrons.  
   %
   These observables probe the shower structure and the hadronisation model, and are directly relevant to event selection at the LHC far-forward detectors. 
 
@@ -225,7 +225,7 @@ Furthermore, this charmed hadron must be prompt.
 We note that this is a hadron-level definition, chosen to mimic charm tagging in experimental FASER analyses and is different from a charm tag 
 on the hard process.
 %
-For instance, in NC DIS, in addition to charm-initiated scattering, $\gamma^*/Z + c \to c$ and photon--gluon fusion, $\gamma^* g \to c\bar{c}$, this definition also adds charm produced by $g \to c\bar{c}$ splitting inside the shower and the charm carried by the beam remnant, which are absent from the corresponding structure function analytical calculations. 
+For instance, in NC DIS, in addition to charm-initiated scattering, $\gamma^*/Z + c \to c$ and photon--gluon fusion, $\gamma^* g \to c\bar{c}$, this definition also adds charm produced by $g \to c\bar{c}$ splitting inside the shower and the charm carried by the beam remnant, which are absent from the corresponding structure function analytical calculations (though the former are partially captured by the NNLO corrections). 
 
 On the structure function side, neutral-current charm production is defined as the charm-flavour contribution to $F_2$, $F_L$ and $xF_3$ following~\cite{Forte:2010ta}, namely the contribution from those diagrams where the charm quark couples to the virtual photon.
 %
@@ -249,7 +249,7 @@ We note that \sherpa's parton shower treats the charm quark as massless and prod
 a rate an order of magnitude higher than the massive showers of \pythia and
 \herwig, unphysically inflating the $D$-meson rates.
 %
-To correct for this, charm tags in \sherpa are obtained by requiring a charm quark in the event hard record as well as a charm hadron produced in
+To correct for this, charm tags in \sherpa are obtained by demanding both a charm quark in the event hard record and a charm hadron produced in
 the event.
 
 Charm-production observables are evaluated in a fiducial region with a tighter requirement on the hadronic invariant mass, $W > 5$~GeV, applied to both currents, to the dimuon selection, and also to the inclusive cross-sections that normalise charm fractions.

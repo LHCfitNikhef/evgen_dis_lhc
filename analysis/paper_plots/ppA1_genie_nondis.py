@@ -281,7 +281,7 @@ def main(energy=1000.0, output=OUTPUT):
     fig.legend(hs, ls, loc="upper center", ncol=len(hs), frameon=False,
                fontsize=FS_LEG, bbox_to_anchor=(0.5, 0.985))
     out = f"{BASE}/{RESULTS}/{output}"
-    fig.savefig(out, dpi=150)
+    plotstyle.savefig(fig, out, dpi=150)
     plt.close(fig)
     print(f"wrote {out}")
 

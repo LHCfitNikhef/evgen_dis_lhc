@@ -346,7 +346,7 @@ def main():
                      r"selection, $E_{\nu} = 1$ TeV"), y=0.995,
                  fontsize=plotstyle.FS_SUPTITLE)
     out = f"{BASE}/{RESULTS}/{OUTPUT}"
-    fig.savefig(out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
+    plotstyle.savefig(fig, out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
     plt.close(fig)
     print(f"wrote {out}")
 

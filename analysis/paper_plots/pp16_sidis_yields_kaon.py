@@ -352,7 +352,7 @@ def main():
         ax.legend(fontsize=plotstyle.FS_LEGEND - 4, frameon=False,
                   loc="upper right")
     out = f"{BASE}/{RESULTS}/{OUTPUT}"
-    fig.savefig(out, dpi=150, bbox_inches="tight")
+    plotstyle.savefig(fig, out, dpi=150, bbox_inches="tight")
     plt.close(fig)
     print(f"wrote {out}")
 

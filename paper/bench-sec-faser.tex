@@ -16,7 +16,7 @@ The expected number of events for a fiducial selection is
 with $\Phi$ the neutrino flux through the detector for a given integrated luminosity~\cite{Kling:2021gos}, $T$ the column density of the tungsten target, and $\sigma_{\rm fid}$ the fiducial cross-section per nucleon, evaluated as explained in Sect.~\ref{sec:settings} from separate proton and neutron samples.
 %
 The cross-section in Eq.~(\ref{eq:rate}) is required as a continuous function of $E_\nu$, and
-here we build a common fine energy ladder from $10$~GeV to several TeV from the \yadism NLO ZM prediction and then rescale it, for each generator, by its ratio to \yadism interpolated in $\log E_\nu$ between the energies at which that generator has been run.
+here we build a common fine-grained energy ladder from $10$~GeV to several TeV from the \yadism NLO ZM prediction and then rescale it, for each generator, by its ratio to \yadism interpolated in $\log E_\nu$ between the energies at which that generator has been run.
 %
 In the following, the FASER Run 3 flux model for $\Phi(E_\nu)$ in Eq.~(\ref{eq:rate}) is taken to be the same as in~\cite{FASER:2024ykc}, namely {\sc\small EPOS-LHC}~\cite{Pierog:2013ria} for light-hadron production and POWHEG-BOX heavy-quark production matched to \pythia~\cite{Buonocore:2023kna} for charm-hadron production, and no flux uncertainties are considered. 
 
@@ -31,7 +31,7 @@ For each generator, distributions are normalised to the observed event yields to
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!tbp]
   \centering
-  \includegraphics[width=0.95\textwidth]{figures/pp_faser_emulsion.png}
+  \includegraphics[width=0.95\textwidth]{figures/pp_faser_emulsion.pdf}
   \caption{Differential distributions for $\nu_e+\bar{\nu}_e$ (left panels) and $\nu_\mu+\bar{\nu}_\mu$ (right panels) charged-current DIS candidate events at FASER$\nu$ for $\mathcal{L}=9.5$ fb$^{-1}$~\cite{FASERnu:2026conf}.
   %
   From top to bottom, we show $N_{\tr}$, $\tan \theta_{\ell'}$, $p_{\ell'}$, and $\Delta \phi$ (defined as the azimuthal separation between the lepton and the summed remaining tracks).
@@ -72,7 +72,7 @@ Then the right panel of Fig.~\ref{fig:faser-electronic} shows the corresponding 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!tbp]
   \centering
-  \includegraphics[width=0.99\textwidth]{figures/pp_faser_electronic.png}
+  \includegraphics[width=0.99\textwidth]{figures/pp_faser_electronic.pdf}
   \caption{Left: predictions from \powhegtwo, \sherpa, \herwig, and \genie for the flux-weighted cross-section for CC DIS in the $-L/E_\nu$ kinematics of the FASER muon-neutrino electronic detector measurements of~\cite{FASER:2026enu2d}.
 %
 The central bin corresponds to the $\nu_{\mu}+\bar{\nu}_{\mu}$ sum, and the bottom panel displays the ratio to the \powhegtwo prediction.
@@ -135,7 +135,7 @@ As mentioned above, additional constraints will be provided by FASER$\nu$ measur
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!tbp]
   \centering
-  \includegraphics[width=0.80\textwidth]{figures/pp_faser_dimuon_pdf.png}
+  \includegraphics[width=0.80\textwidth]{figures/pp_faser_dimuon_pdf.pdf}
   \caption{
   NLO predictions from \powhegtwo for the dimuon signal ($\nu_\mu + \bar\nu_\mu$) arising from CC muon-neutrino DIS recorded in FASER's electronic detector for an integrated luminosity of $\mathcal{L}=300$~fb$^{-1}$. 
   %
@@ -169,7 +169,7 @@ While not shown here, charged-hadron production in muon DIS can also be evaluate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!tbp]
   \centering
-  \includegraphics[width=0.98\textwidth]{figures/pp_sidis_yields.png}
+  \includegraphics[width=0.98\textwidth]{figures/pp_sidis_yields.pdf}
   \caption{Predictions for the expected event yields in semi-inclusive charged-current DIS at FASER$\nu$ for $\mathcal{L}=300$ fb$^{-1}$ as a function of the SIDIS variable $z = E_{h^\pm}/\nu$.
   %
   We display the yields for SIDIS with charged-hadron production summing over all stable charged hadrons (mostly pions and kaons) and assuming an $80\%$ hadron selection efficiency, for $\nu_e+\bar{\nu}_e$ (left panel) and $\nu_\mu+\bar{\nu}_\mu$ (right panel) scattering. 

@@ -606,7 +606,7 @@ def main():
     # NO PROSE INSIDE THE FIGURE (user rule, 2026-08-29): the explanation
     # lives in MESSAGE and in the caption.
     out = f"{BASE}/{RESULTS}/{OUTPUT}"
-    fig.savefig(out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
+    plotstyle.savefig(fig, out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
     plt.close(fig)
     print(f"wrote {out}")
 

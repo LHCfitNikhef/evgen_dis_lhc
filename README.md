@@ -10,7 +10,7 @@ This repository accompanies the paper
 
 > **Event Generation for Neutrino and Muon DIS at the LHC**
 > Paulina Hernandez-Sainz, Felix Kling, Jelle Koorn and Juan Rojo
-> arXiv:XXXX.XXXXX (to appear)
+> [arXiv:2610.16836](https://arxiv.org/abs/2610.16836) ([INSPIRE](https://inspirehep.net/literature/3214395))
 
 whose LaTeX source is in `paper/`; every number and figure in it is derived
 from the result files tracked here.
@@ -19,18 +19,19 @@ from the result files tracked here.
 cite the paper above:**
 
 ```bibtex
-@article{HernandezSainz:2026evgen,
-    author  = "Hernandez-Sainz, Paulina and Kling, Felix and Koorn, Jelle and Rojo, Juan",
-    title   = "{Event Generation for Neutrino and Muon DIS at the LHC}",
-    eprint  = "XXXX.XXXXX",
+@article{Hernandez-Sainz:2026rxc,
+    author = "Hernandez-Sainz, Paulina and Kling, Felix and Koorn, Jelle and Rojo, Juan",
+    title = "{Event Generation for Neutrino and Muon DIS at the LHC}",
+    eprint = "2610.16836",
     archivePrefix = "arXiv",
-    primaryClass  = "hep-ph",
-    year    = "2026"
+    primaryClass = "hep-ph",
+    month = "10",
+    year = "2026"
 }
 ```
 
-The arXiv number will be added here on submission.  Please also cite the
-event generators and tools you use (see the paper's references).
+Please also cite the event generators and tools you use (see the paper's
+references).
 
 The code is released under the MIT licence (`LICENSE`).  External inputs in
 `data/` (fluxes, measurements) remain under the terms of their sources, given

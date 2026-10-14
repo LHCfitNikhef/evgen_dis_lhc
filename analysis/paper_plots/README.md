@@ -1,11 +1,13 @@
 # The paper figures
 
 One script per figure.  Each reads only tracked result files (`results/` for
-muon DIS, `results_nu/` for neutrino DIS) and writes its PNG next to them, so
-every figure rebuilds from a clone without any event sample:
+muon DIS, `results_nu/` for neutrino DIS) and writes its figure next to them
+(through `plotstyle.savefig`, as a vector PDF, which the paper includes, and a
+PNG twin for a quick look), so every figure rebuilds from a clone without any
+event sample:
 
     for f in analysis/paper_plots/pp*.py; do "$BENCH_PYTHON" "$f"; done
-    tools/sync_paper_figures.sh        # copy the PNGs into paper/figures/
+    tools/sync_paper_figures.sh        # copy the PDFs into paper/figures/
     tools/check_paper_plots.py         # each figure's quoted numbers vs its inputs
     tools/check_paper_claims.py        # the numbers quoted in the paper text
 

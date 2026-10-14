@@ -516,7 +516,7 @@ def main():
         a.set_ylim(1.0 - half, 1.0 + 1.45 * half)
     fig.suptitle(tex(TITLE), y=0.98, fontsize=plotstyle.FS_SUPTITLE)
     out = f"{BASE}/{RESULTS}/{OUTPUT}"
-    fig.savefig(out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
+    plotstyle.savefig(fig, out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
     plt.close(fig)
     print(f"wrote {out}")
 

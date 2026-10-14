@@ -117,7 +117,7 @@ In its current implementation, this generator cannot be used to simulate DIS eve
 
 \paragraph{\genie.}   
 %
-As opposed to the other generators considered here, the \genie~\cite{Andreopoulos:2009rq,Andreopoulos:2015wxa} settings (such as PDF choice or matrix-element (ME) model) cannot be straightforwardly modified and are only available for a fixed set of tunes. 
+As opposed to the other generators considered here, the \genie~\cite{Andreopoulos:2009rq,Andreopoulos:2015wxa} settings such as PDF choice or matrix-element (ME) model cannot be straightforwardly modified and are only available for a fixed set of tunes. 
 %
 Here LO simulations for neutrino scattering are produced with \genie using 
 the {\tt G18\_02a\_00\_000} tune~\cite{GENIE:2021zuu}, which is the same configuration that FASER uses~\cite{FASER:2024ykc}.
@@ -130,14 +130,14 @@ For NC muon scattering we use the
 %
 For CC scattering we also consider the {\sc HEDIS} module~\cite{Soto:2021vdc} of {\tt GHE19\_00a}, built on BGR18 structure functions~\cite{Bertone:2018dse} at NLO through \apfel~\cite{Bertone:2013vaa}, achieving NLO accuracy for inclusive distributions.
 %
-This tune evaluates its structure functions with the {\tt NNPDF31sx\_nlo\_as\_0118\_LHCb\_nf\_6} set rather than with \nnpdf.
+This tune evaluates its structure functions with the {\tt NNPDF31sx\_nlo\_as\_0118\_LHCb\_nf\_6} PDF set~\cite{Ball:2017otu,Bertone:2018dse,NNPDF:2017mvq} rather than with \nnpdf.
 % 
 To separate PDF effects from other model parameters, we also generate LO events where GRV98
 is replaced by \nnpdf.
 
 \genie does not simulate a parton shower, either initial- or final-state, for the configurations considered here: the struck quark and the colour-connected target remnant are passed directly to string fragmentation, so \genie final states contain no perturbative QCD radiation beyond the LO partonic process.
 %
-In the default tune the hadronic system is handled by the {\sc AGKY} model~\cite{Yang:2009zx}, which takes hadron multiplicities and momenta from the KNO parametrisation~\cite{Koba:1972ng} below a hadronic invariant mass of $2.3$~GeV and from \pythia string fragmentation above $3$~GeV, interpolating in between; {\sc HEDIS} instead uses a {\sc LEPTO}-derived~\cite{Ingelman:1996mq} interface to \pythia at all $W$.
+In the default tune the hadronic system is handled by the {\sc AGKY} model~\cite{Yang:2009zx}, which takes hadron multiplicities and momenta from the KNO parametrisation~\cite{Koba:1972ng} below a hadronic invariant mass ($W$) of $2.3$~GeV and from \pythia string fragmentation above $3$~GeV, interpolating in between; {\sc HEDIS} instead uses a {\sc LEPTO}-derived~\cite{Ingelman:1996mq} interface to \pythia at all $W$.
 %
 In {\sc HEDIS} the NLO corrections enter only as a reweighting of the LO cross-section, so its final states are LO in structure. 
 %
@@ -148,10 +148,9 @@ This overestimates the charm cross-section for $\nu_\mu$ scattering on a proton 
 The charm channel must therefore always be generated alongside the
 inclusive one.
 %
-Concerning NC scattering, the {\sc EMDIS} channel
-list is a three-flavour calculation where charm is absent both from the initial and final state. 
+Concerning NC scattering, the {\sc EMDIS} channel consists of a three-flavour calculation where charm is absent from the initial and final states. 
 
-An advantage of \genie as compared to the general-purpose generators is that it can account also for non-DIS processes such as quasi-elastic, resonance, and diffractive scattering which are then combined with the DIS contribution.
+An advantage of \genie as compared to most general-purpose generators is that it can account also for non-DIS processes such as quasi-elastic, resonance, and diffractive scattering which are then combined with the DIS contribution.
 %
 It can also cover the shallow-inelastic scattering (SIS) region at low $Q^2$, which provides a non-negligible contribution to total event yields~\cite{Candido:2023utz}.
 %

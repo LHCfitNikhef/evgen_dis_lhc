@@ -500,7 +500,7 @@ def main():
     _check_frame(fig, ax, leg)
     fig.suptitle(tex(TITLE), fontsize=plotstyle.FS_TITLE, y=0.98)
     out = f"{BASE}/{RESULTS}/{OUTPUT}"
-    fig.savefig(out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
+    plotstyle.savefig(fig, out, dpi=200, facecolor=SURFACE, bbox_inches="tight")
     print("wrote", out)
 
 

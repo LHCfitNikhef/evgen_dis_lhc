@@ -20,13 +20,12 @@ At NLO, \yadism predictions are provided in the ZM-VFNS and FONLL schemes, so th
 %
 At NNLO, we use FONLL for neutral-current and ZM-VFNS for charged-current scattering, since in the latter case the massive coefficient functions, although known at NNLO~\cite{Berger:2016inr,Gao:2017kkx,Caola:2026kvl}, are not yet implemented in \yadism. 
 %
-The bottom panels display the ratio of the various calculations to the 
-    massless NLO \yadism calculation.
+The bottom panels display the ratio to the massless NLO \yadism calculation.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!tbp]
   \centering
-  \includegraphics[width=0.98\textwidth]{figures/pp_sigma_vs_energy.png}
+  \includegraphics[width=0.98\textwidth]{figures/pp_sigma_vs_energy.pdf}
   \caption{Inclusive fiducial cross-section per nucleon on a tungsten target as a function of the beam energy for muon $(\mu^-)$ neutral-current (left) and muon-neutrino ($\nu_\mu$) charged-current (right panel) scattering in the fiducial region defined by Eq.~(\ref{eq:fiducial}).
 %
 We provide results for three NLO-matched event generators (\sherpa, \herwig, and \powheg) as well as for the analytical calculations from \yadism at NLO (ZM-VFNS and FONLL) and at NNLO (FONLL for NC and ZM-VFNS for CC).
@@ -80,7 +79,7 @@ These are observables that the  analytic \yadism calculation can predict, since 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!tbp]
   \centering
-  \includegraphics[width=0.96\textwidth]{figures/pp_dis_distributions.png}
+  \includegraphics[width=0.96\textwidth]{figures/pp_dis_distributions.pdf}
   \caption{Same as Fig.~\ref{fig:sigma-vs-energy} for differential distributions in the fiducial region at $E_\ell=1$ TeV.
 %
 From top to bottom, we show the distributions in Bjorken $x_{\rm Bj}$, the scattered-lepton
@@ -130,9 +129,9 @@ We use \yadism FONLL as reference since this \genie cross-section model also acc
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!tbp]
   \centering
-  \includegraphics[width=0.98\textwidth]{figures/pp_genie_vs_energy.png}
+  \includegraphics[width=0.98\textwidth]{figures/pp_genie_vs_energy.pdf}
   \caption{Same as Fig.~\ref{fig:sigma-vs-energy}
- comparing the total inclusive cross-sections predicted by \yadism NLO in the FONLL scheme with \powhegres (muon DIS) and \powhegtwo (neutrino DIS) and different \genie tunes: GRV98LO (default), same with NNPDF4.0, and the {\sc\small HEDIS} tune. 
+ comparing the total inclusive cross-sections predicted by \yadism NLO in the FONLL scheme with \powhegres (muon DIS) and \powhegtwo (neutrino DIS) and different \genie configurations: GRV98LO (default), same with NNPDF4.0, and the {\sc\small HEDIS} tune. 
   %
   In the right panel we also display the  \yadism FONLL prediction evaluated with the same PDF set as {\sc\small HEDIS} uses, namely {\tt NNPDF31sx\_nlo\_as\_0118\_LHCb\_nf\_6}.
   %
@@ -152,7 +151,7 @@ For neutrino DIS a similar effect is found, and there the NLO tune based on {\sc
 %
 This last offset is entirely a PDF effect.
 %
-Indeed, {\tt GHE19\_00a} evaluates its structure functions with {\tt NNPDF31sx\_nlo\_as\_0118\_LHCb\_nf\_6}~\cite{Ball:2017otu,Bertone:2018dse,NNPDF:2017mvq}, whose light-quark densities lie below those of \nnpdf over the $x$ range that dominates the rate.\footnote{This PDF is tailored for applications to ultra-high-energy (UHE) neutrino astronomy, with $D$-meson data constraining its small-$x$ gluon PDF.} 
+Indeed, {\tt GHE19\_00a} evaluates its structure functions with {\tt NNPDF31sx\_nlo\_as\_0118\_LHCb\_nf\_6}, whose light-quark densities lie below those of \nnpdf over the $x$ range that dominates the rate.\footnote{This PDF set was tailored for applications to ultra-high-energy (UHE) neutrino astronomy, with $D$-meson data from the LHCb experiment constraining the small-$x$ gluon PDF~\cite{Gauld:2016kpd}.} 
 %
 When the \yadism FONLL calculation is evaluated with the same PDF set, the agreement with the  {\sc\small HEDIS} predictions is excellent. 
 %
@@ -173,7 +172,7 @@ In Sect.~\ref{sec:hadronic} we revisit the comparison for observables at the lev
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!tbp]
   \centering
-  \includegraphics[width=0.96\textwidth]{figures/pp_genie_dis_distributions.png}
+  \includegraphics[width=0.96\textwidth]{figures/pp_genie_dis_distributions.pdf}
   \caption{Same as Fig.~\ref{fig:dis-distributions}
   now comparing the same muon and neutrino DIS calculations of Fig.~\ref{fig:genie-vs-energy} including the \genie predictions considered in this work (two tunes and a PDF variant).
 }

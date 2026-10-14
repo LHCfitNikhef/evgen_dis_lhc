@@ -13,8 +13,9 @@ WHAT IT SETS, and why each one matters:
   * TICKS POINTING INWARD, ON ALL FOUR SIDES, major length 7 / minor 4.  This
     is the single change that most separates a publication figure from a
     default matplotlib one.
-  * A very light grid (lw=0.1) that guides the eye without competing with the
-    data.
+  * A very light grid that guides the eye without competing with the data:
+    light grey at 0.4 pt.  (It was black at 0.1 pt, which looks the same in a
+    bitmap but is drawn as a solid black hairline by PDF viewers, 2026-10-09.)
   * Explicit font sizes: axis labels 16, ylabel 15, ticks 12, legend 12-14.
   * subplots_adjust rather than tight_layout -- see fused_gridspec() below.
 
@@ -56,6 +57,10 @@ FS_SUPTITLE = 18
 FS_PANEL_TITLE = 14
 
 _applied = False
+
+
+# The grid: light grey, 0.4 pt (see the module docstring).
+GRID_LW, GRID_COLOR = 0.4, "0.8"
 
 
 def _usetex_available():
@@ -116,14 +121,27 @@ def apply():
         "xtick.minor.visible": True,
         "ytick.minor.visible": True,
         "axes.linewidth": 1.0,
-        "grid.linewidth": 0.1,
-        "grid.color": "black",
+        "grid.linewidth": GRID_LW,
+        "grid.color": GRID_COLOR,
         "legend.frameon": True,
         "legend.framealpha": 0.9,
         "figure.dpi": 150,
         "savefig.dpi": 150,
     })
     _applied = True
+
+
+def savefig(fig, out, **kw):
+    """Write a figure twice: `out` as PNG and the same name as vector PDF.
+
+    The PDF is what the paper includes (user decision, 2026-10-09): lines and
+    text stay sharp at any zoom, the labels are real text in the document's
+    fonts, and the file is usually smaller than a 200-dpi bitmap.  The PNG is
+    kept only for looking at a figure quickly, since a PDF does not render in
+    every viewer.  `dpi` affects only the PNG (nothing here is rasterised).
+    """
+    fig.savefig(out, **kw)
+    fig.savefig(os.path.splitext(out)[0] + ".pdf", **kw)
 
 
 def ticks(ax, labelbottom=True):
@@ -137,7 +155,7 @@ def ticks(ax, labelbottom=True):
                    right=True, top=True, labelbottom=labelbottom)
     ax.tick_params(which="major", length=7)
     ax.tick_params(which="minor", length=4)
-    ax.grid(True, lw=0.1)
+    ax.grid(True, lw=GRID_LW, color=GRID_COLOR)
 
 
 # --------------------------------------------------------------- label TeX
